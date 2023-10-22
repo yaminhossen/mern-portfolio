@@ -41,7 +41,7 @@ router
 				}
 				return res.status(201).json({code: 'password match', message: 'your password match'});
 			}
-			return res.status(401).json({code: 'user not found', message: 'your crediential does not match'});
+			return res.status(401).json({code: 'password does not match', message: 'your crediential does not match'});
 		}
 
 		// return res.redirect("/login");

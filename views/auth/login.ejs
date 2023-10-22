@@ -30,7 +30,8 @@
                                     <span class="icon material-symbols-outlined">
                                         person
                                     </span>
-                                    <input type="email" value="admin@gmail.com" placeholder="email" name="email" id="email">
+                                    <input type="email" value="admin@gmail.com" placeholder="email" name="email"
+                                        id="email">
                                 </div>
                                 <label for="email">
                                     <div class="text">Email</div>
@@ -41,7 +42,8 @@
                                     <span class="icon material-symbols-outlined">
                                         key
                                     </span>
-                                    <input type="password" value="1234" placeholder="password" name="password" id="password">
+                                    <input type="password" value="1234" placeholder="password" name="password"
+                                        id="password">
                                 </div>
                                 <label for="password">
                                     <div class="text">password</div>
@@ -74,17 +76,21 @@
             axios.post("/login-submit", new FormData(event.currentTarget))
                 .then(res => {
                     // {{-- localStorage.token = res.data.access_token; --}}
+
                     
-                        // return location.href = "/dashboard";
-             
+                    if(res.status == 201){
+                        return location.href = "/dashboard";
+
+                    }
+
                     console.log(res);
                     console.log(res.data.access_token);
                 })
                 .catch(err => {
-                    let { err_message, data } = err.response.data;
-                    window.toaster(err_message, "error");
+                    let { code, data } = err.response.data;
+                    window.toaster(code, "error");
                     console.log(data);
-                    console.log(err.response.data);
+                    console.log(err.response);
                 })
         }
     </script>
