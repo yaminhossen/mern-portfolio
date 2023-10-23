@@ -16,5 +16,8 @@ router
 	.get("/signup", function (req, res) {
 		return res.render("auth/register");
 	})
+	.get("/home", function (req, res) {
+		return res.render("auth/home");
+	})
 
 module.exports = () => router;
