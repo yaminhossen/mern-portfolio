@@ -21,17 +21,18 @@ router
 				
 				let data = {
 					username: user.username,
-					email: user.email,
+					email: user.email, 
 					_id: user._id,
 					photo_url: '',
 					device_id: '',
 					genrate_time: '', 
 				};
+				// console.log('data', req?.session?.user);
 				req.session.isAuth = true;
 				req.session.user = data;
 				var token = await jwt.sign( data , '91eb159c-a766-48c3-b143-849170dbceb8');
 				res.cookie('token',token)
-
+				// console.log('prev_auth_url',req.session.prev_auth_url);
 				let prevUrl = req.session.prev_auth_url;
 				if (prevUrl) {
 					delete req.session.prev_auth_url;

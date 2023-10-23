@@ -25,7 +25,7 @@
                     <div class="bg3"></div>
                     <div class="form_content">
                         <form onsubmit="login()" method="POST" action="/login-submit" autocomplete="false">
-                            <div class="form_group">
+                            <div class="form_group" id="email_input">
                                 <div class="input_body">
                                     <span class="icon material-symbols-outlined">
                                         person
@@ -77,8 +77,9 @@
                 .then(res => {
                     // {{-- localStorage.token = res.data.access_token; --}}
 
-                    
-                    if(res.status == 201){
+
+                    if (res.status == 201) {
+                        window.toaster( "success");
                         return location.href = "/dashboard";
 
                     }
@@ -90,7 +91,9 @@
                     let { code, data } = err.response.data;
                     window.toaster(code, "error");
                     console.log(data);
-                    console.log(err.response);
+                    console.log(err);
+                    var parentDiv = document.getElementById('email_input');
+                    parentDiv.insertAdjacentHTML('afterend', `<Div class="form_error text-danger">${err?.response?.data?.code}</Div>`)
                 })
         }
     </script>
