@@ -76,7 +76,7 @@
             axios.post("/login-submit", new FormData(event.currentTarget))
                 .then(res => {
                     // {{-- localStorage.token = res.data.access_token; --}}
-
+                    console.log('from form submit',res);
 
                     if (res.status == 201) {
                         window.toaster( "success");

@@ -17,6 +17,19 @@ let data = [
 		status: true,
 		remember_token: "rememberToken"
 	},
+	{
+		username: "user",
+		email: "alif@gmail.com",
+		password: "$2y$10$k0B3jnf4sh52yRnPM5Fn8O1eNvpM6tYrwsqgF3ldFcmifJ3UtuGzq",
+		full_name: "Mohammad alif",
+		telegram_id: "somethisng",
+		telegram_name: "somethingsOne",
+		mobile_number: "39087358",
+		photo: "",
+		status: true,
+		remember_token: "rememberToken"
+	},
+	
 ];
 
 module.exports = () => mongoose.connect(db_url).then(async () => {
