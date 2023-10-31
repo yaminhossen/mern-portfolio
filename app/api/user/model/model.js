@@ -48,8 +48,13 @@ let userSchema = mongoose.Schema({
 	remember_token: {
 		type: String,
 	},
-	role: {
+	creator: {
 		type: [Schema.Types.ObjectId],
+		required: true,
+		ref: 'user_roles',
+	},
+	role: {
+		type: Number,
 		required: true,
 		ref: 'user_roles',
 	}

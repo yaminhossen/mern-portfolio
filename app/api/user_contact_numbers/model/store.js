@@ -11,7 +11,7 @@ const data_validation = async (request_data) => {
             let name = await model.findOne({
                 name: value
             })
-            if (name) {
+            if(name){
                 return Promise.reject('Name already existing')
             }
         })
@@ -27,20 +27,13 @@ const data_validation = async (request_data) => {
             let title = await model.findOne({
                 serial: value
             })
-            if (title) {
+            if(title){
                 return Promise.reject('Serial already existing')
             }
         })
         .withMessage("Serial already existing")
         .run(request_data);
-
-    await body("role")
-        .not()
-        .isEmpty()
-        .withMessage("the role field is required")
-        .run(request_data);
-
-    //  console.log("body data",body("title") );
+//  console.log("body data",body("title") );
     let result = validationResult(request_data);
     return {
         errors: result.array(),
@@ -50,7 +43,7 @@ const data_validation = async (request_data) => {
 
 module.exports = async (data) => {
     console.log('from user role store model', data);
-    let check = await data_validation({ body: data });
+    let check = await data_validation({body:data});
     if (check.hasError) {
         return {
             status: 'failed',

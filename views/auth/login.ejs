@@ -78,7 +78,12 @@
                     // {{-- localStorage.token = res.data.access_token; --}}
                     console.log('from form submit',res);
 
-                    if (res.status == 201) {
+                    if (res?.data?.title == 'user') {
+                        window.toaster( "success");
+                        return location.href = "/home";
+
+                    }
+                    if (res?.data?.title == 'admin') {
                         window.toaster( "success");
                         return location.href = "/dashboard";
 

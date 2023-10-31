@@ -6,7 +6,7 @@ function SideBar() {
     return (
         <nav>
             <ul>
-                <SingleLink to={'/'} text={'Dashboard'} icon={'monitoring'}></SingleLink>
+                <SingleLink to={'/'} text={'Dashboardd'} icon={'monitoring'}></SingleLink>
 
                 <li>
                     <DropDownLink text={'Users'} icon={'manage_accounts'}></DropDownLink>

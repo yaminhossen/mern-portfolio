@@ -1,12 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ModalManagement from "./components/management/ModalManagement";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import setup from "./config/setup";
+import userSetup from "../users/config/setup";
+import MultiselectDropdown from "./components/all_data_components/Multiselect_dropdown";
 
 function Create() {
-
+  const user_data_store = useSelector((state) => state[userSetup.prefix]);
   setup.dispatch = useDispatch();
+  userSetup.dispatch = useDispatch();
   const { store_data } = setup.actions;
+  const { get_data: get_users } = userSetup.actions;
+  const [ selectedRole, setselectedRole ] = useState([])
+  const [ tasklist, setTasklist ] = useState(false)
+
+  useEffect(() => {
+    get_users();
+  }, [])
+
+  console.log(selectedRole);
 
   const handleSubmit = async () => {
     let e = event;
@@ -34,30 +46,26 @@ function Create() {
               <form onSubmit={handleSubmit}>
                 <div className="form-group mb-5">
                   <div className="custom_form_el">
-                    <label htmlFor="">Title</label>
+                    <label htmlFor="">Name</label>
                     <div>:</div>
-                    <div><input name="title" type="text" className="form-control" /></div>
+                    <div><input name="name" type="text" className="form-control" /></div>
                   </div>
                   <div className="custom_form_el">
                     <label htmlFor="">Serial</label>
                     <div>:</div>
                     <div><input name="serial" type="number" className="form-control" /></div>
                   </div>
+                  <div className="custom_form_el">
+                    <label htmlFor="">Creator</label>
+                    <div>:</div>
+                    <div>
+                     <div id="creator">
+                     <MultiselectDropdown data={user_data_store.all_data} selectedData={selectedRole} setSelectedData={setselectedRole} taskOpen={tasklist} setTaskOpen={setTasklist}></MultiselectDropdown>
+                     </div>
+                    </div>
+                  </div>
                 </div>
                 <input type="submit" value="Create" />
-                {/* {[
-                  "Serial",
-                ].map((i) => {
-                  return (
-                    <div className="form-group mb-5">
-                      <div className="custom_form_el">
-                        <label htmlFor="">{i}</label>
-                        <div>:</div>
-                        <input type="text" className="form-control" />
-                      </div>
-                    </div>
-                  );
-                })} */}
               </form>
             </div>
           </div>
