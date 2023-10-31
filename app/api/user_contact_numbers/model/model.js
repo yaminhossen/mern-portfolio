@@ -1,19 +1,15 @@
-// last_id:370 
+// last_id:388 
 
 const { default: mongoose, Schema } = require("mongoose");
 const { readFirstLine } = require("../../../utilites/readFirstLine");
 const writeFirstLine = require("../../../utilites/writeFirstLine");
 
 
-let userRoleSchema = mongoose.Schema({
+let userContactNumberSchema = mongoose.Schema({
 	
-	name: {
+	number: {
 		type: String,
 		require: true,
-		unique: true,
-	},
-	serial: {
-		type: Number,
 		unique: true,
 	},
 	status: {
@@ -25,14 +21,11 @@ let userRoleSchema = mongoose.Schema({
 		// required: true,
 		ref: 'users',
 	},
-	last_id: {
-		type: Number,
-	}
 }, {
 	timestamps: true,
 });
 
-userRoleSchema.pre('save', async function (next) {
+userContactNumberSchema.pre('save', async function (next) {
 	if (!this.isNew) return;
 
 	try {
@@ -49,4 +42,4 @@ userRoleSchema.pre('save', async function (next) {
 
 
 
-module.exports = mongoose.model("user_roles", userRoleSchema);
+module.exports = mongoose.model("user_contact_numbers", userContactNumberSchema);

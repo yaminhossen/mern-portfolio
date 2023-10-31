@@ -50,7 +50,7 @@ let userSchema = mongoose.Schema({
 	},
 	creator: {
 		type: [Schema.Types.ObjectId],
-		required: true,
+		// required: true,
 		ref: 'user_roles',
 	},
 	role: {

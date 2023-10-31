@@ -28,7 +28,7 @@ function Create() {
     e.preventDefault();
     let form_data = new FormData(e.target);
     selectedRole.forEach((e,index)=>{
-      form_data.append(`role[${index}]`, e._id);
+      form_data.append(`role`, e.serial);
     });
     [...document.querySelectorAll('.form_error')].forEach((el => el.remove()));
     await store_data(form_data);
@@ -88,6 +88,15 @@ function Create() {
                     <div><input name="mobile_number" type="text" className="form-control" /></div>
                   </div>
                   <div className="custom_form_el">
+                    <label htmlFor="">Role</label>
+                    <div>:</div>
+                    <div>
+                     <div id="role">
+                     <MultiselectDropdown data={role_data_store.all_data} selectedData={selectedRole} setSelectedData={setselectedRole} taskOpen={tasklist} setTaskOpen={setTasklist}></MultiselectDropdown>
+                     </div>
+                    </div>
+                  </div>
+                  {/* <div className="custom_form_el">
                     <label htmlFor="">Creator</label>
                     <div>:</div>
                     <div>
@@ -95,7 +104,7 @@ function Create() {
                      <MultiselectDropdown data={role_data_store.all_data} selectedData={selectedRole} setSelectedData={setselectedRole} taskOpen={tasklist} setTaskOpen={setTasklist}></MultiselectDropdown>
                      </div>
                     </div>
-                  </div>
+                  </div> */}
                   <div className="custom_form_el">
                     <label htmlFor="">Photo</label>
                     <div>:</div>

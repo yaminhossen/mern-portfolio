@@ -100,7 +100,7 @@ const data_validation = async (request_data) => {
 module.exports = async (datas) => {
     let data = datas.body;
     let files = datas.files;
-    // console.log('from store append', data);
+    console.log('from store append', data);
     // console.log('from store append fdgfgdfdfile', files);
 
     const upload_files = (file, id) => {
@@ -144,6 +144,7 @@ module.exports = async (datas) => {
         user.mobile_number = data.mobile_number;
         user.photo = photo_path;
         user.role = data.role;
+        // user.creator = data.creator;
         const new_data = await model.create(user);
         // user.save();
         // await user.save();

@@ -34,10 +34,10 @@ const data_validation = async (request_data) => {
         .withMessage("Serial already existing")
         .run(request_data);
 
-    await body("role")
+    await body("creator")
         .not()
         .isEmpty()
-        .withMessage("the role field is required")
+        .withMessage("the creator field is required")
         .run(request_data);
 
     //  console.log("body data",body("title") );

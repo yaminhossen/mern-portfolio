@@ -24,6 +24,10 @@ function Create() {
     let e = event;
     e.preventDefault();
     let form_data = new FormData(e.target);
+    selectedRole.forEach((e,index)=>{
+      form_data.append(`creator[${index}]`, e._id);
+      console.log(e);
+    });
     [...document.querySelectorAll('.form_error')].forEach((el => el.remove()));
     await store_data(form_data);
     e.target.reset();

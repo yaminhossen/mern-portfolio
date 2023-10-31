@@ -31,11 +31,11 @@ const MultiselectDropdown = (props) => {
         console.log(selectedData);
     }, [selectedData]);
 
-    // console.log(selectedData);
+    console.log(selectedData);
     console.log(data);
     function addItem(item) {
         console.log(item);
-        let newData = selectedData?.find((i) => i.title == item.title);
+        let newData = selectedData?.find((i) => i.serial == item.serial);
 
         if (newData) {
             // console.log(selectedData);
@@ -97,7 +97,7 @@ const MultiselectDropdown = (props) => {
                             return (
                                 <div>
                                     <li key={index}>
-                                        {i.title}
+                                        {i.serial}
                                         <span
                                             onClick={() => removeData(i)}
                                             className="material-symbols-outlined"
@@ -151,7 +151,7 @@ const MultiselectDropdown = (props) => {
                                                     }
                                                     id={"checbox" + i._id + ukey}
                                                 />
-                                                <div className="">{i.title}</div>
+                                                <div className="">{i.serial}</div>
                                             </label>
                                         </li>
                                     );

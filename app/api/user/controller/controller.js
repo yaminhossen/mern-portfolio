@@ -16,7 +16,7 @@ const controllers = {
 		return res.json(data);
 	},
 	store: async function (req, res) {
-		// console.log(req.files);
+		console.log('form controller',req.body);
 		const data = await store(req);
 		if(data.status === "success"){
 			return res.status(data.status_code).json(data);

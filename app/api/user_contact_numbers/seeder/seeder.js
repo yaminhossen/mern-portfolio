@@ -7,17 +7,15 @@ const Model = require("../model/model");
 let data = [
 	
 	{
-		name: "admin",
-		serial: 1,
+		number: "10110",
 		status: true,
 		// _id:"2"
 
 	},
 	{
-		name: "user",
-		serial: 2,
+		number: "20202",
 		status: true,
-		// _id:"3"
+		// _id:"2"
 
 	},
 ];
@@ -25,7 +23,7 @@ let data = [
 module.exports = async () => mongoose.connect(db_url)
 	.then(async () => {
 		console.log("\n");
-		console.log("user-roles seeding");
+		console.log("user-contact_number seeding");
 
 		await Model.deleteMany({});
 		for (let i = 0; i < data.length; i++) {
@@ -34,7 +32,7 @@ module.exports = async () => mongoose.connect(db_url)
 
 		// let response = await Model.insertMany(data);
 
-		console.log("user-roles seeding complete");
+		console.log("user-contact-number seeding complete");
 
 		console.log("\n");
 	});
