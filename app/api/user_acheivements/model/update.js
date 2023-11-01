@@ -14,6 +14,12 @@ const data_validation = async (request_data) => {
         .withMessage("the serial field is required")
         .run(request_data);
 
+    await body("date")
+        .not()
+        .isEmpty()
+        .withMessage("the date field is required")
+        .run(request_data);
+
     let result = validationResult(request_data);
     return {
         errors: result.array(),
@@ -39,6 +45,7 @@ module.exports = async ( data) => {
         const model_data = await model.findOne({ _id: data.id });
         model_data.title = data.title;
         model_data.serial = data.serial;
+        model_data.date = data.date;
         await model_data.save();
         // console.log(data);
         return {
