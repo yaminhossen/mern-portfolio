@@ -10,12 +10,12 @@ function Create() {
   setup.dispatch = useDispatch();
   userSetup.dispatch = useDispatch();
   const { store_data } = setup.actions;
-  const { get_data: get_users } = userSetup.actions;
+  const { get_data: get_contact_numbers } = userSetup.actions;
   const [ selectedRole, setselectedRole ] = useState([])
   const [ tasklist, setTasklist ] = useState(false)
 
   useEffect(() => {
-    get_users();
+    get_contact_numbers();
   }, [])
 
   console.log(selectedRole);
@@ -37,7 +37,7 @@ function Create() {
       <div className="card-header ">
         <h2 className="heading">Create</h2>
         <div className="btns d-flex gap-2 align-items-center">
-          <a href="#/user-role" className="btn rounded-pill btn-outline-secondary">
+          <a href="#/user-contact-number" className="btn rounded-pill btn-outline-secondary">
             <i className="material-symbols-outlined fill">arrow_back</i>
             Back
           </a>
@@ -49,17 +49,13 @@ function Create() {
             <div className="col-lg-8">
               <form onSubmit={handleSubmit}>
                 <div className="form-group mb-5">
+                  
                   <div className="custom_form_el">
-                    <label htmlFor="">Name</label>
+                    <label htmlFor="">Number</label>
                     <div>:</div>
-                    <div><input name="name" type="text" className="form-control" /></div>
+                    <div><input name="number" type="number" className="form-control" /></div>
                   </div>
-                  <div className="custom_form_el">
-                    <label htmlFor="">Serial</label>
-                    <div>:</div>
-                    <div><input name="serial" type="number" className="form-control" /></div>
-                  </div>
-                  <div className="custom_form_el">
+                  {/* <div className="custom_form_el">
                     <label htmlFor="">Creator</label>
                     <div>:</div>
                     <div>
@@ -67,7 +63,7 @@ function Create() {
                      <MultiselectDropdown data={user_data_store.all_data} selectedData={selectedRole} setSelectedData={setselectedRole} taskOpen={tasklist} setTaskOpen={setTasklist}></MultiselectDropdown>
                      </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
                 <input type="submit" value="Create" />
               </form>
