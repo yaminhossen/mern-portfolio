@@ -1,4 +1,4 @@
-// last_id:375 
+// last_id:376 
 
 const { default: mongoose, Schema } = require("mongoose");
 const { readFirstLine } = require("../../../utilites/readFirstLine");
@@ -10,62 +10,49 @@ let userProfileInfoSchema = mongoose.Schema({
 	designation: {
 		type: String,
 		require: true,
-		unique: true,
 	},
 	blood_group: {
 		type: String,
 		require: true,
-		unique: true,
 	},
 	date_of_birth: {
 		type: Date,
 		require: true,
-		unique: true,
 	},
 	nationality: {
 		type: String,
 		require: true,
-		unique: true,
 	},
 	father_name: {
 		type: String,
 		require: true,
-		unique: true,
 	},
 	mother_name: {
 		type: String,
 		require: true,
-		unique: true,
 	},
 	banner_profile_pic: {
 		type: String,
 		require: true,
-		unique: true,
 	},
 	short_bio: {
 		type: String,
 		require: true,
-		unique: true,
 	},
 	full_bio: {
 		type: String,
 		require: true,
-		unique: true,
 	},
 	address_present: {
 		type: String,
 		require: true,
-		unique: true,
 	},
 	address_permanent: {
 		type: String,
 		require: true,
-		unique: true,
 	},
 	google_map: {
 		type: String,
-		require: true,
-		unique: true,
 	},
 	status: {
 		type: Boolean,

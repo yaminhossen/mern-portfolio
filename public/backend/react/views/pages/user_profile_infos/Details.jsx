@@ -7,10 +7,10 @@ function Details() {
     const { id } = useParams();
     setup.dispatch = useDispatch();
     const data_store = useSelector((state) => state[setup.prefix])[setup.prefix]
-    const { get_user_roles , set_data} = setup.actions;
+    const { get_user_profile_infos , set_data} = setup.actions;
 
     useEffect(() => {
-        get_user_roles(id);
+        get_user_profile_infos(id);
 
         return () =>{
             set_data(null)
@@ -21,13 +21,13 @@ function Details() {
 
 
     if (data_store) {
-        const { _id, title, serial, status, createdAt, updatedAt, last_id } = data_store;
+        const { _id, designation, full_bio, father_name,address_present,address_permanent,mother_name,google_map,banner_profile_pic,nationality,date_of_birth,short_bio,blood_group, createdAt, updatedAt, last_id } = data_store;
         return (
             <div className='card list_card'>
                 <div className="card-header ">
-                    <h2 className='heading'>Create</h2>
+                    <h2 className='heading'>Details</h2>
                     <div className="btns d-flex gap-2 align-items-center">
-                        <a href="#/user-role" className="btn rounded-pill btn-outline-secondary">
+                        <a href="#/user-profile-info" className="btn rounded-pill btn-outline-secondary">
                             <i className="material-symbols-outlined fill">arrow_back</i>
                             Back
                         </a>
@@ -56,24 +56,87 @@ function Details() {
                                         </div>
                                     </div>
                                     <div className="custom_form_el">
-                                        <div>Title</div>
+                                        <div>Designation</div>
                                         <div>:</div>
                                         <div>
-                                            {title}
+                                            {designation}
                                         </div>
                                     </div>
                                     <div className="custom_form_el">
-                                        <div>serial</div>
+                                        <div>Blood</div>
                                         <div>:</div>
                                         <div>
-                                            {serial}
+                                            {blood_group}
                                         </div>
                                     </div>
                                     <div className="custom_form_el">
-                                        <div>Last Id</div>
+                                        <div>Nationality</div>
                                         <div>:</div>
                                         <div>
-                                            {last_id}
+                                            {nationality}
+                                        </div>
+                                    </div>
+                                    <div className="custom_form_el">
+                                        <div>Father</div>
+                                        <div>:</div>
+                                        <div>
+                                            {father_name}
+                                        </div>
+                                    </div>
+                                    <div className="custom_form_el">
+                                        <div>Mother</div>
+                                        <div>:</div>
+                                        <div>
+                                            {mother_name}
+                                        </div>
+                                    </div>
+                                    <div className="custom_form_el">
+                                        <div>Banner Photo</div>
+                                        <div>:</div>
+                                        <div>
+                                            {banner_profile_pic}
+                                        </div>
+                                    </div>
+                                    <div className="custom_form_el">
+                                        <div>Short Bio</div>
+                                        <div>:</div>
+                                        <div>
+                                            {short_bio}
+                                        </div>
+                                    </div>
+                                    <div className="custom_form_el">
+                                        <div>Full Bio</div>
+                                        <div>:</div>
+                                        <div>
+                                            {full_bio}
+                                        </div>
+                                    </div>
+                                    <div className="custom_form_el">
+                                        <div>Date of birth</div>
+                                        <div>:</div>
+                                        <div>
+                                            {date_of_birth}
+                                        </div>
+                                    </div>
+                                    <div className="custom_form_el">
+                                        <div>Pressent Address</div>
+                                        <div>:</div>
+                                        <div>
+                                            {address_present}
+                                        </div>
+                                    </div>
+                                    <div className="custom_form_el">
+                                        <div>Permanent Address</div>
+                                        <div>:</div>
+                                        <div>
+                                            {address_permanent}
+                                        </div>
+                                    </div>
+                                    <div className="custom_form_el">
+                                        <div>Google Map</div>
+                                        <div>:</div>
+                                        <div>
+                                            {google_map}
                                         </div>
                                     </div>
                                     <div className="custom_form_el">

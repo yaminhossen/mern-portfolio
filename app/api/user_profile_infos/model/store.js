@@ -3,36 +3,68 @@ const model = require("./model");
 const { async } = require("q");
 
 const data_validation = async (request_data) => {
-    await body("name")
+    await body("designation")
         .not()
         .isEmpty()
-        .withMessage("the name field is required")
-        .custom(async (value) => {
-            let name = await model.findOne({
-                name: value
-            })
-            if(name){
-                return Promise.reject('Name already existing')
-            }
-        })
-        .withMessage("Name already existing")
+        .withMessage("the designation field is required")
+        .run(request_data);
+    await body("blood_group")
+        .not()
+        .isEmpty()
+        .withMessage("the blood_group field is required")
+        .run(request_data);
+    await body("date_of_birth")
+        .not()
+        .isEmpty()
+        .withMessage("the date_of_birth field is required")
+        .run(request_data);
+    await body("nationality")
+        .not()
+        .isEmpty()
+        .withMessage("the nationality field is required")
+        .run(request_data);
+    await body("father_name")
+        .not()
+        .isEmpty()
+        .withMessage("the father_name field is required")
+        .run(request_data);
+    await body("mother_name")
+        .not()
+        .isEmpty()
+        .withMessage("the mother_name field is required")
+        .run(request_data);
+    await body("banner_profile_pic")
+        .not()
+        .isEmpty()
+        .withMessage("the banner_profile_pic field is required")
+        .run(request_data);
+    await body("short_bio")
+        .not()
+        .isEmpty()
+        .withMessage("the short_bio field is required")
+        .run(request_data);
+    await body("full_bio")
+        .not()
+        .isEmpty()
+        .withMessage("the full_bio field is required")
+        .run(request_data);
+    await body("address_pressent")
+        .not()
+        .isEmpty()
+        .withMessage("the address_pressent field is required")
+        .run(request_data);
+    await body("address_permanent")
+        .not()
+        .isEmpty()
+        .withMessage("the address_permanent field is required")
+        .run(request_data);
+    await body("google_map")
+        .not()
+        .isEmpty()
+        .withMessage("the google_map field is required")
         .run(request_data);
 
 
-    await body("serial")
-        .not()
-        .isEmpty()
-        .withMessage("the serial field is required")
-        .custom(async (value) => {
-            let title = await model.findOne({
-                serial: value
-            })
-            if(title){
-                return Promise.reject('Serial already existing')
-            }
-        })
-        .withMessage("Serial already existing")
-        .run(request_data);
 //  console.log("body data",body("title") );
     let result = validationResult(request_data);
     return {

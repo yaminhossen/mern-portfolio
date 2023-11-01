@@ -1,14 +1,14 @@
 import { async } from "q";
 import dataStoreSlice, { async_actions } from "./store"
-let prefix = 'user_role';
+let prefix = 'user_profile_info';
 var setup = {
     prefix,
-    route_prefix: 'user-role',
-    api_prefix: 'user-role',
-    layout_title: 'user role management',
-    all_page_title: 'All Roles',
-    crate_page_title: 'Create Role',
-    edit_page_title: 'Edit Role',
+    route_prefix: 'user-profile-info',
+    api_prefix: 'user-profile-info',
+    layout_title: 'user profile info management',
+    all_page_title: 'All profile infos',
+    crate_page_title: 'Create profile info',
+    edit_page_title: 'Edit profile info',
 
     dispatch: () => null,
     actions: {
@@ -29,7 +29,7 @@ var setup = {
         fetch_my_data: async () => null,
         [`set_search_parameter`]: async () => null,
         [`set_show_active_data`]:async () => null,
-        // set_user_role_search_parameter: async() => null,
+        // set_user_profile_info_search_parameter: async() => null,
     },
 }
 setup.actions.get_data = async () => await setup.dispatch(async_actions[`fetch_all_data`]());
@@ -40,7 +40,7 @@ setup.actions.set_page = async (page_no) => await setup.dispatch(dataStoreSlice.
 // store action
 setup.actions.store_data = async (form_data) => await setup.dispatch(async_actions[`store_${setup.prefix}`](form_data));
 
-// setup.actions.get_user_roles = async () => await setup.dispatch(async_actions[`fetch_user_roles`]());
+// setup.actions.get_user_profile_infos = async () => await setup.dispatch(async_actions[`fetch_user_profile_infos`]());
 
 setup.actions.set_my_data = async (item) => await setup.dispatch(dataStoreSlice.actions.set_my_data(item));
 setup.actions.fetch_my_data = async () => await setup.dispatch(async_actions.fetch_my_data());
@@ -52,8 +52,8 @@ setup.actions.restore_data = async (id) => await setup.dispatch(async_actions[`r
 // updated data
 setup.actions.update_data = async (data) => await setup.dispatch(async_actions[`edit_${setup.prefix}`](data))
 
-// get user-roles
-setup.actions.get_user_roles = async (id) => await setup.dispatch(async_actions[`details_${setup.prefix}`](id))
+// get user-profile_infos
+setup.actions.get_user_profile_infos = async (id) => await setup.dispatch(async_actions[`details_${setup.prefix}`](id))
 
 // set search parameter
 setup.actions[`set_search_parameter`] = async (searh_key) => await setup.dispatch(dataStoreSlice.actions[`set_search_parameter`](searh_key))
