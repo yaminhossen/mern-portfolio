@@ -7,10 +7,10 @@ function Edit() {
   const { id } = useParams();
   setup.dispatch = useDispatch();
   const data_store = useSelector((state) => state[setup.prefix])[setup.prefix]
-  const { get_user_roles, set_data, update_data } = setup.actions;
+  const { get_user_acheivements, set_data, update_data } = setup.actions;
 
   useEffect(() => {
-    get_user_roles(id);
+    get_user_acheivements(id);
     
     return () => {
       document.getElementById('form-data')?.reset();
@@ -37,13 +37,15 @@ function Edit() {
   
 
   if(data_store){
-    const{serial, title} = data_store;
+    const{serial, title, date} = data_store;
+    let a = new Date(date).toISOString().substring(0,10)
+    console.log(a);
     return (
       <div className="card list_card">
         <div className="card-header ">
           <h2 className="heading">Edit</h2>
           <div className="btns d-flex gap-2 align-items-center">
-            <a href="#/user-role" className="btn rounded-pill btn-outline-secondary">
+            <a href="#/user-acheivement" className="btn rounded-pill btn-outline-secondary">
               <i className="material-symbols-outlined fill">arrow_back</i>
               Back
             </a>
@@ -65,21 +67,13 @@ function Edit() {
                       <div>:</div>
                       <div><input name="serial" type="number" className="form-control" defaultValue={serial} /></div>
                     </div>
+                    <div className="custom_form_el">
+                      <label htmlFor="">Date</label>
+                      <div>:</div>
+                      <div><input name="date" type="date" className="form-control" defaultValue={a} /></div>
+                    </div>
                   </div>
                   <input type="submit" value="Create" />
-                  {/* {[
-                    "Serial",
-                  ].map((i) => {
-                    return (
-                      <div className="form-group mb-5">
-                        <div className="custom_form_el">
-                          <label htmlFor="">{i}</label>
-                          <div>:</div>
-                          <input type="text" className="form-control" />
-                        </div>
-                      </div>
-                    );
-                  })} */}
                 </form>
               </div>
             </div>
