@@ -7,11 +7,11 @@ function Edit() {
   const { id } = useParams();
   setup.dispatch = useDispatch();
   const data_store = useSelector((state) => state[setup.prefix])[setup.prefix]
-  const { get_user_roles, set_data, update_data } = setup.actions;
+  const { get_user_profile_infos, set_data, update_data } = setup.actions;
 
   useEffect(() => {
-    get_user_roles(id);
-    
+    get_user_profile_infos(id);
+
     return () => {
       document.getElementById('form-data')?.reset();
       set_data(null)
@@ -34,16 +34,17 @@ function Edit() {
 
   };
 
-  
 
-  if(data_store){
-    const{serial, title} = data_store;
+
+  if (data_store) {
+    const { designation, blood_group,date_of_birth,nationality, father_name,mother_name,banner_profile_pic,short_bio, full_bio,address_permanent, address_present, google_map } = data_store;
+    let date = new Date(date_of_birth).toISOString().substring(0,10)
     return (
       <div className="card list_card">
         <div className="card-header ">
           <h2 className="heading">Edit</h2>
           <div className="btns d-flex gap-2 align-items-center">
-            <a href="#/user-role" className="btn rounded-pill btn-outline-secondary">
+            <a href="#/user-profile-info" className="btn rounded-pill btn-outline-secondary">
               <i className="material-symbols-outlined fill">arrow_back</i>
               Back
             </a>
@@ -56,30 +57,67 @@ function Edit() {
                 <form id='form-data' onSubmit={handleSubmit}>
                   <div className="form-group mb-5">
                     <div className="custom_form_el">
-                      <label htmlFor="">Title</label>
+                      <label htmlFor="">Designation</label>
                       <div>:</div>
-                      <div><input name="title" type="text" className="form-control" defaultValue={title} /></div>
+                      <div><input name="designation" type="text" className="form-control" defaultValue={designation} /></div>
                     </div>
                     <div className="custom_form_el">
-                      <label htmlFor="">Serial</label>
+                      <label htmlFor="">Blood group</label>
                       <div>:</div>
-                      <div><input name="serial" type="number" className="form-control" defaultValue={serial} /></div>
+                      <div><input name="blood_group" type="text" className="form-control" defaultValue={blood_group} /></div>
+                    </div>
+                    <div className="custom_form_el">
+                      <label htmlFor="">Date of Birth</label>
+                      <div>:</div>
+                      <div><input name="date_of_birth" type="date" className="form-control" defaultValue={date} /></div>
+                    </div>
+                    <div className="custom_form_el">
+                      <label htmlFor="">Nationality</label>
+                      <div>:</div>
+                      <div><input name="nationality" type="text" className="form-control" defaultValue={nationality} /></div>
+                    </div>
+                    <div className="custom_form_el">
+                      <label htmlFor="">Father Name</label>
+                      <div>:</div>
+                      <div><input name="father_name" type="text" className="form-control" defaultValue={father_name} /></div>
+                    </div>
+                    <div className="custom_form_el">
+                      <label htmlFor="">Mother Name</label>
+                      <div>:</div>
+                      <div><input name="mother_name" type="text" className="form-control" defaultValue={mother_name} /></div>
+                    </div>
+                    <div className="custom_form_el">
+                      <label htmlFor="">Banner Profile Pic</label>
+                      <div>:</div>
+                      <div><input name="banner_profile_pic" type="text" className="form-control" defaultValue={banner_profile_pic} /></div>
+                    </div>
+                    <div className="custom_form_el">
+                      <label htmlFor="">Short Bio</label>
+                      <div>:</div>
+                      <div><input name="short_bio" type="text" className="form-control" defaultValue={short_bio} /></div>
+                    </div>
+                    <div className="custom_form_el">
+                      <label htmlFor="">full Bio</label>
+                      <div>:</div>
+                      <div><input name="full_bio" type="text" className="form-control" defaultValue={full_bio} /></div>
+                    </div>
+                    <div className="custom_form_el">
+                      <label htmlFor="">Address Pressent</label>
+                      <div>:</div>
+                      <div><input name="address_present" type="text" className="form-control" defaultValue={address_present} /></div>
+                    </div>
+                    <div className="custom_form_el">
+                      <label htmlFor="">Address Permanent</label>
+                      <div>:</div>
+                      <div><input name="address_permanent" type="text" className="form-control" defaultValue={address_permanent} /></div>
+                    </div>
+                    <div className="custom_form_el">
+                      <label htmlFor="">Google Map</label>
+                      <div>:</div>
+                      <div><input name="google_map" type="text" className="form-control" defaultValue={google_map} /></div>
                     </div>
                   </div>
-                  <input type="submit" value="Create" />
-                  {/* {[
-                    "Serial",
-                  ].map((i) => {
-                    return (
-                      <div className="form-group mb-5">
-                        <div className="custom_form_el">
-                          <label htmlFor="">{i}</label>
-                          <div>:</div>
-                          <input type="text" className="form-control" />
-                        </div>
-                      </div>
-                    );
-                  })} */}
+                  <input type="submit" value="Update" />
                 </form>
               </div>
             </div>
