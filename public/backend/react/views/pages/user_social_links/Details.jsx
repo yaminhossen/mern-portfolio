@@ -7,10 +7,10 @@ function Details() {
     const { id } = useParams();
     setup.dispatch = useDispatch();
     const data_store = useSelector((state) => state[setup.prefix])[setup.prefix]
-    const { get_user_roles , set_data} = setup.actions;
+    const { get_user_social_links , set_data} = setup.actions;
 
     useEffect(() => {
-        get_user_roles(id);
+        get_user_social_links(id);
 
         return () =>{
             set_data(null)
@@ -21,13 +21,13 @@ function Details() {
 
 
     if (data_store) {
-        const { _id, title, serial, status, createdAt, updatedAt, last_id } = data_store;
+        const { _id, type, url, createdAt, updatedAt } = data_store;
         return (
             <div className='card list_card'>
                 <div className="card-header ">
                     <h2 className='heading'>Create</h2>
                     <div className="btns d-flex gap-2 align-items-center">
-                        <a href="#/user-role" className="btn rounded-pill btn-outline-secondary">
+                        <a href="#/user-social-link" className="btn rounded-pill btn-outline-secondary">
                             <i className="material-symbols-outlined fill">arrow_back</i>
                             Back
                         </a>
@@ -38,15 +38,6 @@ function Details() {
                     <div className="container py-5">
                         <div className="row">
                             <div className="col-lg-8">
-                                {/* [
-                                        "ID",
-                                        "Title",
-                                        "Serial",
-                                        "Status",
-                                        "CreatedAt",
-                                        "UpdatedAt",
-                                        "last ID",
-                                    ] */}
                                 <div className="form-group mb-3">
                                     <div className="custom_form_el">
                                         <div>Id</div>
@@ -56,24 +47,17 @@ function Details() {
                                         </div>
                                     </div>
                                     <div className="custom_form_el">
-                                        <div>Title</div>
+                                        <div>Type</div>
                                         <div>:</div>
                                         <div>
-                                            {title}
+                                            {type}
                                         </div>
                                     </div>
                                     <div className="custom_form_el">
-                                        <div>serial</div>
+                                        <div>URL</div>
                                         <div>:</div>
                                         <div>
-                                            {serial}
-                                        </div>
-                                    </div>
-                                    <div className="custom_form_el">
-                                        <div>Last Id</div>
-                                        <div>:</div>
-                                        <div>
-                                            {last_id}
+                                            {url}
                                         </div>
                                     </div>
                                     <div className="custom_form_el">
