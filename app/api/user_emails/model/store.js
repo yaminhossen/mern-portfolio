@@ -3,35 +3,19 @@ const model = require("./model");
 const { async } = require("q");
 
 const data_validation = async (request_data) => {
-    await body("name")
+    await body("email")
         .not()
         .isEmpty()
-        .withMessage("the name field is required")
+        .withMessage("the email field is required")
         .custom(async (value) => {
-            let name = await model.findOne({
-                name: value
+            let email = await model.findOne({
+                email: value
             })
-            if(name){
-                return Promise.reject('Name already existing')
+            if(email){
+                return Promise.reject('Email already existing')
             }
         })
-        .withMessage("Name already existing")
-        .run(request_data);
-
-
-    await body("serial")
-        .not()
-        .isEmpty()
-        .withMessage("the serial field is required")
-        .custom(async (value) => {
-            let title = await model.findOne({
-                serial: value
-            })
-            if(title){
-                return Promise.reject('Serial already existing')
-            }
-        })
-        .withMessage("Serial already existing")
+        .withMessage("Email already existing")
         .run(request_data);
 //  console.log("body data",body("title") );
     let result = validationResult(request_data);

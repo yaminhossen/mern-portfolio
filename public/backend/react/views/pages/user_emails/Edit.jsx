@@ -7,10 +7,10 @@ function Edit() {
   const { id } = useParams();
   setup.dispatch = useDispatch();
   const data_store = useSelector((state) => state[setup.prefix])[setup.prefix]
-  const { get_user_roles, set_data, update_data } = setup.actions;
+  const { get_user_emails, set_data, update_data } = setup.actions;
 
   useEffect(() => {
-    get_user_roles(id);
+    get_user_emails(id);
     
     return () => {
       document.getElementById('form-data')?.reset();
@@ -37,13 +37,13 @@ function Edit() {
   
 
   if(data_store){
-    const{serial, title} = data_store;
+    const{email, title} = data_store;
     return (
       <div className="card list_card">
         <div className="card-header ">
           <h2 className="heading">Edit</h2>
           <div className="btns d-flex gap-2 align-items-center">
-            <a href="#/user-role" className="btn rounded-pill btn-outline-secondary">
+            <a href="#/user-email" className="btn rounded-pill btn-outline-secondary">
               <i className="material-symbols-outlined fill">arrow_back</i>
               Back
             </a>
@@ -56,17 +56,12 @@ function Edit() {
                 <form id='form-data' onSubmit={handleSubmit}>
                   <div className="form-group mb-5">
                     <div className="custom_form_el">
-                      <label htmlFor="">Title</label>
+                      <label htmlFor="">Email</label>
                       <div>:</div>
-                      <div><input name="title" type="text" className="form-control" defaultValue={title} /></div>
-                    </div>
-                    <div className="custom_form_el">
-                      <label htmlFor="">Serial</label>
-                      <div>:</div>
-                      <div><input name="serial" type="number" className="form-control" defaultValue={serial} /></div>
+                      <div><input name="email" type="text" className="form-control" defaultValue={email} /></div>
                     </div>
                   </div>
-                  <input type="submit" value="Create" />
+                  <input type="submit" value="Update" />
                   {/* {[
                     "Serial",
                   ].map((i) => {

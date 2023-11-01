@@ -2,17 +2,12 @@ const { body, validationResult } = require("express-validator");
 const model = require("./model");
 
 const data_validation = async (request_data) => {
-    await body("title")
+    await body("email")
         .not()
         .isEmpty()
-        .withMessage("the title field is required")
+        .withMessage("the email field is required")
         .run(request_data);
 
-    await body("serial")
-        .not()
-        .isEmpty()
-        .withMessage("the serial field is required")
-        .run(request_data);
 
     let result = validationResult(request_data);
     return {
@@ -37,8 +32,7 @@ module.exports = async ( data) => {
 
     try {
         const model_data = await model.findOne({ _id: data.id });
-        model_data.title = data.title;
-        model_data.serial = data.serial;
+        model_data.email = data.email;
         await model_data.save();
         // console.log(data);
         return {
