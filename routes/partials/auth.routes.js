@@ -18,7 +18,8 @@ router
 		if (user) {
 			console.log(user);
 			// console.log(user?.role[0]?.title);
-			let title = user?.role[0]?.title;
+			// let title = user?.role[0]?.title;
+			let title = user?.username;
 			console.log('title', title);
 			let passMatch = await bcrypt.compare(password, user.password);
 			console.log(passMatch);

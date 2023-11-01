@@ -1,4 +1,4 @@
-// last_id:375 
+// last_id:382 
 
 const { default: mongoose, Schema } = require("mongoose");
 const { readFirstLine } = require("../../../utilites/readFirstLine");
@@ -25,9 +25,6 @@ let userRoleSchema = mongoose.Schema({
 		// required: true,
 		ref: 'users',
 	},
-	last_id: {
-		type: Number,
-	}
 }, {
 	timestamps: true,
 });
@@ -36,10 +33,10 @@ userRoleSchema.pre('save', async function (next) {
 	if (!this.isNew) return;
 
 	try {
-		let line = await readFirstLine(__filename);
-		let last_id = parseInt(line.substr(11)) + 1;
-		await writeFirstLine(__filename, line, `// last_id:${last_id} `);
-		this.last_id = last_id;
+		// let line = await readFirstLine(__filename);
+		// let last_id = parseInt(line.substr(11)) + 1;
+		// await writeFirstLine(__filename, line, `// last_id:${last_id} `);
+		// this.last_id = last_id;
 	} catch (error) {
 		console.log(error);
 	}

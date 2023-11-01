@@ -9,14 +9,11 @@ let data = [
 	{
 		name: "admin",
 		serial: 1,
-		status: true,
-		// _id:"2"
 
 	},
 	{
 		name: "user",
 		serial: 2,
-		status: true,
 		// _id:"3"
 
 	},

@@ -25,9 +25,6 @@ let userRoleSchema = mongoose.Schema({
 		// required: true,
 		ref: 'users',
 	},
-	last_id: {
-		type: Number,
-	}
 }, {
 	timestamps: true,
 });

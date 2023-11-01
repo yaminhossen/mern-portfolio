@@ -15,7 +15,7 @@ function DashboardLayout() {
             <div className="app_body">
                 <div className="left">
                     <div className="logo">
-                        <a href="#/">Admin Paneldfkl</a>
+                        <a href="#/">Admin Panel</a>
                     </div>
                     <SideBar></SideBar>
                 </div>

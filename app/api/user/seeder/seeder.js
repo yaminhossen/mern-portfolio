@@ -13,6 +13,7 @@ let data = [
 		telegram_id: "something",
 		telegram_name: "somethingOne",
 		mobile_number: "3908758",
+		role: 13,
 		photo: "",
 		status: true,
 		remember_token: "rememberToken"
@@ -20,11 +21,12 @@ let data = [
 	{
 		username: "user",
 		email: "alif@gmail.com",
-		password: "$2y$10$k0B3jnf4sh52yRnPM5Fn8O1eNvpM6tYrwsqgF3ldFcmifJ3UtuGzq",
+		password: "$2b$13$PlbkNt7Cl5.lwzOjdsBR4e.xgaRZEdsUXCs377PZ5McUPQTBMv/iy",
 		full_name: "Mohammad alif",
 		telegram_id: "somethisng",
 		telegram_name: "somethingsOne",
 		mobile_number: "39087358",
+		role: 31,
 		photo: "",
 		status: true,
 		remember_token: "rememberToken"
