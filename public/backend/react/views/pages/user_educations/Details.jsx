@@ -7,10 +7,10 @@ function Details() {
     const { id } = useParams();
     setup.dispatch = useDispatch();
     const data_store = useSelector((state) => state[setup.prefix])[setup.prefix]
-    const { get_user_roles , set_data} = setup.actions;
+    const { get_user_educations , set_data} = setup.actions;
 
     useEffect(() => {
-        get_user_roles(id);
+        get_user_educations(id);
 
         return () =>{
             set_data(null)
@@ -21,13 +21,13 @@ function Details() {
 
 
     if (data_store) {
-        const { _id, title, serial, status, createdAt, updatedAt, last_id } = data_store;
+        const { _id, title, start_date,end_date,result, createdAt, updatedAt} = data_store;
         return (
             <div className='card list_card'>
                 <div className="card-header ">
                     <h2 className='heading'>Create</h2>
                     <div className="btns d-flex gap-2 align-items-center">
-                        <a href="#/user-role" className="btn rounded-pill btn-outline-secondary">
+                        <a href="#/user-education" className="btn rounded-pill btn-outline-secondary">
                             <i className="material-symbols-outlined fill">arrow_back</i>
                             Back
                         </a>
@@ -63,17 +63,24 @@ function Details() {
                                         </div>
                                     </div>
                                     <div className="custom_form_el">
-                                        <div>serial</div>
+                                        <div>Result</div>
                                         <div>:</div>
                                         <div>
-                                            {serial}
+                                            {result}
                                         </div>
                                     </div>
                                     <div className="custom_form_el">
-                                        <div>Last Id</div>
+                                        <div>Start date</div>
                                         <div>:</div>
                                         <div>
-                                            {last_id}
+                                            {start_date}
+                                        </div>
+                                    </div>
+                                    <div className="custom_form_el">
+                                        <div>End date</div>
+                                        <div>:</div>
+                                        <div>
+                                            {end_date}
                                         </div>
                                     </div>
                                     <div className="custom_form_el">

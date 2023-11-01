@@ -8,10 +8,20 @@ const data_validation = async (request_data) => {
         .withMessage("the title field is required")
         .run(request_data);
 
-    await body("serial")
+    await body("result")
         .not()
         .isEmpty()
-        .withMessage("the serial field is required")
+        .withMessage("the result field is required")
+        .run(request_data);
+    await body("start_date")
+        .not()
+        .isEmpty()
+        .withMessage("the start_date field is required")
+        .run(request_data);
+    await body("end_date")
+        .not()
+        .isEmpty()
+        .withMessage("the end_date field is required")
         .run(request_data);
 
     let result = validationResult(request_data);
@@ -24,21 +34,13 @@ const data_validation = async (request_data) => {
 
 module.exports = async ( data) => {
     console.log(data);
-    // let check = await data_validation({ body: data });
-
-    // if (check.hasError) {
-    //     return {
-    //         status: 'failed',
-    //         data: check.errors,
-    //         message: "validation error",
-    //         status_code: 422,
-    //     }
-    // }
 
     try {
         const model_data = await model.findOne({ _id: data.id });
         model_data.title = data.title;
-        model_data.serial = data.serial;
+        model_data.start_date = data.start_date;
+        model_data.end_date = data.end_date;
+        model_data.result = data.result;
         await model_data.save();
         // console.log(data);
         return {

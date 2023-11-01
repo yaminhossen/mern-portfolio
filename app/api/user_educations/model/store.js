@@ -3,37 +3,31 @@ const model = require("./model");
 const { async } = require("q");
 
 const data_validation = async (request_data) => {
-    await body("name")
+    await body("title")
         .not()
         .isEmpty()
-        .withMessage("the name field is required")
-        .custom(async (value) => {
-            let name = await model.findOne({
-                name: value
-            })
-            if(name){
-                return Promise.reject('Name already existing')
-            }
-        })
-        .withMessage("Name already existing")
+        .withMessage("the title field is required")
         .run(request_data);
 
 
-    await body("serial")
+    await body("start_date")
         .not()
         .isEmpty()
-        .withMessage("the serial field is required")
-        .custom(async (value) => {
-            let title = await model.findOne({
-                serial: value
-            })
-            if(title){
-                return Promise.reject('Serial already existing')
-            }
-        })
-        .withMessage("Serial already existing")
+        .withMessage("the start_date field is required")
         .run(request_data);
-//  console.log("body data",body("title") );
+
+    await body("end_date")
+        .not()
+        .isEmpty()
+        .withMessage("the end_date field is required")
+        .run(request_data);
+
+    await body("result")
+        .not()
+        .isEmpty()
+        .withMessage("the result field is required")
+        .run(request_data);
+    //  console.log("body data",body("title") );
     let result = validationResult(request_data);
     return {
         errors: result.array(),
@@ -43,7 +37,7 @@ const data_validation = async (request_data) => {
 
 module.exports = async (data) => {
     console.log('from user role store model', data);
-    let check = await data_validation({body:data});
+    let check = await data_validation({ body: data });
     if (check.hasError) {
         return {
             status: 'failed',

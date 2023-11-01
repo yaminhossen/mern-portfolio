@@ -1,4 +1,4 @@
-// last_id:388 
+// last_id:391 
 
 const { default: mongoose, Schema } = require("mongoose");
 const { readFirstLine } = require("../../../utilites/readFirstLine");
@@ -10,7 +10,6 @@ let userEducationSchema = mongoose.Schema({
 	title: {
 		type: String,
 		require: true,
-		unique: true,
 	},
 	status: {
 		type: Boolean,
