@@ -59,7 +59,7 @@ function Create() {
                     <div>:</div>
                     <div><input name="serial" type="number" className="form-control" /></div>
                   </div>
-                  <div className="custom_form_el">
+                  {/* <div className="custom_form_el">
                     <label htmlFor="">Creator</label>
                     <div>:</div>
                     <div>
@@ -67,7 +67,7 @@ function Create() {
                      <MultiselectDropdown data={user_data_store.all_data} selectedData={selectedRole} setSelectedData={setselectedRole} taskOpen={tasklist} setTaskOpen={setTasklist}></MultiselectDropdown>
                      </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
                 <input type="submit" value="Create" />
               </form>

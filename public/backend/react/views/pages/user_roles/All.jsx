@@ -58,7 +58,7 @@ function All() {
                                             <td>{data._id}</td>
                                             <td>
                                                 <span onClick={() => set_data(data._id)} className="cursor_pointer text-warning">
-                                                    {data.title}
+                                                    {data.name}
                                                 </span>
                                             </td>
                                             <td>

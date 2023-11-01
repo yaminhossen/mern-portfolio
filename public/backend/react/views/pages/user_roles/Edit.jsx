@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import setup from "./config/setup";
 import { useParams } from 'react-router-dom';
+import { name } from 'ejs';
 
 function Edit() {
   const { id } = useParams();
@@ -37,7 +38,7 @@ function Edit() {
   
 
   if(data_store){
-    const{serial, title} = data_store;
+    const{serial, name} = data_store;
     return (
       <div className="card list_card">
         <div className="card-header ">
@@ -56,9 +57,9 @@ function Edit() {
                 <form id='form-data' onSubmit={handleSubmit}>
                   <div className="form-group mb-5">
                     <div className="custom_form_el">
-                      <label htmlFor="">Title</label>
+                      <label htmlFor="">Name</label>
                       <div>:</div>
-                      <div><input name="title" type="text" className="form-control" defaultValue={title} /></div>
+                      <div><input name="name" type="text" className="form-control" defaultValue={name} /></div>
                     </div>
                     <div className="custom_form_el">
                       <label htmlFor="">Serial</label>

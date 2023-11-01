@@ -2,10 +2,10 @@ const { body, validationResult } = require("express-validator");
 const model = require("./model");
 
 const data_validation = async (request_data) => {
-    await body("title")
+    await body("name")
         .not()
         .isEmpty()
-        .withMessage("the title field is required")
+        .withMessage("the name field is required")
         .run(request_data);
 
     await body("serial")
@@ -37,7 +37,7 @@ module.exports = async ( data) => {
 
     try {
         const model_data = await model.findOne({ _id: data.id });
-        model_data.title = data.title;
+        model_data.name = data.name;
         model_data.serial = data.serial;
         await model_data.save();
         // console.log(data);

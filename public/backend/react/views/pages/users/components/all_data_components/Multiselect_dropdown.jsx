@@ -21,7 +21,7 @@ const MultiselectDropdown = (props) => {
     }, [props.data]);
     
     useEffect(() => {
-        if(props.selectedData.length){
+        if(props.selectedData?.length){
             setSelectedData([...props.selectedData]);
         }
     }, []);
