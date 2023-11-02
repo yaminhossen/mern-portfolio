@@ -5,7 +5,7 @@ const { readFirstLine } = require("../../../../utilites/readFirstLine");
 const writeFirstLine = require("../../../../utilites/writeFirstLine");
 
 
-let blogCommentSchema = mongoose.Schema({
+let blogCommentReplySchema = mongoose.Schema({
 	
 	comment: {
 		type: String,
@@ -27,7 +27,7 @@ let blogCommentSchema = mongoose.Schema({
 	timestamps: true,
 });
 
-blogCommentSchema.pre('save', async function (next) {
+blogCommentReplySchema.pre('save', async function (next) {
 	if (!this.isNew) return;
 
 	try {
@@ -44,4 +44,4 @@ blogCommentSchema.pre('save', async function (next) {
 
 
 
-module.exports = mongoose.model("blog_comment_replys", blogCommentSchema);
+module.exports = mongoose.model("blog_comment_replies", blogCommentReplySchema);

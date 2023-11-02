@@ -9,7 +9,7 @@ const router = express.Router();
 //     return res.json({data:users});
 // })
 
-let prefix = 'api/v1/user-acheivement'
+let prefix = 'api/v1/blog-comment'
 router
     .get(`/${prefix}`, controllers.all)
     // .get(`/${prefix}`, controllers.allSearch)
