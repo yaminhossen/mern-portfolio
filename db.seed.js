@@ -16,6 +16,10 @@ const apiContentCategoriesSeeder = require("./app/api/content/content_categories
 const apiContentCommentsSeeder = require("./app/api/content/content_comments/seeder/seeder")
 const apiContentCommentRepliesSeeder = require("./app/api/content/content_comment_replies/seeder/seeder")
 const apiContentimagesSeeder = require("./app/api/content/content_images/seeder/seeder")
+const apiContactMessagesSeeder = require("./app/api/contact_message/contact_messages/seeder/seeder")
+const apiBannerSeeder = require("./app/api/banner/banners/seeder/seeder")
+const apiSettingTitleSeeder = require("./app/api/setting/setting_titles/seeder/seeder")
+const apiSettingValueSeeder = require("./app/api/setting/setting_values/seeder/seeder")
 
 const seed = async () => {
 
@@ -42,6 +46,16 @@ const seed = async () => {
     await apiContentCommentsSeeder();
     await apiContentCommentRepliesSeeder();
     await apiContentimagesSeeder();
+
+    // contact message seeder!!
+    await apiContactMessagesSeeder();
+
+    // banner seeder!!
+    await apiBannerSeeder();
+
+    // setting seeder!!
+    await apiSettingTitleSeeder();
+    await apiSettingValueSeeder();
 }
 
 seed();
