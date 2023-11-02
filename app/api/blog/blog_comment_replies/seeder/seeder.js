@@ -6,11 +6,13 @@ let data = [
 	
 	{
 		comment: "This is good",
+		reply: "This is so good",
 		status: true,
 
 	},
 	{
-		comment: "This is very nic3",
+		comment: "This is good",
+		reply: "This is so good",
 		status: true,
 
 	},
@@ -19,7 +21,7 @@ let data = [
 module.exports = async () => mongoose.connect(db_url)
 	.then(async () => {
 		console.log("\n");
-		console.log("blog comments seeding");
+		console.log("blog comment replys seeding");
 
 		await Model.deleteMany({});
 		for (let i = 0; i < data.length; i++) {
@@ -28,7 +30,7 @@ module.exports = async () => mongoose.connect(db_url)
 
 		// let response = await Model.insertMany(data);
 
-		console.log("blog comments seeding complete");
+		console.log("blog comment replys seeding complete");
 
 		console.log("\n");
 	});

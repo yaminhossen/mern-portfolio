@@ -5,12 +5,18 @@ const Model = require("../model/model");
 let data = [
 	
 	{
-		comment: "This is good",
+		title: "Blog image1",
+		description: "This is good",
+		photo: "dhfdhdf",
+		photo_alt: "dhfdhdf",
 		status: true,
 
 	},
 	{
-		comment: "This is very nic3",
+		title: "Blog image2",
+		description: "This is so good",
+		photo: "dhfdhdf",
+		photo_alt: "dhfdhdf",
 		status: true,
 
 	},
@@ -19,7 +25,7 @@ let data = [
 module.exports = async () => mongoose.connect(db_url)
 	.then(async () => {
 		console.log("\n");
-		console.log("blog comments seeding");
+		console.log("blog images seeding");
 
 		await Model.deleteMany({});
 		for (let i = 0; i < data.length; i++) {
@@ -28,7 +34,7 @@ module.exports = async () => mongoose.connect(db_url)
 
 		// let response = await Model.insertMany(data);
 
-		console.log("blog comments seeding complete");
+		console.log("blog images seeding complete");
 
 		console.log("\n");
 	});

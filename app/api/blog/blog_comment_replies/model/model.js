@@ -11,6 +11,10 @@ let blogCommentSchema = mongoose.Schema({
 		type: String,
 		require: true,
 	},
+	reply: {
+		type: String,
+		require: true,
+	},
 	status: {
 		type: Boolean,
 		default: true,
@@ -40,4 +44,4 @@ blogCommentSchema.pre('save', async function (next) {
 
 
 
-module.exports = mongoose.model("blog_comments", blogCommentSchema);
+module.exports = mongoose.model("blog_comment_replys", blogCommentSchema);

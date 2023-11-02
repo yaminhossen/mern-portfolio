@@ -7,7 +7,19 @@ const writeFirstLine = require("../../../../utilites/writeFirstLine");
 
 let blogCommentSchema = mongoose.Schema({
 	
-	comment: {
+	title: {
+		type: String,
+		require: true,
+	},
+	description: {
+		type: String,
+		require: true,
+	},
+	photo: {
+		type: String,
+		require: true,
+	},
+	photo_alt: {
 		type: String,
 		require: true,
 	},
@@ -40,4 +52,4 @@ blogCommentSchema.pre('save', async function (next) {
 
 
 
-module.exports = mongoose.model("blog_comments", blogCommentSchema);
+module.exports = mongoose.model("blog_images", blogCommentSchema);
