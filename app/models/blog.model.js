@@ -3,7 +3,7 @@ const translatorModel = require("./translator.model");
 
 
 module.exports = mongoose.model(
-	"blogs",
+	"blogsss",
 	mongoose.Schema(
 		{
 			title: {
