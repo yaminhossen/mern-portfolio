@@ -12,6 +12,10 @@ import user_email_routes from '../views/pages/user_emails/config/routes.js';
 import user_profile_info_routes from '../views/pages/user_profile_infos/config/routes.js';
 import user_social_link_routes from '../views/pages/user_social_links/config/routes.js';
 
+import blog_routes from '../views/pages/blog/blogs/config/routes.js';
+import blog_categorie_routes from '../views/pages/blog/blog_categories/config/routes.js';
+
+
 const router = {
     path: "/",
     element: <DashboardLayout />,
@@ -29,6 +33,8 @@ const router = {
         user_email_routes,
         user_profile_info_routes,
         user_social_link_routes,
+        blog_routes,
+        blog_categorie_routes,
         
         {
             path: '*',

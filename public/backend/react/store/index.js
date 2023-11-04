@@ -6,6 +6,11 @@ import userEducationSlice from "../views/pages/user_educations/config/store";
 import userEmailSlice from "../views/pages/user_emails/config/store";
 import userProfileInfoSlice from "../views/pages/user_profile_infos/config/store";
 import userSocialLinkSlice from "../views/pages/user_social_links/config/store";
+
+// blog store
+import blogSlice from "../views/pages/blog/blogs/config/store";
+import blogCategorieSlice from "../views/pages/blog/blog_categories/config/store";
+
 import { configureStore } from "@reduxjs/toolkit";
 
 
@@ -19,6 +24,10 @@ const store = configureStore({
         user_email: userEmailSlice.reducer,
         user_profile_info: userProfileInfoSlice.reducer,
         user_social_link: userSocialLinkSlice.reducer,
+
+        blog: blogSlice.reducer,
+        blog_categorie: blogCategorieSlice.reducer,
+        
     }
 });
 

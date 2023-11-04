@@ -24,7 +24,7 @@ function SideBar() {
 
                     </ul>
                 </li>
-                <li>
+                {/* <li>
                     <DropDownLink text={'User Acheivement'} icon={'manage_accounts'}></DropDownLink>
                     <ul>
                         <SingleLink to={'/user-acheivement'} text={'all'} icon={'trip_origin'}></SingleLink>
@@ -71,9 +71,29 @@ function SideBar() {
                         <SingleLink to={'/user-social-link/create'} text={'create'} icon={'trip_origin'}></SingleLink>
 
                     </ul>
+                </li> */}
+
+                {/* blog link */}
+                <li>
+                    <DropDownLink text={'Blog'} icon={'manage_accounts'}></DropDownLink>
+                    <ul>
+                        <SingleLink to={'/blog'} text={'all'} icon={'trip_origin'}></SingleLink>
+                        <SingleLink to={'/blog/create'} text={'create'} icon={'trip_origin'}></SingleLink>
+
+                    </ul>
+                </li>
+                <li>
+                    <DropDownLink text={'Blog Categories'} icon={'manage_accounts'}></DropDownLink>
+                    <ul>
+                        <SingleLink to={'/blog-categorie'} text={'all'} icon={'trip_origin'}></SingleLink>
+                        <SingleLink to={'/blog-categorie/create'} text={'create'} icon={'trip_origin'}></SingleLink>
+
+                    </ul>
                 </li>
 
+                {/* practice perpous */}
 
+                
             </ul>
         </nav>
     )

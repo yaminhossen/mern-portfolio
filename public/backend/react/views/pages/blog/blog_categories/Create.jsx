@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ModalManagement from "./components/management/ModalManagement";
 import { useDispatch, useSelector } from "react-redux";
 import setup from "./config/setup";
-import userSetup from "../users/config/setup";
+import userSetup from "../../users/config/setup";
 import MultiselectDropdown from "./components/all_data_components/Multiselect_dropdown";
 
 function Create() {

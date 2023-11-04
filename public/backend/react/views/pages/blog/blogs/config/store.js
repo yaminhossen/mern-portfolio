@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import setup from "./setup";
-import app_config from "../../../../config/app.config";
+import app_config from "../../../../../config/app.config";
 
 var store_prefix = setup.prefix;
 var api_prefix = setup.api_prefix;
@@ -11,7 +11,7 @@ export const async_actions = {
         `${store_prefix}/fetch_all_data`,
         async (data, thunkAPI) => {
             
-            let state = thunkAPI.getState().user_acheivement;
+            let state = thunkAPI.getState().blog;
             let qparams = {
                 page: state[`page`],
                 paginate: state[`paginate`],
@@ -33,7 +33,7 @@ export const async_actions = {
 
     // store data
     [`store_${store_prefix}`]: createAsyncThunk(
-        `user_acheivements/store_${store_prefix}`,
+        `blogs/store_${store_prefix}`,
         async (form_data, thunkAPI) => {
             // console.log(thunkAPI);
             try {
@@ -52,7 +52,7 @@ export const async_actions = {
 
     // edit data or updated data
     [`edit_${store_prefix}`]: createAsyncThunk(
-        `user_acheivements/edit_${store_prefix}`,
+        `blogs/edit_${store_prefix}`,
         async (form_data, thunkAPI) => {
             // console.log(thunkAPI);
             console.log('hoiche');
@@ -101,7 +101,7 @@ export const async_actions = {
 
     // details data
     [`details_${store_prefix}`]: createAsyncThunk(
-        `user_acheivements/details_${store_prefix}`,
+        `blogs/details_${store_prefix}`,
         async (id, thunkAPI) => {
             console.log(id);
             try {

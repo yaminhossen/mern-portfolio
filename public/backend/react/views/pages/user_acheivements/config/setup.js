@@ -1,14 +1,14 @@
 import { async } from "q";
 import dataStoreSlice, { async_actions } from "./store"
-let prefix = 'user_acheivement';
+let prefix = 'blog_categorie';
 var setup = {
     prefix,
-    route_prefix: 'user-acheivement',
-    api_prefix: 'user-acheivement',
-    layout_title: 'user acheivement management',
-    all_page_title: 'All acheivements',
-    crate_page_title: 'Create acheivement',
-    edit_page_title: 'Edit acheivement',
+    route_prefix: 'blog-categorie',
+    api_prefix: 'blog-categorie',
+    layout_title: 'blog categories management',
+    all_page_title: 'All blog categorie',
+    crate_page_title: 'Create blog categorie',
+    edit_page_title: 'Edit blog categorie',
 
     dispatch: () => null,
     actions: {
@@ -53,7 +53,7 @@ setup.actions.restore_data = async (id) => await setup.dispatch(async_actions[`r
 setup.actions.update_data = async (data) => await setup.dispatch(async_actions[`edit_${setup.prefix}`](data))
 
 // get user-acheivement
-setup.actions.get_user_acheivements = async (id) => await setup.dispatch(async_actions[`details_${setup.prefix}`](id))
+setup.actions.get_blog_categories = async (id) => await setup.dispatch(async_actions[`details_${setup.prefix}`](id))
 
 // set search parameter
 setup.actions[`set_search_parameter`] = async (searh_key) => await setup.dispatch(dataStoreSlice.actions[`set_search_parameter`](searh_key))
