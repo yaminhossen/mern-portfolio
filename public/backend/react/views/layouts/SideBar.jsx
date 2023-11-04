@@ -98,6 +98,22 @@ function SideBar() {
 
                     </ul>
                 </li>
+                <li>
+                    <DropDownLink text={'Blog Comment Replies'} icon={'manage_accounts'}></DropDownLink>
+                    <ul>
+                        <SingleLink to={'/blog-comment-reply'} text={'all'} icon={'trip_origin'}></SingleLink>
+                        <SingleLink to={'/blog-comment-reply/create'} text={'create'} icon={'trip_origin'}></SingleLink>
+
+                    </ul>
+                </li>
+                <li>
+                    <DropDownLink text={'Blog images'} icon={'manage_accounts'}></DropDownLink>
+                    <ul>
+                        <SingleLink to={'/blog-images'} text={'all'} icon={'trip_origin'}></SingleLink>
+                        <SingleLink to={'/blog-images/create'} text={'create'} icon={'trip_origin'}></SingleLink>
+
+                    </ul>
+                </li>
 
                 {/* practice perpous */}
 

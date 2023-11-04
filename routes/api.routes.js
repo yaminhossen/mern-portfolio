@@ -10,6 +10,8 @@ const user_social_links_routes = require("../app/api/user_social_links/router/ro
 const blogs_routes = require("../app/api/blog/blogs/router/routes");
 const blog_categories_routes = require("../app/api/blog/blog_categories/router/routes");
 const blog_comments_routes = require("../app/api/blog/blog_comments/router/routes");
+const blog_comment_replies_routes = require("../app/api/blog/blog_comment_replies/router/routes");
+const blog_images_routes = require("../app/api/blog/blog_images/router/routes");
 const router = express.Router();
 
 
@@ -27,5 +29,7 @@ router.use(user_social_links_routes());
 router.use(blogs_routes());
 router.use(blog_categories_routes());
 router.use(blog_comments_routes());
+router.use(blog_comment_replies_routes());
+router.use(blog_images_routes());
 
 module.exports = () => router;

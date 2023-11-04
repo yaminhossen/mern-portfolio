@@ -15,6 +15,8 @@ import user_social_link_routes from '../views/pages/user_social_links/config/rou
 import blog_routes from '../views/pages/blog/blogs/config/routes.js';
 import blog_categorie_routes from '../views/pages/blog/blog_categories/config/routes.js';
 import blog_comment_routes from '../views/pages/blog/blog_comments/config/routes.js';
+import blog_comment_reply_routes from '../views/pages/blog/blog_comment_replies/config/routes.js';
+import blog_image_routes from '../views/pages/blog/blog_images/config/routes.js';
 
 
 const router = {
@@ -37,6 +39,8 @@ const router = {
         blog_routes,
         blog_categorie_routes,
         blog_comment_routes,
+        blog_comment_reply_routes,
+        blog_image_routes,
         
         {
             path: '*',
