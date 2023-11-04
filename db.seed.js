@@ -22,6 +22,8 @@ const apiSettingTitleSeeder = require("./app/api/setting/setting_titles/seeder/s
 const apiSettingValueSeeder = require("./app/api/setting/setting_values/seeder/seeder")
 const apiSettingPhotoGalleryCategoriesSeeder = require("./app/api/photo_gallery/photo_gallery_categories/seeder/seeder")
 const apiSettingPhotoGalleryimagesSeeder = require("./app/api/photo_gallery/photo_gallery_images/seeder/seeder")
+const apiSettingVideoGalleryCategoriesSeeder = require("./app/api/video_gallery/video_gallery_categories/seeder/seeder")
+const apiSettingVideoGalleryimagesSeeder = require("./app/api/video_gallery/video_gallery_images/seeder/seeder")
 
 const seed = async () => {
 
@@ -62,6 +64,10 @@ const seed = async () => {
     // photo gallery
     await apiSettingPhotoGalleryCategoriesSeeder();
     await apiSettingPhotoGalleryimagesSeeder();
+
+    // video gallery
+    await apiSettingVideoGalleryCategoriesSeeder();
+    await apiSettingVideoGalleryimagesSeeder();
 }
 
 seed();
