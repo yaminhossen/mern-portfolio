@@ -90,6 +90,14 @@ function SideBar() {
 
                     </ul>
                 </li>
+                <li>
+                    <DropDownLink text={'Blog Comments'} icon={'manage_accounts'}></DropDownLink>
+                    <ul>
+                        <SingleLink to={'/blog-comment'} text={'all'} icon={'trip_origin'}></SingleLink>
+                        <SingleLink to={'/blog-comment/create'} text={'create'} icon={'trip_origin'}></SingleLink>
+
+                    </ul>
+                </li>
 
                 {/* practice perpous */}
 

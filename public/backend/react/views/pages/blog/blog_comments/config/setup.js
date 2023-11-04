@@ -1,14 +1,14 @@
 import { async } from "q";
 import dataStoreSlice, { async_actions } from "./store"
-let prefix = 'user_acheivemetn';
+let prefix = 'blog_comment';
 var setup = {
     prefix,
-    route_prefix: 'user-acheivement',
-    api_prefix: 'user-acheivement',
-    layout_title: 'user acheivement management',
-    all_page_title: 'All user acheivements',
-    crate_page_title: 'Create user acheivement',
-    edit_page_title: 'Edit user acheivement',
+    route_prefix: 'blog-comment',
+    api_prefix: 'blog-comment',
+    layout_title: 'blog-comment management',
+    all_page_title: 'All blog comments',
+    crate_page_title: 'Create blog comment',
+    edit_page_title: 'Edit blog comment',
 
     dispatch: () => null,
     actions: {
@@ -53,7 +53,7 @@ setup.actions.restore_data = async (id) => await setup.dispatch(async_actions[`r
 setup.actions.update_data = async (data) => await setup.dispatch(async_actions[`edit_${setup.prefix}`](data))
 
 // get user-acheivement
-setup.actions.get_user_acheivemetns = async (id) => await setup.dispatch(async_actions[`details_${setup.prefix}`](id))
+setup.actions.get_blog_comments = async (id) => await setup.dispatch(async_actions[`details_${setup.prefix}`](id))
 
 // set search parameter
 setup.actions[`set_search_parameter`] = async (searh_key) => await setup.dispatch(dataStoreSlice.actions[`set_search_parameter`](searh_key))

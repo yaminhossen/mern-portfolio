@@ -11,7 +11,7 @@ export const async_actions = {
         `${store_prefix}/fetch_all_data`,
         async (data, thunkAPI) => {
             
-            let state = thunkAPI.getState().blog_categorie;
+            let state = thunkAPI.getState().user_acheivement;
             let qparams = {
                 page: state[`page`],
                 paginate: state[`paginate`],
@@ -33,7 +33,7 @@ export const async_actions = {
 
     // store data
     [`store_${store_prefix}`]: createAsyncThunk(
-        `blog-categories/store_${store_prefix}`,
+        `user_acheivements/store_${store_prefix}`,
         async (form_data, thunkAPI) => {
             // console.log(thunkAPI);
             try {
@@ -52,7 +52,7 @@ export const async_actions = {
 
     // edit data or updated data
     [`edit_${store_prefix}`]: createAsyncThunk(
-        `blog-categories/edit_${store_prefix}`,
+        `user_acheivements/edit_${store_prefix}`,
         async (form_data, thunkAPI) => {
             // console.log(thunkAPI);
             console.log('hoiche');
@@ -101,7 +101,7 @@ export const async_actions = {
 
     // details data
     [`details_${store_prefix}`]: createAsyncThunk(
-        `blog-categories/details_${store_prefix}`,
+        `user_acheivements/details_${store_prefix}`,
         async (id, thunkAPI) => {
             console.log(id);
             try {
