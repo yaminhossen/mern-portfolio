@@ -14,6 +14,13 @@ import blogCommentSlice from "../views/pages/blog/blog_comments/config/store";
 import blogCommentReplySlice from "../views/pages/blog/blog_comment_replies/config/store";
 import blogImageSlice from "../views/pages/blog/blog_images/config/store";
 
+// content store
+import contentSlice from "../views/pages/content/contents/config/store";
+import contentCategorieSlice from "../views/pages/content/content_categories/config/store";
+import contentCommentSlice from "../views/pages/content/content_comments/config/store";
+import contentCommentReplySlice from "../views/pages/content/content_comment_replies/config/store";
+import contentImageSlice from "../views/pages/content/content_images/config/store";
+
 import { configureStore } from "@reduxjs/toolkit";
 
 
@@ -28,11 +35,19 @@ const store = configureStore({
         user_profile_info: userProfileInfoSlice.reducer,
         user_social_link: userSocialLinkSlice.reducer,
 
+        // blog store
         blog: blogSlice.reducer,
         blog_categorie: blogCategorieSlice.reducer,
         blog_comment: blogCommentSlice.reducer,
         blog_comment_reply: blogCommentReplySlice.reducer,
         blog_image: blogImageSlice.reducer,
+
+        // content store
+        content: contentSlice.reducer,
+        content_categorie: contentCategorieSlice.reducer,
+        content_comment: contentCommentSlice.reducer,
+        content_comment_reply: contentCommentReplySlice.reducer,
+        content_image: contentImageSlice.reducer,
         
     }
 });

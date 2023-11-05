@@ -115,6 +115,49 @@ function SideBar() {
 
                     </ul>
                 </li>
+
+                {/* content link */}
+                <li>
+                    <DropDownLink text={'Content'} icon={'manage_accounts'}></DropDownLink>
+                    <ul>
+                        <SingleLink to={'/content'} text={'all'} icon={'trip_origin'}></SingleLink>
+                        <SingleLink to={'/content/create'} text={'create'} icon={'trip_origin'}></SingleLink>
+
+                    </ul>
+                </li>
+                <li>
+                    <DropDownLink text={'Content Categories'} icon={'manage_accounts'}></DropDownLink>
+                    <ul>
+                        <SingleLink to={'/content-categorie'} text={'all'} icon={'trip_origin'}></SingleLink>
+                        <SingleLink to={'/content-categorie/create'} text={'create'} icon={'trip_origin'}></SingleLink>
+
+                    </ul>
+                </li>
+                <li>
+                    <DropDownLink text={'Content Comments'} icon={'manage_accounts'}></DropDownLink>
+                    <ul>
+                        <SingleLink to={'/content-comment'} text={'all'} icon={'trip_origin'}></SingleLink>
+                        <SingleLink to={'/content-comment/create'} text={'create'} icon={'trip_origin'}></SingleLink>
+
+                    </ul>
+                </li>
+                <li>
+                    <DropDownLink text={'Content Comment Replies'} icon={'manage_accounts'}></DropDownLink>
+                    <ul>
+                        <SingleLink to={'/content-comment-reply'} text={'all'} icon={'trip_origin'}></SingleLink>
+                        <SingleLink to={'/content-comment-reply/create'} text={'create'} icon={'trip_origin'}></SingleLink>
+
+                    </ul>
+                </li>
+                
+                <li>
+                    <DropDownLink text={'Content Images'} icon={'manage_accounts'}></DropDownLink>
+                    <ul>
+                        <SingleLink to={'/content-image'} text={'all'} icon={'trip_origin'}></SingleLink>
+                        <SingleLink to={'/content-image/create'} text={'create'} icon={'trip_origin'}></SingleLink>
+
+                    </ul>
+                </li>
                 
 
                 {/* practice perpous */}
