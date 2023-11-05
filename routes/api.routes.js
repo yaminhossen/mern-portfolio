@@ -25,6 +25,8 @@ const photo_gallery_categorie_routes = require("../app/api/photo_gallery/photo_g
 const photo_gallery_image_routes = require("../app/api/photo_gallery/photo_gallery_images/router/routes");
 const video_gallery_categorie_routes = require("../app/api/video_gallery/video_gallery_categories/router/routes");
 const video_gallery_image_routes = require("../app/api/video_gallery/video_gallery_images/router/routes");
+const site_url_routes = require("../app/api/site_url/site_urls/router/routes");
+const site_url_view_count_routes = require("../app/api/site_url/stie_url_view_counts/router/routes");
 const router = express.Router();
 
 
@@ -69,5 +71,9 @@ router.use(photo_gallery_image_routes());
 // video gallery
 router.use(video_gallery_categorie_routes());
 router.use(video_gallery_image_routes());
+
+// site url
+router.use(site_url_routes());
+router.use(site_url_view_count_routes());
 
 module.exports = () => router;

@@ -37,6 +37,8 @@ import photo_gallery_image_routes from '../views/pages/photo_gallery/photo_galle
 import video_gallery_categorie_routes from '../views/pages/video_gallery/video_gallery_categories/config/routes.js';
 import video_gallery_image_routes from '../views/pages/video_gallery/video_gallery_images/config/routes.js';
 
+import site_url_routes from '../views/pages/site_url/site_urls/config/routes.js';
+import site_url_view_count_routes from '../views/pages/site_url/site_url_view_counts/config/routes.js';
 
 const router = {
     path: "/",
@@ -80,6 +82,9 @@ const router = {
 
         video_gallery_categorie_routes,
         video_gallery_image_routes,
+
+        site_url_routes,
+        site_url_view_count_routes,
         
         {
             path: '*',

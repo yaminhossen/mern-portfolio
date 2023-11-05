@@ -234,6 +234,24 @@ function SideBar() {
                     </ul>
                 </li>
 
+                {/* site url*/}
+                <li>
+                    <DropDownLink text={'Site Url'} icon={'manage_accounts'}></DropDownLink>
+                    <ul>
+                        <SingleLink to={'/site-url'} text={'all'} icon={'trip_origin'}></SingleLink>
+                        <SingleLink to={'/site-url/create'} text={'create'} icon={'trip_origin'}></SingleLink>
+
+                    </ul>
+                </li>
+                <li>
+                    <DropDownLink text={'Site Url View Count'} icon={'manage_accounts'}></DropDownLink>
+                    <ul>
+                        <SingleLink to={'/site-url-view-count'} text={'all'} icon={'trip_origin'}></SingleLink>
+                        <SingleLink to={'/site-url-view-count/create'} text={'create'} icon={'trip_origin'}></SingleLink>
+
+                    </ul>
+                </li>
+
                 
 
                 {/* practice perpous */}
