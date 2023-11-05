@@ -31,6 +31,10 @@ import bannerSlice from "../views/pages/banner/banners/config/store";
 import settingTitleSlice from "../views/pages/setting/setting_titles/config/store";
 import settingValueSlice from "../views/pages/setting/setting_values/config/store";
 
+// photo gallery
+import photoGalleryCategorieSlice from "../views/pages/photo_gallery/photo_gallery_categories/config/store";
+
+
 import { configureStore } from "@reduxjs/toolkit";
 
 
@@ -68,6 +72,10 @@ const store = configureStore({
         // setting
         setting_title: settingTitleSlice.reducer,
         setting_value: settingValueSlice.reducer,
+
+        // photo gallery
+        photo_gallery_categorie: photoGalleryCategorieSlice.reducer,
+
         
     }
 });

@@ -197,6 +197,17 @@ function SideBar() {
 
                     </ul>
                 </li>
+
+                {/* photo gallery */}
+                <li>
+                    <DropDownLink text={'Photo Gallery Categorie'} icon={'manage_accounts'}></DropDownLink>
+                    <ul>
+                        <SingleLink to={'/photo-gallery-categorie'} text={'all'} icon={'trip_origin'}></SingleLink>
+                        <SingleLink to={'/photo-gallery-categorie/create'} text={'create'} icon={'trip_origin'}></SingleLink>
+
+                    </ul>
+                </li>
+
                 
 
                 {/* practice perpous */}

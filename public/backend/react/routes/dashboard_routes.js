@@ -31,6 +31,9 @@ import banner_routes from '../views/pages/banner/banners/config/routes.js';
 import setting_title_routes from '../views/pages/setting/setting_titles/config/routes.js';
 import setting_value_routes from '../views/pages/setting/setting_values/config/routes.js';
 
+import photo_gallery_categorie_routes from '../views/pages/photo_gallery/photo_gallery_categories/config/routes.js';
+
+
 const router = {
     path: "/",
     element: <DashboardLayout />,
@@ -67,6 +70,8 @@ const router = {
 
         setting_title_routes,
         setting_value_routes,
+
+        photo_gallery_categorie_routes,
         
         {
             path: '*',
