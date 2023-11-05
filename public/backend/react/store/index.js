@@ -33,6 +33,7 @@ import settingValueSlice from "../views/pages/setting/setting_values/config/stor
 
 // photo gallery
 import photoGalleryCategorieSlice from "../views/pages/photo_gallery/photo_gallery_categories/config/store";
+import photoGalleryImageSlice from "../views/pages/photo_gallery/photo_gallery_images/config/store";
 
 
 import { configureStore } from "@reduxjs/toolkit";
@@ -75,6 +76,7 @@ const store = configureStore({
 
         // photo gallery
         photo_gallery_categorie: photoGalleryCategorieSlice.reducer,
+        photo_gallery_image: photoGalleryImageSlice.reducer,
 
         
     }

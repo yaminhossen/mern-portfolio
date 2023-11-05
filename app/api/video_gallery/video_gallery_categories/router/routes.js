@@ -9,7 +9,7 @@ const router = express.Router();
 //     return res.json({data:users});
 // })
 
-let prefix = 'api/v1/video-gallery-categories'
+let prefix = 'api/v1/video-gallery-categorie'
 router
     .get(`/${prefix}`, controllers.all)
     // .get(`/${prefix}`, controllers.allSearch)

@@ -32,6 +32,7 @@ import setting_title_routes from '../views/pages/setting/setting_titles/config/r
 import setting_value_routes from '../views/pages/setting/setting_values/config/routes.js';
 
 import photo_gallery_categorie_routes from '../views/pages/photo_gallery/photo_gallery_categories/config/routes.js';
+import photo_gallery_image_routes from '../views/pages/photo_gallery/photo_gallery_images/config/routes.js';
 
 
 const router = {
@@ -72,6 +73,7 @@ const router = {
         setting_value_routes,
 
         photo_gallery_categorie_routes,
+        photo_gallery_image_routes,
         
         {
             path: '*',

@@ -207,6 +207,14 @@ function SideBar() {
 
                     </ul>
                 </li>
+                <li>
+                    <DropDownLink text={'Photo Gallery Image'} icon={'manage_accounts'}></DropDownLink>
+                    <ul>
+                        <SingleLink to={'/photo-gallery-image'} text={'all'} icon={'trip_origin'}></SingleLink>
+                        <SingleLink to={'/photo-gallery-image/create'} text={'create'} icon={'trip_origin'}></SingleLink>
+
+                    </ul>
+                </li>
 
                 
 

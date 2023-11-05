@@ -22,6 +22,7 @@ const banner_routes = require("../app/api/banner/banners/router/routes");
 const setting_title_routes = require("../app/api/setting/setting_titles/router/routes");
 const setting_value_routes = require("../app/api/setting/setting_values/router/routes");
 const photo_gallery_categorie_routes = require("../app/api/photo_gallery/photo_gallery_categories/router/routes");
+const photo_gallery_image_routes = require("../app/api/photo_gallery/photo_gallery_images/router/routes");
 const router = express.Router();
 
 
@@ -61,5 +62,6 @@ router.use(setting_value_routes());
 
 // photo gallery
 router.use(photo_gallery_categorie_routes());
+router.use(photo_gallery_image_routes());
 
 module.exports = () => router;
