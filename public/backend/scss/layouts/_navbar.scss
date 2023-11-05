@@ -1,8 +1,24 @@
 nav {
+    height: calc(100vh - 61px);
+    overflow-y: scroll;
+
+    /* Customize the scrollbar */
+    nav::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    nav::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    nav::-webkit-scrollbar-thumb {
+        background: #888;
+    }
+
     ul {
-        overflow-y: scroll;
         li {
             margin-bottom: 5px;
+
             .nav_link {
                 border-radius: 5px;
                 display: flex;
@@ -50,11 +66,12 @@ nav {
 
             }
 
-            &:has(>.nav_link.active){
-                ul{
+            &:has(>.nav_link.active) {
+                ul {
                     display: block;
                 }
             }
+
             ul {
                 padding-left: 20px;
                 margin-top: 15px;
@@ -84,10 +101,12 @@ nav {
                         &.active,
                         &:hover {
                             background: unset;
-                            .dark &{
+
+                            .dark & {
                                 // background-color: var(--black_600);
                                 background-color: unset;
                             }
+
                             color: var(--black_900);
 
                             a {
@@ -95,13 +114,15 @@ nav {
                                     font-weight: 400;
                                     position: relative;
                                     font-size: 25px;
-                                    &::after{
+
+                                    &::after {
                                         content: '\e315';
                                         position: absolute;
                                         top: 0;
                                         left: 0;
                                         background-color: var(--black_50);
-                                        .dark &{
+
+                                        .dark & {
                                             background-color: var(--black_800);
                                         }
                                     }

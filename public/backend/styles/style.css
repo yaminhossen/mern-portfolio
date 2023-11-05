@@ -303,6 +303,27 @@ img {
   display: none !important;
 }
 
+html {
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+html ::-webkit-scrollbar {
+  width: 5px;
+}
+html ::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(185, 185, 185);
+  border-radius: 10px;
+}
+html ::-webkit-scrollbar-thumb {
+  background: #a8a1a1;
+  border-radius: 10px;
+}
+html ::-webkit-scrollbar-thumb:hover {
+  background: #b85d5d;
+}
+
 .app_body {
   width: 100vw;
   height: 100vh;
@@ -424,6 +445,20 @@ img {
   background-color: var(--black_700);
 }
 
+nav {
+  height: calc(100vh - 61px);
+  overflow-y: scroll;
+  /* Customize the scrollbar */
+}
+nav nav::-webkit-scrollbar {
+  width: 10px;
+}
+nav nav::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+nav nav::-webkit-scrollbar-thumb {
+  background: #888;
+}
 nav ul li {
   margin-bottom: 5px;
 }
@@ -1752,6 +1787,74 @@ table td {
 .chart_body canvas.doughnut {
   max-height: 250px !important;
   width: 310px !important;
+}
+
+.multiselect_dropdown {
+  max-width: 300px;
+  background-color: rgba(199, 199, 199, 0.5);
+  padding: 4px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  display: block;
+}
+.multiselect_dropdown .close_icon {
+  display: flex;
+  justify-content: end;
+}
+.multiselect_dropdown .close_icon span {
+  width: 30px;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+.multiselect_dropdown .data_table {
+  border: 1px solid rgb(196, 195, 195);
+  border-radius: 5px;
+  min-height: 40px;
+  background-color: rgb(128, 24, 24);
+}
+.multiselect_dropdown .data_table ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 5px;
+}
+.multiselect_dropdown .data_table ul li {
+  border: 1px solid rgb(199, 198, 198);
+  display: flex;
+  padding: 2px;
+  border-radius: 5px;
+}
+.multiselect_dropdown .data_table ul li span {
+  cursor: pointer;
+}
+.multiselect_dropdown .multiselect_search_and_list {
+  border: 1px solid rgb(219, 219, 219);
+  margin-top: 10px;
+  border-radius: 5px;
+}
+.multiselect_dropdown .multiselect_search_and_list .multi_dropdown_all {
+  display: block;
+}
+.multiselect_dropdown .multiselect_search_and_list .multi_dropdown_all.multiselect_dropdown_hide {
+  display: none;
+}
+.multiselect_dropdown .multiselect_search_and_list .multiselect_search {
+  padding: 10px;
+}
+.multiselect_dropdown .multiselect_search_and_list .multiselect_list {
+  border: 1px solid rgb(219, 219, 219);
+  margin: 10px;
+  border-radius: 5px;
+  height: 200px;
+  overflow-y: auto;
+  display: block;
+}
+.multiselect_dropdown .multiselect_search_and_list .multiselect_list ul li {
+  margin: 10px;
+  border-radius: 5px;
+  display: flex;
+  gap: 8px;
 }
 
 /*# sourceMappingURL=style.css.map */

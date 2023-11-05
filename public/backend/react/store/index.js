@@ -12,7 +12,6 @@ import blogSlice from "../views/pages/blog/blogs/config/store";
 import blogCategorieSlice from "../views/pages/blog/blog_categories/config/store";
 import blogCommentSlice from "../views/pages/blog/blog_comments/config/store";
 import blogCommentReplySlice from "../views/pages/blog/blog_comment_replies/config/store";
-import blogimageSlice from "../views/pages/blog/blog_images/config/store";
 
 import { configureStore } from "@reduxjs/toolkit";
 
@@ -32,7 +31,6 @@ const store = configureStore({
         blog_categorie: blogCategorieSlice.reducer,
         blog_comment: blogCommentSlice.reducer,
         blog_comment_reply: blogCommentReplySlice.reducer,
-        blog_image: blogimageSlice.reducer,
         
     }
 });
