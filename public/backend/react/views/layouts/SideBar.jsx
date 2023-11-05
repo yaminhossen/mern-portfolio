@@ -216,6 +216,24 @@ function SideBar() {
                     </ul>
                 </li>
 
+                {/* video gallery */}
+                <li>
+                    <DropDownLink text={'Video Gallery Categorie'} icon={'manage_accounts'}></DropDownLink>
+                    <ul>
+                        <SingleLink to={'/video-gallery-categorie'} text={'all'} icon={'trip_origin'}></SingleLink>
+                        <SingleLink to={'/video-gallery-categorie/create'} text={'create'} icon={'trip_origin'}></SingleLink>
+
+                    </ul>
+                </li>
+                <li>
+                    <DropDownLink text={'Video Gallery Image'} icon={'manage_accounts'}></DropDownLink>
+                    <ul>
+                        <SingleLink to={'/video-gallery-image'} text={'all'} icon={'trip_origin'}></SingleLink>
+                        <SingleLink to={'/video-gallery-image/create'} text={'create'} icon={'trip_origin'}></SingleLink>
+
+                    </ul>
+                </li>
+
                 
 
                 {/* practice perpous */}

@@ -35,6 +35,10 @@ import settingValueSlice from "../views/pages/setting/setting_values/config/stor
 import photoGalleryCategorieSlice from "../views/pages/photo_gallery/photo_gallery_categories/config/store";
 import photoGalleryImageSlice from "../views/pages/photo_gallery/photo_gallery_images/config/store";
 
+// video gallery
+import videoGalleryCategorieSlice from "../views/pages/video_gallery/video_gallery_categories/config/store";
+import videoGalleryImageSlice from "../views/pages/video_gallery/video_gallery_images/config/store";
+
 
 import { configureStore } from "@reduxjs/toolkit";
 
@@ -77,6 +81,10 @@ const store = configureStore({
         // photo gallery
         photo_gallery_categorie: photoGalleryCategorieSlice.reducer,
         photo_gallery_image: photoGalleryImageSlice.reducer,
+
+        // video gallery
+        video_gallery_categorie: videoGalleryCategorieSlice.reducer,
+        video_gallery_image: videoGalleryImageSlice.reducer,
 
         
     }

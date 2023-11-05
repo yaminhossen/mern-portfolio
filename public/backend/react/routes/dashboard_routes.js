@@ -34,6 +34,9 @@ import setting_value_routes from '../views/pages/setting/setting_values/config/r
 import photo_gallery_categorie_routes from '../views/pages/photo_gallery/photo_gallery_categories/config/routes.js';
 import photo_gallery_image_routes from '../views/pages/photo_gallery/photo_gallery_images/config/routes.js';
 
+import video_gallery_categorie_routes from '../views/pages/video_gallery/video_gallery_categories/config/routes.js';
+import video_gallery_image_routes from '../views/pages/video_gallery/video_gallery_images/config/routes.js';
+
 
 const router = {
     path: "/",
@@ -74,6 +77,9 @@ const router = {
 
         photo_gallery_categorie_routes,
         photo_gallery_image_routes,
+
+        video_gallery_categorie_routes,
+        video_gallery_image_routes,
         
         {
             path: '*',
