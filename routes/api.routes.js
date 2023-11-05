@@ -18,6 +18,9 @@ const content_comments_routes = require("../app/api/content/content_comments/rou
 const content_comment_replies_routes = require("../app/api/content/content_comment_replies/router/routes");
 const content_image_routes = require("../app/api/content/content_images/router/routes");
 const contact_message_routes = require("../app/api/contact_message/contact_messages/router/routes");
+const banner_routes = require("../app/api/banner/banners/router/routes");
+const setting_title_routes = require("../app/api/setting/setting_titles/router/routes");
+const setting_value_routes = require("../app/api/setting/setting_values/router/routes");
 const router = express.Router();
 
 
@@ -47,5 +50,12 @@ router.use(content_image_routes());
 
 // contact message
 router.use(contact_message_routes());
+
+// banner
+router.use(banner_routes());
+
+// setting
+router.use(setting_title_routes());
+router.use(setting_value_routes());
 
 module.exports = () => router;

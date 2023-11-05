@@ -157,11 +157,43 @@ function SideBar() {
                     </ul>
                 </li>
 
+                {/* contact message */}
+
                 <li>
                     <DropDownLink text={'Contact Messages'} icon={'manage_accounts'}></DropDownLink>
                     <ul>
                         <SingleLink to={'/contact-message'} text={'all'} icon={'trip_origin'}></SingleLink>
                         <SingleLink to={'/contact-message/create'} text={'create'} icon={'trip_origin'}></SingleLink>
+
+                    </ul>
+                </li>
+
+                {/*banner */}
+
+                <li>
+                    <DropDownLink text={'Banners'} icon={'manage_accounts'}></DropDownLink>
+                    <ul>
+                        <SingleLink to={'/banner'} text={'all'} icon={'trip_origin'}></SingleLink>
+                        <SingleLink to={'/banner/create'} text={'create'} icon={'trip_origin'}></SingleLink>
+
+                    </ul>
+                </li>
+
+                {/*setting link */}
+
+                <li>
+                    <DropDownLink text={'Setting Titles'} icon={'manage_accounts'}></DropDownLink>
+                    <ul>
+                        <SingleLink to={'/setting-title'} text={'all'} icon={'trip_origin'}></SingleLink>
+                        <SingleLink to={'/setting-title/create'} text={'create'} icon={'trip_origin'}></SingleLink>
+
+                    </ul>
+                </li>
+                <li>
+                    <DropDownLink text={'Setting Values'} icon={'manage_accounts'}></DropDownLink>
+                    <ul>
+                        <SingleLink to={'/setting-value'} text={'all'} icon={'trip_origin'}></SingleLink>
+                        <SingleLink to={'/setting-value/create'} text={'create'} icon={'trip_origin'}></SingleLink>
 
                     </ul>
                 </li>

@@ -26,6 +26,10 @@ import content_image_routes from '../views/pages/content/content_images/config/r
 
 import contact_message_routes from '../views/pages/contact_message/contact_messages/config/routes.js';
 
+import banner_routes from '../views/pages/banner/banners/config/routes.js';
+
+import setting_title_routes from '../views/pages/setting/setting_titles/config/routes.js';
+import setting_value_routes from '../views/pages/setting/setting_values/config/routes.js';
 
 const router = {
     path: "/",
@@ -58,6 +62,11 @@ const router = {
         content_image_routes,
 
         contact_message_routes,
+
+        banner_routes,
+
+        setting_title_routes,
+        setting_value_routes,
         
         {
             path: '*',

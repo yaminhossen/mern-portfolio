@@ -24,6 +24,13 @@ import contentImageSlice from "../views/pages/content/content_images/config/stor
 // contact message
 import contactMessageSlice from "../views/pages/contact_message/contact_messages/config/store";
 
+//banner
+import bannerSlice from "../views/pages/banner/banners/config/store";
+
+// setting
+import settingTitleSlice from "../views/pages/setting/setting_titles/config/store";
+import settingValueSlice from "../views/pages/setting/setting_values/config/store";
+
 import { configureStore } from "@reduxjs/toolkit";
 
 
@@ -54,6 +61,13 @@ const store = configureStore({
 
         // contact message
         contact_message: contactMessageSlice.reducer,
+
+        // banenr
+        banner: bannerSlice.reducer,
+
+        // setting
+        setting_title: settingTitleSlice.reducer,
+        setting_value: settingValueSlice.reducer,
         
     }
 });
