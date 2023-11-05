@@ -24,6 +24,8 @@ import content_comment_routes from '../views/pages/content/content_comments/conf
 import content_comment_reply_routes from '../views/pages/content/content_comment_replies/config/routes.js';
 import content_image_routes from '../views/pages/content/content_images/config/routes.js';
 
+import contact_message_routes from '../views/pages/contact_message/contact_messages/config/routes.js';
+
 
 const router = {
     path: "/",
@@ -54,6 +56,8 @@ const router = {
         content_comment_routes,
         content_comment_reply_routes,
         content_image_routes,
+
+        contact_message_routes,
         
         {
             path: '*',

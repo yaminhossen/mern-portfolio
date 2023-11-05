@@ -106,7 +106,6 @@ function SideBar() {
 
                     </ul>
                 </li>
-                
                 <li>
                     <DropDownLink text={'Blog Images'} icon={'manage_accounts'}></DropDownLink>
                     <ul>
@@ -149,12 +148,20 @@ function SideBar() {
 
                     </ul>
                 </li>
-                
                 <li>
                     <DropDownLink text={'Content Images'} icon={'manage_accounts'}></DropDownLink>
                     <ul>
                         <SingleLink to={'/content-image'} text={'all'} icon={'trip_origin'}></SingleLink>
                         <SingleLink to={'/content-image/create'} text={'create'} icon={'trip_origin'}></SingleLink>
+
+                    </ul>
+                </li>
+
+                <li>
+                    <DropDownLink text={'Contact Messages'} icon={'manage_accounts'}></DropDownLink>
+                    <ul>
+                        <SingleLink to={'/contact-message'} text={'all'} icon={'trip_origin'}></SingleLink>
+                        <SingleLink to={'/contact-message/create'} text={'create'} icon={'trip_origin'}></SingleLink>
 
                     </ul>
                 </li>

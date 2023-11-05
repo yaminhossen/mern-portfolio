@@ -17,6 +17,7 @@ const content_categories_routes = require("../app/api/content/content_categories
 const content_comments_routes = require("../app/api/content/content_comments/router/routes");
 const content_comment_replies_routes = require("../app/api/content/content_comment_replies/router/routes");
 const content_image_routes = require("../app/api/content/content_images/router/routes");
+const contact_message_routes = require("../app/api/contact_message/contact_messages/router/routes");
 const router = express.Router();
 
 
@@ -43,5 +44,8 @@ router.use(content_categories_routes());
 router.use(content_comments_routes());
 router.use(content_comment_replies_routes());
 router.use(content_image_routes());
+
+// contact message
+router.use(contact_message_routes());
 
 module.exports = () => router;

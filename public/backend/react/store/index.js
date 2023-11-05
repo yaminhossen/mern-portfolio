@@ -21,6 +21,9 @@ import contentCommentSlice from "../views/pages/content/content_comments/config/
 import contentCommentReplySlice from "../views/pages/content/content_comment_replies/config/store";
 import contentImageSlice from "../views/pages/content/content_images/config/store";
 
+// contact message
+import contactMessageSlice from "../views/pages/contact_message/contact_messages/config/store";
+
 import { configureStore } from "@reduxjs/toolkit";
 
 
@@ -48,6 +51,9 @@ const store = configureStore({
         content_comment: contentCommentSlice.reducer,
         content_comment_reply: contentCommentReplySlice.reducer,
         content_image: contentImageSlice.reducer,
+
+        // contact message
+        contact_message: contactMessageSlice.reducer,
         
     }
 });
