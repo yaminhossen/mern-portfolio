@@ -43,6 +43,9 @@ import videoGalleryImageSlice from "../views/pages/video_gallery/video_gallery_i
 import siteUrlSlice from "../views/pages/site_url/site_urls/config/store";
 import siteUrlViewCountSlice from "../views/pages/site_url/site_url_view_counts/config/store";
 
+// tag
+import tagSlice from "../views/pages/tag/tags/config/store";
+
 
 import { configureStore } from "@reduxjs/toolkit";
 
@@ -93,6 +96,9 @@ const store = configureStore({
         // site url
         site_url: siteUrlSlice.reducer,
         site_url_view_count: siteUrlViewCountSlice.reducer,
+
+        // tag
+        tag: tagSlice.reducer,
 
         
     }

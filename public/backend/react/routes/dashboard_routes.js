@@ -40,6 +40,8 @@ import video_gallery_image_routes from '../views/pages/video_gallery/video_galle
 import site_url_routes from '../views/pages/site_url/site_urls/config/routes.js';
 import site_url_view_count_routes from '../views/pages/site_url/site_url_view_counts/config/routes.js';
 
+import tag_routes from '../views/pages/tag/tags/config/routes.js';
+
 const router = {
     path: "/",
     element: <DashboardLayout />,
@@ -85,6 +87,8 @@ const router = {
 
         site_url_routes,
         site_url_view_count_routes,
+
+        tag_routes,
         
         {
             path: '*',

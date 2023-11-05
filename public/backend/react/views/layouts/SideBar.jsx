@@ -252,6 +252,16 @@ function SideBar() {
                     </ul>
                 </li>
 
+                {/* tag*/}
+                <li>
+                    <DropDownLink text={'Tag'} icon={'manage_accounts'}></DropDownLink>
+                    <ul>
+                        <SingleLink to={'/tag'} text={'all'} icon={'trip_origin'}></SingleLink>
+                        <SingleLink to={'/tag/create'} text={'create'} icon={'trip_origin'}></SingleLink>
+
+                    </ul>
+                </li>
+
                 
 
                 {/* practice perpous */}
