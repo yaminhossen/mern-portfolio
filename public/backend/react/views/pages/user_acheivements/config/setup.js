@@ -1,6 +1,6 @@
 import { async } from "q";
 import dataStoreSlice, { async_actions } from "./store"
-let prefix = 'user_acheivemetn';
+let prefix = 'user_acheivement';
 var setup = {
     prefix,
     route_prefix: 'user-acheivement',

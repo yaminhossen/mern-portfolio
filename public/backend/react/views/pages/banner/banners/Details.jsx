@@ -7,10 +7,10 @@ function Details() {
     const { id } = useParams();
     setup.dispatch = useDispatch();
     const data_store = useSelector((state) => state[setup.prefix])[setup.prefix]
-    const { get_user_acheivements , set_data} = setup.actions;
+    const { get_banners , set_data} = setup.actions;
 
     useEffect(() => {
-        get_user_acheivements(id);
+        get_banners(id);
 
         return () =>{
             set_data(null)
@@ -27,7 +27,7 @@ function Details() {
                 <div className="card-header ">
                     <h2 className='heading'>Create</h2>
                     <div className="btns d-flex gap-2 align-items-center">
-                        <a href="#/user-acheivement" className="btn rounded-pill btn-outline-secondary">
+                        <a href="#/banner" className="btn rounded-pill btn-outline-secondary">
                             <i className="material-symbols-outlined fill">arrow_back</i>
                             Back
                         </a>
