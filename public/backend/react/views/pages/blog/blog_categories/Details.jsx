@@ -21,7 +21,7 @@ function Details() {
 
 
     if (data_store) {
-        const { _id, title, serial, date, createdAt, updatedAt, last_id } = data_store;
+        const { _id, title, short_description,seo_description, long_description,url,photo,seo_keyword, seo_title,createdAt, updatedAt} = data_store;
         return (
             <div className='card list_card'>
                 <div className="card-header ">
@@ -53,19 +53,55 @@ function Details() {
                                         </div>
                                     </div>
                                     <div className="custom_form_el">
-                                        <div>serial</div>
+                                        <div>short_description</div>
                                         <div>:</div>
                                         <div>
-                                            {serial}
+                                            {short_description}
                                         </div>
                                     </div>
                                     <div className="custom_form_el">
-                                        <div>Date</div>
+                                        <div>long_description</div>
                                         <div>:</div>
                                         <div>
-                                            {date}
+                                            {long_description}
                                         </div>
                                     </div>
+                                    <div className="custom_form_el">
+                                        <div>url</div>
+                                        <div>:</div>
+                                        <div>
+                                            {url}
+                                        </div>
+                                    </div>
+                                    <div className="custom_form_el">
+                                        <div>photo</div>
+                                        <div>:</div>
+                                        <div>
+                                            {photo}
+                                        </div>
+                                    </div>
+                                    <div className="custom_form_el">
+                                        <div>seo_title</div>
+                                        <div>:</div>
+                                        <div>
+                                            {seo_title}
+                                        </div>
+                                    </div>
+                                    <div className="custom_form_el">
+                                        <div>seo_keyword</div>
+                                        <div>:</div>
+                                        <div>
+                                            {seo_keyword}
+                                        </div>
+                                    </div>
+                                    <div className="custom_form_el">
+                                        <div>seo_description</div>
+                                        <div>:</div>
+                                        <div>
+                                            {seo_description}
+                                        </div>
+                                    </div>
+                                   
                                     <div className="custom_form_el">
                                         <div>Created At</div>
                                         <div>:</div>
