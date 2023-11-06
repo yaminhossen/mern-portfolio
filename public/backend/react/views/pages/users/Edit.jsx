@@ -13,7 +13,7 @@ function Edit() {
   rollSetup.dispatch = useDispatch();
   const { get_data: get_roles } = rollSetup.actions;
   const data_store = useSelector((state) => state[setup.prefix])[setup.prefix]
-  const { get_user, set_data, update_data } = setup.actions;
+  const { get_users, set_data, update_data } = setup.actions;
 
   const [selectedRole, setselectedRole] = useState([])
   // console.log(selectedRole);
@@ -25,7 +25,7 @@ function Edit() {
   }, [])
 
   useEffect(() => {
-    get_user(id);
+    get_users(id);
 
     return () => {
       document.getElementById('form-data')?.reset();

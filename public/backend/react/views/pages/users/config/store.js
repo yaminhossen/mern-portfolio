@@ -106,7 +106,7 @@ export const async_actions = {
             try {
                 const response = await axios.get(`${app_config.api_endpoint}/${api_prefix}/details/${id}`);
                 // thunkAPI.dispatch(storeSlice.actions.my_action())
-                // console.log(response);
+                console.log(response);
                 return response;
             } catch (error) {
                 // console.log(error);

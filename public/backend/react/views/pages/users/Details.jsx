@@ -7,17 +7,17 @@ function Details() {
     const { id } = useParams();
     setup.dispatch = useDispatch();
     const data_store = useSelector((state) => state[setup.prefix])[setup.prefix]
-    const { get_user , set_data} = setup.actions;
+    const { get_users , set_data} = setup.actions;
     console.log(id);
     useEffect(() => {
-        get_user(id);
+        get_users(id);
 
         return () =>{
             set_data(null)
         };
     }, []);
 
-    console.log(data_store);
+    console.log(data_store, id);
 
 
     if (data_store) {

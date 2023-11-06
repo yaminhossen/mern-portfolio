@@ -17,7 +17,7 @@ function Details() {
         };
     }, []);
 
-    console.log();
+    console.log(data_store);
 
 
     if (data_store) {
