@@ -52,7 +52,7 @@ function Edit() {
     // form_data.append('role', id);
     selectedRole?.forEach((e, index) => {
       // console.log(e._id);
-      form_data.append(`role[${index}]`, e._id);
+      form_data.append(`role`, e.serial);
     });
 
     [...document.querySelectorAll('.form_error')].forEach((el => el.remove()));

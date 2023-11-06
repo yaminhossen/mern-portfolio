@@ -21,7 +21,7 @@ function Details() {
 
 
     if (data_store) {
-        const { _id, username, first_name, last_name, email, telegram_id,telegram_name,mobile_number,photo,createdAt,updatedAt } = data_store;
+        const { _id, username,full_name, role, email, telegram_id,telegram_name,mobile_number,photo,createdAt,updatedAt } = data_store;
         return (
             <div className='card list_card'>
                 <div className="card-header ">
@@ -66,14 +66,7 @@ function Details() {
                                         <div>FirstName</div>
                                         <div>:</div>
                                         <div>
-                                            {first_name}
-                                        </div>
-                                    </div>
-                                    <div className="custom_form_el">
-                                        <div>Lastname</div>
-                                        <div>:</div>
-                                        <div>
-                                            {last_name}
+                                            {full_name}
                                         </div>
                                     </div>
                                     <div className="custom_form_el">
@@ -109,6 +102,13 @@ function Details() {
                                         <div>:</div>
                                         <div>
                                             {photo}
+                                        </div>
+                                    </div>
+                                    <div className="custom_form_el">
+                                        <div>Role</div>
+                                        <div>:</div>
+                                        <div>
+                                            {role}
                                         </div>
                                     </div>
                                     <div className="custom_form_el">

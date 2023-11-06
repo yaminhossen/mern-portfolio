@@ -11,7 +11,7 @@ function Edit() {
 
   useEffect(() => {
     get_blogs(id);
-    
+
     return () => {
       document.getElementById('form-data')?.reset();
       set_data(null)
@@ -34,11 +34,11 @@ function Edit() {
 
   };
 
-  
 
-  if(data_store){
-    const{serial, title, published_date} = data_store;
-    let a = new Date(published_date).toISOString().substring(0,10)
+
+  if (data_store) {
+    const { subtitle, title, short_description, description, photo, photo_alt_text, seo_title, seo_keyword, seo_description, seo_schema_tags, published_date } = data_store;
+    let a = new Date(published_date).toISOString().substring(0, 10)
     console.log(a);
     return (
       <div className="card list_card">
@@ -63,14 +63,54 @@ function Edit() {
                       <div><input name="title" type="text" className="form-control" defaultValue={title} /></div>
                     </div>
                     <div className="custom_form_el">
-                      <label htmlFor="">Serial</label>
+                      <label htmlFor="">Subtitle</label>
                       <div>:</div>
-                      <div><input name="serial" type="number" className="form-control" defaultValue={serial} /></div>
+                      <div><input name="subtitle" type="text" className="form-control" defaultValue={subtitle} /></div>
                     </div>
                     <div className="custom_form_el">
-                      <label htmlFor="">Date</label>
+                      <label htmlFor="">Short Description</label>
                       <div>:</div>
-                      <div><input name="date" type="date" className="form-control" defaultValue={a} /></div>
+                      <div><input name="short_description" type="text" className="form-control" defaultValue={short_description} /></div>
+                    </div>
+                    <div className="custom_form_el">
+                      <label htmlFor="">Description</label>
+                      <div>:</div>
+                      <div><input name="description" type="text" className="form-control" defaultValue={description} /></div>
+                    </div>
+                    <div className="custom_form_el">
+                      <label htmlFor="">Photo</label>
+                      <div>:</div>
+                      <div><input name="photo" type="file" accept="image/*" className="form-control" /></div>
+                    </div>
+                    <div className="custom_form_el">
+                      <label htmlFor="">Photo Alt Text</label>
+                      <div>:</div>
+                      <div><input name="photo_alt_text" type="text" className="form-control" defaultValue={photo_alt_text} /></div>
+                    </div>
+                    <div className="custom_form_el">
+                      <label htmlFor="">Seo Title</label>
+                      <div>:</div>
+                      <div><input name="seo_title" type="text" className="form-control" defaultValue={seo_title} /></div>
+                    </div>
+                    <div className="custom_form_el">
+                      <label htmlFor="">Seo Keyword</label>
+                      <div>:</div>
+                      <div><input name="seo_keyword" type="text" className="form-control" defaultValue={seo_keyword} /></div>
+                    </div>
+                    <div className="custom_form_el">
+                      <label htmlFor="">Seo Description</label>
+                      <div>:</div>
+                      <div><input name="seo_description" type="text" className="form-control" defaultValue={seo_description} /></div>
+                    </div>
+                    <div className="custom_form_el">
+                      <label htmlFor="">Seo Schema Tags</label>
+                      <div>:</div>
+                      <div><input name="seo_schema_tags" type="text" className="form-control" defaultValue={seo_schema_tags} /></div>
+                    </div>
+                    <div className="custom_form_el">
+                      <label htmlFor="">Published Date</label>
+                      <div>:</div>
+                      <div><input name="published_date" type="date" className="form-control" defaultValue={published_date} /></div>
                     </div>
                   </div>
                   <input type="submit" value="Create" />
