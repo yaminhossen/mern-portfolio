@@ -11,7 +11,7 @@ function Edit() {
 
   useEffect(() => {
     get_blog_comments(id);
-    
+
     return () => {
       document.getElementById('form-data')?.reset();
       set_data(null)
@@ -34,10 +34,10 @@ function Edit() {
 
   };
 
-  
 
-  if(data_store){
-    const{comment} = data_store;
+
+  if (data_store) {
+    const { comment } = data_store;
     return (
       <div className="card list_card">
         <div className="card-header ">

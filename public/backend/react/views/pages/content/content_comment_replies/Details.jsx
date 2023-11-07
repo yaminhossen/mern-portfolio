@@ -21,7 +21,7 @@ function Details() {
 
 
     if (data_store) {
-        const { _id, title, serial, date, createdAt, updatedAt, last_id } = data_store;
+        const { _id, comment, reply, createdAt, updatedAt } = data_store;
         return (
             <div className='card list_card'>
                 <div className="card-header ">
@@ -38,7 +38,7 @@ function Details() {
                         <div className="row">
                             <div className="col-lg-8">
                                 <div className="form-group mb-3">
-                                    <div className="custom_form_el">
+                                <div className="custom_form_el">
                                         <div>Id</div>
                                         <div>:</div>
                                         <div>
@@ -46,24 +46,17 @@ function Details() {
                                         </div>
                                     </div>
                                     <div className="custom_form_el">
-                                        <div>Title</div>
+                                        <div>Comment</div>
                                         <div>:</div>
                                         <div>
-                                            {title}
+                                            {comment}
                                         </div>
                                     </div>
                                     <div className="custom_form_el">
-                                        <div>serial</div>
+                                        <div>Reply</div>
                                         <div>:</div>
                                         <div>
-                                            {serial}
-                                        </div>
-                                    </div>
-                                    <div className="custom_form_el">
-                                        <div>Date</div>
-                                        <div>:</div>
-                                        <div>
-                                            {date}
+                                            {reply}
                                         </div>
                                     </div>
                                     <div className="custom_form_el">

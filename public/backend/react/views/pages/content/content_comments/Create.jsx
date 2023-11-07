@@ -11,8 +11,8 @@ function Create() {
   userSetup.dispatch = useDispatch();
   const { store_data } = setup.actions;
   const { get_data: get_users } = userSetup.actions;
-  const [ selectedRole, setselectedRole ] = useState([])
-  const [ tasklist, setTasklist ] = useState(false)
+  const [selectedRole, setselectedRole] = useState([])
+  const [tasklist, setTasklist] = useState(false)
 
   useEffect(() => {
     get_users();
@@ -24,10 +24,6 @@ function Create() {
     let e = event;
     e.preventDefault();
     let form_data = new FormData(e.target);
-    selectedRole.forEach((e,index)=>{
-      form_data.append(`creator[${index}]`, e._id);
-      console.log(e);
-    });
     [...document.querySelectorAll('.form_error')].forEach((el => el.remove()));
     await store_data(form_data);
     e.target.reset();
@@ -49,20 +45,10 @@ function Create() {
             <div className="col-lg-8">
               <form onSubmit={handleSubmit}>
                 <div className="form-group mb-5">
-                  <div className="custom_form_el">
-                    <label htmlFor="">Title</label>
+                <div className="custom_form_el">
+                    <label htmlFor="">Comment</label>
                     <div>:</div>
-                    <div><input name="title" type="text" className="form-control" /></div>
-                  </div>
-                  <div className="custom_form_el">
-                    <label htmlFor="">Serial</label>
-                    <div>:</div>
-                    <div><input name="serial" type="number" className="form-control" /></div>
-                  </div>
-                  <div className="custom_form_el">
-                    <label htmlFor="">Date</label>
-                    <div>:</div>
-                    <div><input name="date" type="date" className="form-control" /></div>
+                    <div><input name="comment" type="text" className="form-control" /></div>
                   </div>
                   {/* <div className="custom_form_el">
                     <label htmlFor="">Creator</label>

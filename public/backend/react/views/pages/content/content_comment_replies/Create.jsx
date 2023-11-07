@@ -49,30 +49,16 @@ function Create() {
             <div className="col-lg-8">
               <form onSubmit={handleSubmit}>
                 <div className="form-group mb-5">
-                  <div className="custom_form_el">
-                    <label htmlFor="">Title</label>
+                <div className="custom_form_el">
+                    <label htmlFor="">Comment</label>
                     <div>:</div>
-                    <div><input name="title" type="text" className="form-control" /></div>
+                    <div><input name="comment" type="text" className="form-control" /></div>
                   </div>
                   <div className="custom_form_el">
-                    <label htmlFor="">Serial</label>
+                    <label htmlFor="">Reply</label>
                     <div>:</div>
-                    <div><input name="serial" type="number" className="form-control" /></div>
+                    <div><input name="reply" type="text" className="form-control" /></div>
                   </div>
-                  <div className="custom_form_el">
-                    <label htmlFor="">Date</label>
-                    <div>:</div>
-                    <div><input name="date" type="date" className="form-control" /></div>
-                  </div>
-                  {/* <div className="custom_form_el">
-                    <label htmlFor="">Creator</label>
-                    <div>:</div>
-                    <div>
-                     <div id="creator">
-                     <MultiselectDropdown data={user_data_store.all_data} selectedData={selectedRole} setSelectedData={setselectedRole} taskOpen={tasklist} setTaskOpen={setTasklist}></MultiselectDropdown>
-                     </div>
-                    </div>
-                  </div> */}
                 </div>
                 <input type="submit" value="Create" />
               </form>
