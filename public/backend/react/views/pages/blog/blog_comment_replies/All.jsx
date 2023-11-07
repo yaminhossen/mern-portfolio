@@ -36,11 +36,11 @@ function All() {
                                 </th>
 
                                 <th className="cursor_n_resize">
-                                    Name
+                                    Comment
                                 </th>
 
                                 <th className="cursor_n_resize">
-                                    Serial
+                                    Reply
                                 </th>
 
                                 <th className="cursor_n_resize">
@@ -58,12 +58,12 @@ function All() {
                                             <td>{data._id}</td>
                                             <td>
                                                 <span onClick={() => set_data(data._id)} className="cursor_pointer text-warning">
-                                                    {data.title}
+                                                    {data.comment}
                                                 </span>
                                             </td>
                                             <td>
                                                 <span>
-                                                    {data.serial}
+                                                    {data.reply}
                                                 </span>
                                             </td>
                                             <td>
