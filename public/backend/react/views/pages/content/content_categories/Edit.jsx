@@ -11,7 +11,7 @@ function Edit() {
 
   useEffect(() => {
     get_content_categories(id);
-    
+
     return () => {
       document.getElementById('form-data')?.reset();
       set_data(null)
@@ -26,7 +26,7 @@ function Edit() {
     let form_data = new FormData(e.target);
     form_data.append('id', id);
 
-    // [...document.querySelectorAll('.form_error')].forEach((el => el.remove()));
+    [...document.querySelectorAll('.form_error')].forEach((el => el.remove()));
     await update_data(form_data);
     // e.target.reset();
     // // e.target.serial.value = "";
@@ -34,10 +34,10 @@ function Edit() {
 
   };
 
-  
 
-  if(data_store){
-    const{serial, title, date} = data_store;
+
+  if (data_store) {
+    const { short_description, long_description,url,photo,seo_title,seo_keyword,seo_description, title } = data_store;
     return (
       <div className="card list_card">
         <div className="card-header ">
@@ -61,14 +61,39 @@ function Edit() {
                       <div><input name="title" type="text" className="form-control" defaultValue={title} /></div>
                     </div>
                     <div className="custom_form_el">
-                      <label htmlFor="">Serial</label>
+                      <label htmlFor="">Short Description</label>
                       <div>:</div>
-                      <div><input name="serial" type="number" className="form-control" defaultValue={serial} /></div>
+                      <div><input name="short_description" type="text" className="form-control"  defaultValue={short_description} /></div>
                     </div>
                     <div className="custom_form_el">
-                      <label htmlFor="">Date</label>
+                      <label htmlFor="">Long Description</label>
                       <div>:</div>
-                      <div><input name="date" type="date" className="form-control" defaultValue={serial} /></div>
+                      <div><input name="long_description" type="text" className="form-control"  defaultValue={long_description} /></div>
+                    </div>
+                    <div className="custom_form_el">
+                      <label htmlFor="">Url</label>
+                      <div>:</div>
+                      <div><input name="url" type="text" className="form-control"  defaultValue={url} /></div>
+                    </div>
+                    <div className="custom_form_el">
+                      <label htmlFor="">Photo</label>
+                      <div>:</div>
+                      <div><input name="photo" type="file" accept="image/*" className="form-control" /></div>
+                    </div>
+                    <div className="custom_form_el">
+                      <label htmlFor="">Seo Title</label>
+                      <div>:</div>
+                      <div><input name="seo_title" type="text" className="form-control"  defaultValue={seo_title} /></div>
+                    </div>
+                    <div className="custom_form_el">
+                      <label htmlFor="">Seo Keyword</label>
+                      <div>:</div>
+                      <div><input name="seo_keyword" type="text" className="form-control"  defaultValue={seo_keyword} /></div>
+                    </div>
+                    <div className="custom_form_el">
+                      <label htmlFor="">Seo Description</label>
+                      <div>:</div>
+                      <div><input name="seo_description" type="text" className="form-control"  defaultValue={seo_description} /></div>
                     </div>
                   </div>
                   <input type="submit" value="Create" />

@@ -55,14 +55,39 @@ function Create() {
                     <div><input name="title" type="text" className="form-control" /></div>
                   </div>
                   <div className="custom_form_el">
-                    <label htmlFor="">Serial</label>
+                    <label htmlFor="">Short Description</label>
                     <div>:</div>
-                    <div><input name="serial" type="number" className="form-control" /></div>
+                    <div><input name="short_description" type="text" className="form-control" /></div>
                   </div>
                   <div className="custom_form_el">
-                    <label htmlFor="">Date</label>
+                    <label htmlFor="">Long Description</label>
                     <div>:</div>
-                    <div><input name="date" type="date" className="form-control" /></div>
+                    <div><input name="long_description" type="text" className="form-control" /></div>
+                  </div>
+                  <div className="custom_form_el">
+                    <label htmlFor="">Url</label>
+                    <div>:</div>
+                    <div><input name="url" type="text" className="form-control" /></div>
+                  </div>
+                  <div className="custom_form_el">
+                    <label htmlFor="">Photo</label>
+                    <div>:</div>
+                    <div><input name="photo" type="file" accept="image/*" className="form-control" /></div>
+                  </div>
+                  <div className="custom_form_el">
+                    <label htmlFor="">Seo Title</label>
+                    <div>:</div>
+                    <div><input name="seo_title" type="text" className="form-control" /></div>
+                  </div>
+                  <div className="custom_form_el">
+                    <label htmlFor="">Seo Keyword</label>
+                    <div>:</div>
+                    <div><input name="seo_keyword" type="text" className="form-control" /></div>
+                  </div>
+                  <div className="custom_form_el">
+                    <label htmlFor="">Seo Description</label>
+                    <div>:</div>
+                    <div><input name="seo_description" type="text" className="form-control" /></div>
                   </div>
                   {/* <div className="custom_form_el">
                     <label htmlFor="">Creator</label>
