@@ -21,7 +21,7 @@ const controllers = {
 		return res.json(data);
 	},
 	store: async function (req, res) {
-		const data = await store(req.body);
+		const data = await store(req);
 		if(data.status === "success"){
 			return res.status(data.status_code).json(data);
 		}else{
@@ -29,7 +29,7 @@ const controllers = {
 		}
 	},
 	update: async function (req, res) {
-		const data = await update( req.body);
+		const data = await update( req);
 		if(data.status === "success"){
 			return res.status(data.status_code).json(data);
 		}else{

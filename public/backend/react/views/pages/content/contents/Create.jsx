@@ -11,8 +11,8 @@ function Create() {
   userSetup.dispatch = useDispatch();
   const { store_data } = setup.actions;
   const { get_data: get_users } = userSetup.actions;
-  const [ selectedRole, setselectedRole ] = useState([])
-  const [ tasklist, setTasklist ] = useState(false)
+  const [selectedRole, setselectedRole] = useState([])
+  const [tasklist, setTasklist] = useState(false)
 
   useEffect(() => {
     get_users();
@@ -24,7 +24,7 @@ function Create() {
     let e = event;
     e.preventDefault();
     let form_data = new FormData(e.target);
-    selectedRole.forEach((e,index)=>{
+    selectedRole.forEach((e, index) => {
       form_data.append(`creator[${index}]`, e._id);
       console.log(e);
     });
@@ -55,24 +55,55 @@ function Create() {
                     <div><input name="title" type="text" className="form-control" /></div>
                   </div>
                   <div className="custom_form_el">
-                    <label htmlFor="">Serial</label>
+                    <label htmlFor="">Subtitle</label>
                     <div>:</div>
-                    <div><input name="serial" type="number" className="form-control" /></div>
+                    <div><input name="subtitle" type="text" className="form-control" /></div>
                   </div>
                   <div className="custom_form_el">
-                    <label htmlFor="">Date</label>
+                    <label htmlFor="">Short Description</label>
                     <div>:</div>
-                    <div><input name="date" type="date" className="form-control" /></div>
+                    <div><input name="short_description" type="text" className="form-control" /></div>
                   </div>
-                  {/* <div className="custom_form_el">
-                    <label htmlFor="">Creator</label>
+                  <div className="custom_form_el">
+                    <label htmlFor="">Description</label>
                     <div>:</div>
-                    <div>
-                     <div id="creator">
-                     <MultiselectDropdown data={user_data_store.all_data} selectedData={selectedRole} setSelectedData={setselectedRole} taskOpen={tasklist} setTaskOpen={setTasklist}></MultiselectDropdown>
-                     </div>
-                    </div>
-                  </div> */}
+                    <div><input name="description" type="text" className="form-control" /></div>
+                  </div>
+                  <div className="custom_form_el">
+                    <label htmlFor="">Published Date</label>
+                    <div>:</div>
+                    <div><input name="published_date" type="Date" className="form-control" /></div>
+                  </div>
+                  <div className="custom_form_el">
+                    <label htmlFor="">Photo</label>
+                    <div>:</div>
+                    <div><input name="photo" type="file" accept="image/*" className="form-control" /></div>
+                  </div>
+                  <div className="custom_form_el">
+                    <label htmlFor="">Photo Alt Text</label>
+                    <div>:</div>
+                    <div><input name="photo_alt_text" type="text" className="form-control" /></div>
+                  </div>
+                  <div className="custom_form_el">
+                    <label htmlFor="">Seo Title</label>
+                    <div>:</div>
+                    <div><input name="seo_title" type="text" className="form-control" /></div>
+                  </div>
+                  <div className="custom_form_el">
+                    <label htmlFor="">Seo Keyword</label>
+                    <div>:</div>
+                    <div><input name="seo_keyword" type="text" className="form-control" /></div>
+                  </div>
+                  <div className="custom_form_el">
+                    <label htmlFor="">Seo Description</label>
+                    <div>:</div>
+                    <div><input name="seo_description" type="text" className="form-control" /></div>
+                  </div>
+                  <div className="custom_form_el">
+                    <label htmlFor="">Seo Schema Tags</label>
+                    <div>:</div>
+                    <div><input name="seo_schema_tags" type="text" className="form-control" /></div>
+                  </div>
                 </div>
                 <input type="submit" value="Create" />
               </form>

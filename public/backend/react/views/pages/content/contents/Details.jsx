@@ -21,7 +21,7 @@ function Details() {
 
 
     if (data_store) {
-        const { _id, title, serial, date, createdAt, updatedAt, last_id } = data_store;
+        const { _id, title, subtitle, short_description, description, photo, photo_alt_text, seo_keyword, seo_description, seo_schema_tags, seo_title, published_date, createdAt, updatedAt, last_id } = data_store;
         return (
             <div className='card list_card'>
                 <div className="card-header ">
@@ -38,7 +38,7 @@ function Details() {
                         <div className="row">
                             <div className="col-lg-8">
                                 <div className="form-group mb-3">
-                                    <div className="custom_form_el">
+                                <div className="custom_form_el">
                                         <div>Id</div>
                                         <div>:</div>
                                         <div>
@@ -53,17 +53,73 @@ function Details() {
                                         </div>
                                     </div>
                                     <div className="custom_form_el">
-                                        <div>serial</div>
+                                        <div>Subtitle</div>
                                         <div>:</div>
                                         <div>
-                                            {serial}
+                                            {subtitle}
                                         </div>
                                     </div>
                                     <div className="custom_form_el">
-                                        <div>Date</div>
+                                        <div>Short Description</div>
                                         <div>:</div>
                                         <div>
-                                            {date}
+                                            {short_description}
+                                        </div>
+                                    </div>
+                                    <div className="custom_form_el">
+                                        <div>Description</div>
+                                        <div>:</div>
+                                        <div>
+                                            {description}
+                                        </div>
+                                    </div>
+                                    <div className="custom_form_el">
+                                        <div>Photo</div>
+                                        <div>:</div>
+                                        <div>
+                                            {photo}
+                                        </div>
+                                    </div>
+                                    <div className="custom_form_el">
+                                        <div>Photo Alt Text</div>
+                                        <div>:</div>
+                                        <div>
+                                            {photo_alt_text}
+                                        </div>
+                                    </div>
+                                    <div className="custom_form_el">
+                                        <div>Seo Title</div>
+                                        <div>:</div>
+                                        <div>
+                                            {seo_title}
+                                        </div>
+                                    </div>
+                                    <div className="custom_form_el">
+                                        <div>Seo Keyword</div>
+                                        <div>:</div>
+                                        <div>
+                                            {seo_keyword}
+                                        </div>
+                                    </div>
+                                    <div className="custom_form_el">
+                                        <div>Seo Description</div>
+                                        <div>:</div>
+                                        <div>
+                                            {seo_description}
+                                        </div>
+                                    </div>
+                                    <div className="custom_form_el">
+                                        <div>Seo Schema Tags</div>
+                                        <div>:</div>
+                                        <div>
+                                            {seo_schema_tags}
+                                        </div>
+                                    </div>
+                                    <div className="custom_form_el">
+                                        <div>Published Date</div>
+                                        <div>:</div>
+                                        <div>
+                                            {published_date}
                                         </div>
                                     </div>
                                     <div className="custom_form_el">

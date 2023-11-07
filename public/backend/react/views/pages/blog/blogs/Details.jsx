@@ -7,12 +7,12 @@ function Details() {
     const { id } = useParams();
     setup.dispatch = useDispatch();
     const data_store = useSelector((state) => state[setup.prefix])[setup.prefix]
-    const { get_blogs , set_data} = setup.actions;
+    const { get_blogs, set_data } = setup.actions;
 
     useEffect(() => {
         get_blogs(id);
 
-        return () =>{
+        return () => {
             set_data(null)
         };
     }, []);
@@ -21,7 +21,7 @@ function Details() {
 
 
     if (data_store) {
-        const { _id, title, subtitle, short_description, description, photo, photo_alt_text, seo_keyword, seo_description,seo_schema_tags, seo_title, published_date, createdAt, updatedAt, last_id } = data_store;
+        const { _id, title, subtitle, short_description, description, photo, photo_alt_text, seo_keyword, seo_description, seo_schema_tags, seo_title, published_date, createdAt, updatedAt, last_id } = data_store;
         return (
             <div className='card list_card'>
                 <div className="card-header ">

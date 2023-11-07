@@ -11,8 +11,8 @@ function Create() {
   userSetup.dispatch = useDispatch();
   const { store_data } = setup.actions;
   const { get_data: get_users } = userSetup.actions;
-  const [ selectedRole, setselectedRole ] = useState([])
-  const [ tasklist, setTasklist ] = useState(false)
+  const [selectedRole, setselectedRole] = useState([])
+  const [tasklist, setTasklist] = useState(false)
 
   useEffect(() => {
     get_users();
@@ -24,7 +24,7 @@ function Create() {
     let e = event;
     e.preventDefault();
     let form_data = new FormData(e.target);
-    selectedRole.forEach((e,index)=>{
+    selectedRole.forEach((e, index) => {
       form_data.append(`creator[${index}]`, e._id);
       console.log(e);
     });
@@ -89,15 +89,6 @@ function Create() {
                     <div>:</div>
                     <div><input name="seo_description" type="text" className="form-control" /></div>
                   </div>
-                  {/* <div className="custom_form_el">
-                    <label htmlFor="">Creator</label>
-                    <div>:</div>
-                    <div>
-                     <div id="creator">
-                     <MultiselectDropdown data={user_data_store.all_data} selectedData={selectedRole} setSelectedData={setselectedRole} taskOpen={tasklist} setTaskOpen={setTasklist}></MultiselectDropdown>
-                     </div>
-                    </div>
-                  </div> */}
                 </div>
                 <input type="submit" value="Create" />
               </form>
