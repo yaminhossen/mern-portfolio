@@ -55,14 +55,19 @@ function Create() {
                     <div><input name="title" type="text" className="form-control" /></div>
                   </div>
                   <div className="custom_form_el">
-                    <label htmlFor="">Serial</label>
+                    <label htmlFor="">Description</label>
                     <div>:</div>
-                    <div><input name="serial" type="number" className="form-control" /></div>
+                    <div><input name="description" type="text" className="form-control" /></div>
                   </div>
                   <div className="custom_form_el">
-                    <label htmlFor="">Date</label>
+                    <label htmlFor="">Photo</label>
                     <div>:</div>
-                    <div><input name="date" type="date" className="form-control" /></div>
+                    <div><input name="photo" type="file" accept="image/*" className="form-control" /></div>
+                  </div>
+                  <div className="custom_form_el">
+                    <label htmlFor="">Photo Alt</label>
+                    <div>:</div>
+                    <div><input name="photo_alt" type="text" className="form-control" /></div>
                   </div>
                   {/* <div className="custom_form_el">
                     <label htmlFor="">Creator</label>
