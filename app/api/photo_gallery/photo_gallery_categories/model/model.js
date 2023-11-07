@@ -23,11 +23,11 @@ let photogallerycategoriesSchema = mongoose.Schema({
 		type: String,
 		require: true,
 	},
-	image: {
+	photo: {
 		type: String,
 		require: true,
 	},
-	image_alt: {
+	photo_alt: {
 		type: String,
 		require: true,
 	},
@@ -35,7 +35,7 @@ let photogallerycategoriesSchema = mongoose.Schema({
 		type: String,
 		require: true,
 	},
-	seo_keywords: {
+	seo_keyword: {
 		type: String,
 		require: true,
 	},
