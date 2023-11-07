@@ -21,7 +21,7 @@ function Details() {
 
 
     if (data_store) {
-        const { _id, title, serial, date, createdAt, updatedAt, last_id } = data_store;
+        const { _id, value, createdAt, updatedAt, last_id } = data_store;
         return (
             <div className='card list_card'>
                 <div className="card-header ">
@@ -46,24 +46,10 @@ function Details() {
                                         </div>
                                     </div>
                                     <div className="custom_form_el">
-                                        <div>Title</div>
+                                        <div>Value</div>
                                         <div>:</div>
                                         <div>
-                                            {title}
-                                        </div>
-                                    </div>
-                                    <div className="custom_form_el">
-                                        <div>serial</div>
-                                        <div>:</div>
-                                        <div>
-                                            {serial}
-                                        </div>
-                                    </div>
-                                    <div className="custom_form_el">
-                                        <div>Date</div>
-                                        <div>:</div>
-                                        <div>
-                                            {date}
+                                            {value}
                                         </div>
                                     </div>
                                     <div className="custom_form_el">

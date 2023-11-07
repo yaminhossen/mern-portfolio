@@ -53,20 +53,6 @@ function Details() {
                                         </div>
                                     </div>
                                     <div className="custom_form_el">
-                                        <div>serial</div>
-                                        <div>:</div>
-                                        <div>
-                                            {serial}
-                                        </div>
-                                    </div>
-                                    <div className="custom_form_el">
-                                        <div>Date</div>
-                                        <div>:</div>
-                                        <div>
-                                            {date}
-                                        </div>
-                                    </div>
-                                    <div className="custom_form_el">
                                         <div>Created At</div>
                                         <div>:</div>
                                         <div>

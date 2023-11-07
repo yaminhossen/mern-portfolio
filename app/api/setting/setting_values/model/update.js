@@ -2,23 +2,12 @@ const { body, validationResult } = require("express-validator");
 const model = require("./model");
 
 const data_validation = async (request_data) => {
-    await body("title")
+    await body("value")
         .not()
         .isEmpty()
-        .withMessage("the title field is required")
+        .withMessage("the value field is required")
         .run(request_data);
 
-    await body("serial")
-        .not()
-        .isEmpty()
-        .withMessage("the serial field is required")
-        .run(request_data);
-
-    await body("date")
-        .not()
-        .isEmpty()
-        .withMessage("the date field is required")
-        .run(request_data);
 
     let result = validationResult(request_data);
     return {
@@ -30,22 +19,20 @@ const data_validation = async (request_data) => {
 
 module.exports = async ( data) => {
     console.log(data);
-    // let check = await data_validation({ body: data });
+    let check = await data_validation({ body: data });
 
-    // if (check.hasError) {
-    //     return {
-    //         status: 'failed',
-    //         data: check.errors,
-    //         message: "validation error",
-    //         status_code: 422,
-    //     }
-    // }
+    if (check.hasError) {
+        return {
+            status: 'failed',
+            data: check.errors,
+            message: "validation error",
+            status_code: 422,
+        }
+    }
 
     try {
         const model_data = await model.findOne({ _id: data.id });
-        model_data.title = data.title;
-        model_data.serial = data.serial;
-        model_data.date = data.date;
+        model_data.value = data.value;
         await model_data.save();
         // console.log(data);
         return {

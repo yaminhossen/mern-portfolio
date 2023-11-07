@@ -54,16 +54,6 @@ function Create() {
                     <div>:</div>
                     <div><input name="title" type="text" className="form-control" /></div>
                   </div>
-                  <div className="custom_form_el">
-                    <label htmlFor="">Serial</label>
-                    <div>:</div>
-                    <div><input name="serial" type="number" className="form-control" /></div>
-                  </div>
-                  <div className="custom_form_el">
-                    <label htmlFor="">Date</label>
-                    <div>:</div>
-                    <div><input name="date" type="date" className="form-control" /></div>
-                  </div>
                   {/* <div className="custom_form_el">
                     <label htmlFor="">Creator</label>
                     <div>:</div>

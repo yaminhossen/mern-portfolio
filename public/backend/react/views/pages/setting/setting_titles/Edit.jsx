@@ -26,7 +26,7 @@ function Edit() {
     let form_data = new FormData(e.target);
     form_data.append('id', id);
 
-    // [...document.querySelectorAll('.form_error')].forEach((el => el.remove()));
+    [...document.querySelectorAll('.form_error')].forEach((el => el.remove()));
     await update_data(form_data);
     // e.target.reset();
     // // e.target.serial.value = "";
@@ -59,16 +59,6 @@ function Edit() {
                       <label htmlFor="">Title</label>
                       <div>:</div>
                       <div><input name="title" type="text" className="form-control" defaultValue={title} /></div>
-                    </div>
-                    <div className="custom_form_el">
-                      <label htmlFor="">Serial</label>
-                      <div>:</div>
-                      <div><input name="serial" type="number" className="form-control" defaultValue={serial} /></div>
-                    </div>
-                    <div className="custom_form_el">
-                      <label htmlFor="">Date</label>
-                      <div>:</div>
-                      <div><input name="date" type="date" className="form-control" defaultValue={serial} /></div>
                     </div>
                   </div>
                   <input type="submit" value="Create" />
