@@ -50,20 +50,31 @@ function Create() {
               <form onSubmit={handleSubmit}>
                 <div className="form-group mb-5">
                   <div className="custom_form_el">
-                    <label htmlFor="">Title</label>
+                    <label htmlFor="">Full Name</label>
                     <div>:</div>
-                    <div><input name="title" type="text" className="form-control" /></div>
+                    <div><input name="full_name" type="text" className="form-control" /></div>
                   </div>
                   <div className="custom_form_el">
-                    <label htmlFor="">Serial</label>
+                    <label htmlFor="">Email</label>
                     <div>:</div>
-                    <div><input name="serial" type="number" className="form-control" /></div>
+                    <div><input name="email" type="text" className="form-control" /></div>
                   </div>
                   <div className="custom_form_el">
-                    <label htmlFor="">Date</label>
+                    <label htmlFor="">Address</label>
                     <div>:</div>
-                    <div><input name="date" type="date" className="form-control" /></div>
+                    <div><input name="address" type="text" className="form-control" /></div>
                   </div>
+                  <div className="custom_form_el">
+                    <label htmlFor="">Subject</label>
+                    <div>:</div>
+                    <div><input name="subject" type="text" className="form-control" /></div>
+                  </div>
+                  <div className="custom_form_el">
+                    <label htmlFor="">Message</label>
+                    <div>:</div>
+                    <div><input name="message" type="text" className="form-control" /></div>
+                  </div>
+                  
                   {/* <div className="custom_form_el">
                     <label htmlFor="">Creator</label>
                     <div>:</div>

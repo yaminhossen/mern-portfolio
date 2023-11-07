@@ -2,23 +2,31 @@ const { body, validationResult } = require("express-validator");
 const model = require("./model");
 
 const data_validation = async (request_data) => {
-    await body("title")
-        .not()
-        .isEmpty()
-        .withMessage("the title field is required")
-        .run(request_data);
-
-    await body("serial")
-        .not()
-        .isEmpty()
-        .withMessage("the serial field is required")
-        .run(request_data);
-
-    await body("date")
-        .not()
-        .isEmpty()
-        .withMessage("the date field is required")
-        .run(request_data);
+    await body("full_name")
+    .not()
+    .isEmpty()
+    .withMessage("the full_name field is required")
+    .run(request_data);
+await body("email")
+    .not()
+    .isEmpty()
+    .withMessage("the email field is required")
+    .run(request_data);
+await body("subject")
+    .not()
+    .isEmpty()
+    .withMessage("the subject field is required")
+    .run(request_data);
+await body("message")
+    .not()
+    .isEmpty()
+    .withMessage("the message field is required")
+    .run(request_data);
+await body("address")
+    .not()
+    .isEmpty()
+    .withMessage("the address field is required")
+    .run(request_data);
 
     let result = validationResult(request_data);
     return {
@@ -43,9 +51,11 @@ module.exports = async ( data) => {
 
     try {
         const model_data = await model.findOne({ _id: data.id });
-        model_data.title = data.title;
-        model_data.serial = data.serial;
-        model_data.date = data.date;
+        model_data.full_name = data.full_name;
+        model_data.email = data.email;
+        model_data.address = data.address;
+        model_data.subject = data.subject;
+        model_data.message = data.message;
         await model_data.save();
         // console.log(data);
         return {

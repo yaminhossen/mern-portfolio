@@ -72,7 +72,7 @@ module.exports = async (datas) => {
         }
         model_data.title = data.title;
         model_data.description = data.description;
-        model_data.photo = photo_path;
+        model_data.photo = photo_path; 
         model_data.photo_alt = data.photo_alt;
         await model_data.save();
         // console.log(data);

@@ -37,7 +37,7 @@ function Edit() {
   
 
   if(data_store){
-    const{serial, title, date} = data_store;
+    const { _id, full_name, email, address,subject,message, createdAt, updatedAt, last_id } = data_store;
     return (
       <div className="card list_card">
         <div className="card-header ">
@@ -56,19 +56,29 @@ function Edit() {
                 <form id='form-data' onSubmit={handleSubmit}>
                   <div className="form-group mb-5">
                     <div className="custom_form_el">
-                      <label htmlFor="">Title</label>
+                      <label htmlFor="">full_name</label>
                       <div>:</div>
-                      <div><input name="title" type="text" className="form-control" defaultValue={title} /></div>
+                      <div><input name="full_name" type="text" className="form-control" defaultValue={full_name} /></div>
                     </div>
                     <div className="custom_form_el">
-                      <label htmlFor="">Serial</label>
+                      <label htmlFor="">email</label>
                       <div>:</div>
-                      <div><input name="serial" type="number" className="form-control" defaultValue={serial} /></div>
+                      <div><input name="email" type="text" className="form-control" defaultValue={email} /></div>
                     </div>
                     <div className="custom_form_el">
-                      <label htmlFor="">Date</label>
+                      <label htmlFor="">address</label>
                       <div>:</div>
-                      <div><input name="date" type="date" className="form-control" defaultValue={serial} /></div>
+                      <div><input name="address" type="text" className="form-control" defaultValue={address} /></div>
+                    </div>
+                    <div className="custom_form_el">
+                      <label htmlFor="">subject</label>
+                      <div>:</div>
+                      <div><input name="subject" type="text" className="form-control" defaultValue={subject} /></div>
+                    </div>
+                    <div className="custom_form_el">
+                      <label htmlFor="">message</label>
+                      <div>:</div>
+                      <div><input name="message" type="text" className="form-control" defaultValue={message} /></div>
                     </div>
                   </div>
                   <input type="submit" value="Create" />

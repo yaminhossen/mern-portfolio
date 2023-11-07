@@ -3,51 +3,32 @@ const model = require("./model");
 const { async } = require("q");
 
 const data_validation = async (request_data) => {
-    await body("title")
+    await body("full_name")
         .not()
         .isEmpty()
-        .withMessage("the title field is required")
-        .custom(async (value) => {
-            let title = await model.findOne({
-                title: value
-            })
-            if(title){
-                return Promise.reject('Title already existing')
-            }
-        })
-        .withMessage("Title already existing")
+        .withMessage("the full_name field is required")
         .run(request_data);
-
-
-    await body("serial")
+    await body("email")
         .not()
         .isEmpty()
-        .withMessage("the serial field is required")
-        .custom(async (value) => {
-            let title = await model.findOne({
-                serial: value
-            })
-            if(title){
-                return Promise.reject('Serial already existing')
-            }
-        })
-        .withMessage("Serial already existing")
+        .withMessage("the email field is required")
         .run(request_data);
-
-    await body("date")
+    await body("subject")
         .not()
         .isEmpty()
-        .withMessage("the date field is required")
-        .custom(async (value) => {
-            let title = await model.findOne({
-                date: value
-            })
-            if(title){
-                return Promise.reject('Date already existing')
-            }
-        })
-        .withMessage("Date already existing")
+        .withMessage("the subject field is required")
         .run(request_data);
+    await body("message")
+        .not()
+        .isEmpty()
+        .withMessage("the message field is required")
+        .run(request_data);
+    await body("address")
+        .not()
+        .isEmpty()
+        .withMessage("the address field is required")
+        .run(request_data);
+
 //  console.log("body data",body("title") );
     let result = validationResult(request_data);
     return {
