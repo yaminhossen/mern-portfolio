@@ -37,7 +37,7 @@ function Edit() {
   
 
   if(data_store){
-    const{serial, title, date} = data_store;
+    const{description, photo_alt, title, date} = data_store;
     return (
       <div className="card list_card">
         <div className="card-header ">
@@ -55,20 +55,25 @@ function Edit() {
               <div className="col-lg-8">
                 <form id='form-data' onSubmit={handleSubmit}>
                   <div className="form-group mb-5">
-                    <div className="custom_form_el">
+                  <div className="custom_form_el">
                       <label htmlFor="">Title</label>
                       <div>:</div>
                       <div><input name="title" type="text" className="form-control" defaultValue={title} /></div>
                     </div>
                     <div className="custom_form_el">
-                      <label htmlFor="">Serial</label>
+                      <label htmlFor="">Description</label>
                       <div>:</div>
-                      <div><input name="serial" type="number" className="form-control" defaultValue={serial} /></div>
+                      <div><input name="description" type="text" className="form-control" defaultValue={description} /></div>
                     </div>
                     <div className="custom_form_el">
-                      <label htmlFor="">Date</label>
+                      <label htmlFor="">Photo</label>
                       <div>:</div>
-                      <div><input name="date" type="date" className="form-control" defaultValue={serial} /></div>
+                      <div><input name="photo" type="file" accept="image/*" className="form-control" /></div>
+                    </div>
+                    <div className="custom_form_el">
+                      <label htmlFor="">Photo Alt</label>
+                      <div>:</div>
+                      <div><input name="photo_alt" type="text" className="form-control" defaultValue={photo_alt} /></div>
                     </div>
                   </div>
                   <input type="submit" value="Create" />
