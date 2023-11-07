@@ -11,7 +11,7 @@ function Edit() {
 
   useEffect(() => {
     get_banners(id);
-    
+
     return () => {
       document.getElementById('form-data')?.reset();
       set_data(null)
@@ -26,7 +26,7 @@ function Edit() {
     let form_data = new FormData(e.target);
     form_data.append('id', id);
 
-    // [...document.querySelectorAll('.form_error')].forEach((el => el.remove()));
+    [...document.querySelectorAll('.form_error')].forEach((el => el.remove()));
     await update_data(form_data);
     // e.target.reset();
     // // e.target.serial.value = "";
@@ -34,10 +34,10 @@ function Edit() {
 
   };
 
-  
 
-  if(data_store){
-    const{serial, title, date} = data_store;
+
+  if (data_store) {
+    const { button_url,button_text, title, sub_title,description } = data_store;
     return (
       <div className="card list_card">
         <div className="card-header ">
@@ -58,17 +58,27 @@ function Edit() {
                     <div className="custom_form_el">
                       <label htmlFor="">Title</label>
                       <div>:</div>
-                      <div><input name="title" type="text" className="form-control" defaultValue={title} /></div>
+                      <div><input name="title" type="text" className="form-control"  defaultValue={title} /></div>
                     </div>
                     <div className="custom_form_el">
-                      <label htmlFor="">Serial</label>
+                      <label htmlFor="">Sub Title</label>
                       <div>:</div>
-                      <div><input name="serial" type="number" className="form-control" defaultValue={serial} /></div>
+                      <div><input name="sub_title" type="text" className="form-control"  defaultValue={sub_title} /></div>
                     </div>
                     <div className="custom_form_el">
-                      <label htmlFor="">Date</label>
+                      <label htmlFor="">Description</label>
                       <div>:</div>
-                      <div><input name="date" type="date" className="form-control" defaultValue={serial} /></div>
+                      <div><input name="description" type="text" className="form-control"  defaultValue={description} /></div>
+                    </div>
+                    <div className="custom_form_el">
+                      <label htmlFor="">Button Text</label>
+                      <div>:</div>
+                      <div><input name="button_text" type="text" className="form-control"  defaultValue={button_text} /></div>
+                    </div>
+                    <div className="custom_form_el">
+                      <label htmlFor="">Button Url</label>
+                      <div>:</div>
+                      <div><input name="button_url" type="text" className="form-control"  defaultValue={button_url} /></div>
                     </div>
                   </div>
                   <input type="submit" value="Create" />

@@ -7,17 +7,25 @@ const data_validation = async (request_data) => {
         .isEmpty()
         .withMessage("the title field is required")
         .run(request_data);
-
-    await body("serial")
+    await body("sub_title")
         .not()
         .isEmpty()
-        .withMessage("the serial field is required")
+        .withMessage("the sub_title field is required")
         .run(request_data);
-
-    await body("date")
+    await body("description")
         .not()
         .isEmpty()
-        .withMessage("the date field is required")
+        .withMessage("the description field is required")
+        .run(request_data);
+    await body("button_url")
+        .not()
+        .isEmpty()
+        .withMessage("the button_url field is required")
+        .run(request_data);
+    await body("button_text")
+        .not()
+        .isEmpty()
+        .withMessage("the button_text field is required")
         .run(request_data);
 
     let result = validationResult(request_data);
@@ -28,24 +36,26 @@ const data_validation = async (request_data) => {
 };
 
 
-module.exports = async ( data) => {
+module.exports = async (data) => {
     console.log(data);
-    // let check = await data_validation({ body: data });
+    let check = await data_validation({ body: data });
 
-    // if (check.hasError) {
-    //     return {
-    //         status: 'failed',
-    //         data: check.errors,
-    //         message: "validation error",
-    //         status_code: 422,
-    //     }
-    // }
+    if (check.hasError) {
+        return {
+            status: 'failed',
+            data: check.errors,
+            message: "validation error",
+            status_code: 422,
+        }
+    }
 
     try {
         const model_data = await model.findOne({ _id: data.id });
         model_data.title = data.title;
-        model_data.serial = data.serial;
-        model_data.date = data.date;
+        model_data.sub_title = data.sub_title;
+        model_data.description = data.description;
+        model_data.button_url = data.button_url;
+        model_data.button_text = data.button_text;
         await model_data.save();
         // console.log(data);
         return {
@@ -64,5 +74,5 @@ module.exports = async ( data) => {
     }
     // return model_data,
 
-    
+
 }

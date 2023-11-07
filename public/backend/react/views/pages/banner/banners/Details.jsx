@@ -21,7 +21,7 @@ function Details() {
 
 
     if (data_store) {
-        const { _id, title, serial, date, createdAt, updatedAt, last_id } = data_store;
+        const { button_url,button_text, title, sub_title,description,_id,createdAt,updatedAt } = data_store;
         return (
             <div className='card list_card'>
                 <div className="card-header ">
@@ -53,17 +53,31 @@ function Details() {
                                         </div>
                                     </div>
                                     <div className="custom_form_el">
-                                        <div>serial</div>
+                                        <div>Sub Title</div>
                                         <div>:</div>
                                         <div>
-                                            {serial}
+                                            {sub_title}
                                         </div>
                                     </div>
                                     <div className="custom_form_el">
-                                        <div>Date</div>
+                                        <div>Description</div>
                                         <div>:</div>
                                         <div>
-                                            {date}
+                                            {description}
+                                        </div>
+                                    </div>
+                                    <div className="custom_form_el">
+                                        <div>Button Url</div>
+                                        <div>:</div>
+                                        <div>
+                                            {button_url}
+                                        </div>
+                                    </div>
+                                    <div className="custom_form_el">
+                                        <div>Button Text</div>
+                                        <div>:</div>
+                                        <div>
+                                            {button_text}
                                         </div>
                                     </div>
                                     <div className="custom_form_el">

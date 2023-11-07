@@ -38,16 +38,16 @@ await body("address")
 
 module.exports = async ( data) => {
     console.log(data);
-    // let check = await data_validation({ body: data });
+    let check = await data_validation({ body: data });
 
-    // if (check.hasError) {
-    //     return {
-    //         status: 'failed',
-    //         data: check.errors,
-    //         message: "validation error",
-    //         status_code: 422,
-    //     }
-    // }
+    if (check.hasError) {
+        return {
+            status: 'failed',
+            data: check.errors,
+            message: "validation error",
+            status_code: 422,
+        }
+    }
 
     try {
         const model_data = await model.findOne({ _id: data.id });

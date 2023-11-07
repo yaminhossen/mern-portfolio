@@ -11,8 +11,8 @@ function Create() {
   userSetup.dispatch = useDispatch();
   const { store_data } = setup.actions;
   const { get_data: get_users } = userSetup.actions;
-  const [ selectedRole, setselectedRole ] = useState([])
-  const [ tasklist, setTasklist ] = useState(false)
+  const [selectedRole, setselectedRole] = useState([])
+  const [tasklist, setTasklist] = useState(false)
 
   useEffect(() => {
     get_users();
@@ -24,7 +24,7 @@ function Create() {
     let e = event;
     e.preventDefault();
     let form_data = new FormData(e.target);
-    selectedRole.forEach((e,index)=>{
+    selectedRole.forEach((e, index) => {
       form_data.append(`creator[${index}]`, e._id);
       console.log(e);
     });
@@ -55,14 +55,24 @@ function Create() {
                     <div><input name="title" type="text" className="form-control" /></div>
                   </div>
                   <div className="custom_form_el">
-                    <label htmlFor="">Serial</label>
+                    <label htmlFor="">Sub Title</label>
                     <div>:</div>
-                    <div><input name="serial" type="number" className="form-control" /></div>
+                    <div><input name="sub_title" type="text" className="form-control" /></div>
                   </div>
                   <div className="custom_form_el">
-                    <label htmlFor="">Date</label>
+                    <label htmlFor="">Description</label>
                     <div>:</div>
-                    <div><input name="date" type="date" className="form-control" /></div>
+                    <div><input name="description" type="text" className="form-control" /></div>
+                  </div>
+                  <div className="custom_form_el">
+                    <label htmlFor="">Button Text</label>
+                    <div>:</div>
+                    <div><input name="button_text" type="text" className="form-control" /></div>
+                  </div>
+                  <div className="custom_form_el">
+                    <label htmlFor="">Button Url</label>
+                    <div>:</div>
+                    <div><input name="button_url" type="text" className="form-control" /></div>
                   </div>
                   {/* <div className="custom_form_el">
                     <label htmlFor="">Creator</label>
