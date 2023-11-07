@@ -37,7 +37,7 @@ function Edit() {
   
 
   if(data_store){
-    const{serial, title, date} = data_store;
+    const{comment} = data_store;
     return (
       <div className="card list_card">
         <div className="card-header ">
@@ -56,22 +56,12 @@ function Edit() {
                 <form id='form-data' onSubmit={handleSubmit}>
                   <div className="form-group mb-5">
                     <div className="custom_form_el">
-                      <label htmlFor="">Title</label>
+                      <label htmlFor="">Comment</label>
                       <div>:</div>
-                      <div><input name="title" type="text" className="form-control" defaultValue={title} /></div>
-                    </div>
-                    <div className="custom_form_el">
-                      <label htmlFor="">Serial</label>
-                      <div>:</div>
-                      <div><input name="serial" type="number" className="form-control" defaultValue={serial} /></div>
-                    </div>
-                    <div className="custom_form_el">
-                      <label htmlFor="">Date</label>
-                      <div>:</div>
-                      <div><input name="date" type="date" className="form-control" defaultValue={serial} /></div>
+                      <div><input name="comment" type="text" className="form-control" defaultValue={comment} /></div>
                     </div>
                   </div>
-                  <input type="submit" value="Create" />
+                  <input type="submit" value="Update" />
                 </form>
               </div>
             </div>
