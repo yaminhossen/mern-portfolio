@@ -11,7 +11,7 @@ function Edit() {
 
   useEffect(() => {
     get_photo_gallery_images(id);
-    
+
     return () => {
       document.getElementById('form-data')?.reset();
       set_data(null)
@@ -34,9 +34,9 @@ function Edit() {
 
   };
 
-  
 
-  if(data_store){
+
+  if (data_store) {
     const { short_description, long_description, url, photo, photo_alt, seo_title, seo_keyword, seo_description, title, _id } = data_store;
     return (
       <div className="card list_card">
@@ -55,7 +55,7 @@ function Edit() {
               <div className="col-lg-8">
                 <form id='form-data' onSubmit={handleSubmit}>
                   <div className="form-group mb-5">
-                  <div className="custom_form_el">
+                    <div className="custom_form_el">
                       <label htmlFor="">Title</label>
                       <div>:</div>
                       <div><input name="title" type="text" className="form-control" defaultValue={title} /></div>
@@ -75,7 +75,7 @@ function Edit() {
                       <div>:</div>
                       <div><input name="url" type="text" className="form-control" defaultValue={url} /></div>
                     </div>
-                    
+
                     <div className="custom_form_el">
                       <label htmlFor="">Photo </label>
                       <div>:</div>

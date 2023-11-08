@@ -11,8 +11,8 @@ function Create() {
   userSetup.dispatch = useDispatch();
   const { store_data } = setup.actions;
   const { get_data: get_users } = userSetup.actions;
-  const [ selectedRole, setselectedRole ] = useState([])
-  const [ tasklist, setTasklist ] = useState(false)
+  const [selectedRole, setselectedRole] = useState([])
+  const [tasklist, setTasklist] = useState(false)
 
   useEffect(() => {
     get_users();
@@ -49,7 +49,7 @@ function Create() {
             <div className="col-lg-8">
               <form onSubmit={handleSubmit}>
                 <div className="form-group mb-5">
-                <div className="custom_form_el">
+                  <div className="custom_form_el">
                     <label htmlFor="">Title</label>
                     <div>:</div>
                     <div><input name="title" type="text" className="form-control" /></div>

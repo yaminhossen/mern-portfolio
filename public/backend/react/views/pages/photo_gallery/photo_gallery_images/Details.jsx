@@ -7,12 +7,12 @@ function Details() {
     const { id } = useParams();
     setup.dispatch = useDispatch();
     const data_store = useSelector((state) => state[setup.prefix])[setup.prefix]
-    const { get_photo_gallery_images , set_data} = setup.actions;
+    const { get_photo_gallery_images, set_data } = setup.actions;
 
     useEffect(() => {
         get_photo_gallery_images(id);
 
-        return () =>{
+        return () => {
             set_data(null)
         };
     }, []);
@@ -21,7 +21,7 @@ function Details() {
 
 
     if (data_store) {
-        const { short_description,long_description,url,photo,photo_alt,seo_title,seo_keyword,seo_description,title, _id,createdAt,updatedAt } = data_store;
+        const { short_description, long_description, url, photo, photo_alt, seo_title, seo_keyword, seo_description, title, _id, createdAt, updatedAt } = data_store;
         return (
             <div className='card list_card'>
                 <div className="card-header ">
@@ -38,7 +38,7 @@ function Details() {
                         <div className="row">
                             <div className="col-lg-8">
                                 <div className="form-group mb-3">
-                                <div className="custom_form_el">
+                                    <div className="custom_form_el">
                                         <div>Id</div>
                                         <div>:</div>
                                         <div>
