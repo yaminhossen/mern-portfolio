@@ -23,7 +23,7 @@ function SideBar() {
                     </ul>
                 </li>
 
-               
+
 
                 {/* blog link */}
                 <li>
@@ -37,7 +37,7 @@ function SideBar() {
 
                     </ul>
                 </li>
-               
+
 
                 {/* content link */}
                 <li>
@@ -51,87 +51,27 @@ function SideBar() {
 
                     </ul>
                 </li>
-               
+
 
                 {/* contact message */}
 
                 <li>
-                    <DropDownLink text={'Contact Messages'} icon={'manage_accounts'}></DropDownLink>
+                    <DropDownLink text={'Web site'} icon={'manage_accounts'}></DropDownLink>
                     <ul>
-                        <SingleLink to={'/contact-message'} text={'all'} icon={'trip_origin'}></SingleLink>
-
-                    </ul>
-                </li>
-
-                {/*banner */}
-
-                <li>
-                    <DropDownLink text={'Banners'} icon={'manage_accounts'}></DropDownLink>
-                    <ul>
-                        <SingleLink to={'/banner'} text={'all'} icon={'trip_origin'}></SingleLink>
-
-                    </ul>
-                </li>
-
-                {/*setting link */}
-
-                <li>
-                    <DropDownLink text={'Setting Titles'} icon={'manage_accounts'}></DropDownLink>
-                    <ul>
-                        <SingleLink to={'/setting-title'} text={'all'} icon={'trip_origin'}></SingleLink>
-                        <SingleLink to={'/setting-value'} text={'all'} icon={'trip_origin'}></SingleLink>
-
-
-                    </ul>
-                </li>
-
-                {/* photo gallery */}
-                <li>
-                    <DropDownLink text={'Photo Gallery Categorie'} icon={'manage_accounts'}></DropDownLink>
-                    <ul>
-                        <SingleLink to={'/photo-gallery-categorie'} text={'all'} icon={'trip_origin'}></SingleLink>
-                        <SingleLink to={'/photo-gallery-image'} text={'all'} icon={'trip_origin'}></SingleLink>
-
-
-                    </ul>
-                </li>
-              
-
-                {/* video gallery */}
-                <li>
-                    <DropDownLink text={'Video Gallery Categorie'} icon={'manage_accounts'}></DropDownLink>
-                    <ul>
-                        <SingleLink to={'/video-gallery-categorie'} text={'all'} icon={'trip_origin'}></SingleLink>
-                        <SingleLink to={'/video-gallery-image'} text={'all'} icon={'trip_origin'}></SingleLink>
-
-
-                    </ul>
-                </li>
-                
-
-                {/* site url*/}
-                <li>
-                    <DropDownLink text={'Site Url'} icon={'manage_accounts'}></DropDownLink>
-                    <ul>
-                        <SingleLink to={'/site-url'} text={'all'} icon={'trip_origin'}></SingleLink>
-                        <SingleLink to={'/site-url-view-count'} text={'all'} icon={'trip_origin'}></SingleLink>
-
-
-                    </ul>
-                </li>
-             
-                {/* tag*/}
-                <li>
-                    <DropDownLink text={'Tag'} icon={'manage_accounts'}></DropDownLink>
-                    <ul>
-                        <SingleLink to={'/tag'} text={'all'} icon={'trip_origin'}></SingleLink>
+                        <SingleLink to={'/contact-message'} text={'contact-message'} icon={'trip_origin'}></SingleLink>
+                        <SingleLink to={'/banner'} text={'banner'} icon={'trip_origin'}></SingleLink>
+                        <SingleLink to={'/setting-title'} text={'setting'} icon={'trip_origin'}></SingleLink>
+                        <SingleLink to={'/photo-gallery-categorie'} text={'photo gallery'} icon={'trip_origin'}></SingleLink>
+                        <SingleLink to={'/video-gallery-categorie'} text={'video gallery'} icon={'trip_origin'}></SingleLink>
+                        <SingleLink to={'/site-url'} text={'site urls'} icon={'trip_origin'}></SingleLink>
+                        <SingleLink to={'/tag'} text={'tags'} icon={'trip_origin'}></SingleLink>
 
                     </ul>
                 </li>
 
 
 
-                {/* practice perpous */}
+
 
 
             </ul>
