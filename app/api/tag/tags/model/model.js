@@ -24,7 +24,7 @@ let tagSchema = mongoose.Schema({
 		type: String,
 		require: true,
 	},
-	image: {
+	photo: {
 		type: String,
 		require: true,
 	},

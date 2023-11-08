@@ -7,12 +7,12 @@ function Details() {
     const { id } = useParams();
     setup.dispatch = useDispatch();
     const data_store = useSelector((state) => state[setup.prefix])[setup.prefix]
-    const { get_tags , set_data} = setup.actions;
+    const { get_tags, set_data } = setup.actions;
 
     useEffect(() => {
         get_tags(id);
 
-        return () =>{
+        return () => {
             set_data(null)
         };
     }, []);
@@ -21,7 +21,7 @@ function Details() {
 
 
     if (data_store) {
-        const { _id, title, serial, date, createdAt, updatedAt, last_id } = data_store;
+        const { _id, title, short_description, long_description, url, photo, seo_title, seo_keyword, seo_description, date, createdAt, updatedAt, last_id } = data_store;
         return (
             <div className='card list_card'>
                 <div className="card-header ">
@@ -53,17 +53,52 @@ function Details() {
                                         </div>
                                     </div>
                                     <div className="custom_form_el">
-                                        <div>serial</div>
+                                        <div>short_description</div>
                                         <div>:</div>
                                         <div>
-                                            {serial}
+                                            {short_description}
                                         </div>
                                     </div>
                                     <div className="custom_form_el">
-                                        <div>Date</div>
+                                        <div>long_description</div>
                                         <div>:</div>
                                         <div>
-                                            {date}
+                                            {long_description}
+                                        </div>
+                                    </div>
+                                    <div className="custom_form_el">
+                                        <div>url</div>
+                                        <div>:</div>
+                                        <div>
+                                            {url}
+                                        </div>
+                                    </div>
+                                    <div className="custom_form_el">
+                                        <div>Photo</div>
+                                        <div>:</div>
+                                        <div>
+                                            {photo}
+                                        </div>
+                                    </div>
+                                    <div className="custom_form_el">
+                                        <div>Seo Title</div>
+                                        <div>:</div>
+                                        <div>
+                                            {seo_title}
+                                        </div>
+                                    </div>
+                                    <div className="custom_form_el">
+                                        <div>Seo Keyword</div>
+                                        <div>:</div>
+                                        <div>
+                                            {seo_keyword}
+                                        </div>
+                                    </div>
+                                    <div className="custom_form_el">
+                                        <div>Seo Description</div>
+                                        <div>:</div>
+                                        <div>
+                                            {seo_description}
                                         </div>
                                     </div>
                                     <div className="custom_form_el">
