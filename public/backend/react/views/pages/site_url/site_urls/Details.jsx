@@ -21,7 +21,7 @@ function Details() {
 
 
     if (data_store) {
-        const { _id, title, serial, date, createdAt, updatedAt, last_id } = data_store;
+        const { _id, total_view, url_redirect_to, url_for_table_id, createdAt, updatedAt, total_redirect, url_for_table, url} = data_store;
         return (
             <div className='card list_card'>
                 <div className="card-header ">
@@ -46,24 +46,45 @@ function Details() {
                                         </div>
                                     </div>
                                     <div className="custom_form_el">
-                                        <div>Title</div>
+                                        <div>url</div>
                                         <div>:</div>
                                         <div>
-                                            {title}
+                                            {url}
                                         </div>
                                     </div>
                                     <div className="custom_form_el">
-                                        <div>serial</div>
+                                        <div>url_for_table</div>
                                         <div>:</div>
                                         <div>
-                                            {serial}
+                                            {url_for_table}
                                         </div>
                                     </div>
                                     <div className="custom_form_el">
-                                        <div>Date</div>
+                                        <div>url_for_table_id</div>
                                         <div>:</div>
                                         <div>
-                                            {date}
+                                            {url_for_table_id}
+                                        </div>
+                                    </div>
+                                    <div className="custom_form_el">
+                                        <div>url_redirect_to</div>
+                                        <div>:</div>
+                                        <div>
+                                            {url_redirect_to}
+                                        </div>
+                                    </div>
+                                    <div className="custom_form_el">
+                                        <div>total_view</div>
+                                        <div>:</div>
+                                        <div>
+                                            {total_view}
+                                        </div>
+                                    </div>
+                                    <div className="custom_form_el">
+                                        <div>total_redirect</div>
+                                        <div>:</div>
+                                        <div>
+                                            {total_redirect}
                                         </div>
                                     </div>
                                     <div className="custom_form_el">

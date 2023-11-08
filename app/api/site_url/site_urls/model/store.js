@@ -3,51 +3,37 @@ const model = require("./model");
 const { async } = require("q");
 
 const data_validation = async (request_data) => {
-    await body("title")
+    await body("url")
         .not()
         .isEmpty()
-        .withMessage("the title field is required")
-        .custom(async (value) => {
-            let title = await model.findOne({
-                title: value
-            })
-            if(title){
-                return Promise.reject('Title already existing')
-            }
-        })
-        .withMessage("Title already existing")
+        .withMessage("the url field is required")
         .run(request_data);
-
-
-    await body("serial")
+    await body("url_for_table")
         .not()
         .isEmpty()
-        .withMessage("the serial field is required")
-        .custom(async (value) => {
-            let title = await model.findOne({
-                serial: value
-            })
-            if(title){
-                return Promise.reject('Serial already existing')
-            }
-        })
-        .withMessage("Serial already existing")
+        .withMessage("the url_for_table field is required")
         .run(request_data);
-
-    await body("date")
+    await body("url_for_table_id")
         .not()
         .isEmpty()
-        .withMessage("the date field is required")
-        .custom(async (value) => {
-            let title = await model.findOne({
-                date: value
-            })
-            if(title){
-                return Promise.reject('Date already existing')
-            }
-        })
-        .withMessage("Date already existing")
+        .withMessage("the url_for_table_id field is required")
         .run(request_data);
+    await body("url_redirect_to")
+        .not()
+        .isEmpty()
+        .withMessage("the url_redirect_to field is required")
+        .run(request_data);
+    await body("total_view")
+        .not()
+        .isEmpty()
+        .withMessage("the total_view field is required")
+        .run(request_data);
+    await body("total_redirect")
+        .not()
+        .isEmpty()
+        .withMessage("the total_redirect field is required")
+        .run(request_data);
+
 //  console.log("body data",body("title") );
     let result = validationResult(request_data);
     return {

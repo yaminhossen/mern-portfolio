@@ -24,10 +24,6 @@ function Create() {
     let e = event;
     e.preventDefault();
     let form_data = new FormData(e.target);
-    selectedRole.forEach((e,index)=>{
-      form_data.append(`creator[${index}]`, e._id);
-      console.log(e);
-    });
     [...document.querySelectorAll('.form_error')].forEach((el => el.remove()));
     await store_data(form_data);
     e.target.reset();
@@ -37,7 +33,7 @@ function Create() {
       <div className="card-header ">
         <h2 className="heading">Create</h2>
         <div className="btns d-flex gap-2 align-items-center">
-          <a href="#/site-url-view-count" className="btn rounded-pill btn-outline-secondary">
+          <a href="#/site-url" className="btn rounded-pill btn-outline-secondary">
             <i className="material-symbols-outlined fill">arrow_back</i>
             Back
           </a>
@@ -50,29 +46,35 @@ function Create() {
               <form onSubmit={handleSubmit}>
                 <div className="form-group mb-5">
                   <div className="custom_form_el">
-                    <label htmlFor="">Title</label>
+                    <label htmlFor="">url</label>
                     <div>:</div>
-                    <div><input name="title" type="text" className="form-control" /></div>
+                    <div><input name="url" type="text" className="form-control" /></div>
                   </div>
                   <div className="custom_form_el">
-                    <label htmlFor="">Serial</label>
+                    <label htmlFor="">url_for_table</label>
                     <div>:</div>
-                    <div><input name="serial" type="number" className="form-control" /></div>
+                    <div><input name="url_for_table" type="text" className="form-control" /></div>
                   </div>
                   <div className="custom_form_el">
-                    <label htmlFor="">Date</label>
+                    <label htmlFor="">url_for_table_id</label>
                     <div>:</div>
-                    <div><input name="date" type="date" className="form-control" /></div>
+                    <div><input name="url_for_table_id" type="text" className="form-control" /></div>
                   </div>
-                  {/* <div className="custom_form_el">
-                    <label htmlFor="">Creator</label>
+                  <div className="custom_form_el">
+                    <label htmlFor="">url_redirect_to</label>
                     <div>:</div>
-                    <div>
-                     <div id="creator">
-                     <MultiselectDropdown data={user_data_store.all_data} selectedData={selectedRole} setSelectedData={setselectedRole} taskOpen={tasklist} setTaskOpen={setTasklist}></MultiselectDropdown>
-                     </div>
-                    </div>
-                  </div> */}
+                    <div><input name="url_redirect_to" type="text" className="form-control" /></div>
+                  </div>
+                  <div className="custom_form_el">
+                    <label htmlFor="">total_view</label>
+                    <div>:</div>
+                    <div><input name="total_view" type="text" className="form-control" /></div>
+                  </div>
+                  <div className="custom_form_el">
+                    <label htmlFor="">total_redirect</label>
+                    <div>:</div>
+                    <div><input name="total_redirect" type="text" className="form-control" /></div>
+                  </div>
                 </div>
                 <input type="submit" value="Create" />
               </form>

@@ -11,7 +11,7 @@ function Edit() {
 
   useEffect(() => {
     get_site_urls(id);
-    
+
     return () => {
       document.getElementById('form-data')?.reset();
       set_data(null)
@@ -26,7 +26,7 @@ function Edit() {
     let form_data = new FormData(e.target);
     form_data.append('id', id);
 
-    // [...document.querySelectorAll('.form_error')].forEach((el => el.remove()));
+    [...document.querySelectorAll('.form_error')].forEach((el => el.remove()));
     await update_data(form_data);
     // e.target.reset();
     // // e.target.serial.value = "";
@@ -34,10 +34,10 @@ function Edit() {
 
   };
 
-  
 
-  if(data_store){
-    const{serial, title, date} = data_store;
+
+  if (data_store) {
+    const {  total_view, url_redirect_to, url_for_table_id,   total_redirect, url_for_table, url} = data_store;
     return (
       <div className="card list_card">
         <div className="card-header ">
@@ -55,21 +55,36 @@ function Edit() {
               <div className="col-lg-8">
                 <form id='form-data' onSubmit={handleSubmit}>
                   <div className="form-group mb-5">
-                    <div className="custom_form_el">
-                      <label htmlFor="">Title</label>
-                      <div>:</div>
-                      <div><input name="title" type="text" className="form-control" defaultValue={title} /></div>
-                    </div>
-                    <div className="custom_form_el">
-                      <label htmlFor="">Serial</label>
-                      <div>:</div>
-                      <div><input name="serial" type="number" className="form-control" defaultValue={serial} /></div>
-                    </div>
-                    <div className="custom_form_el">
-                      <label htmlFor="">Date</label>
-                      <div>:</div>
-                      <div><input name="date" type="date" className="form-control" defaultValue={serial} /></div>
-                    </div>
+                  <div className="custom_form_el">
+                    <label htmlFor="">url</label>
+                    <div>:</div>
+                    <div><input name="url" type="text" className="form-control" defaultValue={url} /></div>
+                  </div>
+                  <div className="custom_form_el">
+                    <label htmlFor="">url_for_table</label>
+                    <div>:</div>
+                    <div><input name="url_for_table" type="text" className="form-control"  defaultValue={url_for_table} /></div>
+                  </div>
+                  <div className="custom_form_el">
+                    <label htmlFor="">url_for_table_id</label>
+                    <div>:</div>
+                    <div><input name="url_for_table_id" type="text" className="form-control"  defaultValue={url_for_table_id} /></div>
+                  </div>
+                  <div className="custom_form_el">
+                    <label htmlFor="">url_redirect_to</label>
+                    <div>:</div>
+                    <div><input name="url_redirect_to" type="text" className="form-control"  defaultValue={url_redirect_to} /></div>
+                  </div>
+                  <div className="custom_form_el">
+                    <label htmlFor="">total_view</label>
+                    <div>:</div>
+                    <div><input name="total_view" type="text" className="form-control"  defaultValue={total_view} /></div>
+                  </div>
+                  <div className="custom_form_el">
+                    <label htmlFor="">total_redirect</label>
+                    <div>:</div>
+                    <div><input name="total_redirect" type="text" className="form-control"  defaultValue={total_redirect} /></div>
+                  </div>
                   </div>
                   <input type="submit" value="Create" />
                 </form>
