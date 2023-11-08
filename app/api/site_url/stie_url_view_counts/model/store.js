@@ -3,51 +3,28 @@ const model = require("./model");
 const { async } = require("q");
 
 const data_validation = async (request_data) => {
-    await body("title")
+    await body("site_url")
         .not()
         .isEmpty()
-        .withMessage("the title field is required")
-        .custom(async (value) => {
-            let title = await model.findOne({
-                title: value
-            })
-            if(title){
-                return Promise.reject('Title already existing')
-            }
-        })
-        .withMessage("Title already existing")
+        .withMessage("the site_url field is required")
+        .run(request_data);
+    await body("ip_address")
+        .not()
+        .isEmpty()
+        .withMessage("the ip_address field is required")
+        .run(request_data);
+    await body("device")
+        .not()
+        .isEmpty()
+        .withMessage("the device field is required")
+        .run(request_data);
+    await body("location")
+        .not()
+        .isEmpty()
+        .withMessage("the location field is required")
         .run(request_data);
 
 
-    await body("serial")
-        .not()
-        .isEmpty()
-        .withMessage("the serial field is required")
-        .custom(async (value) => {
-            let title = await model.findOne({
-                serial: value
-            })
-            if(title){
-                return Promise.reject('Serial already existing')
-            }
-        })
-        .withMessage("Serial already existing")
-        .run(request_data);
-
-    await body("date")
-        .not()
-        .isEmpty()
-        .withMessage("the date field is required")
-        .custom(async (value) => {
-            let title = await model.findOne({
-                date: value
-            })
-            if(title){
-                return Promise.reject('Date already existing')
-            }
-        })
-        .withMessage("Date already existing")
-        .run(request_data);
 //  console.log("body data",body("title") );
     let result = validationResult(request_data);
     return {

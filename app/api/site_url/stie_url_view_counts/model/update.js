@@ -2,22 +2,27 @@ const { body, validationResult } = require("express-validator");
 const model = require("./model");
 
 const data_validation = async (request_data) => {
-    await body("title")
+    await body("site_url")
         .not()
         .isEmpty()
-        .withMessage("the title field is required")
+        .withMessage("the site_url field is required")
         .run(request_data);
 
-    await body("serial")
+    await body("ip_address")
         .not()
         .isEmpty()
-        .withMessage("the serial field is required")
+        .withMessage("the ip_address field is required")
         .run(request_data);
 
-    await body("date")
+    await body("device")
         .not()
         .isEmpty()
-        .withMessage("the date field is required")
+        .withMessage("the device field is required")
+        .run(request_data);
+    await body("location")
+        .not()
+        .isEmpty()
+        .withMessage("the location field is required")
         .run(request_data);
 
     let result = validationResult(request_data);
@@ -30,22 +35,23 @@ const data_validation = async (request_data) => {
 
 module.exports = async ( data) => {
     console.log(data);
-    // let check = await data_validation({ body: data });
+    let check = await data_validation({ body: data });
 
-    // if (check.hasError) {
-    //     return {
-    //         status: 'failed',
-    //         data: check.errors,
-    //         message: "validation error",
-    //         status_code: 422,
-    //     }
-    // }
+    if (check.hasError) {
+        return {
+            status: 'failed',
+            data: check.errors,
+            message: "validation error",
+            status_code: 422,
+        }
+    }
 
     try {
         const model_data = await model.findOne({ _id: data.id });
-        model_data.title = data.title;
-        model_data.serial = data.serial;
-        model_data.date = data.date;
+        model_data.site_url = data.site_url;
+        model_data.ip_address = data.ip_address;
+        model_data.device = data.device;
+        model_data.location = data.location;
         await model_data.save();
         // console.log(data);
         return {

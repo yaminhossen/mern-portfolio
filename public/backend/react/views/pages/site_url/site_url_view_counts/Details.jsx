@@ -21,7 +21,7 @@ function Details() {
 
 
     if (data_store) {
-        const { _id, title, serial, date, createdAt, updatedAt, last_id } = data_store;
+        const{site_url, ip_address,device, location, _id, createdAt, updatedAt} = data_store;
         return (
             <div className='card list_card'>
                 <div className="card-header ">
@@ -46,24 +46,31 @@ function Details() {
                                         </div>
                                     </div>
                                     <div className="custom_form_el">
-                                        <div>Title</div>
+                                        <div>site_url</div>
                                         <div>:</div>
                                         <div>
-                                            {title}
+                                            {site_url}
                                         </div>
                                     </div>
                                     <div className="custom_form_el">
-                                        <div>serial</div>
+                                        <div>ip_address</div>
                                         <div>:</div>
                                         <div>
-                                            {serial}
+                                            {ip_address}
                                         </div>
                                     </div>
                                     <div className="custom_form_el">
-                                        <div>Date</div>
+                                        <div>device</div>
                                         <div>:</div>
                                         <div>
-                                            {date}
+                                            {device}
+                                        </div>
+                                    </div>
+                                    <div className="custom_form_el">
+                                        <div>location</div>
+                                        <div>:</div>
+                                        <div>
+                                            {location}
                                         </div>
                                     </div>
                                     <div className="custom_form_el">

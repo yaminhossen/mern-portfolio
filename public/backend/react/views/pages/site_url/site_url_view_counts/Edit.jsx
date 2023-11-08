@@ -26,7 +26,7 @@ function Edit() {
     let form_data = new FormData(e.target);
     form_data.append('id', id);
 
-    // [...document.querySelectorAll('.form_error')].forEach((el => el.remove()));
+    [...document.querySelectorAll('.form_error')].forEach((el => el.remove()));
     await update_data(form_data);
     // e.target.reset();
     // // e.target.serial.value = "";
@@ -37,7 +37,7 @@ function Edit() {
   
 
   if(data_store){
-    const{serial, title, date} = data_store;
+    const{site_url, ip_address,device, location} = data_store;
     return (
       <div className="card list_card">
         <div className="card-header ">
@@ -55,21 +55,26 @@ function Edit() {
               <div className="col-lg-8">
                 <form id='form-data' onSubmit={handleSubmit}>
                   <div className="form-group mb-5">
-                    <div className="custom_form_el">
-                      <label htmlFor="">Title</label>
-                      <div>:</div>
-                      <div><input name="title" type="text" className="form-control" defaultValue={title} /></div>
-                    </div>
-                    <div className="custom_form_el">
-                      <label htmlFor="">Serial</label>
-                      <div>:</div>
-                      <div><input name="serial" type="number" className="form-control" defaultValue={serial} /></div>
-                    </div>
-                    <div className="custom_form_el">
-                      <label htmlFor="">Date</label>
-                      <div>:</div>
-                      <div><input name="date" type="date" className="form-control" defaultValue={serial} /></div>
-                    </div>
+                  <div className="custom_form_el">
+                    <label htmlFor="">Site Url</label>
+                    <div>:</div>
+                    <div><input name="site_url" type="text" className="form-control" defaultValue={site_url} /></div>
+                  </div>
+                  <div className="custom_form_el">
+                    <label htmlFor="">Ip Address</label>
+                    <div>:</div>
+                    <div><input name="ip_address" type="text" className="form-control" defaultValue={ip_address} /></div>
+                  </div>
+                  <div className="custom_form_el">
+                    <label htmlFor="">Device</label>
+                    <div>:</div>
+                    <div><input name="device" type="text" className="form-control" defaultValue={device} /></div>
+                  </div>
+                  <div className="custom_form_el">
+                    <label htmlFor="">Location</label>
+                    <div>:</div>
+                    <div><input name="location" type="text" className="form-control" defaultValue={location} /></div>
+                  </div>
                   </div>
                   <input type="submit" value="Create" />
                 </form>

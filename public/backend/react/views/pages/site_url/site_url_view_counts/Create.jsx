@@ -11,8 +11,8 @@ function Create() {
   userSetup.dispatch = useDispatch();
   const { store_data } = setup.actions;
   const { get_data: get_users } = userSetup.actions;
-  const [ selectedRole, setselectedRole ] = useState([])
-  const [ tasklist, setTasklist ] = useState(false)
+  const [selectedRole, setselectedRole] = useState([])
+  const [tasklist, setTasklist] = useState(false)
 
   useEffect(() => {
     get_users();
@@ -24,10 +24,10 @@ function Create() {
     let e = event;
     e.preventDefault();
     let form_data = new FormData(e.target);
-    selectedRole.forEach((e,index)=>{
-      form_data.append(`creator[${index}]`, e._id);
-      console.log(e);
-    });
+    // selectedRole.forEach((e,index)=>{
+    //   form_data.append(`creator[${index}]`, e._id);
+    //   console.log(e);
+    // });
     [...document.querySelectorAll('.form_error')].forEach((el => el.remove()));
     await store_data(form_data);
     e.target.reset();
@@ -50,29 +50,25 @@ function Create() {
               <form onSubmit={handleSubmit}>
                 <div className="form-group mb-5">
                   <div className="custom_form_el">
-                    <label htmlFor="">Title</label>
+                    <label htmlFor="">Site Url</label>
                     <div>:</div>
-                    <div><input name="title" type="text" className="form-control" /></div>
+                    <div><input name="site_url" type="text" className="form-control" /></div>
                   </div>
                   <div className="custom_form_el">
-                    <label htmlFor="">Serial</label>
+                    <label htmlFor="">Ip Address</label>
                     <div>:</div>
-                    <div><input name="serial" type="number" className="form-control" /></div>
+                    <div><input name="ip_address" type="text" className="form-control" /></div>
                   </div>
                   <div className="custom_form_el">
-                    <label htmlFor="">Date</label>
+                    <label htmlFor="">Device</label>
                     <div>:</div>
-                    <div><input name="date" type="date" className="form-control" /></div>
+                    <div><input name="device" type="text" className="form-control" /></div>
                   </div>
-                  {/* <div className="custom_form_el">
-                    <label htmlFor="">Creator</label>
+                  <div className="custom_form_el">
+                    <label htmlFor="">Location</label>
                     <div>:</div>
-                    <div>
-                     <div id="creator">
-                     <MultiselectDropdown data={user_data_store.all_data} selectedData={selectedRole} setSelectedData={setselectedRole} taskOpen={tasklist} setTaskOpen={setTasklist}></MultiselectDropdown>
-                     </div>
-                    </div>
-                  </div> */}
+                    <div><input name="location" type="text" className="form-control" /></div>
+                  </div>
                 </div>
                 <input type="submit" value="Create" />
               </form>
