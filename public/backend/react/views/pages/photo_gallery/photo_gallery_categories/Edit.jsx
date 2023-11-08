@@ -37,7 +37,7 @@ function Edit() {
 
 
   if (data_store) {
-    const { short_description, long_description, url, photo, photo_alt, seo_title, seo_keywords, seo_description, title, _id } = data_store;
+    const { short_description, long_description, url, photo, photo_alt, seo_title, seo_keyword, seo_description, title, _id } = data_store;
     return (
       <div className="card list_card">
         <div className="card-header ">
@@ -94,7 +94,7 @@ function Edit() {
                     <div className="custom_form_el">
                       <label htmlFor="">seo_keyword</label>
                       <div>:</div>
-                      <div><input name="seo_keyword" type="text" className="form-control" defaultValue={seo_keywords} /></div>
+                      <div><input name="seo_keyword" type="text" className="form-control" defaultValue={seo_keyword} /></div>
                     </div>
                     <div className="custom_form_el">
                       <label htmlFor="">seo_description</label>

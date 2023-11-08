@@ -101,7 +101,7 @@ module.exports = async (datas) => {
         model_data.photo = data.photo;
         model_data.photo_alt = data.photo_alt;
         model_data.seo_title = data.seo_title;
-        model_data.seo_keywords = data.seo_keywords;
+        model_data.seo_keyword = data.seo_keyword;
         model_data.seo_description = data.seo_description;
         await model_data.save();
         // console.log(data);
