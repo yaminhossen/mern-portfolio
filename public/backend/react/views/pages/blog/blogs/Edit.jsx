@@ -51,11 +51,11 @@ function Edit() {
             </a>
           </div>
         </div>
-        <div className="card-body">
-          <div className="container py-5">
-            <div className="row">
-              <div className="col-lg-8">
-                <form id='form-data' onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
+          <div className="card-body">
+            <div className="container py-5">
+              <div className="row">
+                <div className="col-lg-8">
                   <div className="form-group mb-5">
                     <div className="custom_form_el">
                       <label htmlFor="">Title</label>
@@ -78,6 +78,11 @@ function Edit() {
                       <div><input name="description" type="text" className="form-control" defaultValue={description} /></div>
                     </div>
                     <div className="custom_form_el">
+                      <label htmlFor="">Published Date</label>
+                      <div>:</div>
+                      <div><input name="published_date" type="date" className="form-control" defaultValue={published_date} /></div>
+                    </div>
+                    <div className="custom_form_el">
                       <label htmlFor="">Photo</label>
                       <div>:</div>
                       <div><input name="photo" type="file" accept="image/*" className="form-control" /></div>
@@ -87,39 +92,48 @@ function Edit() {
                       <div>:</div>
                       <div><input name="photo_alt_text" type="text" className="form-control" defaultValue={photo_alt_text} /></div>
                     </div>
+                    <div className="mt-4 mb-3">
+                      <h4>SEO Part <sub>optional</sub></h4>
+                      <hr />
+                    </div>
                     <div className="custom_form_el">
                       <label htmlFor="">Seo Title</label>
                       <div>:</div>
-                      <div><input name="seo_title" type="text" className="form-control" defaultValue={seo_title} /></div>
+                      <div>
+                        <textarea name="seo_title" className="form-control" id="">{seo_title}</textarea>
+                      </div>
                     </div>
                     <div className="custom_form_el">
                       <label htmlFor="">Seo Keyword</label>
                       <div>:</div>
-                      <div><input name="seo_keyword" type="text" className="form-control" defaultValue={seo_keyword} /></div>
+                      <div>
+                        <textarea name="seo_keyword" className="form-control" id="">{seo_keyword}</textarea>
+                      </div>
                     </div>
                     <div className="custom_form_el">
                       <label htmlFor="">Seo Description</label>
                       <div>:</div>
-                      <div><input name="seo_description" type="text" className="form-control" defaultValue={seo_description} /></div>
+                      <div>
+                        <textarea name="seo_description" className="form-control" id="">{seo_description}</textarea>
+                      </div>
                     </div>
                     <div className="custom_form_el">
                       <label htmlFor="">Seo Schema Tags</label>
                       <div>:</div>
-                      <div><input name="seo_schema_tags" type="text" className="form-control" defaultValue={seo_schema_tags} /></div>
-                    </div>
-                    <div className="custom_form_el">
-                      <label htmlFor="">Published Date</label>
-                      <div>:</div>
-                      <div><input name="published_date" type="date" className="form-control" defaultValue={published_date} /></div>
+                      <div>
+                        <textarea name="seo_schema_tags" className="form-control" id="">{seo_schema_tags}</textarea>
+                      </div>
                     </div>
                   </div>
-                  <input type="submit" value="Create" />
-                </form>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="card-footer"></div>
+          <div className="card-footer">
+            <input type="submit" value="Create" />
+
+          </div>
+        </form>
       </div>
     )
   }

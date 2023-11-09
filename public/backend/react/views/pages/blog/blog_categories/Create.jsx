@@ -11,8 +11,8 @@ function Create() {
   userSetup.dispatch = useDispatch();
   const { store_data } = setup.actions;
   const { get_data: get_users } = userSetup.actions;
-  const [ selectedRole, setselectedRole ] = useState([])
-  const [ tasklist, setTasklist ] = useState(false)
+  const [selectedRole, setselectedRole] = useState([])
+  const [tasklist, setTasklist] = useState(false)
 
   useEffect(() => {
     get_users();
@@ -39,11 +39,11 @@ function Create() {
           </a>
         </div>
       </div>
-      <div className="card-body">
-        <div className="container py-5">
-          <div className="row">
-            <div className="col-lg-8">
-              <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
+        <div className="card-body">
+          <div className="container py-5">
+            <div className="row">
+              <div className="col-xl-8">
                 <div className="form-group mb-5">
                   <div className="custom_form_el">
                     <label htmlFor="">Title</label>
@@ -51,57 +51,66 @@ function Create() {
                     <div><input name="title" type="text" className="form-control" /></div>
                   </div>
                   <div className="custom_form_el">
-                    <label htmlFor="">Short Description</label>
-                    <div>:</div>
-                    <div><input name="short_description" type="text" className="form-control" /></div>
-                  </div>
-                  <div className="custom_form_el">
-                    <label htmlFor="">Long Description</label>
-                    <div>:</div>
-                    <div><input name="long_description" type="text" className="form-control" /></div>
-                  </div>
-                  <div className="custom_form_el">
                     <label htmlFor="">Url</label>
                     <div>:</div>
                     <div><input name="url" type="text" className="form-control" /></div>
                   </div>
                   <div className="custom_form_el">
+                    <label htmlFor="">Short Description</label>
+                    <div>:</div>
+                    <div>
+                      <textarea name="short_description" className="form-control" id=""></textarea>
+                    </div>
+                  </div>
+                  <div className="custom_form_el">
+                    <label htmlFor="">Long Description</label>
+                    <div>:</div>
+                    <div>
+                      {/* <input name="long_description" type="text" className="form-control" /> */}
+                      <textarea name="long_description" className="form-control" id=""></textarea>
+                    </div>
+                  </div>
+
+                  <div className="custom_form_el">
                     <label htmlFor="">Photo</label>
                     <div>:</div>
                     <div><input name="photo" type="file" accept="image/*" className="form-control" /></div>
                   </div>
+                  <div className="mt-4 mb-3">
+                    <h4>SEO Part <sub>optional</sub></h4>
+                    <hr />
+                  </div>
                   <div className="custom_form_el">
                     <label htmlFor="">Seo Title</label>
                     <div>:</div>
-                    <div><input name="seo_title" type="text" className="form-control" /></div>
+                    <div>
+                      <textarea name="seo_title" className="form-control" id=""></textarea>
+                    </div>
                   </div>
                   <div className="custom_form_el">
                     <label htmlFor="">Seo Keyword</label>
                     <div>:</div>
-                    <div><input name="seo_keyword" type="text" className="form-control" /></div>
+                    <div>
+                      <textarea name="seo_keyword" className="form-control" id=""></textarea>
+                    </div>
                   </div>
                   <div className="custom_form_el">
                     <label htmlFor="">Seo Description</label>
                     <div>:</div>
-                    <div><input name="seo_description" type="text" className="form-control" /></div>
-                  </div>
-                  {/* <div className="custom_form_el">
-                    <label htmlFor="">Creator</label>
-                    <div>:</div>
                     <div>
-                     <div id="creator">
-                     <MultiselectDropdown data={user_data_store.all_data} selectedData={selectedRole} setSelectedData={setselectedRole} taskOpen={tasklist} setTaskOpen={setTasklist}></MultiselectDropdown>
-                     </div>
+                      <textarea name="seo_description" className="form-control" id=""></textarea>
                     </div>
-                  </div> */}
+                  </div>
                 </div>
-                <input type="submit" value="Create" />
-              </form>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="card-footer"></div>
+        <div className="card-footer">
+          <button type="submit" className="btn btn-sm btn-outline-warning">Submit</button>
+
+        </div>
+      </form>
     </div>
   );
 }
