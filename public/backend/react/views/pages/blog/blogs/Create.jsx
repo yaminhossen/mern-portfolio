@@ -69,7 +69,7 @@ function Create() {
                     <div>
                       <Editor
                         onInit={(evt, editor) => short_description_ref.current = editor}
-                        initialValue="<p>This is short description.</p>"
+                        initialValue={`<p>This is short description.</p>`}
                         init={{
                           height: 300,
                           menubar: false,

@@ -51,6 +51,10 @@ let blogSchema = mongoose.Schema({
 		type: Date,
 		require: true,
 	},
+	categories: {
+		type: [Schema.Types.ObjectId],
+		ref: 'blog_categories'
+	},
 	status: {
 		type: Boolean,
 		default: true,
@@ -59,6 +63,7 @@ let blogSchema = mongoose.Schema({
 		type: Schema.Types.ObjectId,
 		ref: 'users',
 	},
+
 }, {
 	timestamps: true,
 });
