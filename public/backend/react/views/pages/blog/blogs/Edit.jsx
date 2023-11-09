@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react'
+import React, { useEffect,useRef } from 'react'
+import { Editor } from '@tinymce/tinymce-react';
 import { useDispatch, useSelector } from "react-redux";
 import setup from "./config/setup";
 import { useParams } from 'react-router-dom';
@@ -8,6 +9,15 @@ function Edit() {
   setup.dispatch = useDispatch();
   const data_store = useSelector((state) => state[setup.prefix])[setup.prefix]
   const { get_blogs, set_data, update_data } = setup.actions;
+
+  const short_description_ref = useRef(null);
+  const description_ref = useRef(null);
+  const short_description_reflog = () => {
+    if (short_description_ref.current) {
+      console.log(short_description_ref.current.getContent());
+    }
+  };
+
 
   useEffect(() => {
     get_blogs(id);
@@ -25,8 +35,12 @@ function Edit() {
     e.preventDefault();
     let form_data = new FormData(e.target);
     form_data.append('id', id);
+    form_data.append("short_description", short_description_ref.current.getContent());
+    form_data.append("description", description_ref.current.getContent());
 
-    // [...document.querySelectorAll('.form_error')].forEach((el => el.remove()));
+    [...document.querySelectorAll('.form_error')].forEach((el => el.remove()));
+
+    console.log(short_description_ref.current.getContent());
     await update_data(form_data);
     // e.target.reset();
     // // e.target.serial.value = "";
@@ -39,7 +53,7 @@ function Edit() {
   if (data_store) {
     const { subtitle, title, short_description, description, photo, photo_alt_text, seo_title, seo_keyword, seo_description, seo_schema_tags, published_date } = data_store;
     let a = new Date(published_date).toISOString().substring(0, 10)
-    console.log(a);
+    console.log(short_description);
     return (
       <div className="card list_card">
         <div className="card-header ">
@@ -70,12 +84,51 @@ function Edit() {
                     <div className="custom_form_el">
                       <label htmlFor="">Short Description</label>
                       <div>:</div>
-                      <div><input name="short_description" type="text" className="form-control" defaultValue={short_description} /></div>
+                      <div>
+                      <Editor
+                        onInit={(evt, editor) => short_description_ref.current = editor}
+                        // initialValue= {short_description ? short_description :'no data'}
+                        initialValue= {short_description ? short_description :'no data'}
+                        init={{
+                          height: 300,
+                          menubar: false,
+                          plugins: [
+                            'advlist autolink lists link image charmap print preview anchor',
+                            'searchreplace visualblocks code fullscreen',
+                            'insertdatetime media table paste code help wordcount'
+                          ],
+                          toolbar: 'undo redo | formatselect | ' +
+                            'bold italic backcolor | alignleft aligncenter ' +
+                            'alignright alignjustify | bullist numlist outdent indent | ' +
+                            'removeformat | help',
+                          content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+                        }}
+                      />
+                        </div>
                     </div>
                     <div className="custom_form_el">
                       <label htmlFor="">Description</label>
                       <div>:</div>
-                      <div><input name="description" type="text" className="form-control" defaultValue={description} /></div>
+                      <div>
+                      <Editor
+                        onInit={(evt, editor) =>description_ref.current = editor}
+                        initialValue="<p>This is short description.</p>"
+                        init={{
+                          height: 300,
+                          menubar: false,
+                          plugins: [
+                            'advlist autolink lists link image charmap print preview anchor',
+                            'searchreplace visualblocks code fullscreen',
+                            'insertdatetime media table paste code help wordcount'
+                          ],
+                          toolbar: 'undo redo | formatselect | ' +
+                            'bold italic backcolor | alignleft aligncenter ' +
+                            'alignright alignjustify | bullist numlist outdent indent | ' +
+                            'removeformat | help',
+                          content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+                        }}
+                      />
+                        </div>
                     </div>
                     <div className="custom_form_el">
                       <label htmlFor="">Published Date</label>
