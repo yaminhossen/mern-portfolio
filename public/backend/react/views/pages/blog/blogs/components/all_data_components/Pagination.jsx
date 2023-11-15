@@ -87,7 +87,7 @@ function Pagination() {
             setPaginate([]);
         }
     }, [data_store.page, data_store.all_data_count])
-
+// console.log(data_store?.all_data?.length);
     return (
         <>
             <div className="d-inline-block">
@@ -136,7 +136,7 @@ function Pagination() {
                 </select>
             </div>
             <div className="show-limit d-inline-block">
-                <span>Total:</span> <span>6</span>
+                <span>Total:</span> <span>{data_store?.all_data?.length}</span>
             </div>
         </>
     )

@@ -36,11 +36,11 @@ function All() {
                                 </th> */}
 
                                 <th className="cursor_n_resize">
-                                    Name
+                                    Title
                                 </th>
 
                                 <th className="cursor_n_resize">
-                                    Serial
+                                    Photo
                                 </th>
 
                                 <th className="cursor_n_resize">
@@ -63,7 +63,7 @@ function All() {
                                             </td>
                                             <td>
                                                 <span>
-                                                    {data.serial}
+                                                <img width="40px" src={data?.photo} alt="" />
                                                 </span>
                                             </td>
                                             <td>

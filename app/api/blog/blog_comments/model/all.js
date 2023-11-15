@@ -7,7 +7,7 @@ module.exports = async ({ page, paginate, search_key, orderByCol, orderByAsc, sh
     };
 
     if (search_key.length) {
-        filter.title = { $regex: search_key, $options: "i" };
+        filter.comment = { $regex: search_key, $options: "i" };
     }
 
     let skip = 0;

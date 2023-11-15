@@ -187,6 +187,7 @@ const storeSlice = createSlice({
         [`set_search_parameter`]: function (state, { type, payload }) {
             state[`search_key`] = payload;
             // storeSlice.caseReducers.fetch_all_data();
+            // console.log('this is from store',payload);
         },
         [`set_show_active_data`]: function (state, { type, payload }) {
             state[`show_active_data`] = payload;

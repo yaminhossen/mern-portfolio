@@ -22,7 +22,7 @@ async function getId() {
 }
 
 // node app/api/blog/blogs/seeder/seeder.js
-console.log("hi hello");
+// console.log("hi hello");
 
 
 let data = [
@@ -113,5 +113,5 @@ const run = async () => mongoose.connect(db_url)
 		console.log("\n");
 	});
 
-run()
-module.exports = run
+// run()
+module.exports = async () =>  run()
