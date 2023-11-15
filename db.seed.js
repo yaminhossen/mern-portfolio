@@ -48,8 +48,8 @@ const seed = async () => {
     await apiBlogimagesSeeder();
 
     // content seeder!!
-    await apiContentSeeder();
     await apiContentCategoriesSeeder();
+    await apiContentSeeder();
     await apiContentCommentsSeeder();
     await apiContentCommentRepliesSeeder();
     await apiContentimagesSeeder();

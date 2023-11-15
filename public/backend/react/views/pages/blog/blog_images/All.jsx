@@ -36,7 +36,7 @@ function All() {
                                 </th> */}
 
                                 <th className="cursor_n_resize">
-                                    Name
+                                    Title
                                 </th>
 
                                 <th className="cursor_n_resize">

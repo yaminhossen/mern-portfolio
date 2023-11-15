@@ -51,6 +51,10 @@ let contentSchema = mongoose.Schema({
 		type: Date,
 		require: true,
 	},
+	categories: {
+		type: [Schema.Types.ObjectId],
+		ref: 'content_categories'
+	},
 	status: {
 		type: Boolean,
 		default: true,
