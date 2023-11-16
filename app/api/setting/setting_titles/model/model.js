@@ -6,10 +6,13 @@ const writeFirstLine = require("../../../../utilites/writeFirstLine");
 
 
 let settingtitleSchema = mongoose.Schema({
-	
+
 	title: {
 		type: String,
 		require: true,
+	},
+	value: {
+		type: Array,
 	},
 	status: {
 		type: Boolean,
