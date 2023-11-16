@@ -1,5 +1,9 @@
 const { body, validationResult } = require("express-validator");
 const model = require("./model");
+const { async } = require("q");
+var fs = require('fs-extra')
+const { dirname } = require('path');
+const appDir = dirname(require.main.filename);
 
 const data_validation = async (request_data) => {
     await body("title")
@@ -36,8 +40,31 @@ const data_validation = async (request_data) => {
 };
 
 
-module.exports = async (data) => {
-    console.log(data);
+module.exports = async (datas) => {
+    let data = datas.body;
+    let files = datas.files;
+
+    const upload_files = (file, id) => {
+        let file_name = parseInt(Math.random() * 1000) + id + file.name;
+        const path = appDir + "/public/uploads/posts/" + file_name;
+        fs.move(file.path, path, function (err) {
+            if (err) return console.error(err)
+            console.log("success!")
+        })
+        profile_photo_path = "uploads/posts/" + file_name;
+        return profile_photo_path;
+    }
+    const upload_files2 = (file, id) => {
+        let file_name = parseInt(Math.random() * 1000) + id + file.name;
+        const path = appDir + "/public/uploads/posts/" + file_name;
+        fs.move(file.path, path, function (err) {
+            if (err) return console.error(err)
+            console.log("success!")
+        })
+        banner_photo_path = "uploads/posts/" + file_name;
+        return banner_photo_path;
+    }
+
     let check = await data_validation({ body: data });
 
     if (check.hasError) {
@@ -48,14 +75,34 @@ module.exports = async (data) => {
             status_code: 422,
         }
     }
-
     try {
+        
+
         const model_data = await model.findOne({ _id: data.id });
+        // console.log('yamin2',model_data);
+        // var photo_path = model_data.photo;
+        
+        var profile_photo_path = "";
+
+        if (files?.profile_photo) {
+            profile_photo_path = upload_files(files?.profile_photo, data.title);
+            console.log('form profile_photo_path', profile_photo_path);
+        }
+        var banner_photo_path = "";
+
+        if (files?.banner_photo) {
+            banner_photo_path = upload_files2(files?.banner_photo, data.title);
+            console.log('form banner_photo_path', banner_photo_path);
+        }
+
         model_data.title = data.title;
         model_data.sub_title = data.sub_title;
+        model_data.short_description = data.short_description;
         model_data.description = data.description;
-        model_data.button_url = data.button_url;
+        model_data.banner_photo = banner_photo_path;
+        model_data.profile_photo = profile_photo_path;
         model_data.button_text = data.button_text;
+        model_data.button_url = data.button_url;
         await model_data.save();
         // console.log(data);
         return {
@@ -65,6 +112,7 @@ module.exports = async (data) => {
             status_code: 201,
         };
     } catch (error) {
+        console.log(error);
         return {
             status: 'failed',
             data: error,
@@ -72,7 +120,5 @@ module.exports = async (data) => {
             status_code: 500,
         }
     }
-    // return model_data,
-
 
 }

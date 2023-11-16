@@ -11,12 +11,12 @@ function Create() {
   userSetup.dispatch = useDispatch();
   const { store_data } = setup.actions;
   const { get_data: get_users } = userSetup.actions;
-  const [selectedRole, setselectedRole] = useState([])
-  const [tasklist, setTasklist] = useState(false)
+  const [selectedRole, setselectedRole] = useState([]);
+  const [tasklist, setTasklist] = useState(false);
 
   useEffect(() => {
     get_users();
-  }, [])
+  }, []);
 
   console.log(selectedRole);
 
@@ -24,11 +24,11 @@ function Create() {
     let e = event;
     e.preventDefault();
     let form_data = new FormData(e.target);
-    selectedRole.forEach((e, index) => {
-      form_data.append(`creator[${index}]`, e._id);
-      console.log(e);
-    });
-    [...document.querySelectorAll('.form_error')].forEach((el => el.remove()));
+    // selectedRole.forEach((e, index) => {
+    //   form_data.append(`creator[${index}]`, e._id);
+    //   console.log(e);
+    // });
+    [...document.querySelectorAll(".form_error")].forEach((el) => el.remove());
     await store_data(form_data);
     e.target.reset();
   };
@@ -52,27 +52,67 @@ function Create() {
                   <div className="custom_form_el">
                     <label htmlFor="">Title</label>
                     <div>:</div>
-                    <div><input name="title" type="text" className="form-control" /></div>
+                    <div>
+                      <input
+                        name="title"
+                        type="text"
+                        className="form-control"
+                      />
+                    </div>
                   </div>
                   <div className="custom_form_el">
                     <label htmlFor="">Sub Title</label>
                     <div>:</div>
-                    <div><input name="sub_title" type="text" className="form-control" /></div>
+                    <div>
+                      <input
+                        name="sub_title"
+                        type="text"
+                        className="form-control"
+                      />
+                    </div>
+                  </div>
+                  <div className="custom_form_el">
+                    <label htmlFor="">Profile Photo</label>
+                    <div>:</div>
+                    <div><input name="profile_photo" type="file" accept="image/*" className="form-control" /></div>
+                  </div>
+                  <div className="custom_form_el">
+                    <label htmlFor="">Banner Photo</label>
+                    <div>:</div>
+                    <div><input name="banner_photo" type="file" accept="image/*" className="form-control" /></div>
                   </div>
                   <div className="custom_form_el">
                     <label htmlFor="">Description</label>
                     <div>:</div>
-                    <div><input name="description" type="text" className="form-control" /></div>
+                    <div>
+                      <input
+                        name="description"
+                        type="text"
+                        className="form-control"
+                      />
+                    </div>
                   </div>
                   <div className="custom_form_el">
                     <label htmlFor="">Button Text</label>
                     <div>:</div>
-                    <div><input name="button_text" type="text" className="form-control" /></div>
+                    <div>
+                      <input
+                        name="button_text"
+                        type="text"
+                        className="form-control"
+                      />
+                    </div>
                   </div>
                   <div className="custom_form_el">
                     <label htmlFor="">Button Url</label>
                     <div>:</div>
-                    <div><input name="button_url" type="text" className="form-control" /></div>
+                    <div>
+                      <input
+                        name="button_url"
+                        type="text"
+                        className="form-control"
+                      />
+                    </div>
                   </div>
                   {/* <div className="custom_form_el">
                     <label htmlFor="">Creator</label>

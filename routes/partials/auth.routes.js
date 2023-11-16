@@ -13,7 +13,7 @@ router
 		const { email, password } = req.body;
 		console.log('pre pass', password);
 		let user = await userModel.where({ email: email }).populate('role').findOne();
-		console.log('last pass', user.password);
+		console.log('last pass', user?.password);
 		// console.log(user);
 		if (user) {
 			console.log(user);
@@ -21,34 +21,34 @@ router
 			// let title = user?.role[0]?.title;
 			let title = user?.username;
 			console.log('title', title);
-			let passMatch = await bcrypt.compare(password, user.password);
+			let passMatch = await bcrypt.compare(password, user?.password);
 			console.log(passMatch);
 			if (passMatch) {
 				// console.log(passMatch);
 				let data = {
 					username: user.username,
-					email: user.email, 
+					email: user.email,
 					_id: user._id,
 					photo_url: '',
 					device_id: '',
-					genrate_time: '', 
+					genrate_time: '',
 				};
 				// console.log('data', req?.session?.user);
 				req.session.isAuth = true;
 				req.session.user = data;
-				var token = await jwt.sign( data , '91eb159c-a766-48c3-b143-849170dbceb8');
-				res.cookie('token',token)
+				var token = await jwt.sign(data, '91eb159c-a766-48c3-b143-849170dbceb8');
+				res.cookie('token', token)
 				// console.log('prev_auth_url',req.session.prev_auth_url);
 				let prevUrl = req.session.prev_auth_url;
 				if (prevUrl) {
 					delete req.session.prev_auth_url;
-					if(prevUrl != "/favicon.ico"){
+					if (prevUrl != "/favicon.ico") {
 						return res.redirect(prevUrl);
 					}
 				}
-				return res.status(201).json({code: 'password match', message: 'your password match', title: title});
+				return res.status(201).json({ code: 'password match', message: 'your password match', title: title });
 			}
-			return res.status(401).json({code: 'password does not match', message: 'your crediential does not match'});
+			return res.status(401).json({ code: 'password does not match', message: 'your crediential does not match' });
 		}
 		/* if (user.username == user) {
 			console.log(user);
@@ -83,7 +83,7 @@ router
 		} */
 
 		// return res.redirect("/login");
-		return res.status(401).json({code: 'user not found', message: 'your crediential does not match'});;
+		return res.status(401).json({ code: 'user not found', message: 'your crediential does not match' });;
 	})
 	.post("/signup-submit", async function (req, res) {
 		// console.log(req.body);

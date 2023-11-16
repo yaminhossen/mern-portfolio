@@ -69,8 +69,6 @@ const data_validation = async (request_data) => {
 module.exports = async (datas) => {
     let data = datas.body;
     let files = datas.files;
-    // console.log('yamin',data);
-    // console.log('yamin files',files);
 
     const upload_files = (file, id) => {
         let file_name = parseInt(Math.random() * 1000) + id + file.name;

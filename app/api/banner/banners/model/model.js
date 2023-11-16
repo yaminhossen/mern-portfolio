@@ -15,6 +15,14 @@ let bannerSchema = mongoose.Schema({
 		type: String,
 		require: true,
 	},
+	profile_photo: {
+		type: String,
+		require: true,
+	},
+	banner_photo: {
+		type: String,
+		require: true,
+	},
 	description: {
 		type: String,
 		require: true,

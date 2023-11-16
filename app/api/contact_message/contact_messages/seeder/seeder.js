@@ -5,23 +5,38 @@ const Model = require("../model/model");
 let data = [
 	
 	{
-		full_name: "Hellow sagir",
-		email: "hellow@gmail.com",
-		address: "Solo Tour",
-		subject: "Solo Tour",
-		message: "Solo Tour",
+		full_name: "Alif Sagir",
+		email: "alif@gmail.com",
+		address: "mirpur, Dhaka",
+		subject: "feedback",
+		message: "change logo",
 		status: true,
-
 	},
 	{
-		full_name: "sdfds sagir",
-		email: "sdfs@gmail.com",
-		address: "Solo Tour",
-		subject: "Solo Tour",
-		message: "Solo Tour",
+		full_name: "Tarikul Islam",
+		email: "tarik@gmail.com",
+		address: "mirpur, Dhaka",
+		subject: "feedback",
+		message: "change logo",
 		status: true,
-
 	},
+	{
+		full_name: "Mojammel haque",
+		email: "mojammel@gmail.com",
+		address: "feni, chattogram",
+		subject: "feedback",
+		message: "change logo",
+		status: true,
+	},
+	{
+		full_name: "Sajid hasan",
+		email: "sajid@gmail.com",
+		address: "noakhali, chattogram",
+		subject: "feedback",
+		message: "change logo",
+		status: true,
+	},
+	
 ];
 
 module.exports = async () => mongoose.connect(db_url)

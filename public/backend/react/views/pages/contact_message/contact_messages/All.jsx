@@ -28,19 +28,17 @@ function All() {
                         <thead>
                             <tr>
                                 <th><input type="checkbox" className="form-check-input" /></th>
-                                <th aria-label="id" className="cursor_n_resize">
-                                    ID
-                                    <span className=''>
-                                        <i className="material-symbols-outlined fill">arrow_drop_down</i>
-                                    </span>
+                                
+
+                                <th className="cursor_n_resize">
+                                    Full Name
                                 </th>
 
                                 <th className="cursor_n_resize">
-                                    Name
+                                    Email
                                 </th>
-
                                 <th className="cursor_n_resize">
-                                    Serial
+                                    Message
                                 </th>
 
                                 <th className="cursor_n_resize">
@@ -55,15 +53,20 @@ function All() {
                                     return (
                                         <tr key={data.id}>
                                             <td><input type="checkbox" className="form-check-input" /></td>
-                                            <td>{data._id}</td>
+                                            {/* <td>{data._id}</td> */}
                                             <td>
                                                 <span onClick={() => set_data(data._id)} className="cursor_pointer text-warning">
-                                                    {data.title}
+                                                    {data.full_name}
                                                 </span>
                                             </td>
                                             <td>
                                                 <span>
-                                                    {data.serial}
+                                                    {data.email}
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <span>
+                                                    {data.message}
                                                 </span>
                                             </td>
                                             <td>
