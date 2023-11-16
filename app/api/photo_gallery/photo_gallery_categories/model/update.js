@@ -98,7 +98,7 @@ module.exports = async (datas) => {
         model_data.short_description = data.short_description;
         model_data.long_description = data.long_description;
         model_data.url = data.url;
-        model_data.photo = data.photo;
+        model_data.photo = photo_path;
         model_data.photo_alt = data.photo_alt;
         model_data.seo_title = data.seo_title;
         model_data.seo_keyword = data.seo_keyword;

@@ -60,12 +60,21 @@ function SideBar() {
                     <ul>
                         <SingleLink to={'/contact-message'} text={'contact-message'} icon={'trip_origin'}></SingleLink>
                         <SingleLink to={'/banner'} text={'banner'} icon={'trip_origin'}></SingleLink>
-                        <SingleLink to={'/setting-title'} text={'setting'} icon={'trip_origin'}></SingleLink>
                         <SingleLink to={'/photo-gallery-categorie'} text={'photo gallery'} icon={'trip_origin'}></SingleLink>
+                        {/* <SingleLink to={'/photo-gallery-image'} text={'photos'} icon={'trip_origin'}></SingleLink> */}
                         <SingleLink to={'/video-gallery-categorie'} text={'video gallery'} icon={'trip_origin'}></SingleLink>
                         <SingleLink to={'/site-url'} text={'site urls'} icon={'trip_origin'}></SingleLink>
                         <SingleLink to={'/tag'} text={'tags'} icon={'trip_origin'}></SingleLink>
 
+                    </ul>
+                </li>
+
+                {/* setting */}
+
+                <li>
+                    <DropDownLink text={'Setting'} icon={'manage_accounts'}></DropDownLink>
+                    <ul>
+                        <SingleLink to={'/setting-title'} text={'setting'} icon={'trip_origin'}></SingleLink>
                     </ul>
                 </li>
 

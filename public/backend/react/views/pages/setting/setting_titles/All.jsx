@@ -33,6 +33,9 @@ function All() {
                                 <th className="cursor_n_resize">
                                     Title
                                 </th>
+                                <th className="cursor_n_resize">
+                                    Value
+                                </th>
 
                                
                                 <th className="cursor_n_resize">
@@ -52,11 +55,11 @@ function All() {
                                                     {data.title}
                                                 </span>
                                             </td>
-                                            {/* <td>
+                                            <td>
                                                 <span>
-                                                    {data.serial}
+                                                    {data.title == 'map' ? "map":data.value[0]}
                                                 </span>
-                                            </td> */}
+                                            </td>
                                             <td>
                                                 {
                                                     data.status == 1 ?

@@ -1,20 +1,20 @@
-import React, { useEffect } from 'react'
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import setup from "./config/setup";
-import { useParams } from 'react-router-dom';
+import { useParams } from "react-router-dom";
 
 function Edit() {
   const { id } = useParams();
   setup.dispatch = useDispatch();
-  const data_store = useSelector((state) => state[setup.prefix])[setup.prefix]
+  const data_store = useSelector((state) => state[setup.prefix])[setup.prefix];
   const { get_photo_gallery_categories, set_data, update_data } = setup.actions;
 
   useEffect(() => {
     get_photo_gallery_categories(id);
 
     return () => {
-      document.getElementById('form-data')?.reset();
-      set_data(null)
+      document.getElementById("form-data")?.reset();
+      set_data(null);
     };
   }, []);
 
@@ -24,94 +24,177 @@ function Edit() {
     let e = event;
     e.preventDefault();
     let form_data = new FormData(e.target);
-    form_data.append('id', id);
+    form_data.append("id", id);
 
-    [...document.querySelectorAll('.form_error')].forEach((el => el.remove()));
+    [...document.querySelectorAll(".form_error")].forEach((el) => el.remove());
     await update_data(form_data);
     // e.target.reset();
     // // e.target.serial.value = "";
     // // e.target.title.value = "";
-
   };
 
-
-
   if (data_store) {
-    const { short_description, long_description, url, photo, photo_alt, seo_title, seo_keyword, seo_description, title, _id } = data_store;
+    const {
+      short_description,
+      long_description,
+      url,
+      photo,
+      photo_alt,
+      seo_title,
+      seo_keyword,
+      seo_description,
+      title,
+      _id,
+    } = data_store;
     return (
       <div className="card list_card">
         <div className="card-header ">
           <h2 className="heading">Edit</h2>
           <div className="btns d-flex gap-2 align-items-center">
-            <a href="#/photo-gallery-categorie" className="btn rounded-pill btn-outline-secondary">
+            <a
+              href="#/photo-gallery-categorie"
+              className="btn rounded-pill btn-outline-secondary"
+            >
               <i className="material-symbols-outlined fill">arrow_back</i>
               Back
             </a>
           </div>
         </div>
-        <div className="card-body">
-          <div className="container py-5">
-            <div className="row">
-              <div className="col-lg-8">
-                <form id='form-data' onSubmit={handleSubmit}>
+        <form id="form-data" onSubmit={handleSubmit}>
+          <div className="card-body">
+            <div className="container py-5">
+              <div className="row">
+                <div className="col-lg-8">
                   <div className="form-group mb-5">
                     <div className="custom_form_el">
                       <label htmlFor="">Title</label>
                       <div>:</div>
-                      <div><input name="title" type="text" className="form-control" defaultValue={title} /></div>
+                      <div>
+                        <input
+                          name="title"
+                          type="text"
+                          className="form-control"
+                          defaultValue={title}
+                        />
+                      </div>
                     </div>
                     <div className="custom_form_el">
                       <label htmlFor="">short_description</label>
                       <div>:</div>
-                      <div><input name="short_description" type="text" className="form-control" defaultValue={short_description} /></div>
+                      <div>
+                        <textarea
+                          name="short_description"
+                          className="form-control"
+                          id=""
+                        >
+                          {short_description}
+                        </textarea>
+                      </div>
                     </div>
                     <div className="custom_form_el">
                       <label htmlFor="">long_description</label>
                       <div>:</div>
-                      <div><input name="long_description" type="text" className="form-control" defaultValue={long_description} /></div>
+                      <div>
+                        <textarea
+                          name="long_description"
+                          className="form-control"
+                          id=""
+                          rows="6"
+                        >
+                          {long_description}
+                        </textarea>
+                      </div>
                     </div>
                     <div className="custom_form_el">
                       <label htmlFor="">url</label>
                       <div>:</div>
-                      <div><input name="url" type="text" className="form-control" defaultValue={url} /></div>
+                      <div>
+                        <input
+                          name="url"
+                          type="text"
+                          className="form-control"
+                          defaultValue={url}
+                        />
+                      </div>
                     </div>
-                    
+
                     <div className="custom_form_el">
                       <label htmlFor="">Photo </label>
                       <div>:</div>
-                      <div><input name="photo" type="file" accept="image/*" className="form-control" /></div>
+                      <div>
+                        <input
+                          name="photo"
+                          type="file"
+                          accept="image/*"
+                          className="form-control"
+                        />
+                      </div>
                     </div>
                     <div className="custom_form_el">
                       <label htmlFor="">photo Alt</label>
                       <div>:</div>
-                      <div><input name="photo_alt" type="text" className="form-control" defaultValue={photo_alt} /></div>
+                      <div>
+                        <input
+                          name="photo_alt"
+                          type="text"
+                          className="form-control"
+                          defaultValue={photo_alt}
+                        />
+                      </div>
+                    </div>
+                    <div className="mt-4 mb-3">
+                      <h4>
+                        SEO Part <sub>optional</sub>
+                      </h4>
+                      <hr />
                     </div>
                     <div className="custom_form_el">
-                      <label htmlFor="">seo_title</label>
+                      <label htmlFor="">Seo Title</label>
                       <div>:</div>
-                      <div><input name="seo_title" type="text" className="form-control" defaultValue={seo_title} /></div>
+                      <div>
+                        <textarea
+                          name="seo_title"
+                          className="form-control"
+                          id=""
+                        >{seo_title}</textarea>
+                      </div>
                     </div>
                     <div className="custom_form_el">
-                      <label htmlFor="">seo_keyword</label>
+                      <label htmlFor="">Seo Keyword</label>
                       <div>:</div>
-                      <div><input name="seo_keyword" type="text" className="form-control" defaultValue={seo_keyword} /></div>
+                      <div>
+                        <textarea
+                          name="seo_keyword"
+                          className="form-control"
+                          id=""
+                        >{seo_keyword}</textarea>
+                      </div>
                     </div>
                     <div className="custom_form_el">
-                      <label htmlFor="">seo_description</label>
+                      <label htmlFor="">Seo Description</label>
                       <div>:</div>
-                      <div><input name="seo_description" type="text" className="form-control" defaultValue={seo_description} /></div>
+                      <div>
+                        <textarea
+                          name="seo_description"
+                          className="form-control"
+                          id=""
+                        >{seo_description}</textarea>
+                      </div>
                     </div>
                   </div>
-                  <input type="submit" value="Create" />
-                </form>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="card-footer"></div>
+          <div className="card-footer">
+            <button type="submit" className="btn btn-sm btn-outline-warning">
+              Submit
+            </button>
+          </div>
+        </form>
       </div>
-    )
+    );
   }
 }
 
-export default Edit
+export default Edit;

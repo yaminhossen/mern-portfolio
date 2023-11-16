@@ -11,12 +11,12 @@ function Create() {
   userSetup.dispatch = useDispatch();
   const { store_data } = setup.actions;
   const { get_data: get_users } = userSetup.actions;
-  const [selectedRole, setselectedRole] = useState([])
-  const [tasklist, setTasklist] = useState(false)
+  const [selectedRole, setselectedRole] = useState([]);
+  const [tasklist, setTasklist] = useState(false);
 
   useEffect(() => {
     get_users();
-  }, [])
+  }, []);
 
   console.log(selectedRole);
 
@@ -24,7 +24,7 @@ function Create() {
     let e = event;
     e.preventDefault();
     let form_data = new FormData(e.target);
-    [...document.querySelectorAll('.form_error')].forEach((el => el.remove()));
+    [...document.querySelectorAll(".form_error")].forEach((el) => el.remove());
     await store_data(form_data);
     e.target.reset();
   };
@@ -33,7 +33,10 @@ function Create() {
       <div className="card-header ">
         <h2 className="heading">Create</h2>
         <div className="btns d-flex gap-2 align-items-center">
-          <a href="#/blog-categorie" className="btn rounded-pill btn-outline-secondary">
+          <a
+            href="#/blog-categorie"
+            className="btn rounded-pill btn-outline-secondary"
+          >
             <i className="material-symbols-outlined fill">arrow_back</i>
             Back
           </a>
@@ -48,18 +51,30 @@ function Create() {
                   <div className="custom_form_el">
                     <label htmlFor="">Title</label>
                     <div>:</div>
-                    <div><input name="title" type="text" className="form-control" /></div>
+                    <div>
+                      <input
+                        name="title"
+                        type="text"
+                        className="form-control"
+                      />
+                    </div>
                   </div>
                   <div className="custom_form_el">
                     <label htmlFor="">Url</label>
                     <div>:</div>
-                    <div><input name="url" type="text" className="form-control" /></div>
+                    <div>
+                      <input name="url" type="text" className="form-control" />
+                    </div>
                   </div>
                   <div className="custom_form_el">
                     <label htmlFor="">Short Description</label>
                     <div>:</div>
                     <div>
-                      <textarea name="short_description" className="form-control" id=""></textarea>
+                      <textarea
+                        name="short_description"
+                        className="form-control"
+                        id=""
+                      ></textarea>
                     </div>
                   </div>
                   <div className="custom_form_el">
@@ -67,38 +82,63 @@ function Create() {
                     <div>:</div>
                     <div>
                       {/* <input name="long_description" type="text" className="form-control" /> */}
-                      <textarea name="long_description" className="form-control" id=""></textarea>
+                      <textarea
+                        name="long_description"
+                        className="form-control"
+                        id=""
+                      ></textarea>
                     </div>
                   </div>
 
                   <div className="custom_form_el">
                     <label htmlFor="">Photo</label>
                     <div>:</div>
-                    <div><input name="photo" type="file" accept="image/*" className="form-control" /></div>
+                    <div>
+                      <input
+                        name="photo"
+                        type="file"
+                        accept="image/*"
+                        className="form-control"
+                      />
+                    </div>
                   </div>
                   <div className="mt-4 mb-3">
-                    <h4>SEO Part <sub>optional</sub></h4>
+                    <h4>
+                      SEO Part <sub>optional</sub>
+                    </h4>
                     <hr />
                   </div>
                   <div className="custom_form_el">
                     <label htmlFor="">Seo Title</label>
                     <div>:</div>
                     <div>
-                      <textarea name="seo_title" className="form-control" id=""></textarea>
+                      <textarea
+                        name="seo_title"
+                        className="form-control"
+                        id=""
+                      ></textarea>
                     </div>
                   </div>
                   <div className="custom_form_el">
                     <label htmlFor="">Seo Keyword</label>
                     <div>:</div>
                     <div>
-                      <textarea name="seo_keyword" className="form-control" id=""></textarea>
+                      <textarea
+                        name="seo_keyword"
+                        className="form-control"
+                        id=""
+                      ></textarea>
                     </div>
                   </div>
                   <div className="custom_form_el">
                     <label htmlFor="">Seo Description</label>
                     <div>:</div>
                     <div>
-                      <textarea name="seo_description" className="form-control" id=""></textarea>
+                      <textarea
+                        name="seo_description"
+                        className="form-control"
+                        id=""
+                      ></textarea>
                     </div>
                   </div>
                 </div>
@@ -107,8 +147,9 @@ function Create() {
           </div>
         </div>
         <div className="card-footer">
-          <button type="submit" className="btn btn-sm btn-outline-warning">Submit</button>
-
+          <button type="submit" className="btn btn-sm btn-outline-warning">
+            Submit
+          </button>
         </div>
       </form>
     </div>
