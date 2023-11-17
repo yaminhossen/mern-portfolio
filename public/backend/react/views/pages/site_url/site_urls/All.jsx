@@ -28,20 +28,10 @@ function All() {
                         <thead>
                             <tr>
                                 <th><input type="checkbox" className="form-check-input" /></th>
-                                <th aria-label="id" className="cursor_n_resize">
-                                    ID
-                                    <span className=''>
-                                        <i className="material-symbols-outlined fill">arrow_drop_down</i>
-                                    </span>
-                                </th>
-
                                 <th className="cursor_n_resize">
                                     Url
                                 </th>
 
-                                <th className="cursor_n_resize">
-                                    Serial
-                                </th>
 
                                 <th className="cursor_n_resize">
                                     Status
@@ -55,15 +45,9 @@ function All() {
                                     return (
                                         <tr key={data.id}>
                                             <td><input type="checkbox" className="form-check-input" /></td>
-                                            <td>{data._id}</td>
                                             <td>
                                                 <span onClick={() => set_data(data._id)} className="cursor_pointer text-warning">
                                                     {data.url}
-                                                </span>
-                                            </td>
-                                            <td>
-                                                <span>
-                                                    {data.serial}
                                                 </span>
                                             </td>
                                             <td>

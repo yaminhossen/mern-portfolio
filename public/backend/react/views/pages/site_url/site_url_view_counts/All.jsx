@@ -28,12 +28,7 @@ function All() {
                         <thead>
                             <tr>
                                 <th><input type="checkbox" className="form-check-input" /></th>
-                                <th aria-label="id" className="cursor_n_resize">
-                                    ID
-                                    <span className=''>
-                                        <i className="material-symbols-outlined fill">arrow_drop_down</i>
-                                    </span>
-                                </th>
+                               
 
                                 <th className="cursor_n_resize">
                                     Device
