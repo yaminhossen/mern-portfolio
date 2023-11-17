@@ -14,11 +14,11 @@ let tagSchema = mongoose.Schema({
 	},
 	short_description: {
 		type: String,
-		require: true,
+		// require: true,
 	},
 	long_description: {
 		type: String,
-		require: true,
+		// require: true,
 	},
 	url: {
 		type: String,
