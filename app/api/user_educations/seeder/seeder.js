@@ -7,19 +7,33 @@ const Model = require("../model/model");
 let data = [
 	
 	{
-		title: "admin",
+		title: "SSC",
 		status: true,
 		start_date: "2023-06-10",
 		end_date: "2023-06-10",
-		result: 'This is very good',
+		result: 'GPA-5',
 	},
 	
 	{
-		title: "user",
+		title: "HSC",
 		status: true,
 		start_date: "2023-06-10",
 		end_date: "2023-06-10",
-		result: 'This is not good',
+		result: 'GPA-4.5',
+	},
+	{
+		title: "BSc",
+		status: true,
+		start_date: "2023-06-10",
+		end_date: "2023-06-10",
+		result: 'CGPA-3.5',
+	},
+	{
+		title: "MSc",
+		status: true,
+		start_date: "2023-06-10",
+		end_date: "2023-06-10",
+		result: 'CGPA-3.4',
 	},
 ];
 

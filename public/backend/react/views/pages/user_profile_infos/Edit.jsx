@@ -89,7 +89,7 @@ function Edit() {
                     <div className="custom_form_el">
                       <label htmlFor="">Banner Profile Pic</label>
                       <div>:</div>
-                      <div><input name="banner_profile_pic" type="text" className="form-control" defaultValue={banner_profile_pic} /></div>
+                      <div> <input name="banner_profile_pic" type="file" accept="image/*" className="form-control" /></div>
                     </div>
                     <div className="custom_form_el">
                       <label htmlFor="">Short Bio</label>

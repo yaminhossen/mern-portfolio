@@ -13,7 +13,7 @@ let data = [
 		nationality: "bangladeshi",
 		father_name: "Abdur Rahman",
 		mother_name: "Khadejaul kubra",
-		banner_profile_pic: "sdfjdklsjfklsdj",
+		banner_profile_pic: "",
 		short_bio: "sdfjdklsjfklsdj",
 		full_bio: "sdfjdklsjfklsdj",
 		address_present: "dhaka",

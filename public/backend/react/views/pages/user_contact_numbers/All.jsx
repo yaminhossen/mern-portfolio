@@ -28,16 +28,14 @@ function All() {
                         <thead>
                             <tr>
                                 <th><input type="checkbox" className="form-check-input" /></th>
-                                <th aria-label="id" className="cursor_n_resize">
+                                {/* <th aria-label="id" className="cursor_n_resize">
                                     ID
                                     <span className=''>
                                         <i className="material-symbols-outlined fill">arrow_drop_down</i>
                                     </span>
-                                </th>
+                                </th> */}
 
-                                <th className="cursor_n_resize">
-                                    Creator
-                                </th>
+                             
 
                                 <th className="cursor_n_resize">
                                     Number
@@ -55,12 +53,12 @@ function All() {
                                     return (
                                         <tr key={data.id}>
                                             <td><input type="checkbox" className="form-check-input" /></td>
-                                            <td>{data._id}</td>
-                                            <td>
+                                            {/* <td>{data._id}</td> */}
+                                            {/* <td>
                                                 <span onClick={() => set_data(data._id)} className="cursor_pointer text-warning">
                                                     {data?.creator}
                                                 </span>
-                                            </td>
+                                            </td> */}
                                             <td>
                                                 <span>
                                                     {data.number}

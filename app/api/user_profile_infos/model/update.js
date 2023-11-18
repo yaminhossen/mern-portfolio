@@ -1,5 +1,9 @@
 const { body, validationResult } = require("express-validator");
 const model = require("./model");
+const { async } = require("q");
+var fs = require('fs-extra')
+const { dirname } = require('path');
+const appDir = dirname(require.main.filename);
 
 const data_validation = async (request_data) => {
     await body("designation")
@@ -32,11 +36,6 @@ const data_validation = async (request_data) => {
         .isEmpty()
         .withMessage("the mother_name field is required")
         .run(request_data);
-    await body("banner_profile_pic")
-        .not()
-        .isEmpty()
-        .withMessage("the banner_profile_pic field is required")
-        .run(request_data);
     await body("short_bio")
         .not()
         .isEmpty()
@@ -47,10 +46,10 @@ const data_validation = async (request_data) => {
         .isEmpty()
         .withMessage("the full_bio field is required")
         .run(request_data);
-    await body("address_pressent")
+    await body("address_present")
         .not()
         .isEmpty()
-        .withMessage("the address_pressent field is required")
+        .withMessage("the address_present field is required")
         .run(request_data);
     await body("address_permanent")
         .not()
@@ -71,28 +70,49 @@ const data_validation = async (request_data) => {
 };
 
 
-module.exports = async ( data) => {
-    console.log(data);
-    // let check = await data_validation({ body: data });
+module.exports = async (datas) => {
+    let data = datas.body;
+    let files = datas.files;
 
-    // if (check.hasError) {
-    //     return {
-    //         status: 'failed',
-    //         data: check.errors,
-    //         message: "validation error",
-    //         status_code: 422,
-    //     }
-    // }
+    const upload_files = (file, id) => {
+        let file_name = parseInt(Math.random() * 1000) + id + file.name;
+        const path = appDir + "/public/uploads/posts/" + file_name;
+        fs.move(file.path, path, function (err) {
+            if (err) return console.error(err)
+            console.log("success!")
+        })
+        banner_profile_pic_path = "uploads/posts/" + file_name;
+        return banner_profile_pic_path;
+    }
 
+    let check = await data_validation({ body: data });
+
+    if (check.hasError) {
+        return {
+            status: 'failed',
+            data: check.errors,
+            message: "validation error",
+            status_code: 422,
+        }
+    }
     try {
+        
+
         const model_data = await model.findOne({ _id: data.id });
+        // console.log('yamin2',model_data);
+        // var banner_profile_pic_path = model_data.photo;
+        
+        if (files?.banner_profile_pic) {
+            banner_profile_pic_path = upload_files(files?.banner_profile_pic, data.title);
+            console.log('form banner_profile_pic_path',banner_profile_pic_path);
+        }
         model_data.designation = data.designation;
         model_data.blood_group = data.blood_group;
         model_data.date_of_birth = data.date_of_birth;
         model_data.nationality = data.nationality;
+        model_data.banner_profile_pic = banner_profile_pic_path;
         model_data.father_name = data.father_name;
         model_data.mother_name = data.mother_name;
-        model_data.banner_profile_pic = data.banner_profile_pic;
         model_data.short_bio = data.short_bio;
         model_data.full_bio = data.full_bio;
         model_data.address_present = data.address_present;
@@ -107,6 +127,7 @@ module.exports = async ( data) => {
             status_code: 201,
         };
     } catch (error) {
+        console.log(error);
         return {
             status: 'failed',
             data: error,
@@ -114,7 +135,5 @@ module.exports = async ( data) => {
             status_code: 500,
         }
     }
-    // return model_data,
 
-    
 }
