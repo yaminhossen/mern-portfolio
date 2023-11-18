@@ -53,7 +53,7 @@ setup.actions.restore_data = async (id) => await setup.dispatch(async_actions[`r
 setup.actions.update_data = async (data) => await setup.dispatch(async_actions[`edit_${setup.prefix}`](data))
 
 // get user-acheivement
-setup.actions.get_user_acheivemetns = async (id) => await setup.dispatch(async_actions[`details_${setup.prefix}`](id))
+setup.actions.get_user_acheivements = async (id) => await setup.dispatch(async_actions[`details_${setup.prefix}`](id))
 
 // set search parameter
 setup.actions[`set_search_parameter`] = async (searh_key) => await setup.dispatch(dataStoreSlice.actions[`set_search_parameter`](searh_key))

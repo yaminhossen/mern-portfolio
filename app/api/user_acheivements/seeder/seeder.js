@@ -7,19 +7,35 @@ const Model = require("../model/model");
 let data = [
 	
 	{
-		title: "সামাজিক কাজ",
+		title: "Mother of humanity",
 		serial: 1,
 		status: true,
 		date: "2023-06-14",
-		description: ' সামাজিক মূল্যবোধ বিভিন্ন কারণে নিজেকে আরোগ্যসম্মত, উদার, স্বচ্ছ, নৈতিক, সহিষ্ণুতামূলক ও বিনয়ী ব্যক্তি হিসেবে উন্নয়ন করতে সাহায্য করে। এছাড়াও এটি সমাজের মানদণ্ড, নীতিমালা ও সংস্কৃতির বিকাশে অবদান রাখে।',
+		description: 'Sheik Hasina Bangladesh Prime Minister talks about Rohingya refugees, shelters and crisis in Myanmar she has been named Mother of Humanity .',
 
 	},
 	{
-		title: "শিক্ষামূলক কাজ",
+		title: "Planet 50–50 champion",
 		serial: 2,
 		status: true,
 		date: "2023-06-14",
-		description: ' সামাজিক মূল্যবোধ বিভিন্ন কারণে নিজেকে আরোগ্যসম্মত, উদার, স্বচ্ছ, নৈতিক, সহিষ্ণুতামূলক ও বিনয়ী ব্যক্তি হিসেবে উন্নয়ন করতে সাহায্য করে। এছাড়াও এটি সমাজের মানদণ্ড, নীতিমালা ও সংস্কৃতির বিকাশে অবদান রাখে।',
+		description: 'Prime Minister Sheikh Hasina has been conferred with the “Agent of Change” award and “Planet 50-50 Champion” honour for her outstanding contributions to women empowerment.',
+
+	},
+	{
+		title: "Doctor of Law",
+		serial: 3,
+		status: true,
+		date: "1997-10-25",
+		description: 'A Doctor of Law is a degree in law. The application of the term varies from country to country and includes degrees such as the Doctor of Juridical Science',
+
+	},
+	{
+		title: "Mother Teresa Award",
+		serial: 4,
+		status: true,
+		date: "1998-06-14",
+		description: 'Mary Teresa Bojaxhiu MC, better known as Mother Teresa, was an Albanian-Indian Catholic nun and the founder of the Missionaries of Charity.',
 
 	},
 ];
