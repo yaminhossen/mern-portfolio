@@ -39,11 +39,11 @@ function Create() {
           </a>
         </div>
       </div>
+              <form onSubmit={handleSubmit}>
       <div className="card-body">
         <div className="container py-5">
           <div className="row">
             <div className="col-lg-8">
-              <form onSubmit={handleSubmit}>
                 <div className="form-group mb-5">
                   <div className="custom_form_el">
                     <label htmlFor="">url</label>
@@ -76,13 +76,16 @@ function Create() {
                     <div><input name="total_redirect" type="text" className="form-control" /></div>
                   </div>
                 </div>
-                <input type="submit" value="Create" />
-              </form>
             </div>
           </div>
         </div>
       </div>
-      <div className="card-footer"></div>
+      <div className="card-footer">
+      <button className="btn btn-outline-info" type="submit" value="Create">
+            Submit{" "}
+          </button>
+      </div>
+              </form>
     </div>
   );
 }

@@ -43,11 +43,11 @@ function Create() {
           </a>
         </div>
       </div>
+              <form onSubmit={handleSubmit}>
       <div className="card-body">
         <div className="container py-5">
           <div className="row">
             <div className="col-lg-8">
-              <form onSubmit={handleSubmit}>
                 <div className="form-group mb-5">
                   <div className="custom_form_el">
                     <label htmlFor="">Type</label>
@@ -59,23 +59,18 @@ function Create() {
                     <div>:</div>
                     <div><input name="url" type="text" className="form-control" /></div>
                   </div>
-                  {/* <div className="custom_form_el">
-                    <label htmlFor="">Creator</label>
-                    <div>:</div>
-                    <div>
-                     <div id="creator">
-                     <MultiselectDropdown data={user_data_store.all_data} selectedData={selectedRole} setSelectedData={setselectedRole} taskOpen={tasklist} setTaskOpen={setTasklist}></MultiselectDropdown>
-                     </div>
-                    </div>
-                  </div> */}
+                 
                 </div>
-                <input type="submit" value="Create" />
-              </form>
             </div>
           </div>
         </div>
       </div>
-      <div className="card-footer"></div>
+      <div className="card-footer">
+      <button className="btn btn-outline-info" type="submit" value="Create">
+            Submit{" "}
+          </button>
+      </div>
+              </form>
     </div>
   );
 }

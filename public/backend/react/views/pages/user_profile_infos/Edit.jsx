@@ -50,11 +50,11 @@ function Edit() {
             </a>
           </div>
         </div>
+                <form id='form-data' onSubmit={handleSubmit}>
         <div className="card-body">
           <div className="container py-5">
             <div className="row">
               <div className="col-lg-8">
-                <form id='form-data' onSubmit={handleSubmit}>
                   <div className="form-group mb-5">
                     <div className="custom_form_el">
                       <label htmlFor="">Designation</label>
@@ -117,13 +117,16 @@ function Edit() {
                       <div><input name="google_map" type="text" className="form-control" defaultValue={google_map} /></div>
                     </div>
                   </div>
-                  <input type="submit" value="Update" />
-                </form>
               </div>
             </div>
           </div>
         </div>
-        <div className="card-footer"></div>
+        <div className="card-footer">
+        <button className="btn btn-outline-info" type="submit" value="Create">
+            Submit{" "}
+          </button>
+        </div>
+                </form>
       </div>
     )
   }
