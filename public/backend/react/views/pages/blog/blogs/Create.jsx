@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Editor } from '@tinymce/tinymce-react';
+import { Editor } from "@tinymce/tinymce-react";
 import ModalManagement from "./components/management/ModalManagement";
 import { useDispatch, useSelector } from "react-redux";
 import setup from "./config/setup";
@@ -12,8 +12,8 @@ function Create() {
   userSetup.dispatch = useDispatch();
   const { store_data } = setup.actions;
   const { get_data: get_users } = userSetup.actions;
-  const [selectedRole, setselectedRole] = useState([])
-  const [tasklist, setTasklist] = useState(false)
+  const [selectedRole, setselectedRole] = useState([]);
+  const [tasklist, setTasklist] = useState(false);
 
   const short_description_ref = useRef(null);
   const description_ref = useRef(null);
@@ -25,7 +25,7 @@ function Create() {
 
   useEffect(() => {
     get_users();
-  }, [])
+  }, []);
 
   console.log(selectedRole);
 
@@ -33,15 +33,18 @@ function Create() {
     let e = event;
     e.preventDefault();
     let form_data = new FormData(e.target);
-    form_data.append("short_description", short_description_ref.current.getContent())
-    form_data.append("description", description_ref.current.getContent())
+    form_data.append(
+      "short_description",
+      short_description_ref.current.getContent()
+    );
+    form_data.append("description", description_ref.current.getContent());
 
     console.log(description_ref.current.getContent());
     // selectedRole.forEach((e,index)=>{
     //   // form_data.append(`creator[${index}]`, e._id);
     //   console.log(e);
     // });
-    [...document.querySelectorAll('.form_error')].forEach((el => el.remove()));
+    [...document.querySelectorAll(".form_error")].forEach((el) => el.remove());
     await store_data(form_data);
     // e.target.reset();
   };
@@ -62,27 +65,30 @@ function Create() {
             <div className="row">
               <div className="col-lg-8">
                 <div className="form-group mb-5">
-
                   <div className="custom_form_el">
                     <label htmlFor="">Short Description</label>
                     <div>:</div>
                     <div>
                       <Editor
-                        onInit={(evt, editor) => short_description_ref.current = editor}
+                        onInit={(evt, editor) =>
+                          (short_description_ref.current = editor)
+                        }
                         initialValue={`<p>This is short description.</p>`}
                         init={{
                           height: 300,
                           menubar: false,
                           plugins: [
-                            'advlist autolink lists link image charmap print preview anchor',
-                            'searchreplace visualblocks code fullscreen',
-                            'insertdatetime media table paste code help wordcount'
+                            "advlist autolink lists link image charmap print preview anchor",
+                            "searchreplace visualblocks code fullscreen",
+                            "insertdatetime media table paste code help wordcount",
                           ],
-                          toolbar: 'undo redo | formatselect | ' +
-                            'bold italic backcolor | alignleft aligncenter ' +
-                            'alignright alignjustify | bullist numlist outdent indent | ' +
-                            'removeformat | help',
-                          content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+                          toolbar:
+                            "undo redo | formatselect | " +
+                            "bold italic backcolor | alignleft aligncenter " +
+                            "alignright alignjustify | bullist numlist outdent indent | " +
+                            "removeformat | help",
+                          content_style:
+                            "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
                         }}
                       />
                     </div>
@@ -91,57 +97,79 @@ function Create() {
                     <label htmlFor="">Description</label>
                     <div>:</div>
                     <div>
-                    <Editor
-                        onInit={(evt, editor) => description_ref.current = editor}
+                      <Editor
+                        onInit={(evt, editor) =>
+                          (description_ref.current = editor)
+                        }
                         initialValue="<p>This is the description.</p>"
                         init={{
                           height: 300,
                           menubar: false,
                           plugins: [
-                            'advlist autolink lists link image charmap print preview anchor',
-                            'searchreplace visualblocks code fullscreen',
-                            'insertdatetime media table paste code help wordcount'
+                            "advlist autolink lists link image charmap print preview anchor",
+                            "searchreplace visualblocks code fullscreen",
+                            "insertdatetime media table paste code help wordcount",
                           ],
-                          toolbar: 'undo redo | formatselect | ' +
-                            'bold italic backcolor | alignleft aligncenter ' +
-                            'alignright alignjustify | bullist numlist outdent indent | ' +
-                            'removeformat | help',
-                          content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+                          toolbar:
+                            "undo redo | formatselect | " +
+                            "bold italic backcolor | alignleft aligncenter " +
+                            "alignright alignjustify | bullist numlist outdent indent | " +
+                            "removeformat | help",
+                          content_style:
+                            "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
                         }}
                       />
                     </div>
                   </div>
 
                   <div className="mt-4 mb-3">
-                    <h4>SEO Part <sub>optional</sub></h4>
+                    <h4>
+                      SEO Part <sub>optional</sub>
+                    </h4>
                     <hr />
                   </div>
                   <div className="custom_form_el">
                     <label htmlFor="">Seo Title</label>
                     <div>:</div>
                     <div>
-                      <textarea name="seo_title" className="form-control" id=""></textarea>
+                      <textarea
+                        name="seo_title"
+                        className="form-control"
+                        id=""
+                      ></textarea>
                     </div>
                   </div>
                   <div className="custom_form_el">
                     <label htmlFor="">Seo Keyword</label>
                     <div>:</div>
                     <div>
-                      <textarea name="seo_keyword" className="form-control" id=""></textarea>
+                      <textarea
+                        name="seo_keyword"
+                        className="form-control"
+                        id=""
+                      ></textarea>
                     </div>
                   </div>
                   <div className="custom_form_el">
                     <label htmlFor="">Seo Description</label>
                     <div>:</div>
                     <div>
-                      <textarea name="seo_description" className="form-control" id=""></textarea>
+                      <textarea
+                        name="seo_description"
+                        className="form-control"
+                        id=""
+                      ></textarea>
                     </div>
                   </div>
                   <div className="custom_form_el">
                     <label htmlFor="">Seo Schema Tags</label>
                     <div>:</div>
                     <div>
-                      <textarea name="seo_schema_tags" className="form-control" id=""></textarea>
+                      <textarea
+                        name="seo_schema_tags"
+                        className="form-control"
+                        id=""
+                      ></textarea>
                     </div>
                   </div>
                 </div>
@@ -151,33 +179,64 @@ function Create() {
                   <div>
                     <label htmlFor="">Title</label>
                     <div>
-                      <input name="title" type="text" className="form-control" />
+                      <input
+                        name="title"
+                        type="text"
+                        className="form-control"
+                      />
                     </div>
                   </div>
                 </div>
                 <div className="mb-3">
-                  <div> <label htmlFor="">Subtitle</label>
+                  <div>
+                    {" "}
+                    <label htmlFor="">Subtitle</label>
                     <div>
-                      <input name="subtitle" type="text" className="form-control" /></div>
+                      <input
+                        name="subtitle"
+                        type="text"
+                        className="form-control"
+                      />
+                    </div>
                   </div>
                 </div>
                 <div className="mb-3">
-                  <div> <label htmlFor="">Published Date</label>
+                  <div>
+                    {" "}
+                    <label htmlFor="">Published Date</label>
                     <div>
-                      <input name="published_date" type="date" className="form-control" /></div>
+                      <input
+                        name="published_date"
+                        type="date"
+                        className="form-control"
+                      />
+                    </div>
                   </div>
                 </div>
                 <div className="mb-3">
-                  <div> <label htmlFor="">Photo</label>
+                  <div>
+                    {" "}
+                    <label htmlFor="">Photo</label>
                     <div>
-                      <input name="photo" type="file" accept="image/*" className="form-control" /></div>
+                      <input
+                        name="photo"
+                        type="file"
+                        accept="image/*"
+                        className="form-control"
+                      />
+                    </div>
                   </div>
                 </div>
                 <div className="mb-3">
                   <div>
                     <label htmlFor="">Photo Alt Text</label>
                     <div>
-                      <input name="photo_alt_text" type="text" className="form-control" /></div>
+                      <input
+                        name="photo_alt_text"
+                        type="text"
+                        className="form-control"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -185,8 +244,9 @@ function Create() {
           </div>
         </div>
         <div className="card-footer">
-          <button className="btn btn-outline-info" type="submit" value="Create" >Submit </button>
-
+          <button className="btn btn-outline-info" type="submit" value="Create">
+            Submit{" "}
+          </button>
         </div>
       </form>
     </div>

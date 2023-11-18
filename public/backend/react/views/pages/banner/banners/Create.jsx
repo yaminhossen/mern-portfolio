@@ -130,7 +130,11 @@ function Create() {
           </div>
         </div>
       </div>
-      <div className="card-footer"></div>
+      <div className="card-footer">
+      <button className="btn btn-outline-info" type="submit" value="Create">
+            Submit{" "}
+          </button>
+      </div>
     </div>
   );
 }

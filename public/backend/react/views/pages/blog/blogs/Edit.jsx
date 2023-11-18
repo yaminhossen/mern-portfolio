@@ -183,7 +183,9 @@ function Edit() {
             </div>
           </div>
           <div className="card-footer">
-            <input type="submit" value="Create" />
+          <button className="btn btn-outline-info" type="submit" value="Create">
+            Submit{" "}
+          </button>
 
           </div>
         </form>

@@ -49,11 +49,11 @@ function Edit() {
             </a>
           </div>
         </div>
+                <form id='form-data' onSubmit={handleSubmit}>
         <div className="card-body">
           <div className="container py-5">
             <div className="row">
               <div className="col-lg-8">
-                <form id='form-data' onSubmit={handleSubmit}>
                   <div className="form-group mb-5">
                     <div className="custom_form_el">
                       <label htmlFor="">Title</label>
@@ -77,12 +77,16 @@ function Edit() {
                     </div>
                   </div>
                   <input type="submit" value="Create" />
-                </form>
               </div>
             </div>
           </div>
         </div>
-        <div className="card-footer"></div>
+        <div className="card-footer">
+        <button className="btn btn-outline-info" type="submit" value="Create">
+            Submit{" "}
+          </button>
+        </div>
+                </form>
       </div>
     )
   }

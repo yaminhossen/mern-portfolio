@@ -43,11 +43,11 @@ function Create() {
           </a>
         </div>
       </div>
+              <form onSubmit={handleSubmit}>
       <div className="card-body">
         <div className="container py-5">
           <div className="row">
             <div className="col-lg-8">
-              <form onSubmit={handleSubmit}>
                 <div className="form-group mb-5">
                   <div className="custom_form_el">
                     <label htmlFor="">Comment</label>
@@ -65,12 +65,16 @@ function Create() {
                   </div> */}
                 </div>
                 <input type="submit" value="Create" />
-              </form>
             </div>
           </div>
         </div>
       </div>
-      <div className="card-footer"></div>
+      <div className="card-footer">
+      <button className="btn btn-outline-info" type="submit" value="Create">
+            Submit{" "}
+          </button>
+      </div>
+              </form>
     </div>
   );
 }
