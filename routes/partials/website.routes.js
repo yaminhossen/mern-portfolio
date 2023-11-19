@@ -7,9 +7,9 @@ const router = express.Router();
 router
 	.get("/", website_controller.home)
 	.get("/category/:category_name/:category_id", website_controller.category_post)
-	.get("/about", function (req, res) {
-		return res.render("about");
-	})
+	// .get("/about", function (req, res) {
+	// 	return res.render("about");
+	// })
 	.get("/login", function (req, res) {
 		return res.render("auth/login");
 	})
@@ -17,7 +17,13 @@ router
 		return res.render("auth/register");
 	})
 	.get("/home", function (req, res) {
-		return res.render("auth/home");
+		return res.render("frontend/home");
+	})
+	.get("/about", function (req, res) {
+		return res.render("frontend/about");
+	})
+	.get("/contemporary", function (req, res) {
+		return res.render("frontend/contemporary");
 	})
 
 module.exports = () => router;
