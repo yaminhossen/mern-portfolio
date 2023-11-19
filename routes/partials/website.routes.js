@@ -25,5 +25,11 @@ router
 	.get("/contemporary", function (req, res) {
 		return res.render("frontend/contemporary");
 	})
+	.get("/social-work", function (req, res) {
+		return res.render("frontend/social_work");
+	})
+	.get("/book-review", function (req, res) {
+		return res.render("frontend/book_review");
+	})
 
 module.exports = () => router;
