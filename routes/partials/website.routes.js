@@ -31,5 +31,23 @@ router
 	.get("/book-review", function (req, res) {
 		return res.render("frontend/book_review");
 	})
+	.get("/blog-islam", function (req, res) {
+		return res.render("frontend/blog/islam");
+	})
+	.get("/blog-islami-movement", function (req, res) {
+		return res.render("frontend/blog/islami_movement");
+	})
+	.get("/blog-bangladesh", function (req, res) {
+		return res.render("frontend/blog/bangladesh");
+	})
+	.get("/blog-politics", function (req, res) {
+		return res.render("frontend/blog/politics");
+	})
+	.get("/blog-history", function (req, res) {
+		return res.render("frontend/blog/history");
+	})
+	.get("/blog-miscellaneous", function (req, res) {
+		return res.render("frontend/blog/miscellaneous");
+	})
 
 module.exports = () => router;
