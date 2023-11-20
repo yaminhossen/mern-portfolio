@@ -5,8 +5,8 @@ const website_controller = require("../../app/controllers/frontend/wbsite.contro
 const router = express.Router();
 
 router
-	.get("/", website_controller.home)
-	.get("/category/:category_name/:category_id", website_controller.category_post)
+	// .get("/", website_controller.home)
+	// .get("/category/:category_name/:category_id", website_controller.category_post)
 	// .get("/about", function (req, res) {
 	// 	return res.render("about");
 	// })
@@ -16,9 +16,10 @@ router
 	.get("/signup", function (req, res) {
 		return res.render("auth/register");
 	})
-	.get("/home", function (req, res) {
-		return res.render("frontend/home");
-	})
+	// .get("/home", function (req, res) {
+	// 	return res.render("frontend/home");
+	// })
+	.get("/home", website_controller.profile_infos)
 	.get("/about", function (req, res) {
 		return res.render("frontend/about");
 	})

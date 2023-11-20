@@ -1,5 +1,6 @@
 const blogModel = require("../../models/blog.model");
 const categoryModel = require("../../models/category.model");
+const uesrProfileInfosModel = require("../../api/user_profile_infos/model/model")
 
 const controllers = {
 	folder_prefix: ``,
@@ -12,6 +13,15 @@ const controllers = {
 		return res.render(`home`, {
 			blogs,
             categories,
+		});
+	},
+	profile_infos: async function (req, res) {
+		let profile_info = await uesrProfileInfosModel.find();
+        // let categories = await categoryModel.find();
+
+		return res.render(`frontend/home`, {
+			profile_info,
+            // categories,
 		});
 	},
 	category_post: async function (req, res) {
