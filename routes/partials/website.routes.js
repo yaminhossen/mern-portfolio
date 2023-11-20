@@ -58,14 +58,26 @@ router
 	.get("/blog-bangladesh", function (req, res) {
 		return res.render("frontend/blog/bangladesh");
 	})
+	.get("/blog-bangladesh-details", function (req, res) {
+		return res.render("frontend/blog/bangladesh_details");
+	})
 	.get("/blog-politics", function (req, res) {
 		return res.render("frontend/blog/politics");
+	})
+	.get("/blog-politics-details", function (req, res) {
+		return res.render("frontend/blog/politics_details");
 	})
 	.get("/blog-history", function (req, res) {
 		return res.render("frontend/blog/history");
 	})
+	.get("/blog-history-details", function (req, res) {
+		return res.render("frontend/blog/history_details");
+	})
 	.get("/blog-miscellaneous", function (req, res) {
 		return res.render("frontend/blog/miscellaneous");
+	})
+	.get("/blog-miscellaneous-details", function (req, res) {
+		return res.render("frontend/blog/miscellaneous_details");
 	})
 	.get("/photo-gallery", function (req, res) {
 		return res.render("frontend/gallery/photo_gallery");
