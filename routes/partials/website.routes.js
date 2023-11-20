@@ -40,11 +40,20 @@ router
 	.get("/book-review", function (req, res) {
 		return res.render("frontend/book_review");
 	})
+	.get("/book-review-details", function (req, res) {
+		return res.render("frontend/book_review_details");
+	})
 	.get("/blog-islam", function (req, res) {
 		return res.render("frontend/blog/islam");
 	})
+	.get("/blog-islam-details", function (req, res) {
+		return res.render("frontend/blog/islam_details");
+	})
 	.get("/blog-islamic-movement", function (req, res) {
 		return res.render("frontend/blog/islamic_movement");
+	})
+	.get("/blog-islamic-movement-details", function (req, res) {
+		return res.render("frontend/blog/islamic_movement_details");
 	})
 	.get("/blog-bangladesh", function (req, res) {
 		return res.render("frontend/blog/bangladesh");
