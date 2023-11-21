@@ -19,7 +19,7 @@ router
 	// .get("/home", function (req, res) {
 	// 	return res.render("frontend/home");
 	// })
-	.get("/home", website_controller.profile_infos)
+	.get("/home", [website_controller.home_page])
 	.get("/about", function (req, res) {
 		return res.render("frontend/about");
 	})

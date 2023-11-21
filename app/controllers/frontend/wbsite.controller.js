@@ -1,6 +1,7 @@
 const blogModel = require("../../models/blog.model");
 const categoryModel = require("../../models/category.model");
 const uesrProfileInfosModel = require("../../api/user_profile_infos/model/model")
+const photoGalleryCategoriyModel = require("../../api/photo_gallery/photo_gallery_categories/model/model")
 
 const controllers = {
 	folder_prefix: ``,
@@ -15,15 +16,21 @@ const controllers = {
             categories,
 		});
 	},
-	profile_infos: async function (req, res) {
+	home_page: async function (req, res) {
 		let profile_info = await uesrProfileInfosModel.find();
-        // let categories = await categoryModel.find();
-
+		let photo_gallery_category = await photoGalleryCategoriyModel.find();
+		console.log("photo_gallery",photo_gallery_category);
 		return res.render(`frontend/home`, {
 			profile_info,
-            // categories,
+			photo_gallery_category,
 		});
 	},
+	// photo_gallery_category: async function (req, res) {
+	// 	let photo_gallery_category = await photoGalleryCategoriyModel.find();
+	// 	return res.render(`frontend/home`, {
+	// 		photo_gallery_category,
+	// 	});
+	// },
 	category_post: async function (req, res) {
         let {category_name, category_id} = req.params;
 
