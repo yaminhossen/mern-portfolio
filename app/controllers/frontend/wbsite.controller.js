@@ -8,6 +8,8 @@ const userSocialLinksModel = require("../../api/user_social_links/model/model")
 const userEmailsModel = require("../../api/user_emails/model/model")
 const userContactMessagesModel = require("../../api/contact_message/contact_messages/model/model")
 
+const userSettingTitlesModel = require("../../api/setting/setting_titles/model/model")
+
 const controllers = {
 	folder_prefix: ``,
 	route_prefix: ``,
@@ -44,12 +46,14 @@ const controllers = {
 		let emails = await userEmailsModel.find();
 		let social_links = await userSocialLinksModel.find();
 		let contact_message = await userContactMessagesModel.find();
-		// console.log("photo_gallery",emails);
+		let address = await userSettingTitlesModel.find();
+		console.log("address",address[4].value[1]);
 		return res.render(`frontend/contact`, {
 			contact_numbers,
 			emails,
 			social_links,
 			contact_message,
+			address,
 		});
 	},
 	// photo_gallery_category: async function (req, res) {

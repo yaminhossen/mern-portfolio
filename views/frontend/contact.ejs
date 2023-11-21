@@ -37,8 +37,8 @@
                                         </div>
 
                                         <div class="content_text">
-                                            <p class="text">বাড়ি ৩১, লেন ০১, ব্লক বি, সেকশন ০৬, মিরপুর, ঢাকা-১২০৪,
-                                                বাংলাদেশ।
+                                            <p class="text">
+                                                <%= address[4].value[0] %>
                                             </p>
                                         </div>
                                     </div>
@@ -128,21 +128,22 @@
                                         <div class="rirst_name_and_second_name_area form_item">
                                             <div class="first_name_area">
                                                 <label>নামের প্রথম অংশ</label>
-                                                <input type="text" placeholder="নাম">
+                                                <input type="text" placeholder="নাম"  Value="<%= contact_message[0].full_name %>">
                                             </div>
                                             <div class="second_name_area">
                                                 <label>নামের দ্বিতীয় অংশ</label>
-                                                <input type="text" placeholder="নামের শিরোনাম">
+                                                <input type="text" placeholder="নামের শিরোনাম" Value="<%= contact_message[0].email %>">
                                             </div>
                                         </div>
                                         <div class="email_area form_item">
                                             <label>ইমেইল</label>
-                                            <input type="email" placeholder="abc@gmail.com">
+                                            <input type="email" placeholder="abc@gmail.com" Value="<%= contact_message[0].email %>">
                                         </div>
                                         <div class="message_area form_item">
                                             <label>মেসেজ</label>
                                             <textarea name="#" id="#" cols="30" rows="10"
-                                                placeholder="আপনার লেখা লিখুন . . ."></textarea>
+                                                placeholder="আপনার লেখা লিখুন . . .">
+                                            <%= contact_message[0].message %></textarea>
                                         </div>
                                         <button class="submit_button"><i class="fa-regular fa-paper-plane"></i> Submit
                                         </button>
