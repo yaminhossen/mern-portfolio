@@ -24,108 +24,25 @@
                         <div class="inner_page_all_content" data-aos="fade-up" data-aos-duration="1000">
 
                             <!--card start -->
-                            <a href="#" class="photo_card edit_photo_card" data-aos="fade-up"
-                                data-aos-duration="600">
-                                <img src="./assets/images/local_image/s2.jpg" alt="img">
-                                <!-- overlay-area start -->
-                                <div class="overlay-area">
-                                    <div class="overlay-area_content">
-                                        <div class="image_title">
-                                            <h2 class="title_text">বিশ্বব্যাপী উদ্বেগের কারণ হয়ে দাঁড়িয়েছে
-                                            </h2>
-                                        </div>
-                                    </div>
+                            <% photo_gallery_category.map( (photo)=>{ %>
 
-                                </div>
-                                <!-- overlay-area end -->
-                            </a>
-                            <!--card end -->
-                            <!--card start -->
-                            <a href="#" class="photo_card edit_photo_card" data-aos="fade-up"
-                                data-aos-duration="600">
-                                <img src="./assets/images/local_image/s2.jpg" alt="img">
-                                <!-- overlay-area start -->
-                                <div class="overlay-area">
-                                    <div class="overlay-area_content">
-                                        <div class="image_title">
-                                            <h2 class="title_text">বিশ্বব্যাপী উদ্বেগের কারণ হয়ে দাঁড়িয়েছে
-                                            </h2>
+                                <a href="#" class="photo_card" data-aos="fade-up" data-aos-duration="300">
+                                    <img src="<%= photo.photo %>" alt="<%= photo.photo_alt %>">
+                                    <!-- overlay-area start -->
+                                    <div class="overlay-area">
+                                        <div class="overlay-area_content">
+                                            <div class="image_title">
+                                                <h2 class="title_text">
+                                                    <%= photo.title %>
+                                                </h2>
+                                            </div>
                                         </div>
+    
                                     </div>
-
-                                </div>
-                                <!-- overlay-area end -->
-                            </a>
-                            <!--card end -->
-                            <!--card start -->
-                            <a href="#" class="photo_card edit_photo_card" data-aos="fade-up"
-                                data-aos-duration="600">
-                                <img src="./assets/images/local_image/s2.jpg" alt="img">
-                                <!-- overlay-area start -->
-                                <div class="overlay-area">
-                                    <div class="overlay-area_content">
-                                        <div class="image_title">
-                                            <h2 class="title_text">বিশ্বব্যাপী উদ্বেগের কারণ হয়ে দাঁড়িয়েছে
-                                            </h2>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <!-- overlay-area end -->
-                            </a>
-                            <!--card end -->
-                            <!--card start -->
-                            <a href="#" class="photo_card edit_photo_card" data-aos="fade-up"
-                                data-aos-duration="600">
-                                <img src="./assets/images/local_image/s2.jpg" alt="img">
-                                <!-- overlay-area start -->
-                                <div class="overlay-area">
-                                    <div class="overlay-area_content">
-                                        <div class="image_title">
-                                            <h2 class="title_text">
-                                                ফিলিস্তিন-ইসরায়েল
-                                                যুদ্ধ</h2>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <!-- overlay-area end -->
-                            </a>
-                            <!--card end -->
-                            <!--card start -->
-                            <a href="#" class="photo_card edit_photo_card" data-aos="fade-up"
-                                data-aos-duration="600">
-                                <img src="./assets/images/local_image/s2.jpg" alt="img">
-                                <!-- overlay-area start -->
-                                <div class="overlay-area">
-                                    <div class="overlay-area_content">
-                                        <div class="image_title">
-                                            <h2 class="title_text">বিশ্বব্যাপী
-                                                ফিলিস্তিন-ইসরায়েল
-                                            </h2>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <!-- overlay-area end -->
-                            </a>
-                            <!--card end -->
-                            <!--card start -->
-                            <a href="#" class="photo_card edit_photo_card" data-aos="fade-up"
-                                data-aos-duration="600">
-                                <img src="./assets/images/local_image/s2.jpg" alt="img">
-                                <!-- overlay-area start -->
-                                <div class="overlay-area">
-                                    <div class="overlay-area_content">
-                                        <div class="image_title">
-                                            <h2 class="title_text">বিশ্বব্যাপী উদ্বেগের কারণ হয়ে দাঁড়িয়েছে
-                                                যুদ্ধ</h2>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <!-- overlay-area end -->
-                            </a>
+                                    <!-- overlay-area end -->
+                                </a>
+    
+                                <% })%>
                             <!--card end -->
 
 
@@ -186,36 +103,16 @@
 
                             <div class="categories_item_all">
                                 <ul>
-                                    <li>
-                                        <a href="#" class="categories_name">
-                                            সব
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="categories_name">
-                                            ক্যাটেগরীজ
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="categories_name">
-                                            ক্যাটেগরীজ 1
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="categories_name">
-                                            গরীজ 2
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="categories_name">
-                                            ক্যাটেগরীজ 3
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="categories_name">
-                                            ক্যাটেগরীজ 4
-                                        </a>
-                                    </li>
+                                    <% photo_gallery_category.map( (photo)=>{ %>
+
+                                        <li>
+                                            <a href="#" class="categories_name">
+                                                <%= photo.title %>
+                                            </a>
+                                        </li>
+            
+                                        <% })%>
+                                    
                                 </ul>
                             </div>
 
@@ -326,37 +223,18 @@
 
                             <div class="popular_tag_all">
                                 <ul>
-                                    <li>
-                                        <a href="#" class="tag_text">ট্যাগ 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">জনপ্রিয় ট্যাগ</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">জনপ্রিয় ট্যাগ 2</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">ট্যাগ 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">জনপ্রিয় ট্যাগ</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">ট্যাগ 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">জনপ্রিয় ট্যাগ</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">ট্যাগ 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">জনপ্রিয় ট্যাগ</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">ট্যাগ 1</a>
-                                    </li>
+                                    <% tags.map( (tag)=>{ %>
+
+                                        <li>
+                                            <a href="#" class="tag_text">
+                                                <%= tag.title %>
+                                            </a>
+                                        </li>
+            
+                                        <% })%>
+                                    
                                 </ul>
+                                
                             </div>
 
 

@@ -714,7 +714,7 @@
 
                     <!-- all_blog_card start -->
                     <div class="all_photo_card">
-                        <% photo_gallery_category.map( (photo)=>{ %>
+                        <% photo_gallery_category.splice(0,4).map( (photo)=>{ %>
 
                             <a href="#" class="photo_card" data-aos="fade-up" data-aos-duration="300">
                                 <img src="<%= photo.photo %>" alt="<%= photo.photo_alt %>">

@@ -80,9 +80,7 @@ router
 	.get("/blog-miscellaneous-details", function (req, res) {
 		return res.render("frontend/blog/miscellaneous_details");
 	})
-	.get("/photo-gallery", function (req, res) {
-		return res.render("frontend/gallery/photo_gallery");
-	})
+	.get("/photo-gallery", website_controller.photo_gallery)
 	.get("/video-gallery", function (req, res) {
 		return res.render("frontend/gallery/video_gallery");
 	})
