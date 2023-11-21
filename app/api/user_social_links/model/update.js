@@ -7,6 +7,11 @@ const data_validation = async (request_data) => {
         .isEmpty()
         .withMessage("the type field is required")
         .run(request_data);
+    await body("icon")
+        .not()
+        .isEmpty()
+        .withMessage("the icon field is required")
+        .run(request_data);
 
     await body("url")
         .not()
@@ -39,6 +44,7 @@ module.exports = async ( data) => {
         const model_data = await model.findOne({ _id: data.id });
         model_data.type = data.type;
         model_data.url = data.url;
+        model_data.icon = data.icon;
         await model_data.save();
         // console.log(data);
         return {

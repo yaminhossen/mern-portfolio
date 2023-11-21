@@ -34,7 +34,7 @@ function Edit() {
   };
 
   if (data_store) {
-    const { url, type } = data_store;
+    const { url, type, icon } = data_store;
     return (
       <div className="card list_card">
         <div className="card-header ">
@@ -76,6 +76,18 @@ function Edit() {
                           type="text"
                           className="form-control"
                           defaultValue={url}
+                        />
+                      </div>
+                    </div>
+                    <div className="custom_form_el">
+                      <label htmlFor="">ICON</label>
+                      <div>:</div>
+                      <div>
+                        <input
+                          name="icon"
+                          type="text"
+                          className="form-control"
+                          defaultValue={icon}
                         />
                       </div>
                     </div>

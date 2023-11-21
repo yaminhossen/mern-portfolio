@@ -23,9 +23,7 @@ router
 	.get("/about", function (req, res) {
 		return res.render("frontend/about");
 	})
-	.get("/contact", function (req, res) {
-		return res.render("frontend/contact");
-	})
+	.get("/contact", website_controller.contact)
 	.get("/contemporary", function (req, res) {
 		return res.render("frontend/contemporary");
 	})

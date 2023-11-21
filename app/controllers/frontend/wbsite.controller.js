@@ -3,6 +3,10 @@ const categoryModel = require("../../models/category.model");
 const uesrProfileInfosModel = require("../../api/user_profile_infos/model/model")
 const photoGalleryCategoriyModel = require("../../api/photo_gallery/photo_gallery_categories/model/model")
 const tagsModel = require("../../api/tag/tags/model/model")
+const userContactNumbersModel = require("../../api/user_contact_numbers/model/model")
+const userSocialLinksModel = require("../../api/user_social_links/model/model")
+const userEmailsModel = require("../../api/user_emails/model/model")
+const userContactMessagesModel = require("../../api/contact_message/contact_messages/model/model")
 
 const controllers = {
 	folder_prefix: ``,
@@ -33,6 +37,19 @@ const controllers = {
 		return res.render(`frontend/home`, {
 			profile_info,
 			photo_gallery_category,
+		});
+	},
+	contact: async function (req, res) {
+		let contact_numbers = await userContactNumbersModel.find();
+		let emails = await userEmailsModel.find();
+		let social_links = await userSocialLinksModel.find();
+		let contact_message = await userContactMessagesModel.find();
+		// console.log("photo_gallery",emails);
+		return res.render(`frontend/contact`, {
+			contact_numbers,
+			emails,
+			social_links,
+			contact_message,
 		});
 	},
 	// photo_gallery_category: async function (req, res) {

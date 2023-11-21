@@ -1,4 +1,4 @@
-// last_id:505 
+// last_id:522 
 
 const { default: mongoose, Schema } = require("mongoose");
 const { readFirstLine } = require("../../../utilites/readFirstLine");
@@ -16,6 +16,10 @@ let userRoleSchema = mongoose.Schema({
 		type: String,
 		require: true,
 		unique: true,
+	},
+	icon: {
+		type: String,
+		require: true,
 	},
 	status: {
 		type: Boolean,

@@ -21,7 +21,7 @@ function Details() {
 
 
     if (data_store) {
-        const { _id, type, url, createdAt, updatedAt } = data_store;
+        const { _id, type, url,icon, createdAt, updatedAt } = data_store;
         return (
             <div className='card list_card'>
                 <div className="card-header ">
@@ -58,6 +58,13 @@ function Details() {
                                         <div>:</div>
                                         <div>
                                             {url}
+                                        </div>
+                                    </div>
+                                    <div className="custom_form_el">
+                                        <div>ICON</div>
+                                        <div>:</div>
+                                        <div>
+                                            {icon}
                                         </div>
                                     </div>
                                     <div className="custom_form_el">

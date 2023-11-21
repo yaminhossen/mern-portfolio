@@ -9,11 +9,25 @@ let data = [
 	{
 		type: "facebook",
 		url: "www.facebook.com",
+		icon:"fa-brands fa-facebook-f",
 		status: true,
 	},
 	{
 		type: "telegram",
 		url: "www.telegram.com",
+		icon:"fa-brands fa-youtube",
+		status: true,
+	},
+	{
+		type: "linkdin",
+		url: "www.linkdin.com",
+		icon:"fa-brands fa-linkedin",
+		status: true,
+	},
+	{
+		type: "twitter",
+		url: "www.twitter.com",
+		icon:"fa-brands fa-twitter",
 		status: true,
 	},
 ];

@@ -59,6 +59,11 @@ function Create() {
                     <div>:</div>
                     <div><input name="url" type="text" className="form-control" /></div>
                   </div>
+                  <div className="custom_form_el">
+                    <label htmlFor="">Icon</label>
+                    <div>:</div>
+                    <div><input name="icon" type="text" className="form-control" /></div>
+                  </div>
                  
                 </div>
             </div>

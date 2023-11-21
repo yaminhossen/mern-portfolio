@@ -17,6 +17,20 @@ const data_validation = async (request_data) => {
         })
         .withMessage("Type already existing")
         .run(request_data);
+    await body("icon")
+        .not()
+        .isEmpty()
+        .withMessage("the icon field is required")
+        .custom(async (value) => {
+            let icon = await model.findOne({
+                icon: value
+            })
+            if(icon){
+                return Promise.reject('icon already existing')
+            }
+        })
+        .withMessage("icon already existing")
+        .run(request_data);
 
 
     await body("url")
