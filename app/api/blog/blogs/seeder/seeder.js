@@ -18,7 +18,7 @@ async function getId() {
 	var random = gen_rand();
 	var data = await blogCategoriesModel.find().limit(1).skip(random);
 	console.log(random, data[0]._id);
-	return data.map(i => i._id);
+	return [data.map(i => i._id),"655dc56cdfef49c66bc28b5f"];
 }
 
 // node app/api/blog/blogs/seeder/seeder.js
@@ -39,7 +39,7 @@ let data = [
 		seo_description: "ইসরায়েল ও হামাস",
 		seo_schema_tags: "ইসরায়েল ও হামাস",
 		published_date: "2023-06-14",
-		categories: [],
+		categories: ['655dc56cdfef49c66bc28b5f'],
 		status: true,
 
 	},
@@ -55,7 +55,7 @@ let data = [
 		seo_description: "চীনা কমিউনিস্ট",
 		seo_schema_tags: "চীনা কমিউনিস্ট",
 		published_date: "2023-07-11",
-		categories: ['654c5d4e30dbb71ec3d78392'],
+		categories: ['654c5d4e30dbb71ec3d78392', '655dc56cdfef49c66bc28b5f'],
 		status: true,
 
 	},
@@ -71,7 +71,7 @@ let data = [
 		seo_description: "ইসরায়েল সফরে",
 		seo_schema_tags: "ইসরায়েল সফরে",
 		published_date: "2023-07-11",
-		categories: ['654c5d4e30dbb71ec3d78392'],
+		categories: ['654c5d4e30dbb71ec3d78392','655dc56cdfef49c66bc28b5f'],
 		status: true,
 
 	},
@@ -87,7 +87,7 @@ let data = [
 		seo_description: "নেতানিয়াহুকে এরদোয়ান",
 		seo_schema_tags: "নেতানিয়াহুকে এরদোয়ান",
 		published_date: "2023-07-11",
-		categories: ['654c5d4e30dbb71ec3d78392'],
+		categories: ['654c5d4e30dbb71ec3d78392','655dc56cdfef49c66bc28b5f'],
 		status: true,
 
 	},

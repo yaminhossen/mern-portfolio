@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import setup from './config/setup';
 import CanvasDetails from './components/management/CanvasDetails';

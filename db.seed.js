@@ -41,7 +41,7 @@ const seed = async () => {
     await apiUserprofileinfoSeeder();
 
     // blog seeder!!!
-    await apiBlogCategoriesSeeder();
+    // await apiBlogCategoriesSeeder();
     await apiBlogsSeeder();
     await apiBlogCommentsSeeder();
     await apiBlogCommentRepliesSeeder();

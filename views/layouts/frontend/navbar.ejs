@@ -7,6 +7,7 @@
                     <img src="./assets/images/logo_image/logo.png" alt="img">
                 </a>
                 <div class="navigation_menu_area">
+                   
                     <ul>
                         <li>
                             <a href="home" class="menu_text">হোম</a>
@@ -32,24 +33,16 @@
                             </button>
 
                             <ul id="inner_menu">
-                                <li>
-                                    <a href="blog-islam" class="menu_text">ইসলাম</a>
-                                </li>
-                                <li>
-                                    <a href="blog-islamic-movement" class="menu_text">ইসলামী আন্দোলন</a>
-                                </li>
-                                <li>
-                                    <a href="blog-bangladesh" class="menu_text">বাংলাদেশ</a>
-                                </li>
-                                <li>
-                                    <a href="blog-politics" class="menu_text">রাজনীতি</a>
-                                </li>
-                                <li>
-                                    <a href="blog-history" class="menu_text">ইতিহাস</a>
-                                </li>
-                                <li>
-                                    <a href="blog-miscellaneous" class="menu_text">বিবিধ</a>
-                                </li>
+                                
+                                    <% commonData.blog_category.map( (category)=>{ %>
+
+                                        
+                                        <li>
+                                            <a href="<%= category.url %>" class="menu_text">
+                                                <%= category.title %></a>
+                                        </li>
+                                        <% })%>
+                               
                             </ul>
                         </li>
                         <li>

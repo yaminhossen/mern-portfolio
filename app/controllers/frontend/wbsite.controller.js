@@ -9,6 +9,8 @@ const userEmailsModel = require("../../api/user_emails/model/model")
 const userContactMessagesModel = require("../../api/contact_message/contact_messages/model/model")
 
 const userSettingTitlesModel = require("../../api/setting/setting_titles/model/model")
+const blogCategoriesModel = require("../../api/blog/blog_categories/model/model")
+const blogsModel = require("../../api/blog/blogs/model/model")
 
 const controllers = {
 	folder_prefix: ``,
@@ -26,19 +28,35 @@ const controllers = {
 	photo_gallery: async function (req, res) {
 		let photo_gallery_category = await photoGalleryCategoriyModel.find();
 		let tags = await tagsModel.find();
+		let blog_category = await blogCategoriesModel.find();
 
 		return res.render(`frontend/gallery/photo_gallery`, {
 			photo_gallery_category,
 			tags,
+			blog_category,
 		});
 	},
 	home_page: async function (req, res) {
 		let profile_info = await uesrProfileInfosModel.find();
 		let photo_gallery_category = await photoGalleryCategoriyModel.find();
+		let blog_category = await blogCategoriesModel.find();
 		// console.log("photo_gallery",photo_gallery_category);
 		return res.render(`frontend/home`, {
 			profile_info,
 			photo_gallery_category,
+			blog_category,
+		});
+	},
+	contemporary: async function (req, res) {
+		// const model_data = await model.findOne({ _id: data.id });
+		let contemp = await blogCategoriesModel.findOne({ title: "সমসাময়িক" });
+		
+		let contems = await blogsModel.find().where({categories:contemp._id});
+
+		console.log("contemp",contemp._id);
+		console.log("contems",contems);
+		return res.render(`frontend/contemporary`, {
+			contems,
 		});
 	},
 	contact: async function (req, res) {

@@ -1,5 +1,6 @@
 const express = require("express");
 const isAuthMiddleware = require("../../app/middlewares/isAuth.middleware");
+const frontendCommonDataMiddleware = require("../../app/middlewares/frontendCommonData.middleware");
 const { share_check_auth } = require("../..");
 const website_controller = require("../../app/controllers/frontend/wbsite.controller");
 const router = express.Router();
@@ -24,9 +25,7 @@ router
 		return res.render("frontend/about");
 	})
 	.get("/contact", website_controller.contact)
-	.get("/contemporary", function (req, res) {
-		return res.render("frontend/contemporary");
-	})
+	.get("/contemporary",website_controller.contemporary)
 	.get("/contemporary-details", function (req, res) {
 		return res.render("frontend/contemporary_details");
 	})
@@ -42,7 +41,7 @@ router
 	.get("/book-review-details", function (req, res) {
 		return res.render("frontend/book_review_details");
 	})
-	.get("/blog-islam", function (req, res) {
+	.get("/blog-islam",function (req, res) {
 		return res.render("frontend/blog/islam");
 	})
 	.get("/blog-islam-details", function (req, res) {
