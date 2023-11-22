@@ -13,169 +13,47 @@
                     <div class="inner_page_area_content">
                         <!-- content_title start -->
                         <div class="content_title_and_description" data-aos="fade-right" data-aos-duration="1000">
-                            <h2 class="title_text">সমসাময়িক</h2>
-                            <%= contems[0].title %>
-                            <p class="description_text">নাজাত লাভ, জান্নাত অর্জন, খোদার সন্তুষ্টি এবং ধনসম্পদেও
-                                বরকতের
-                                মাধ্যম।
-                                সততা মানব চরিত্রের শ্রেষ্ঠ গুণ। </p>
+                            <h2 class="title_text"><%= contemp.title %></h2>
+                            <p class="description_text">
+                                <%= contemp.short_description %>
+                            </p>
                         </div>
                         <!-- content_title end -->
 
                         <!-- inner_page_all_content start -->
                         <div class="inner_page_all_content" data-aos="fade-up" data-aos-duration="1000">
 
-                            <!-- item area start -->
-                            <a href="contemporary-details" class="item">
-                                <img src="./assets/images/news_image/img3.jpg" alt="News">
+                            <% contems.map( (cm)=>{ %>
 
-                                <!-- layout_area start -->
-                                <div class="layout_area">
-                                    <div class="item_date_and_title_area">
-
-                                        <div class="date_area">
-                                            <p class="date_text">
-                                                12.November.2023
-                                            </p>
+                                <a href="contemporary-details/<%= cm._id %>" class="item">
+                                    <img src="<%= cm.photo %>" alt="News">
+    
+                                    <!-- layout_area start -->
+                                    <div class="layout_area">
+                                        <div class="item_date_and_title_area">
+    
+                                            <div class="date_area">
+                                                <p class="date_text">
+                                                   <%= cm.published_date.toISOString().substring(0, 10)%>
+                                                   
+                                                </p>
+                                            </div>
+    
+                                            <div class="title_area">
+                                                <p class="title_text">
+                                                   <%= cm.subtitle %>
+                                                </p>
+                                            </div>
+    
                                         </div>
-
-                                        <div class="title_area">
-                                            <p class="title_text">
-                                                প্রতিশোধ হিসেবে রাশিয়ার দুই কূটনীতিককে বহিষ্কার করেছে যুক্তরাষ্ট্র
-                                            </p>
-                                        </div>
-
                                     </div>
-                                </div>
-                                <!-- layout_area end-->
-                            </a>
-                            <!-- item area end -->
-                            <!-- item area start -->
-                            <a href="contemporary-details" class="item">
-                                <img src="./assets/images/news_image/img3.jpg" alt="News">
+                                    <!-- layout_area end-->
+                                </a>
+                                        
+                               
+                                <% })%>
 
-                                <!-- layout_area start -->
-                                <div class="layout_area">
-                                    <div class="item_date_and_title_area">
-
-                                        <div class="date_area">
-                                            <p class="date_text">
-                                                12.November.2023
-                                            </p>
-                                        </div>
-
-                                        <div class="title_area">
-                                            <p class="title_text">
-                                                প্রতিশোধ হিসেবে রাশিয়ার দুই কূটনীতিককে বহিষ্কার করেছে যুক্তরাষ্ট্র
-                                            </p>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <!-- layout_area end-->
-                            </a>
-                            <!-- item area end -->
-                            <!-- item area start -->
-                            <a href="contemporary-details" class="item">
-                                <img src="./assets/images/news_image/img3.jpg" alt="News">
-
-                                <!-- layout_area start -->
-                                <div class="layout_area">
-                                    <div class="item_date_and_title_area">
-
-                                        <div class="date_area">
-                                            <p class="date_text">
-                                                12.November.2023
-                                            </p>
-                                        </div>
-
-                                        <div class="title_area">
-                                            <p class="title_text">
-                                                প্রতিশোধ হিসেবে রাশিয়ার দুই কূটনীতিককে বহিষ্কার করেছে যুক্তরাষ্ট্র
-                                            </p>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <!-- layout_area end-->
-                            </a>
-                            <!-- item area end -->
-                            <!-- item area start -->
-                            <a href="contemporary-details" class="item">
-                                <img src="./assets/images/news_image/img3.jpg" alt="News">
-
-                                <!-- layout_area start -->
-                                <div class="layout_area">
-                                    <div class="item_date_and_title_area">
-
-                                        <div class="date_area">
-                                            <p class="date_text">
-                                                12.November.2023
-                                            </p>
-                                        </div>
-
-                                        <div class="title_area">
-                                            <p class="title_text">
-                                                প্রতিশোধ হিসেবে রাশিয়ার দুই কূটনীতিককে বহিষ্কার করেছে যুক্তরাষ্ট্র
-                                            </p>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <!-- layout_area end-->
-                            </a>
-                            <!-- item area end -->
-                            <!-- item area start -->
-                            <a href="contemporary-details" class="item">
-                                <img src="./assets/images/news_image/img3.jpg" alt="News">
-
-                                <!-- layout_area start -->
-                                <div class="layout_area">
-                                    <div class="item_date_and_title_area">
-
-                                        <div class="date_area">
-                                            <p class="date_text">
-                                                12.November.2023
-                                            </p>
-                                        </div>
-
-                                        <div class="title_area">
-                                            <p class="title_text">
-                                                প্রতিশোধ হিসেবে রাশিয়ার দুই কূটনীতিককে বহিষ্কার করেছে যুক্তরাষ্ট্র
-                                            </p>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <!-- layout_area end-->
-                            </a>
-                            <!-- item area end -->
-                            <!-- item area start -->
-                            <a href="contemporary-details" class="item">
-                                <img src="./assets/images/news_image/img3.jpg" alt="News">
-
-                                <!-- layout_area start -->
-                                <div class="layout_area">
-                                    <div class="item_date_and_title_area">
-
-                                        <div class="date_area">
-                                            <p class="date_text">
-                                                12.November.2023
-                                            </p>
-                                        </div>
-
-                                        <div class="title_area">
-                                            <p class="title_text">
-                                                প্রতিশোধ হিসেবে রাশিয়ার দুই কূটনীতিককে বহিষ্কার করেছে যুক্তরাষ্ট্র
-                                            </p>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <!-- layout_area end-->
-                            </a>
-                            <!-- item area end -->
-
+                           
                         </div>
                         <!-- inner_page_all_content end -->
 
@@ -233,36 +111,16 @@
 
                             <div class="categories_item_all">
                                 <ul>
-                                    <li>
-                                        <a href="#" class="categories_name">
-                                            সব
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="categories_name">
-                                            ক্যাটেগরীজ
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="categories_name">
-                                            ক্যাটেগরীজ 1
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="categories_name">
-                                            গরীজ 2
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="categories_name">
-                                            ক্যাটেগরীজ 3
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="categories_name">
-                                            ক্যাটেগরীজ 4
-                                        </a>
-                                    </li>
+                                    <% commonData.blog_category.map( (cm)=>{ %>
+
+                                        <li>
+                                            <a href="<%= cm.url %>" class="categories_name">
+                                                <%= cm.title %>
+                                            </a>
+                                        </li>
+            
+                                        <% })%>
+                                    
                                 </ul>
                             </div>
 
@@ -279,84 +137,31 @@
                             <!-- side_ber_area_title end -->
 
                             <div class="recently_posted_item_all">
+                                <% contems.map( (cm)=>{ %>
 
-                                <!-- posted_item start -->
+                                     <!-- posted_item start -->
                                 <a href="#" class="posted_item">
                                     <div class="image_area">
-                                        <img src="./assets/images/news_image/img6.jpg" alt="img">
+                                        <img src="<%= cm.photo %>" alt="img">
                                     </div>
                                     <div class="title_and_dete_area">
                                         <div class="title_area">
                                             <p class="title_text">
-                                                সামাজিক কাজ ইউনিয়ন পরিষদ কাজ সামাজিক
+                                               <%= cm.title %>
                                             </p>
                                         </div>
                                         <div class="date_area">
                                             <p class="date_text">
-                                                12.November.2023
+                                                <%= cm.published_date.toISOString().substring(0, 10) %>
                                             </p>
                                         </div>
                                     </div>
                                 </a>
                                 <!-- posted_item end -->
-                                <!-- posted_item start -->
-                                <a href="#" class="posted_item">
-                                    <div class="image_area">
-                                        <img src="./assets/images/news_image/img6.jpg" alt="img">
-                                    </div>
-                                    <div class="title_and_dete_area">
-                                        <div class="title_area">
-                                            <p class="title_text">
-                                                সামাজিক কাজ ইউনিয়ন
-                                            </p>
-                                        </div>
-                                        <div class="date_area">
-                                            <p class="date_text">
-                                                12.November.2023
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                                <!-- posted_item end -->
-                                <!-- posted_item start -->
-                                <a href="#" class="posted_item">
-                                    <div class="image_area">
-                                        <img src="./assets/images/news_image/img6.jpg" alt="img">
-                                    </div>
-                                    <div class="title_and_dete_area">
-                                        <div class="title_area">
-                                            <p class="title_text">
-                                                সামাজিক কাজ ইউনিয়ন পরিষদ কাজ সামাজিক
-                                            </p>
-                                        </div>
-                                        <div class="date_area">
-                                            <p class="date_text">
-                                                12.November.2023
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                                <!-- posted_item end -->
-                                <!-- posted_item start -->
-                                <a href="#" class="posted_item">
-                                    <div class="image_area">
-                                        <img src="./assets/images/news_image/img6.jpg" alt="img">
-                                    </div>
-                                    <div class="title_and_dete_area">
-                                        <div class="title_area">
-                                            <p class="title_text">
-                                                সামাজিক কাজ ইউনিয়ন পরিষদ কাজ সামাজিক
-                                            </p>
-                                        </div>
-                                        <div class="date_area">
-                                            <p class="date_text">
-                                                12.November.2023
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                                <!-- posted_item end -->
+        
+                                    <% })%>
 
+                               
                             </div>
 
                         </div>
@@ -373,36 +178,16 @@
 
                             <div class="popular_tag_all">
                                 <ul>
-                                    <li>
-                                        <a href="#" class="tag_text">ট্যাগ 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">জনপ্রিয় ট্যাগ</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">জনপ্রিয় ট্যাগ 2</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">ট্যাগ 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">জনপ্রিয় ট্যাগ</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">ট্যাগ 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">জনপ্রিয় ট্যাগ</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">ট্যাগ 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">জনপ্রিয় ট্যাগ</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">ট্যাগ 1</a>
-                                    </li>
+                                    <% commonData.tags.map( (tag)=>{ %>
+
+                                        <li>
+                                            <a href="#" class="tag_text">
+                                                <%= tag.title %>
+                                            </a>
+                                        </li>
+            
+                                        <% })%>
+                                    
                                 </ul>
                             </div>
 

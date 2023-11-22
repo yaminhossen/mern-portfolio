@@ -26,9 +26,7 @@ router
 	})
 	.get("/contact", website_controller.contact)
 	.get("/contemporary",website_controller.contemporary)
-	.get("/contemporary-details", function (req, res) {
-		return res.render("frontend/contemporary_details");
-	})
+	.get("/contemporary-details/:id", website_controller.contemporary_details)
 	.get("/social-work", function (req, res) {
 		return res.render("frontend/social_work");
 	})

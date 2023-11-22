@@ -10,12 +10,12 @@ const userContactMessagesModel = require("../../api/contact_message/contact_mess
 
 const userSettingTitlesModel = require("../../api/setting/setting_titles/model/model")
 const blogCategoriesModel = require("../../api/blog/blog_categories/model/model")
-const blogsModel = require("../../api/blog/blogs/model/model")
+const blogsModel = require("../../api/blog/blogs/model/model");
 
 const controllers = {
 	folder_prefix: ``,
 	route_prefix: ``,
-
+ 
 	home: async function (req, res) {
 		let blogs = await blogModel.find().populate('creator').populate('category');
         let categories = await categoryModel.find();
@@ -26,6 +26,7 @@ const controllers = {
 		});
 	},
 	photo_gallery: async function (req, res) {
+	
 		let photo_gallery_category = await photoGalleryCategoriyModel.find();
 		let tags = await tagsModel.find();
 		let blog_category = await blogCategoriesModel.find();
@@ -53,10 +54,20 @@ const controllers = {
 		
 		let contems = await blogsModel.find().where({categories:contemp._id});
 
-		console.log("contemp",contemp._id);
-		console.log("contems",contems);
+		// console.log("contemp",contemp._id);
+		// console.log("contems",contems);
 		return res.render(`frontend/contemporary`, {
 			contems,
+			contemp,
+		});
+	},
+	
+	contemporary_details: async function (req, res) {
+		// console.log(req.params.id);
+		let contemp_details = await blogsModel.findOne({_id:req.params.id});
+		// console.log(contemp_details);
+		return res.render(`frontend/contemporary_details`, {
+			contemp_details,
 		});
 	},
 	contact: async function (req, res) {
