@@ -11,6 +11,10 @@ let bannerSchema = mongoose.Schema({
 		type: String,
 		require: true,
 	},
+	name: {
+		type: String,
+		require: true,
+	},
 	sub_title: {
 		type: String,
 		require: true,

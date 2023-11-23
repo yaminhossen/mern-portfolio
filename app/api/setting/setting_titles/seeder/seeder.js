@@ -126,7 +126,19 @@ values = {
 	shut_down_website: [
 		"false",
 	],
-	
+	banner_at_a_glance_title:[
+		"সর্বমোট বই পর্যালোচনা",
+		"সর্বমোট গাছ লাগানো",
+		"সাক্ষরতা অভিযান",
+		"জনপ্রিয়তা"
+
+	],
+	banner_at_a_glance_value:[
+		"২০০",
+		"৫০০",
+		"৩০০",
+		"৯৬%",
+	],
 }
 
 title = [
@@ -178,6 +190,10 @@ title = [
 	"mail_from_name",
 
 	"shut_down_website",
+
+	"banner_at_a_glance_title",
+	"banner_at_a_glance_value",
+
 ],
 
 

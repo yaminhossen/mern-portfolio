@@ -6,6 +6,7 @@ let data = [
 	
 	{
 		title: "কেন্দ্রীয় সভাপতি",
+		name: "রাজিবুর রহমান",
 		sub_title: "কেন্দ্রীয় সভাপতির, বাংলাদেশ ইসলামী ছাত্রশিবির",
 		profile_photo:"uploads/posts/19কেন্দ্রীয় সভাপতিbanner11.png",
 		banner_photo:"uploads/posts/442কেন্দ্রীয় সভাপতিbg1.jpg",
@@ -16,6 +17,7 @@ let data = [
 	},
 	{
 		title: "কেন্দ্রীয় সভাপতি",
+		name: "রাজিবুর রহমান",
 		sub_title: "কেন্দ্রীয় সভাপতির, বাংলাদেশ ইসলামী ছাত্রশিবির",
 		profile_photo:"uploads/posts/19কেন্দ্রীয় সভাপতিbanner11.png",
 		banner_photo:"uploads/posts/442কেন্দ্রীয় সভাপতিbg1.jpg",
@@ -26,6 +28,7 @@ let data = [
 	},
 	{
 		title: "কেন্দ্রীয় সভাপতি",
+		name: "রাজিবুর রহমান",
 		sub_title: "কেন্দ্রীয় সভাপতির, বাংলাদেশ ইসলামী ছাত্রশিবির",
 		profile_photo:"uploads/posts/19কেন্দ্রীয় সভাপতিbanner11.png",
 		banner_photo:"uploads/posts/442কেন্দ্রীয় সভাপতিbg1.jpg",
@@ -36,6 +39,7 @@ let data = [
 	},
 	{
 		title: "কেন্দ্রীয় সভাপতি",
+		name: "রাজিবুর রহমান",
 		sub_title: "কেন্দ্রীয় সভাপতির, বাংলাদেশ ইসলামী ছাত্রশিবির",
 		profile_photo:"uploads/posts/19কেন্দ্রীয় সভাপতিbanner11.png",
 		banner_photo:"uploads/posts/442কেন্দ্রীয় সভাপতিbg1.jpg",

@@ -16,9 +16,9 @@
                             <div class="left-area">
                                 <div class="left_area_content">
                                     <p class="profation_name">কেন্দ্রীয় সভাপতির, বাংলাদেশ ইসলামী ছাত্রশিবির</p>
-                                    <h2 class="name_text"> রাজিবুর রহমান</h2>
+                                    <h2 class="name_text"><%= banner[0].name %></h2>
                                     <p class="description_text">
-                                        <%= profile_info[0].short_bio %>
+                                        <%= banner[0].description %>
                                     </p>
                                     <!-- <p><%= photo_gallery_category[0].title %></p> -->
                                     <!-- button_area start-->
@@ -51,48 +51,48 @@
                     <!-- small_count-area start -->
                     <div class="small_count_area">
                         <div class="small_count-area_content">
-
+                            
                             <!-- count_item start -->
                             <div class="count_item">
                                 <div class="count_number_area">
-                                    <h2 class="number_text">10+</h2>
+                                    <h2 class="number_text"><%= settingValue.value[0] %>+</h2>
                                 </div>
                                 <div class="count_text_area">
                                     <p class="count_text">
-                                        কাউন্ট নাম্বার</p>
+                                        <%= settingTitle.value[0] %></p>
                                 </div>
                             </div>
                             <!-- count_item end -->
                             <!-- count_item start -->
                             <div class="count_item">
                                 <div class="count_number_area">
-                                    <h2 class="number_text">300</h2>
+                                    <h2 class="number_text"><%= settingValue.value[1] %></h2>
                                 </div>
                                 <div class="count_text_area">
                                     <p class="count_text">
-                                        কাউন্ট নাম্বার</p>
+                                        <%= settingTitle.value[1] %></p>
                                 </div>
                             </div>
                             <!-- count_item end -->
                             <!-- count_item start -->
                             <div class="count_item">
                                 <div class="count_number_area">
-                                    <h2 class="number_text">250</h2>
+                                    <h2 class="number_text"><%= settingValue.value[2] %></h2>
                                 </div>
                                 <div class="count_text_area">
                                     <p class="count_text">
-                                        কাউন্ট নাম্বার </p>
+                                        <%= settingTitle.value[2] %> </p>
                                 </div>
                             </div>
                             <!-- count_item end -->
                             <!-- count_item start -->
                             <div class="count_item">
                                 <div class="count_number_area">
-                                    <h2 class="number_text">90</h2>
+                                    <h2 class="number_text"><%= settingValue.value[3] %></h2>
                                 </div>
                                 <div class="count_text_area">
                                     <p class="count_text">
-                                        কাউন্ট নাম্বার</p>
+                                        <%= settingTitle.value[3] %></p>
                                 </div>
                             </div>
                             <!-- count_item end -->

@@ -11,6 +11,11 @@ const data_validation = async (request_data) => {
         .isEmpty()
         .withMessage("the title field is required")
         .run(request_data);
+    await body("name")
+        .not()
+        .isEmpty()
+        .withMessage("the name field is required")
+        .run(request_data);
     await body("sub_title")
         .not()
         .isEmpty()
@@ -97,6 +102,7 @@ module.exports = async (datas) => {
         // const user = new model();
         const user = {};
         user.title = data.title;
+        user.name = data.name;
         user.sub_title = data.sub_title;
         user.description = data.description;
         user.banner_photo = banner_photo_path;

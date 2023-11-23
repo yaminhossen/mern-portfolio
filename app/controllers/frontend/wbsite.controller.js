@@ -11,6 +11,8 @@ const userContactMessagesModel = require("../../api/contact_message/contact_mess
 const userSettingTitlesModel = require("../../api/setting/setting_titles/model/model")
 const blogCategoriesModel = require("../../api/blog/blog_categories/model/model")
 const blogsModel = require("../../api/blog/blogs/model/model");
+const bannerModel = require("../../api/banner/banners/model/model");
+const settingModel = require("../../api/setting/setting_titles/model/model");
 
 const controllers = {
 	folder_prefix: ``,
@@ -41,11 +43,17 @@ const controllers = {
 		let profile_info = await uesrProfileInfosModel.find();
 		let photo_gallery_category = await photoGalleryCategoriyModel.find();
 		let blog_category = await blogCategoriesModel.find();
+		let settingTitle = await settingModel.findOne({ title: "banner_at_a_glance_title" });
+		let settingValue = await settingModel.findOne({ title: "banner_at_a_glance_value" });
+		let banner = await bannerModel.find();
 		// console.log("photo_gallery",photo_gallery_category);
 		return res.render(`frontend/home`, {
 			profile_info,
 			photo_gallery_category,
 			blog_category,
+			banner,
+			settingTitle,
+			settingValue,
 		});
 	},
 	contemporary: async function (req, res) {
@@ -65,9 +73,12 @@ const controllers = {
 	contemporary_details: async function (req, res) {
 		// console.log(req.params.id);
 		let contemp_details = await blogsModel.findOne({_id:req.params.id});
+		let contemp = await blogCategoriesModel.findOne({ title: "সমসাময়িক" });
+		let contems = await blogsModel.find().where({categories:contemp._id});
 		// console.log(contemp_details);
 		return res.render(`frontend/contemporary_details`, {
 			contemp_details,
+			contems,
 		});
 	},
 	contact: async function (req, res) {

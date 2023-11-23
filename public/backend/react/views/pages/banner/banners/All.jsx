@@ -31,6 +31,9 @@ function All() {
                                 
 
                                 <th className="cursor_n_resize">
+                                    Name
+                                </th>
+                                <th className="cursor_n_resize">
                                     Title
                                 </th>
 
@@ -53,6 +56,11 @@ function All() {
                                     return (
                                         <tr key={data.id}>
                                             <td><input type="checkbox" className="form-check-input" /></td>
+                                            <td>
+                                                <span onClick={() => set_data(data._id)} className="cursor_pointer text-warning">
+                                                    {data.name}
+                                                </span>
+                                            </td>
                                             <td>
                                                 <span onClick={() => set_data(data._id)} className="cursor_pointer text-warning">
                                                     {data.title}

@@ -61,6 +61,17 @@ function Create() {
                     </div>
                   </div>
                   <div className="custom_form_el">
+                    <label htmlFor="">Name</label>
+                    <div>:</div>
+                    <div>
+                      <input
+                        name="name"
+                        type="text"
+                        className="form-control"
+                      />
+                    </div>
+                  </div>
+                  <div className="custom_form_el">
                     <label htmlFor="">Sub Title</label>
                     <div>:</div>
                     <div>

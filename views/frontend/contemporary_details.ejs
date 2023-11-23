@@ -13,11 +13,8 @@
                     <div class="inner_page_area_content">
                         <!-- content_title start -->
                         <div class="content_title_and_description" data-aos="fade-right" data-aos-duration="1000">
-                            <h2 class="title_text">সমসাময়িক (বিস্তারিত)</h2>
-                            <p class="description_text">নাজাত লাভ, জান্নাত অর্জন, খোদার সন্তুষ্টি এবং ধনসম্পদেও
-                                বরকতের
-                                মাধ্যম।
-                                সততা মানব চরিত্রের শ্রেষ্ঠ গুণ। </p>
+                            <h2 class="title_text"><%= contemp_details.title %> (বিস্তারিত)</h2>
+                            <p class="description_text"><%= contemp_details.subtitle %></p>
                         </div>
                         <!-- content_title end -->
 
@@ -26,12 +23,11 @@
                             <!-- inner_item_details start -->
                             <div class="inner_item_details">
                                 <div class="image_area">
-                                    <img src="/assets/images/news_image/img4.webp" alt="image">
+                                    <img src="<%= contemp_details.photo %>" alt="image">
                                 </div>
                                 <div class="date_and_comment_area">
                                     <div class="date_area date_comment_area">
-                                        <p class="date_area_text date_comment_area_text">12.November. <span
-                                                class="color_text">2023</span> </p>
+                                        <p class="date_area_text date_comment_area_text"><%= contemp_details.published_date.toISOString().substring(0, 10) %></p>
                                     </div>
                                     <div class="comment_area date_comment_area">
                                         <a href="#" class="comment_area_text date_comment_area_text">9 <span
@@ -41,40 +37,14 @@
 
                                 <div class="title-area">
                                     <h2 class="title-area_text">
-                                        <%= contemp_details.subtitle %>
+                                        <%- contemp_details.short_description %>
                                     </h2>
                                 </div>
                                 <div class="item_description_area">
                                     <p class="description_text">
-                                        মানুষ সামাজিক জীব। সমাজবদ্ধ হয়ে বসবাস করা মানুষের সহজাত প্রবৃত্তি। একে অন্যের
-                                        সহযোগিতা
-                                        ছাড়া মানুষ একদিনও চলতে পারে না। তাই সামাজিক জীবনে পরস্পরিক সাহায্য-সহযোগিতা খুবই
-                                        মানুষ সামাজিক জীব। সমাজবদ্ধ হয়ে বসবাস করা মানুষের সহজাত প্রবৃত্তি। একে অন্যের
-                                        সহযোগিতা
-                                        ছাড়া মানুষ একদিনও চলতে পারে না। তাই সামাজিক জীবনে পরস্পরিক সাহায্য-সহযোগিতা খুবই
-                                        গুরুত্বপূর্ণ। ইসলাম সমাজকল্যাণমূলক ধর্ম। মানব কল্যাণ ও সমাজকল্যাণ ইসলামের অন্যতম
-                                        লক্ষ্য।
-                                        ছাড়া মানুষ একদিনও চলতে পারে না। তাই সামাজিক জীবনে পরস্পরিক সাহায্য-সহযোগিতা খুবই
-                                        গুরুত্বপূর্ণ। ইসলাম সমাজকল্যাণমূলক ধর্ম। মানব কল্যাণ ও সমাজকল্যাণ ইসলামের অন্যতম
-                                        লক্ষ্য।
+                                        <%- contemp_details.description %>
                                     </p>
-                                    <p class="description_text">
-                                        মানুষ সামাজিক জীব। সমাজবদ্ধ হয়ে বসবাস করা মানুষের সহজাত প্রবৃত্তি। একে অন্যের
-                                        সহযোগিতা
-                                        ছাড়া মানুষ একদিনও চলতে পারে না। তাই সামাজিক জীবনে পরস্পরিক সাহায্য-সহযোগিতা খুবই
-                                        গুরুত্বপূর্ণ। ইসলাম সমাজকল্যাণমূলক ধর্ম। মানব কল্যাণ ও সমাজকল্যাণ ইসলামের অন্যতম
-                                        লক্ষ্য।
-                                        ছাড়া মানুষ একদিনও চলতে পারে না। তাই সামাজিক জীবনে পরস্পরিক সাহায্য-সহযোগিতা খুবই
-                                        গুরুত্বপূর্ণ। ইসলাম সমাজকল্যাণমূলক ধর্ম। মানব কল্যাণ ও সমাজকল্যাণ ইসলামের অন্যতম
-                                        লক্ষ্য।
-                                    </p>
-                                    <p class="description_text">
-                                        মানুষ সামাজিক জীব। সমাজবদ্ধ হয়ে বসবাস করা মানুষের সহজাত প্রবৃত্তি। একে অন্যের
-                                        সহযোগিতা
-                                        ছাড়া মানুষ একদিনও চলতে পারে না। তাই সামাজিক জীবনে পরস্পরিক সাহায্য-সহযোগিতা খুবই
-                                        গুরুত্বপূর্ণ। ইসলাম সমাজকল্যাণমূলক ধর্ম। মানব কল্যাণ ও সমাজকল্যাণ ইসলামের অন্যতম
-                                        লক্ষ্য।
-                                    </p>
+                                    
                                 </div>
 
                                 <!-- comment_area start -->
@@ -255,193 +225,100 @@
                         </div>
                         <!-- search_area end -->
 
-                        <!-- categories_area start -->
-                        <div class="categories_area">
+                       <!-- categories_area start -->
+                       <div class="categories_area">
 
-                            <!-- side_ber_area_title start -->
-                            <div class="side_ber_area_title">
-                                <h2 class="title_text">ক্যাটেগরীজ</h2>
-                            </div>
-                            <!-- side_ber_area_title end -->
-
-                            <div class="categories_item_all">
-                                <ul>
-                                    <li>
-                                        <a href="#" class="categories_name">
-                                            সব
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="categories_name">
-                                            ক্যাটেগরীজ
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="categories_name">
-                                            ক্যাটেগরীজ 1
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="categories_name">
-                                            গরীজ 2
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="categories_name">
-                                            ক্যাটেগরীজ 3
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="categories_name">
-                                            ক্যাটেগরীজ 4
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-
+                        <!-- side_ber_area_title start -->
+                        <div class="side_ber_area_title">
+                            <h2 class="title_text">ক্যাটেগরীজ</h2>
                         </div>
-                        <!-- categories_area end -->
+                        <!-- side_ber_area_title end -->
 
-                        <!-- recently_posted_area start -->
-                        <div class="recently_posted_area">
+                        <div class="categories_item_all">
+                            <ul>
+                                <% commonData.blog_category.map( (cm)=>{ %>
 
-                            <!-- side_ber_area_title start -->
-                            <div class="side_ber_area_title">
-                                <h2 class="title_text">সম্প্রতি পোস্ট</h2>
-                            </div>
-                            <!-- side_ber_area_title end -->
-
-                            <div class="recently_posted_item_all">
-
-                                <!-- posted_item start -->
-                                <a href="#" class="posted_item">
-                                    <div class="image_area">
-                                        <img src="/assets/images/news_image/img6.jpg" alt="img">
-                                    </div>
-                                    <div class="title_and_dete_area">
-                                        <div class="title_area">
-                                            <p class="title_text">
-                                                সামাজিক কাজ ইউনিয়ন পরিষদ কাজ সামাজিক
-                                            </p>
-                                        </div>
-                                        <div class="date_area">
-                                            <p class="date_text">
-                                                12.November.2023
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                                <!-- posted_item end -->
-                                <!-- posted_item start -->
-                                <a href="#" class="posted_item">
-                                    <div class="image_area">
-                                        <img src="/assets/images/news_image/img6.jpg" alt="img">
-                                    </div>
-                                    <div class="title_and_dete_area">
-                                        <div class="title_area">
-                                            <p class="title_text">
-                                                সামাজিক কাজ ইউনিয়ন
-                                            </p>
-                                        </div>
-                                        <div class="date_area">
-                                            <p class="date_text">
-                                                12.November.2023
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                                <!-- posted_item end -->
-                                <!-- posted_item start -->
-                                <a href="#" class="posted_item">
-                                    <div class="image_area">
-                                        <img src="/assets/images/news_image/img6.jpg" alt="img">
-                                    </div>
-                                    <div class="title_and_dete_area">
-                                        <div class="title_area">
-                                            <p class="title_text">
-                                                সামাজিক কাজ ইউনিয়ন পরিষদ কাজ সামাজিক
-                                            </p>
-                                        </div>
-                                        <div class="date_area">
-                                            <p class="date_text">
-                                                12.November.2023
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                                <!-- posted_item end -->
-                                <!-- posted_item start -->
-                                <a href="#" class="posted_item">
-                                    <div class="image_area">
-                                        <img src="/assets/images/news_image/img6.jpg" alt="img">
-                                    </div>
-                                    <div class="title_and_dete_area">
-                                        <div class="title_area">
-                                            <p class="title_text">
-                                                সামাজিক কাজ ইউনিয়ন পরিষদ কাজ সামাজিক
-                                            </p>
-                                        </div>
-                                        <div class="date_area">
-                                            <p class="date_text">
-                                                12.November.2023
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                                <!-- posted_item end -->
-
-                            </div>
-
+                                    <li>
+                                        <a href="<%= cm.url %>" class="categories_name">
+                                            <%= cm.title %>
+                                        </a>
+                                    </li>
+        
+                                    <% })%>
+                                
+                            </ul>
                         </div>
-                        <!-- recently_posted_area end -->
 
-                        <!-- popular_tag_area start -->
-                        <div class="popular_tag_area">
+                    </div>
+                    <!-- categories_area end -->
 
-                            <!-- side_ber_area_title start -->
-                            <div class="side_ber_area_title">
-                                <h2 class="title_text">জনপ্রিয় ট্যাগ</h2>
-                            </div>
-                            <!-- side_ber_area_title end -->
+                    <!-- recently_posted_area start -->
+                    <div class="recently_posted_area">
 
-                            <div class="popular_tag_all">
-                                <ul>
-                                    <li>
-                                        <a href="#" class="tag_text">ট্যাগ 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">জনপ্রিয় ট্যাগ</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">জনপ্রিয় ট্যাগ 2</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">ট্যাগ 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">জনপ্রিয় ট্যাগ</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">ট্যাগ 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">জনপ্রিয় ট্যাগ</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">ট্যাগ 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">জনপ্রিয় ট্যাগ</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">ট্যাগ 1</a>
-                                    </li>
-                                </ul>
-                            </div>
-
-
+                        <!-- side_ber_area_title start -->
+                        <div class="side_ber_area_title">
+                            <h2 class="title_text">সম্প্রতি পোস্ট</h2>
                         </div>
-                        <!-- popular_tag_area end -->
+                        <!-- side_ber_area_title end -->
+
+                        <div class="recently_posted_item_all">
+                            <% contems.slice(-2).map( (cm)=>{ %>
+
+                                 <!-- posted_item start -->
+                            <a href="#" class="posted_item">
+                                <div class="image_area">
+                                    <img src="<%= cm.photo %>" alt="img">
+                                </div>
+                                <div class="title_and_dete_area">
+                                    <div class="title_area">
+                                        <p class="title_text">
+                                           <%= cm.title %>
+                                        </p>
+                                    </div>
+                                    <div class="date_area">
+                                        <p class="date_text">
+                                            <%= cm.published_date.toISOString().substring(0, 10) %>
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- posted_item end -->
+    
+                                <% })%>
+
+                           
+                        </div>
+
+                    </div>
+                    <!-- recently_posted_area end -->
+
+                    <!-- popular_tag_area start -->
+                    <div class="popular_tag_area">
+
+                        <!-- side_ber_area_title start -->
+                        <div class="side_ber_area_title">
+                            <h2 class="title_text">জনপ্রিয় ট্যাগ</h2>
+                        </div>
+                        <!-- side_ber_area_title end -->
+
+                        <div class="popular_tag_all">
+                            <ul>
+                                <% commonData.tags.map( (tag)=>{ %>
+
+                                    <li>
+                                        <a href="#" class="tag_text">
+                                            <%= tag.title %>
+                                        </a>
+                                    </li>
+        
+                                    <% })%>
+                                
+                            </ul>
+                        </div>
+
+
+                    </div>
+                    <!-- popular_tag_area end -->
 
                     </div>
                 </div>
