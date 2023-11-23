@@ -46,6 +46,10 @@ const controllers = {
 		let settingTitle = await settingModel.findOne({ title: "banner_at_a_glance_title" });
 		let settingValue = await settingModel.findOne({ title: "banner_at_a_glance_value" });
 		let banner = await bannerModel.find();
+
+		let contemp = await blogCategoriesModel.findOne({ title: "সমসাময়িক" });
+		
+		let contems = await blogsModel.find().where({categories:contemp._id});
 		// console.log("photo_gallery",photo_gallery_category);
 		return res.render(`frontend/home`, {
 			profile_info,
@@ -54,6 +58,8 @@ const controllers = {
 			banner,
 			settingTitle,
 			settingValue,
+			contemp,
+			contems,
 		});
 	},
 	contemporary: async function (req, res) {
