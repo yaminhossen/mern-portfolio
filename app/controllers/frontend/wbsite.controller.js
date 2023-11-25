@@ -50,6 +50,11 @@ const controllers = {
 		let contemp = await blogCategoriesModel.findOne({ title: "সমসাময়িক" });
 		
 		let contems = await blogsModel.find().where({categories:contemp._id});
+
+		let social_work = await blogCategoriesModel.findOne({ title: "সামাজিক কাজ" });
+		
+		let social_works = await blogsModel.find().where({categories:social_work._id});
+
 		// console.log("photo_gallery",photo_gallery_category);
 		return res.render(`frontend/home`, {
 			profile_info,
@@ -60,6 +65,8 @@ const controllers = {
 			settingValue,
 			contemp,
 			contems,
+			social_work,
+			social_works,
 		});
 	},
 	contemporary: async function (req, res) {
@@ -81,14 +88,25 @@ const controllers = {
 		
 		let social_works = await blogsModel.find().where({categories:social_work._id});
 
-		console.log("social_work",social_work._id);
-		console.log("social_works",social_works);
+		// console.log("social_work",social_work._id);
+		// console.log("social_works",social_works.length);
 		return res.render(`frontend/social_work`, {
 			social_work,
 			social_works,
 		});
 	},
 	
+	social_work_details: async function (req, res) {
+		// console.log(req.params.id);
+		let social_work_details = await blogsModel.findOne({_id:req.params.id});
+		let social_work = await blogCategoriesModel.findOne({ title: "সামাজিক কাজ" });
+		let social_works = await blogsModel.find().where({categories:social_work._id});
+		// console.log(social_work_details);
+		return res.render(`frontend/social_work_details`, {
+			social_work_details,
+			social_works,
+		});
+	},
 	contemporary_details: async function (req, res) {
 		// console.log(req.params.id);
 		let contemp_details = await blogsModel.findOne({_id:req.params.id});

@@ -12,29 +12,27 @@
                     <div class="inner_page_area_content">
                         <!-- content_title start -->
                         <div class="content_title_and_description" data-aos="fade-right" data-aos-duration="1000">
-                            <h2 class="title_text">সামাজিক কাজ</h2>
-                            <p class="description_text">নাজাত লাভ, জান্নাত অর্জন, খোদার সন্তুষ্টি এবং ধনসম্পদেও
-                                বরকতের
-                                মাধ্যম।
-                                সততা মানব চরিত্রের শ্রেষ্ঠ গুণ। </p>
+                            <h2 class="title_text"><%= social_work.title %></h2>
+                            <p class="description_text">
+                                <%= social_work.short_description %>
+                            </p>
                         </div>
                         <!-- content_title end -->
 
                         <!-- inner_page_all_content start -->
                         <div class="inner_page_all_content">
                             <!-- item_area start -->
+                            <% social_works.map( (sw)=>{ %>
                             <div class="item_area">
-                                <a href="social-work-details"
+                                <a href="social-work-details/<%= sw._id %>"
                                     class="social_work_image_card edit_social_work_image_card" data-aos="fade-up" data-aos-duration="300">
-                                    <img src="/assets/images/news_image/img2.jpg" alt="img">
+                                    <img src="<%= sw.photo %>" alt="img">
                                     <!-- overlay-area start -->
                                     <div class="overlay-area">
                                         <div class="overlay-area_content">
 
                                             <div class="image_title">
-                                                <h2 class="title_text">বিশ্বব্যাপী উদ্বেগের কারণ হয়ে দাঁড়িয়েছে
-                                                    ফিলিস্তিন-ইসরায়েল
-                                                    যুদ্ধ</h2>
+                                                <h2 class="title_text"><%= sw.subtitle %></h2>
                                             </div>
                                         </div>
 
@@ -42,199 +40,9 @@
                                     <!-- overlay-area end -->
                                 </a>
                             </div>
+                            <% })%>
                             <!-- item_area end -->
-                            <!-- item_area start -->
-                            <div class="item_area">
-                                <a href="social-work-details"
-                                    class="social_work_image_card edit_social_work_image_card" data-aos="fade-up" data-aos-duration="600">
-                                    <img src="/assets/images/news_image/img2.jpg" alt="img">
-                                    <!-- overlay-area start -->
-                                    <div class="overlay-area">
-                                        <div class="overlay-area_content">
-
-                                            <div class="video_icon_area">
-                                                <div class="video_icon">
-                                                    <i class="fa-solid fa-play"></i>
-                                                </div>
-                                            </div>
-
-                                            <div class="image_title">
-                                                <h2 class="title_text">বিশ্বব্যাপী উদ্বেগের কারণ হয়ে দাঁড়িয়েছে
-                                                    ফিলিস্তিন-ইসরায়েল
-                                                    যুদ্ধ</h2>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <!-- overlay-area end -->
-                                </a>
-                            </div>
-                            <!-- item_area end -->
-                            <!-- item_area start -->
-                            <div class="item_area">
-                                <a href="social-work-details"
-                                    class="social_work_image_card edit_social_work_image_card" data-aos="fade-up" data-aos-duration="900">
-                                    <img src="/assets/images/news_image/img2.jpg" alt="img">
-                                    <!-- overlay-area start -->
-                                    <div class="overlay-area">
-                                        <div class="overlay-area_content">
-
-                                            <div class="image_title">
-                                                <h2 class="title_text">বিশ্বব্যাপী উদ্বেগের কারণ হয়ে দাঁড়িয়েছে
-                                                    ফিলিস্তিন-ইসরায়েল
-                                                    যুদ্ধ</h2>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <!-- overlay-area end -->
-                                </a>
-                            </div>
-                            <!-- item_area end -->
-                            <!-- item_area start -->
-                            <div class="item_area">
-                                <a href="social-work-details"
-                                    class="social_work_image_card edit_social_work_image_card" data-aos="fade-up" data-aos-duration="1200">
-                                    <img src="/assets/images/news_image/img2.jpg" alt="img">
-                                    <!-- overlay-area start -->
-                                    <div class="overlay-area">
-                                        <div class="overlay-area_content">
-
-                                            <div class="video_icon_area">
-                                                <div class="video_icon">
-                                                    <i class="fa-solid fa-play"></i>
-                                                </div>
-                                            </div>
-
-                                            <div class="image_title">
-                                                <h2 class="title_text">বিশ্বব্যাপী উদ্বেগের কারণ হয়ে দাঁড়িয়েছে
-                                                    ফিলিস্তিন-ইসরায়েল
-                                                    যুদ্ধ</h2>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <!-- overlay-area end -->
-                                </a>
-                            </div>
-                            <!-- item_area end -->
-                            <!-- item_area start -->
-                            <div class="item_area">
-                                <a href="social-work-details"
-                                    class="social_work_image_card edit_social_work_image_card" data-aos="fade-up" data-aos-duration="300">
-                                    <img src="/assets/images/news_image/img2.jpg" alt="img">
-                                    <!-- overlay-area start -->
-                                    <div class="overlay-area">
-                                        <div class="overlay-area_content">
-
-                                            <div class="image_title">
-                                                <h2 class="title_text">বিশ্বব্যাপী উদ্বেগের কারণ হয়ে দাঁড়িয়েছে
-                                                    ফিলিস্তিন-ইসরায়েল
-                                                    যুদ্ধ</h2>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <!-- overlay-area end -->
-                                </a>
-                            </div>
-                            <!-- item_area end -->
-                            <!-- item_area start -->
-                            <div class="item_area">
-                                <a href="social-work-details"
-                                    class="social_work_image_card edit_social_work_image_card" data-aos="fade-up" data-aos-duration="600">
-                                    <img src="/assets/images/news_image/img2.jpg" alt="img">
-                                    <!-- overlay-area start -->
-                                    <div class="overlay-area">
-                                        <div class="overlay-area_content">
-
-                                            <div class="video_icon_area">
-                                                <div class="video_icon">
-                                                    <i class="fa-solid fa-play"></i>
-                                                </div>
-                                            </div>
-
-                                            <div class="image_title">
-                                                <h2 class="title_text">বিশ্বব্যাপী উদ্বেগের কারণ হয়ে দাঁড়িয়েছে
-                                                    ফিলিস্তিন-ইসরায়েল
-                                                    যুদ্ধ</h2>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <!-- overlay-area end -->
-                                </a>
-                            </div>
-                            <!-- item_area end -->
-                            <!-- item_area start -->
-                            <div class="item_area">
-                                <a href="social-work-details"
-                                    class="social_work_image_card edit_social_work_image_card" data-aos="fade-up" data-aos-duration="900">
-                                    <img src="/assets/images/news_image/img2.jpg" alt="img">
-                                    <!-- overlay-area start -->
-                                    <div class="overlay-area">
-                                        <div class="overlay-area_content">
-
-                                            <div class="image_title">
-                                                <h2 class="title_text">বিশ্বব্যাপী উদ্বেগের কারণ হয়ে দাঁড়িয়েছে
-                                                    ফিলিস্তিন-ইসরায়েল
-                                                    যুদ্ধ</h2>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <!-- overlay-area end -->
-                                </a>
-                            </div>
-                            <!-- item_area end -->
-                            <!-- item_area start -->
-                            <div class="item_area">
-                                <a href="social-work-details"
-                                    class="social_work_image_card edit_social_work_image_card" data-aos="fade-up" data-aos-duration="1200">
-                                    <img src="/assets/images/news_image/img2.jpg" alt="img">
-                                    <!-- overlay-area start -->
-                                    <div class="overlay-area">
-                                        <div class="overlay-area_content">
-
-                                            <div class="video_icon_area">
-                                                <div class="video_icon">
-                                                    <i class="fa-solid fa-play"></i>
-                                                </div>
-                                            </div>
-
-                                            <div class="image_title">
-                                                <h2 class="title_text">বিশ্বব্যাপী উদ্বেগের কারণ হয়ে দাঁড়িয়েছে
-                                                    ফিলিস্তিন-ইসরায়েল
-                                                    যুদ্ধ</h2>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <!-- overlay-area end -->
-                                </a>
-                            </div>
-                            <!-- item_area end -->
-                            <!-- item_area start -->
-                            <div class="item_area">
-                                <a href="social-work-details"
-                                    class="social_work_image_card edit_social_work_image_card" data-aos="fade-up" data-aos-duration="300">
-                                    <img src="/assets/images/news_image/img2.jpg" alt="img">
-                                    <!-- overlay-area start -->
-                                    <div class="overlay-area">
-                                        <div class="overlay-area_content">
-
-                                            <div class="image_title">
-                                                <h2 class="title_text">বিশ্বব্যাপী উদ্বেগের কারণ হয়ে দাঁড়িয়েছে
-                                                    ফিলিস্তিন-ইসরায়েল
-                                                    যুদ্ধ</h2>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <!-- overlay-area end -->
-                                </a>
-                            </div>
-                            <!-- item_area end -->
+                         
 
 
                         </div>
