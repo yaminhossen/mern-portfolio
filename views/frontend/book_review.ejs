@@ -12,170 +12,33 @@
                     <div class="inner_page_area_content">
                         <!-- content_title start -->
                         <div class="content_title_and_description" data-aos="fade-right" data-aos-duration="1000">
-                            <h2 class="title_text">বই পর্যালোচনা</h2>
-                            <p class="description_text">নাজাত লাভ, জান্নাত অর্জন, খোদার সন্তুষ্টি এবং ধনসম্পদেও
-                                বরকতের
-                                মাধ্যম।
-                                সততা মানব চরিত্রের শ্রেষ্ঠ গুণ। </p>
+                            <h2 class="title_text"><%= book_review.title %></h2>
+                            <p class="description_text"><%= book_review.short_description %></p>
                         </div>
                         <!-- content_title end -->
 
                         <!-- inner_page_all_content start -->
                         <div class="inner_page_all_content" data-aos="fade-up" data-aos-duration="1000">
+                            <% book_reviews.map( (br)=>{ %>
                             <!-- book_card start -->
                             <div class="book_card">
-                                <a href="book-review-details" class="book_card_item edit_inner_book_card_item">
+                                <a href="book-review-details/<%= br._id %>" class="book_card_item edit_inner_book_card_item">
                                     <div class="image_area">
-                                        <img src="/assets/images/book_review_image/book1.jpg" alt="image">
+                                        <img src="<%= br.photo %>" alt="<%= br.photo_alt %>">
                                         <!-- <div class="bg_image" style="">
 
                                 </div> -->
                                     </div>
                                     <div class="image_title_and_description_area">
-                                        <h2 class="title_text">ইসলাম বই</h2>
-                                        <p class="description_text">নাজাত লাভ, জান্নাত অর্জন, খোদার সন্তুষ্টি এবং
-                                            ধনসম্পদেও
-                                            বরকতের
-                                            মাধ্যম।
-                                            সততা মানব চরিত্রের শ্রেষ্ঠ গুণ। নাজাত লাভ, জান্নাত অর্জন,
+                                        <h2 class="title_text"><%= br.title %></h2>
+                                        <p class="description_text"><%- br.short_description %>
                                         </p>
                                     </div>
 
                                 </a>
                             </div>
                             <!-- book_card end -->
-                            <!-- book_card start -->
-                            <div class="book_card">
-                                <a href="book-review-details" class="book_card_item edit_inner_book_card_item">
-                                    <div class="image_area">
-                                        <img src="/assets/images/book_review_image/book2.jpg" alt="image">
-                                        <!-- <div class="bg_image" style="">
-
-                                </div> -->
-                                    </div>
-                                    <div class="image_title_and_description_area">
-                                        <h2 class="title_text">ইসলাম বই</h2>
-                                        <p class="description_text">নাজাত লাভ, জান্নাত অর্জন, খোদার সন্তুষ্টি এবং
-                                            ধনসম্পদেও
-                                            বরকতের
-                                            মাধ্যম।
-                                            সততা মানব চরিত্রের শ্রেষ্ঠ গুণ। নাজাত লাভ, জান্নাত অর্জন,
-                                        </p>
-                                    </div>
-
-                                </a>
-                            </div>
-                            <!-- book_card end -->
-                            <!-- book_card start -->
-                            <div class="book_card">
-                                <a href="book-review-details" class="book_card_item edit_inner_book_card_item">
-                                    <div class="image_area">
-                                        <img src="/assets/images/book_review_image/book3.jpg" alt="image">
-                                        <!-- <div class="bg_image" style="">
-
-                                </div> -->
-                                    </div>
-                                    <div class="image_title_and_description_area">
-                                        <h2 class="title_text">ইসলাম বই</h2>
-                                        <p class="description_text">নাজাত লাভ, জান্নাত অর্জন, খোদার সন্তুষ্টি এবং
-                                            ধনসম্পদেও
-                                            বরকতের
-                                            মাধ্যম।
-                                            সততা মানব চরিত্রের শ্রেষ্ঠ গুণ। নাজাত লাভ, জান্নাত অর্জন,
-                                        </p>
-                                    </div>
-
-                                </a>
-                            </div>
-                            <!-- book_card end -->
-                            <!-- book_card start -->
-                            <div class="book_card">
-                                <a href="book-review-details" class="book_card_item edit_inner_book_card_item">
-                                    <div class="image_area">
-                                        <img src="/assets/images/book_review_image/book4.jpg" alt="image">
-                                        <!-- <div class="bg_image" style="">
-
-                                </div> -->
-                                    </div>
-                                    <div class="image_title_and_description_area">
-                                        <h2 class="title_text">ইসলাম বই</h2>
-                                        <p class="description_text">নাজাত লাভ, জান্নাত অর্জন, খোদার সন্তুষ্টি এবং
-                                            ধনসম্পদেও
-                                            বরকতের
-                                            মাধ্যম।
-                                            সততা মানব চরিত্রের শ্রেষ্ঠ গুণ। নাজাত লাভ, জান্নাত অর্জন,
-                                        </p>
-                                    </div>
-
-                                </a>
-                            </div>
-                            <!-- book_card end -->
-                            <!-- book_card start -->
-                            <div class="book_card ">
-                                <a href="book-review-details" class="book_card_item edit_inner_book_card_item">
-                                    <div class="image_area">
-                                        <img src="/assets/images/book_review_image/book5.jpg" alt="image">
-                                        <!-- <div class="bg_image" style="">
-
-                                </div> -->
-                                    </div>
-                                    <div class="image_title_and_description_area">
-                                        <h2 class="title_text">ইসলাম বই</h2>
-                                        <p class="description_text">নাজাত লাভ, জান্নাত অর্জন, খোদার সন্তুষ্টি এবং
-                                            ধনসম্পদেও
-                                            বরকতের
-                                            মাধ্যম।
-                                            সততা মানব চরিত্রের শ্রেষ্ঠ গুণ। নাজাত লাভ, জান্নাত অর্জন,
-                                        </p>
-                                    </div>
-
-                                </a>
-                            </div>
-                            <!-- book_card end -->
-                            <!-- book_card start -->
-                            <div class="book_card ">
-                                <a href="book-review-details" class="book_card_item edit_inner_book_card_item">
-                                    <div class="image_area">
-                                        <img src="/assets/images/book_review_image/book6.jpg" alt="image">
-                                        <!-- <div class="bg_image" style="">
-
-                                </div> -->
-                                    </div>
-                                    <div class="image_title_and_description_area">
-                                        <h2 class="title_text">ইসলাম বই</h2>
-                                        <p class="description_text">নাজাত লাভ, জান্নাত অর্জন, খোদার সন্তুষ্টি এবং
-                                            ধনসম্পদেও
-                                            বরকতের
-                                            মাধ্যম।
-                                            সততা মানব চরিত্রের শ্রেষ্ঠ গুণ। নাজাত লাভ, জান্নাত অর্জন,
-                                        </p>
-                                    </div>
-
-                                </a>
-                            </div>
-                            <!-- book_card end -->
-                            <!-- book_card start -->
-                            <div class="book_card ">
-                                <a href="book-review-details" class="book_card_item edit_inner_book_card_item">
-                                    <div class="image_area">
-                                        <img src="/assets/images/book_review_image/book7.jpg" alt="image">
-                                        <!-- <div class="bg_image" style="">
-
-                                </div> -->
-                                    </div>
-                                    <div class="image_title_and_description_area">
-                                        <h2 class="title_text">ইসলাম বই</h2>
-                                        <p class="description_text">নাজাত লাভ, জান্নাত অর্জন, খোদার সন্তুষ্টি এবং
-                                            ধনসম্পদেও
-                                            বরকতের
-                                            মাধ্যম।
-                                            সততা মানব চরিত্রের শ্রেষ্ঠ গুণ। নাজাত লাভ, জান্নাত অর্জন,
-                                        </p>
-                                    </div>
-
-                                </a>
-                            </div>
-                            <!-- book_card end -->
+                            <% })%>
                         </div>
                         <!-- inner_page_all_content end -->
 

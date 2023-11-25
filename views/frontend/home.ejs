@@ -272,7 +272,7 @@
                             <li class="item_area">
                                 <a href="social-work-details/<%= sw._id %>" class="social_work_image_card" data-aos="fade-up"
                                     data-aos-duration="300">
-                                    <img src="<%= sw.photo %>" alt="img">
+                                    <img src="<%= sw.photo %>" alt="<%= sw.photo_alt %>">
                                     <!-- overlay-area start -->
                                     <div class="overlay-area">
                                         <div class="overlay-area_content">
@@ -373,88 +373,35 @@
 
                     <!-- content_title start -->
                     <div class="content_title_and_description" data-aos="fade-right" data-aos-duration="1000">
-                        <h2 class="title_text">বই পর্যালোচনা</h2>
-                        <p class="description_text">নাজাত লাভ, জান্নাত অর্জন, খোদার সন্তুষ্টি এবং ধনসম্পদেও বরকতের
-                            মাধ্যম।
-                            সততা মানব চরিত্রের শ্রেষ্ঠ গুণ। নাজাত লাভ, জান্নাত অর্জন, খোদার সন্তুষ্টি এবং ধনসম্পদেও
-                            বরকতের
-                            মাধ্যম। </p>
+                        <h2 class="title_text"><%= book_review.title %></h2>
+                        <p class="description_text"><%= book_review.short_description %> </p>
                     </div>
                     <!-- content_title end -->
 
                     <!-- book_card_area_all start -->
                     <div class="book_card_area_all">
-
+                        <% book_reviews.map( (br)=>{ %>
                         <!-- book_card start -->
                         <div class="book_card">
-                            <a href="book_review_details.html" class="book_card_item" data-aos="fade-up"
+                            <a href="book-review-details/<%= br._id %>" class="book_card_item" data-aos="fade-up"
                                 data-aos-duration="300">
                                 <div class="image_area">
-                                    <img src="/assets/images/book_review_image/book1.jpg" alt="image">
+                                    <img src="<%= br.photo %>" alt="<%= br.photo_alt %>">
                                     <!-- <div class="bg_image" style="">
 
                                 </div> -->
                                 </div>
                                 <div class="image_title_and_description_area">
-                                    <h2 class="title_text">ইসলাম বই</h2>
-                                    <p class="description_text">নাজাত লাভ, জান্নাত অর্জন, খোদার সন্তুষ্টি এবং ধনসম্পদেও
-                                        বরকতের
-                                        মাধ্যম।
-                                        সততা মানব চরিত্রের শ্রেষ্ঠ গুণ। নাজাত লাভ, জান্নাত অর্জন,
+                                    <h2 class="title_text"><%= br.title %></h2>
+                                    <p class="description_tex">
+                                        <%- br.short_description %>
                                     </p>
                                 </div>
 
                             </a>
                         </div>
                         <!-- book_card end -->
-                        <!-- book_card start -->
-                        <div class="book_card">
-                            <a href="book_review_details.html" class="book_card_item" data-aos="fade-up"
-                                data-aos-duration="600">
-                                <div class="image_area">
-                                    <img src="/assets/images/book_review_image/book2.jpg" alt="image">
-                                </div>
-                                <div class="image_title_and_description_area">
-                                    <h2 class="title_text">বই</h2>
-                                    <p class="description_text">বইটি থেকে অনেক টি থেকে অনেক কিছু
-                                        জানার আছে</p>
-                                </div>
-
-                            </a>
-                        </div>
-                        <!-- book_card end -->
-                        <!-- book_card start -->
-                        <div class="book_card">
-                            <a href="book_review_details.html" class="book_card_item" data-aos="fade-up"
-                                data-aos-duration="900">
-                                <div class="image_area">
-                                    <img src="/assets/images/book_review_image/book3.jpg" alt="image">
-                                </div>
-                                <div class="image_title_and_description_area">
-                                    <h2 class="title_text">ইসলাম</h2>
-                                    <p class="description_text">বইটা অনেক সুন্দর , বইটি থেকে অনেক </p>
-                                </div>
-
-                            </a>
-                        </div>
-                        <!-- book_card end -->
-                        <!-- book_card start -->
-                        <div class="book_card">
-                            <a href="book_review_details.html" class="book_card_item" data-aos="fade-up"
-                                data-aos-duration="1200">
-                                <div class="image_area">
-                                    <img src="/assets/images/book_review_image/book4.jpg" alt="image">
-                                </div>
-                                <div class="image_title_and_description_area">
-                                    <h2 class="title_text">বইটি থেকে অনেক</h2>
-                                    <p class="description_text">
-                                        অনেক বইটা অনেক সুন্দর , ক কিছু
-                                        জানার আছে</p>
-                                </div>
-
-                            </a>
-                        </div>
-                        <!-- book_card end -->
+                        <% })%>
                     </div>
                     <!-- book_card_area_all end -->
 
@@ -462,7 +409,7 @@
                     <div class="button_area" style="text-align: center;" data-aos="fade-up" data-aos-duration="1000">
                         <a href="book-review" class="button_text_area">
                             <span class="button_text">
-                                আরোও দেখুন
+                               <%= banner[0].button_text  %>
                                 <span class="dash_icon"></span>
                             </span>
                         </a>
