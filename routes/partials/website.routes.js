@@ -27,9 +27,7 @@ router
 	.get("/contact", website_controller.contact)
 	.get("/contemporary",website_controller.contemporary)
 	.get("/contemporary-details/:id", website_controller.contemporary_details)
-	.get("/social-work", function (req, res) {
-		return res.render("frontend/social_work");
-	})
+	.get("/social-work", website_controller.social_work)
 	.get("/social-work-details", function (req, res) {
 		return res.render("frontend/social_work_details");
 	})

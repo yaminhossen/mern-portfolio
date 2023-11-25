@@ -75,6 +75,19 @@ const controllers = {
 			contemp,
 		});
 	},
+	social_work: async function (req, res) {
+		// const model_data = await model.findOne({ _id: data.id });
+		let social_work = await blogCategoriesModel.findOne({ title: "সামাজিক কাজ" });
+		
+		let social_works = await blogsModel.find().where({categories:social_work._id});
+
+		console.log("social_work",social_work._id);
+		console.log("social_works",social_works);
+		return res.render(`frontend/social_work`, {
+			social_work,
+			social_works,
+		});
+	},
 	
 	contemporary_details: async function (req, res) {
 		// console.log(req.params.id);
