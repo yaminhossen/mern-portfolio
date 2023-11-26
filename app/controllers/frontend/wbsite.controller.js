@@ -59,6 +59,28 @@ const controllers = {
 
 		let book_reviews = await blogsModel.find().where({ categories: book_review._id });
 
+		let blog_islam = await blogCategoriesModel.findOne({ title: "ইসলাম" });
+
+		let blog_islams = await blogsModel.find().where({ categories: blog_islam._id });
+
+		let blog_islamic_movement = await blogCategoriesModel.findOne({ title: "ইসলামী আন্দোলন" });
+
+		let blog_islamic_movements = await blogsModel.find().where({ categories: blog_islamic_movement._id });
+
+		let blog_bangladesh = await blogCategoriesModel.findOne({ title: "বাংলাদেশ" });
+
+		let blog_bangladeshs = await blogsModel.find().where({ categories: blog_bangladesh._id });
+
+		let blog_politics = await blogCategoriesModel.findOne({ title: "বাংলাদেশ" });
+
+		let blog_politicss = await blogsModel.find().where({ categories: blog_politics._id });
+
+		let blog_history = await blogCategoriesModel.findOne({ title: "ইতিহাস" });
+
+		let blog_historys = await blogsModel.find().where({ categories: blog_history._id });
+
+
+
 		// console.log("photo_gallery",photo_gallery_category);
 		return res.render(`frontend/home`, {
 			profile_info,
@@ -73,6 +95,17 @@ const controllers = {
 			social_works,
 			book_review,
 			book_reviews,
+			blog_islam,
+			blog_islams,
+			blog_islamic_movement,
+			blog_islamic_movements,
+			blog_bangladesh,
+			blog_bangladeshs,
+			blog_politics,
+			blog_politicss,
+			blog_history,
+			blog_historys,
+
 		});
 	},
 	contemporary: async function (req, res) {
@@ -123,6 +156,106 @@ const controllers = {
 			social_works,
 		});
 	},
+	blog_islam: async function (req, res) {
+		// const model_data = await model.findOne({ _id: data.id });
+		let blog_islam = await blogCategoriesModel.findOne({ title: "ইসলাম" });
+
+		let blog_islams = await blogsModel.find().where({ categories: blog_islam._id });
+
+		// console.log("blog_islam",blog_islam._id);
+		// console.log("blog_islams",blog_islams.length);
+		return res.render(`frontend/blog/islam`, {
+			blog_islam,
+			blog_islams,
+		});
+	},
+	blog_islam_details: async function (req, res) {
+		// console.log(req.params.id);
+		let blog_islam_details = await blogsModel.findOne({ _id: req.params.id });
+		let blog_islam = await blogCategoriesModel.findOne({ title: "ইসলাম" });
+		let blog_islams = await blogsModel.find().where({ categories: blog_islam._id });
+		// console.log(blog_islam_details);
+		return res.render(`frontend/blog/islam_details`, {
+			blog_islam_details,
+			blog_islams,
+		});
+	},
+	blog_islamic_movement: async function (req, res) {
+		let blog_islamic_movement = await blogCategoriesModel.findOne({ title: "ইসলামী আন্দোলন" });
+
+		let blog_islamic_movements = await blogsModel.find().where({ categories: blog_islamic_movement._id });
+
+		return res.render(`frontend/blog/islamic_movement`, {
+			blog_islamic_movement,
+			blog_islamic_movements,
+		});
+	},
+	blog_islamic_movement_details: async function (req, res) {
+		let blog_islamic_movement_details = await blogsModel.findOne({ _id: req.params.id });
+		let blog_islamic_movement = await blogCategoriesModel.findOne({ title: "ইসলামী আন্দোলন" });
+		let blog_islamic_movements = await blogsModel.find().where({ categories: blog_islamic_movement._id });
+		return res.render(`frontend/blog/islamic_movement_details`, {
+			blog_islamic_movement_details,
+			blog_islamic_movements,
+		});
+	},
+	blog_bangladesh: async function (req, res) {
+		let blog_bangladesh = await blogCategoriesModel.findOne({ title: "বাংলাদেশ" });
+
+		let blog_bangladeshs = await blogsModel.find().where({ categories: blog_bangladesh._id });
+
+		return res.render(`frontend/blog/bangladesh`, {
+			blog_bangladesh,
+			blog_bangladeshs,
+		});
+	},
+	blog_bangladesh_details: async function (req, res) {
+		let blog_bangladesh_details = await blogsModel.findOne({ _id: req.params.id });
+		let blog_bangladesh = await blogCategoriesModel.findOne({ title: "বাংলাদেশ" });
+		let blog_bangladeshs = await blogsModel.find().where({ categories: blog_bangladesh._id });
+		return res.render(`frontend/blog/bangladesh_details`, {
+			blog_bangladesh_details,
+			blog_bangladeshs,
+		});
+	},
+	blog_politics: async function (req, res) {
+		let blog_politics = await blogCategoriesModel.findOne({ title: "রাজনীতি" });
+
+		let blog_politicss = await blogsModel.find().where({ categories: blog_politics._id });
+
+		return res.render(`frontend/blog/politics`, {
+			blog_politics,
+			blog_politicss,
+		});
+	},
+	blog_politics_details: async function (req, res) {
+		let blog_politics_details = await blogsModel.findOne({ _id: req.params.id });
+		let blog_politics = await blogCategoriesModel.findOne({ title: "রাজনীতি" });
+		let blog_politicss = await blogsModel.find().where({ categories: blog_politics._id });
+		return res.render(`frontend/blog/politics_details`, {
+			blog_politics_details,
+			blog_politicss,
+		});
+	},
+	blog_history: async function (req, res) {
+		let blog_history = await blogCategoriesModel.findOne({ title: "ইতিহাস" });
+
+		let blog_historys = await blogsModel.find().where({ categories: blog_history._id });
+
+		return res.render(`frontend/blog/history`, {
+			blog_history,
+			blog_historys,
+		});
+	},
+	blog_history_details: async function (req, res) {
+		let blog_history_details = await blogsModel.findOne({ _id: req.params.id });
+		let blog_history = await blogCategoriesModel.findOne({ title: "ইতিহাস" });
+		let blog_historys = await blogsModel.find().where({ categories: blog_history._id });
+		return res.render(`frontend/blog/history_details`, {
+			blog_history_details,
+			blog_historys,
+		});
+	},
 	book_review: async function (req, res) {
 		// const model_data = await model.findOne({ _id: data.id });
 		let book_review = await blogCategoriesModel.findOne({ title: "বই পর্যালোচনা" });
@@ -148,8 +281,8 @@ const controllers = {
 			book_reviews,
 		});
 	},
-	
-	
+
+
 	contact: async function (req, res) {
 		let contact_numbers = await userContactNumbersModel.find();
 		let emails = await userEmailsModel.find();

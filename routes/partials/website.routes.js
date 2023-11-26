@@ -25,49 +25,40 @@ router
 		return res.render("frontend/about");
 	})
 	.get("/contact", website_controller.contact)
-	.get("/contemporary",website_controller.contemporary)
+
+	.get("/contemporary", website_controller.contemporary)
 	.get("/contemporary-details/:id", website_controller.contemporary_details)
+
 	.get("/social-work", website_controller.social_work)
 	.get("/social-work-details/:id", website_controller.social_work_details)
+
 	.get("/book-review", website_controller.book_review)
 	.get("/book-review-details/:id", website_controller.book_review_details)
-	.get("/blog-islam",function (req, res) {
-		return res.render("frontend/blog/islam");
-	})
-	.get("/blog-islam-details", function (req, res) {
-		return res.render("frontend/blog/islam_details");
-	})
-	.get("/blog-islamic-movement", function (req, res) {
-		return res.render("frontend/blog/islamic_movement");
-	})
-	.get("/blog-islamic-movement-details", function (req, res) {
-		return res.render("frontend/blog/islamic_movement_details");
-	})
-	.get("/blog-bangladesh", function (req, res) {
-		return res.render("frontend/blog/bangladesh");
-	})
-	.get("/blog-bangladesh-details", function (req, res) {
-		return res.render("frontend/blog/bangladesh_details");
-	})
-	.get("/blog-politics", function (req, res) {
-		return res.render("frontend/blog/politics");
-	})
-	.get("/blog-politics-details", function (req, res) {
-		return res.render("frontend/blog/politics_details");
-	})
-	.get("/blog-history", function (req, res) {
-		return res.render("frontend/blog/history");
-	})
-	.get("/blog-history-details", function (req, res) {
-		return res.render("frontend/blog/history_details");
-	})
+
+	.get("/blog-islam", website_controller.blog_islam)
+	.get("/blog-islam-details/:id", website_controller.blog_islam_details)
+
+	.get("/blog-islamic-movement", website_controller.blog_islamic_movement)
+	.get("/blog-islamic-movement-details/:id", website_controller.blog_islamic_movement_details)
+
+	.get("/blog-bangladesh", website_controller.blog_bangladesh)
+	.get("/blog-bangladesh-details/:id", website_controller.blog_bangladesh_details)
+
+	.get("/blog-politics", website_controller.blog_politics)
+	.get("/blog-politics-details/:id", website_controller.blog_politics_details)
+
+	.get("/blog-history", website_controller.blog_history)
+	.get("/blog-history-details/:id", website_controller.blog_history_details)
+
 	.get("/blog-miscellaneous", function (req, res) {
 		return res.render("frontend/blog/miscellaneous");
 	})
 	.get("/blog-miscellaneous-details", function (req, res) {
 		return res.render("frontend/blog/miscellaneous_details");
 	})
+
 	.get("/photo-gallery", website_controller.photo_gallery)
+
 	.get("/video-gallery", function (req, res) {
 		return res.render("frontend/gallery/video_gallery");
 	})
