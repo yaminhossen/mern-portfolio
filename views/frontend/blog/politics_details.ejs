@@ -12,11 +12,8 @@
                     <div class="inner_page_area_content">
                         <!-- content_title start -->
                         <div class="content_title_and_description" data-aos="fade-right" data-aos-duration="1000">
-                            <h2 class="title_text">রাজনীতি (বিস্তারিত)</h2>
-                            <p class="description_text">নাজাত লাভ, জান্নাত অর্জন, খোদার সন্তুষ্টি এবং ধনসম্পদেও
-                                বরকতের
-                                মাধ্যম।
-                                সততা মানব চরিত্রের শ্রেষ্ঠ গুণ। </p>
+                            <h2 class="title_text"><%= blog_politics_details.title %> (বিস্তারিত)</h2>
+                            <p class="description_text"><%= blog_politics_details.subtitle %></p>
                         </div>
                         <!-- content_title end -->
 
@@ -25,12 +22,11 @@
                             <!-- inner_item_details start -->
                             <div class="inner_item_details">
                                 <div class="image_area">
-                                    <img src="/assets/images/news_image/img4.webp" alt="image">
+                                    <img src="<%= blog_politics_details.photo %>" alt="<%= blog_politics_details.photo_alt %>">
                                 </div>
                                 <div class="date_and_comment_area">
                                     <div class="date_area date_comment_area">
-                                        <p class="date_area_text date_comment_area_text">12.November. <span
-                                                class="color_text">2023</span> </p>
+                                        <p class="date_area_text date_comment_area_text"><%= blog_politics_details.published_date.toISOString().substring(0, 10) %> </p>
                                     </div>
                                     <div class="comment_area date_comment_area">
                                         <a href="#" class="comment_area_text date_comment_area_text">9 <span
@@ -40,39 +36,12 @@
 
                                 <div class="title-area">
                                     <h2 class="title-area_text">
-                                        মানুষ সামাজিক জীব। সমাজবদ্ধ হয়ে বসবাস করা মানুষের সহজাত প্রবৃত্তি।
+                                        <%- blog_politics_details.short_description %>
                                     </h2>
                                 </div>
                                 <div class="item_description_area">
                                     <p class="description_text">
-                                        মানুষ সামাজিক জীব। সমাজবদ্ধ হয়ে বসবাস করা মানুষের সহজাত প্রবৃত্তি। একে অন্যের
-                                        সহযোগিতা
-                                        ছাড়া মানুষ একদিনও চলতে পারে না। তাই সামাজিক জীবনে পরস্পরিক সাহায্য-সহযোগিতা খুবই
-                                        মানুষ সামাজিক জীব। সমাজবদ্ধ হয়ে বসবাস করা মানুষের সহজাত প্রবৃত্তি। একে অন্যের
-                                        সহযোগিতা
-                                        ছাড়া মানুষ একদিনও চলতে পারে না। তাই সামাজিক জীবনে পরস্পরিক সাহায্য-সহযোগিতা খুবই
-                                        গুরুত্বপূর্ণ। ইসলাম সমাজকল্যাণমূলক ধর্ম। মানব কল্যাণ ও সমাজকল্যাণ ইসলামের অন্যতম
-                                        লক্ষ্য।
-                                        ছাড়া মানুষ একদিনও চলতে পারে না। তাই সামাজিক জীবনে পরস্পরিক সাহায্য-সহযোগিতা খুবই
-                                        গুরুত্বপূর্ণ। ইসলাম সমাজকল্যাণমূলক ধর্ম। মানব কল্যাণ ও সমাজকল্যাণ ইসলামের অন্যতম
-                                        লক্ষ্য।
-                                    </p>
-                                    <p class="description_text">
-                                        মানুষ সামাজিক জীব। সমাজবদ্ধ হয়ে বসবাস করা মানুষের সহজাত প্রবৃত্তি। একে অন্যের
-                                        সহযোগিতা
-                                        ছাড়া মানুষ একদিনও চলতে পারে না। তাই সামাজিক জীবনে পরস্পরিক সাহায্য-সহযোগিতা খুবই
-                                        গুরুত্বপূর্ণ। ইসলাম সমাজকল্যাণমূলক ধর্ম। মানব কল্যাণ ও সমাজকল্যাণ ইসলামের অন্যতম
-                                        লক্ষ্য।
-                                        ছাড়া মানুষ একদিনও চলতে পারে না। তাই সামাজিক জীবনে পরস্পরিক সাহায্য-সহযোগিতা খুবই
-                                        গুরুত্বপূর্ণ। ইসলাম সমাজকল্যাণমূলক ধর্ম। মানব কল্যাণ ও সমাজকল্যাণ ইসলামের অন্যতম
-                                        লক্ষ্য।
-                                    </p>
-                                    <p class="description_text">
-                                        মানুষ সামাজিক জীব। সমাজবদ্ধ হয়ে বসবাস করা মানুষের সহজাত প্রবৃত্তি। একে অন্যের
-                                        সহযোগিতা
-                                        ছাড়া মানুষ একদিনও চলতে পারে না। তাই সামাজিক জীবনে পরস্পরিক সাহায্য-সহযোগিতা খুবই
-                                        গুরুত্বপূর্ণ। ইসলাম সমাজকল্যাণমূলক ধর্ম। মানব কল্যাণ ও সমাজকল্যাণ ইসলামের অন্যতম
-                                        লক্ষ্য।
+                                        <%- blog_politics_details.description %>
                                     </p>
                                 </div>
 

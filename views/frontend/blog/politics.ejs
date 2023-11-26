@@ -12,27 +12,25 @@
                     <div class="inner_page_area_content">
                         <!-- content_title start -->
                         <div class="content_title_and_description" data-aos="fade-right" data-aos-duration="1000">
-                            <h2 class="title_text">রাজনীতি</h2>
-                            <p class="description_text">নাজাত লাভ, জান্নাত অর্জন, খোদার সন্তুষ্টি এবং ধনসম্পদেও
-                                বরকতের
-                                মাধ্যম।
-                                সততা মানব চরিত্রের শ্রেষ্ঠ গুণ। </p>
+                            <h2 class="title_text"><%= blog_politics.title %></h2>
+                            <p class="description_text"><%= blog_politics.short_description %></p>
                         </div>
                         <!-- content_title end -->
 
                         <!-- inner_page_all_content start -->
                         <div class="inner_page_all_content" data-aos="fade-up" data-aos-duration="1000">
+                            <% blog_politicss.map( (bp)=>{ %>
                             <!-- blog_card start -->
-                            <a href="blog-politics-details" class="blog_card edit_inner_blog_card">
+                            <a href="blog-politics-details/<%= bp._id %>" class="blog_card edit_inner_blog_card">
                                 <div class="blog_image">
-                                    <img src="/assets/images/news_image/img2.jpg" alt="img">
+                                    <img src="<%= bp.photo %>" alt="<%= bp.photo_alt %>">
                                 </div>
                                 <!-- overlay_area start -->
                                 <div class="overlay_area">
                                     <div class="blog_title">
                                         <div class="title_area">
                                             <h2 class="title_text">
-                                                বিশ্বব্যাপী উদ্বেগের কারণ
+                                                <%= bp.title %>
                                             </h2>
                                         </div>
 
@@ -41,139 +39,8 @@
                                 <!-- overlay_area end -->
                             </a>
                             <!-- blog_card end -->
-                            <!-- blog_card start -->
-                            <a href="blog-politics-details" class="blog_card edit_inner_blog_card">
-                                <div class="blog_image">
-                                    <img src="/assets/images/news_image/img2.jpg" alt="img">
-                                </div>
-                                <!-- overlay_area start -->
-                                <div class="overlay_area">
-                                    <div class="blog_title">
-                                        <div class="title_area">
-                                            <h2 class="title_text">
-                                                বিশ্বব্যাপী উদ্বেগের কারণ
-                                            </h2>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <!-- overlay_area end -->
-                            </a>
-                            <!-- blog_card end -->
-                            <!-- blog_card start -->
-                            <a href="blog-politics-details" class="blog_card edit_inner_blog_card">
-                                <div class="blog_image">
-                                    <img src="/assets/images/news_image/img2.jpg" alt="img">
-                                </div>
-                                <!-- overlay_area start -->
-                                <div class="overlay_area">
-                                    <div class="blog_title">
-                                        <div class="title_area">
-                                            <h2 class="title_text">
-                                                বিশ্বব্যাপী উদ্বেগের কারণ
-                                            </h2>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <!-- overlay_area end -->
-                            </a>
-                            <!-- blog_card end -->
-                            <!-- blog_card start -->
-                            <a href="blog-politics-details" class="blog_card edit_inner_blog_card">
-                                <div class="blog_image">
-                                    <img src="/assets/images/news_image/img2.jpg" alt="img">
-                                </div>
-                                <!-- overlay_area start -->
-                                <div class="overlay_area">
-                                    <div class="blog_title">
-                                        <div class="title_area">
-                                            <h2 class="title_text">
-                                                বিশ্বব্যাপী উদ্বেগের কারণ
-                                            </h2>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <!-- overlay_area end -->
-                            </a>
-                            <!-- blog_card end -->
-                            <!-- blog_card start -->
-                            <a href="blog-politics-details" class="blog_card edit_inner_blog_card">
-                                <div class="blog_image">
-                                    <img src="/assets/images/news_image/img2.jpg" alt="img">
-                                </div>
-                                <!-- overlay_area start -->
-                                <div class="overlay_area">
-                                    <div class="blog_title">
-                                        <div class="title_area">
-                                            <h2 class="title_text">
-                                                বিশ্বব্যাপী উদ্বেগের কারণ
-                                            </h2>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <!-- overlay_area end -->
-                            </a>
-                            <!-- blog_card end -->
-                            <!-- blog_card start -->
-                            <a href="blog-politics-details" class="blog_card edit_inner_blog_card">
-                                <div class="blog_image">
-                                    <img src="/assets/images/news_image/img2.jpg" alt="img">
-                                </div>
-                                <!-- overlay_area start -->
-                                <div class="overlay_area">
-                                    <div class="blog_title">
-                                        <div class="title_area">
-                                            <h2 class="title_text">
-                                                বিশ্বব্যাপী উদ্বেগের কারণ
-                                            </h2>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <!-- overlay_area end -->
-                            </a>
-                            <!-- blog_card end -->
-                            <!-- blog_card start -->
-                            <a href="blog-politics-details" class="blog_card edit_inner_blog_card">
-                                <div class="blog_image">
-                                    <img src="/assets/images/news_image/img2.jpg" alt="img">
-                                </div>
-                                <!-- overlay_area start -->
-                                <div class="overlay_area">
-                                    <div class="blog_title">
-                                        <div class="title_area">
-                                            <h2 class="title_text">
-                                                বিশ্বব্যাপী উদ্বেগের কারণ
-                                            </h2>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <!-- overlay_area end -->
-                            </a>
-                            <!-- blog_card end -->
-                            <!-- blog_card start -->
-                            <a href="blog-politics-details" class="blog_card edit_inner_blog_card">
-                                <div class="blog_image">
-                                    <img src="/assets/images/news_image/img2.jpg" alt="img">
-                                </div>
-                                <!-- overlay_area start -->
-                                <div class="overlay_area">
-                                    <div class="blog_title">
-                                        <div class="title_area">
-                                            <h2 class="title_text">
-                                                বিশ্বব্যাপী উদ্বেগের কারণ
-                                            </h2>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <!-- overlay_area end -->
-                            </a>
-                            <!-- blog_card end -->
+                            <% })%>
+                           
                         </div>
                         <!-- inner_page_all_content end -->
 
