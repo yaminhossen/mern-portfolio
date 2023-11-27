@@ -21,9 +21,7 @@ router
 	// 	return res.render("frontend/home");
 	// })
 	.get("/home", [website_controller.home_page])
-	.get("/about", function (req, res) {
-		return res.render("frontend/about");
-	})
+	.get("/about", website_controller.about)
 	.get("/contact", website_controller.contact)
 
 	.get("/contemporary", website_controller.contemporary)

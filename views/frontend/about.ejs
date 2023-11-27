@@ -14,10 +14,7 @@
                 <div class="content_title_and_description" data-aos="fade-right" data-aos-duration="1000">
                     <h2 class="title_text">
                         আমাদের সম্পর্কে</h2>
-                    <p class="description_text">নাজাত লাভ, জান্নাত অর্জন, খোদার সন্তুষ্টি এবং ধনসম্পদেও
-                        বরকতের
-                        মাধ্যম।
-                        সততা মানব চরিত্রের শ্রেষ্ঠ গুণ। </p>
+                    <p class="description_text"><%= profile_info[0].short_bio %></p>
                 </div>
                 <!-- content_title end -->
 
@@ -31,24 +28,24 @@
                         <div class="all_content">
                             <ul>
                                 <li>
-                                    <span class="title">নামের প্রথম অংশ</span>
+                                    <span class="title">নাম</span>
                                     <span class="spagee">:</span>
-                                    <span class="details">রাজিবুর </span>
+                                    <span class="details"><%= banner[0].name %></span>
                                 </li>
-                                <li>
+                                <!-- <li>
                                     <span class="title">নামের শেষাংশ</span>
                                     <span class="spagee">:</span>
                                     <span class="details">রহমান</span>
-                                </li>
+                                </li> -->
                                 <li>
                                     <span class="title">জন্ম তারিখ</span>
                                     <span class="spagee">:</span>
-                                    <span class="details">30 sep 1995</span>
+                                    <span class="details"><%= profile_info[0].date_of_birth.toISOString().substring(0, 10)%></span>
                                 </li>
                                 <li>
                                     <span class="title">জাতীয়তা</span>
                                     <span class="spagee">:</span>
-                                    <span class="details">বাংলাদেশ</span>
+                                    <span class="details"><%= profile_info[0].nationality %></span>
                                 </li>
                                 <li>
                                     <span class="title">ভাষা</span>
@@ -64,12 +61,12 @@
                                 <li>
                                     <span class="title">পেশা</span>
                                     <span class="spagee">:</span>
-                                    <span class="details">Software engineer</span>
+                                    <span class="details"><%= profile_info[0].designation %></span>
                                 </li>
                                 <li>
                                     <span class="title">ঠিকানা</span>
                                     <span class="spagee">:</span>
-                                    <span class="details">ঢাকা</span>
+                                    <span class="details"><%= profile_info[0].address_present %></span>
                                 </li>
                                 <li>
                                     <span class="title">ফোন</span>
@@ -115,10 +112,10 @@
                                     </div>
                                     <div class="item_content_details">
                                         <div class="year">
-                                            <p class="year_text">2018 - 2020</p>
+                                            <p class="year_text"><%= user_educations[0].start_date.toISOString().substring(0,4) %> - <%= user_educations[0].end_date.toISOString().substring(0,4) %> </p>
                                         </div>
                                         <div class="title">
-                                            <p class="itemm_text">Master Degree</p>
+                                            <p class="itemm_text"><%= user_educations[0].title %></p>
                                         </div>
                                         <div class="institution_name">
                                             <p class="institution_name_text">University of California</p>

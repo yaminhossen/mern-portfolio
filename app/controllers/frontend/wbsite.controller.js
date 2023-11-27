@@ -1,6 +1,7 @@
 const blogModel = require("../../models/blog.model");
 const categoryModel = require("../../models/category.model");
 const uesrProfileInfosModel = require("../../api/user_profile_infos/model/model")
+const uesrEducationModel = require("../../api/user_educations/model/model")
 
 const photoGalleryCategoriyModel = require("../../api/photo_gallery/photo_gallery_categories/model/model")
 
@@ -29,6 +30,18 @@ const controllers = {
 		return res.render(`home`, {
 			blogs,
 			categories,
+		});
+	},
+	about: async function (req, res) {
+
+		let user_educations = await uesrEducationModel.find();
+		let profile_info = await uesrProfileInfosModel.find();
+		let banner = await bannerModel.find();
+		// console.log('profile_info', profile_info)
+		return res.render(`frontend/about`, {
+			profile_info,
+			user_educations,
+			banner,
 		});
 	},
 	photo_gallery: async function (req, res) {

@@ -1,96 +1,61 @@
 <!-- head area include -->
 <%- include('../layouts/frontend/head.ejs') %>
 
-<!-- navbar area include -->
-<%- include('../layouts/frontend/navbar.ejs') %>
+    <!-- navbar area include -->
+    <%- include('../layouts/frontend/navbar.ejs') %>
 
-    <div class="inner-page_and_side-ber-area">
-        <div class="container">
-            <div class="inner-page_and_side-ber-area_content">
-                <!-- inner_page_area start -->
-                <div class="inner_page_area">
-                    <div class="inner_page_area_content">
-                        <!-- content_title start -->
-                        <div class="content_title_and_description" data-aos="fade-right" data-aos-duration="1000">
-                            <h2 class="title_text"><%= social_work_details.title %> (বিস্তারিত)</h2>
-                            <p class="description_text"><%= social_work_details.subtitle %></p>
-                        </div>
-                        <!-- content_title end -->
+        <div class="inner-page_and_side-ber-area">
+            <div class="container">
+                <div class="inner-page_and_side-ber-area_content">
+                    <!-- inner_page_area start -->
+                    <div class="inner_page_area">
+                        <div class="inner_page_area_content">
+                            <!-- content_title start -->
+                            <div class="content_title_and_description" data-aos="fade-right" data-aos-duration="1000">
+                                <h2 class="title_text">
+                                    <%= social_work_details.title %> (বিস্তারিত)
+                                </h2>
+                                <p class="description_text">
+                                    <%= social_work_details.subtitle %>
+                                </p>
+                            </div>
+                            <!-- content_title end -->
 
-                        <!-- inner_details_page start -->
-                        <div class="inner_details_page" data-aos="fade-up" data-aos-duration="1000">
-                            <!-- inner_item_details start -->
-                            <div class="inner_item_details">
-                                <div class="image_area">
-                                    <img src="<%= social_work_details.photo %>" alt="<%= social_work_details.photo_alt %>">
-                                </div>
-                                <div class="date_and_comment_area">
-                                    <div class="date_area date_comment_area">
-                                        <p class="date_area_text date_comment_area_text"><%= social_work_details.published_date.toISOString().substring(0, 10) %></p>
+                            <!-- inner_details_page start -->
+                            <div class="inner_details_page" data-aos="fade-up" data-aos-duration="1000">
+                                <!-- inner_item_details start -->
+                                <div class="inner_item_details">
+                                    <div class="image_area">
+                                        <img src="<%= social_work_details.photo %>"
+                                            alt="<%= social_work_details.photo_alt %>">
                                     </div>
-                                    <div class="comment_area date_comment_area">
-                                        <a href="#" class="comment_area_text date_comment_area_text">9 <span
-                                                class="color_text">Comment</span></a>
+                                    <div class="date_and_comment_area">
+                                        <div class="date_area date_comment_area">
+                                            <p class="date_area_text date_comment_area_text">
+                                                <%= social_work_details.published_date.toISOString().substring(0, 10) %>
+                                            </p>
+                                        </div>
+                                        <div class="comment_area date_comment_area">
+                                            <a href="#" class="comment_area_text date_comment_area_text">9 <span
+                                                    class="color_text">Comment</span></a>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="title-area">
-                                    <h2 class="title-area_text">
-                                        <%- social_work_details.short_description %>
-                                    </h2>
-                                </div>
-                                <div class="item_description_area">
-                                    <p class="description_text">
-                                        <%- social_work_details.description %>
-                                    </p>
-                                </div>
+                                    <div class="title-area">
+                                        <h2 class="title-area_text">
+                                            <%- social_work_details.short_description %>
+                                        </h2>
+                                    </div>
+                                    <div class="item_description_area">
+                                        <p class="description_text">
+                                            <%- social_work_details.description %>
+                                        </p>
+                                    </div>
 
-                                <!-- comment_area start -->
-                                <div class="comment-area">
-                                    <form action="#">
-                                        <!-- user-image_area_and_comment_form_area start -->
-                                        <div class="user-image_area_and_comment_form_and_button_area">
-                                            <div class="user-image_and_comment_form_area">
-                                                <div class="user-image_area">
-                                                    <img src="/assets/images/profile_image/img1.png" alt="img">
-                                                </div>
-                                                <input class="comment_form_area" type="text"
-                                                    placeholder="Comment . . .">
-                                            </div>
-
-                                            <div class="cancel_and_submit_button_area">
-                                                <button class="cancel_and_submit_button">Cancel</button>
-                                                <button class="cancel_and_submit_button">Submit</button>
-                                            </div>
-                                        </div>
-                                        <!-- user-image_area_and_comment_form_area end -->
-
-                                        <!-- comment_text_area start -->
-                                        <div class="comment_text_area">
-                                            <div class="user-image_area_and_comment_text_area">
-                                                <div class="user-image_area">
-                                                    <img src="/assets/images/profile_image/img2.png" alt="img">
-                                                </div>
-                                                <div class="comment_text">
-                                                    <p class="text">সমাজবদ্ধ হয়ে বসবাস করা মানুষের স সমাজবদ্ধ হয়ে বসবাস
-                                                        করা মানুষের
-                                                        সহজাত হয়ে বসবাস করা মানুষের সহজা হয়ে
-                                                        বসবাস করা মানুষের সহজা হয়ে বসবাস করা মানুষের সহজা ততত প্রবৃত্তি।
-                                                        সমাজবদ্ধ
-                                                        হয়ে বসবাস করা মানুষের সহজাত হয়ে বসবাস করা মানুষের সহজা হয়ে
-                                                        বসবাস করা মানুষের সহজা হয়ে বসবাস করা মানুষের সহজা ততত
-                                                        প্রবৃত্তি।র সহজা ততত
-                                                        প্রবৃত্তি।</p>
-                                                    <div class="button_area">
-                                                        <button class="cancel_and_submit_button">Replay</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- comment_text_area end -->
-
-                                        <!-- replay_comment_area start -->
-                                        <div class="replay_comment_area">
+                                    <!-- comment_area start -->
+                                    <div class="comment-area">
+                                        <form action="#">
+                                            <!-- user-image_area_and_comment_form_area start -->
                                             <div class="user-image_area_and_comment_form_and_button_area">
                                                 <div class="user-image_and_comment_form_area">
                                                     <div class="user-image_area">
@@ -105,360 +70,310 @@
                                                     <button class="cancel_and_submit_button">Submit</button>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <!-- replay_comment_area end -->
+                                            <!-- user-image_area_and_comment_form_area end -->
 
-                                    </form>
-                                </div>
-                                <!-- comment_area end -->
-
-                                <!-- related_item_area start -->
-                                <div class="related_item_area">
-                                    <!-- item_area start -->
-                                    <div class="item_area">
-                                        <a href="social-work-details"
-                                            class="social_work_image_card edit_social_work_image_card edit_details_social_work_card">
-                                            <img src="/assets/images/news_image/img2.jpg" alt="img">
-                                            <!-- overlay-area start -->
-                                            <div class="overlay-area">
-                                                <div class="overlay-area_content">
-
-                                                    <div class="image_title">
-                                                        <h2 class="title_text">বিশ্বব্যাপী উদ্বেগের কারণ হয়ে দাঁড়িয়েছে
-                                                            ফিলিস্তিন-ইসরায়েল
-                                                            যুদ্ধ</h2>
+                                            <!-- comment_text_area start -->
+                                            <div class="comment_text_area">
+                                                <div class="user-image_area_and_comment_text_area">
+                                                    <div class="user-image_area">
+                                                        <img src="/assets/images/profile_image/img2.png" alt="img">
+                                                    </div>
+                                                    <div class="comment_text">
+                                                        <p class="text">সমাজবদ্ধ হয়ে বসবাস করা মানুষের স সমাজবদ্ধ হয়ে
+                                                            বসবাস
+                                                            করা মানুষের
+                                                            সহজাত হয়ে বসবাস করা মানুষের সহজা হয়ে
+                                                            বসবাস করা মানুষের সহজা হয়ে বসবাস করা মানুষের সহজা ততত
+                                                            প্রবৃত্তি।
+                                                            সমাজবদ্ধ
+                                                            হয়ে বসবাস করা মানুষের সহজাত হয়ে বসবাস করা মানুষের সহজা হয়ে
+                                                            বসবাস করা মানুষের সহজা হয়ে বসবাস করা মানুষের সহজা ততত
+                                                            প্রবৃত্তি।র সহজা ততত
+                                                            প্রবৃত্তি।</p>
+                                                        <div class="button_area">
+                                                            <button class="cancel_and_submit_button">Replay</button>
+                                                        </div>
                                                     </div>
                                                 </div>
-
                                             </div>
-                                            <!-- overlay-area end -->
-                                        </a>
-                                    </div>
-                                    <!-- item_area end -->
-                                    <!-- item_area start -->
-                                    <div class="item_area">
-                                        <a href="social-work-details"
-                                            class="social_work_image_card edit_social_work_image_card edit_details_social_work_card">
-                                            <img src="/assets/images/news_image/img2.jpg" alt="img">
-                                            <!-- overlay-area start -->
-                                            <div class="overlay-area">
-                                                <div class="overlay-area_content">
+                                            <!-- comment_text_area end -->
 
-                                                    <div class="video_icon_area">
-                                                        <div class="video_icon">
-                                                            <i class="fa-solid fa-play"></i>
+                                            <!-- replay_comment_area start -->
+                                            <div class="replay_comment_area">
+                                                <div class="user-image_area_and_comment_form_and_button_area">
+                                                    <div class="user-image_and_comment_form_area">
+                                                        <div class="user-image_area">
+                                                            <img src="/assets/images/profile_image/img1.png" alt="img">
+                                                        </div>
+                                                        <input class="comment_form_area" type="text"
+                                                            placeholder="Comment . . .">
+                                                    </div>
+
+                                                    <div class="cancel_and_submit_button_area">
+                                                        <button class="cancel_and_submit_button">Cancel</button>
+                                                        <button class="cancel_and_submit_button">Submit</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- replay_comment_area end -->
+
+                                        </form>
+                                    </div>
+                                    <!-- comment_area end -->
+
+                                    <!-- related_item_area start -->
+                                    <div class="related_item_area">
+                                        <!-- item_area start -->
+                                        <div class="item_area">
+                                            <a href="social-work-details"
+                                                class="social_work_image_card edit_social_work_image_card edit_details_social_work_card">
+                                                <img src="/assets/images/news_image/img2.jpg" alt="img">
+                                                <!-- overlay-area start -->
+                                                <div class="overlay-area">
+                                                    <div class="overlay-area_content">
+
+                                                        <div class="image_title">
+                                                            <h2 class="title_text">বিশ্বব্যাপী উদ্বেগের কারণ হয়ে
+                                                                দাঁড়িয়েছে
+                                                                ফিলিস্তিন-ইসরায়েল
+                                                                যুদ্ধ</h2>
                                                         </div>
                                                     </div>
 
-                                                    <div class="image_title">
-                                                        <h2 class="title_text">বিশ্বব্যাপী উদ্বেগের কারণ হয়ে দাঁড়িয়েছে
-                                                            ফিলিস্তিন-ইসরায়েল
-                                                            যুদ্ধ</h2>
-                                                    </div>
                                                 </div>
+                                                <!-- overlay-area end -->
+                                            </a>
+                                        </div>
+                                        <!-- item_area end -->
+                                        <!-- item_area start -->
+                                        <div class="item_area">
+                                            <a href="social-work-details"
+                                                class="social_work_image_card edit_social_work_image_card edit_details_social_work_card">
+                                                <img src="/assets/images/news_image/img2.jpg" alt="img">
+                                                <!-- overlay-area start -->
+                                                <div class="overlay-area">
+                                                    <div class="overlay-area_content">
 
-                                            </div>
-                                            <!-- overlay-area end -->
-                                        </a>
-                                    </div>
-                                    <!-- item_area end -->
-                                    <!-- item_area start -->
-                                    <div class="item_area">
-                                        <a href="social-work-details"
-                                            class="social_work_image_card edit_social_work_image_card edit_details_social_work_card">
-                                            <img src="/assets/images/news_image/img2.jpg" alt="img">
-                                            <!-- overlay-area start -->
-                                            <div class="overlay-area">
-                                                <div class="overlay-area_content">
+                                                        <div class="video_icon_area">
+                                                            <div class="video_icon">
+                                                                <i class="fa-solid fa-play"></i>
+                                                            </div>
+                                                        </div>
 
-                                                    <div class="image_title">
-                                                        <h2 class="title_text">বিশ্বব্যাপী উদ্বেগের কারণ হয়ে দাঁড়িয়েছে
-                                                            ফিলিস্তিন-ইসরায়েল
-                                                            যুদ্ধ</h2>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                            <!-- overlay-area end -->
-                                        </a>
-                                    </div>
-                                    <!-- item_area end -->
-                                    <!-- item_area start -->
-                                    <div class="item_area">
-                                        <a href="social-work-details"
-                                            class="social_work_image_card edit_social_work_image_card edit_details_social_work_card">
-                                            <img src="/assets/images/news_image/img2.jpg" alt="img">
-                                            <!-- overlay-area start -->
-                                            <div class="overlay-area">
-                                                <div class="overlay-area_content">
-
-                                                    <div class="video_icon_area">
-                                                        <div class="video_icon">
-                                                            <i class="fa-solid fa-play"></i>
+                                                        <div class="image_title">
+                                                            <h2 class="title_text">বিশ্বব্যাপী উদ্বেগের কারণ হয়ে
+                                                                দাঁড়িয়েছে
+                                                                ফিলিস্তিন-ইসরায়েল
+                                                                যুদ্ধ</h2>
                                                         </div>
                                                     </div>
 
-                                                    <div class="image_title">
-                                                        <h2 class="title_text">বিশ্বব্যাপী উদ্বেগের কারণ হয়ে দাঁড়িয়েছে
-                                                            ফিলিস্তিন-ইসরায়েল
-                                                            যুদ্ধ</h2>
-                                                    </div>
                                                 </div>
+                                                <!-- overlay-area end -->
+                                            </a>
+                                        </div>
+                                        <!-- item_area end -->
+                                        <!-- item_area start -->
+                                        <div class="item_area">
+                                            <a href="social-work-details"
+                                                class="social_work_image_card edit_social_work_image_card edit_details_social_work_card">
+                                                <img src="/assets/images/news_image/img2.jpg" alt="img">
+                                                <!-- overlay-area start -->
+                                                <div class="overlay-area">
+                                                    <div class="overlay-area_content">
 
-                                            </div>
-                                            <!-- overlay-area end -->
-                                        </a>
-                                    </div>
-                                    <!-- item_area end -->
-                                    <!-- item_area start -->
-                                    <div class="item_area">
-                                        <a href="social-work-details"
-                                            class="social_work_image_card edit_social_work_image_card edit_details_social_work_card">
-                                            <img src="/assets/images/news_image/img2.jpg" alt="img">
-                                            <!-- overlay-area start -->
-                                            <div class="overlay-area">
-                                                <div class="overlay-area_content">
-
-                                                    <div class="image_title">
-                                                        <h2 class="title_text">বিশ্বব্যাপী উদ্বেগের কারণ হয়ে দাঁড়িয়েছে
-                                                            ফিলিস্তিন-ইসরায়েল
-                                                            যুদ্ধ</h2>
+                                                        <div class="image_title">
+                                                            <h2 class="title_text">বিশ্বব্যাপী উদ্বেগের কারণ হয়ে
+                                                                দাঁড়িয়েছে
+                                                                ফিলিস্তিন-ইসরায়েল
+                                                                যুদ্ধ</h2>
+                                                        </div>
                                                     </div>
-                                                </div>
 
-                                            </div>
-                                            <!-- overlay-area end -->
-                                        </a>
+                                                </div>
+                                                <!-- overlay-area end -->
+                                            </a>
+                                        </div>
+                                        <!-- item_area end -->
+                                        <!-- item_area start -->
+                                        <div class="item_area">
+                                            <a href="social-work-details"
+                                                class="social_work_image_card edit_social_work_image_card edit_details_social_work_card">
+                                                <img src="/assets/images/news_image/img2.jpg" alt="img">
+                                                <!-- overlay-area start -->
+                                                <div class="overlay-area">
+                                                    <div class="overlay-area_content">
+
+                                                        <div class="video_icon_area">
+                                                            <div class="video_icon">
+                                                                <i class="fa-solid fa-play"></i>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="image_title">
+                                                            <h2 class="title_text">বিশ্বব্যাপী উদ্বেগের কারণ হয়ে
+                                                                দাঁড়িয়েছে
+                                                                ফিলিস্তিন-ইসরায়েল
+                                                                যুদ্ধ</h2>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <!-- overlay-area end -->
+                                            </a>
+                                        </div>
+                                        <!-- item_area end -->
+                                        <!-- item_area start -->
+                                        <div class="item_area">
+                                            <a href="social-work-details"
+                                                class="social_work_image_card edit_social_work_image_card edit_details_social_work_card">
+                                                <img src="/assets/images/news_image/img2.jpg" alt="img">
+                                                <!-- overlay-area start -->
+                                                <div class="overlay-area">
+                                                    <div class="overlay-area_content">
+
+                                                        <div class="image_title">
+                                                            <h2 class="title_text">বিশ্বব্যাপী উদ্বেগের কারণ হয়ে
+                                                                দাঁড়িয়েছে
+                                                                ফিলিস্তিন-ইসরায়েল
+                                                                যুদ্ধ</h2>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <!-- overlay-area end -->
+                                            </a>
+                                        </div>
+                                        <!-- item_area end -->
                                     </div>
-                                    <!-- item_area end -->
+                                    <!-- related_item_area end -->
                                 </div>
-                                <!-- related_item_area end -->
+                                <!-- inner_item_details end -->
                             </div>
-                            <!-- inner_item_details end -->
+                            <!-- inner_details_page end -->
+
+
+
                         </div>
-                        <!-- inner_details_page end -->
-
-
-
                     </div>
-                </div>
-                <!-- inner_page_area end -->
+                    <!-- inner_page_area end -->
 
-                <!-- side_ber_area start -->
-                <div class="side_ber_area" data-aos="fade-left" data-aos-duration="1000">
-                    <div class="side_ber_area_content">
+                    <!-- side_ber_area start -->
+                    <div class="side_ber_area" data-aos="fade-left" data-aos-duration="1000">
+                        <div class="side_ber_area_content">
 
-                        <!-- search_area start -->
-                        <div class="search_area">
-                            <form action="#">
-                                <input type="text" placeholder="Search . . .">
-                                <button class="button_area">
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                </button>
-                            </form>
-                        </div>
-                        <!-- search_area end -->
-
-                        <!-- categories_area start -->
-                        <div class="categories_area">
-
-                            <!-- side_ber_area_title start -->
-                            <div class="side_ber_area_title">
-                                <h2 class="title_text">ক্যাটেগরীজ</h2>
+                            <!-- search_area start -->
+                            <div class="search_area">
+                                <form action="#">
+                                    <input type="text" placeholder="Search . . .">
+                                    <button class="button_area">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </button>
+                                </form>
                             </div>
-                            <!-- side_ber_area_title end -->
+                            <!-- search_area end -->
 
-                            <div class="categories_item_all">
-                                <ul>
-                                    <li>
-                                        <a href="#" class="categories_name">
-                                            সব
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="categories_name">
-                                            ক্যাটেগরীজ
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="categories_name">
-                                            ক্যাটেগরীজ 1
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="categories_name">
-                                            গরীজ 2
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="categories_name">
-                                            ক্যাটেগরীজ 3
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="categories_name">
-                                            ক্যাটেগরীজ 4
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
+                            <!-- categories_area start -->
+                            <div class="categories_area">
 
-                        </div>
-                        <!-- categories_area end -->
+                                <!-- side_ber_area_title start -->
+                                <div class="side_ber_area_title">
+                                    <h2 class="title_text">ক্যাটেগরীজ</h2>
+                                </div>
+                                <!-- side_ber_area_title end -->
 
-                        <!-- recently_posted_area start -->
-                        <div class="recently_posted_area">
+                                <div class="categories_item_all">
+                                    <ul>
+                                        <% commonData.blog_category.map( (cm)=>{ %>
 
-                            <!-- side_ber_area_title start -->
-                            <div class="side_ber_area_title">
-                                <h2 class="title_text">সম্প্রতি পোস্ট</h2>
-                            </div>
-                            <!-- side_ber_area_title end -->
+                                            <li>
+                                                <a href="<%= cm.url %>" class="categories_name">
+                                                    <%= cm.title %>
+                                                </a>
+                                            </li>
 
-                            <div class="recently_posted_item_all">
-
-                                <!-- posted_item start -->
-                                <a href="#" class="posted_item">
-                                    <div class="image_area">
-                                        <img src="/assets/images/news_image/img6.jpg" alt="img">
-                                    </div>
-                                    <div class="title_and_dete_area">
-                                        <div class="title_area">
-                                            <p class="title_text">
-                                                সামাজিক কাজ ইউনিয়ন পরিষদ কাজ সামাজিক
-                                            </p>
-                                        </div>
-                                        <div class="date_area">
-                                            <p class="date_text">
-                                                12.November.2023
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                                <!-- posted_item end -->
-                                <!-- posted_item start -->
-                                <a href="#" class="posted_item">
-                                    <div class="image_area">
-                                        <img src="/assets/images/news_image/img6.jpg" alt="img">
-                                    </div>
-                                    <div class="title_and_dete_area">
-                                        <div class="title_area">
-                                            <p class="title_text">
-                                                সামাজিক কাজ ইউনিয়ন
-                                            </p>
-                                        </div>
-                                        <div class="date_area">
-                                            <p class="date_text">
-                                                12.November.2023
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                                <!-- posted_item end -->
-                                <!-- posted_item start -->
-                                <a href="#" class="posted_item">
-                                    <div class="image_area">
-                                        <img src="/assets/images/news_image/img6.jpg" alt="img">
-                                    </div>
-                                    <div class="title_and_dete_area">
-                                        <div class="title_area">
-                                            <p class="title_text">
-                                                সামাজিক কাজ ইউনিয়ন পরিষদ কাজ সামাজিক
-                                            </p>
-                                        </div>
-                                        <div class="date_area">
-                                            <p class="date_text">
-                                                12.November.2023
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                                <!-- posted_item end -->
-                                <!-- posted_item start -->
-                                <a href="#" class="posted_item">
-                                    <div class="image_area">
-                                        <img src="/assets/images/news_image/img6.jpg" alt="img">
-                                    </div>
-                                    <div class="title_and_dete_area">
-                                        <div class="title_area">
-                                            <p class="title_text">
-                                                সামাজিক কাজ ইউনিয়ন পরিষদ কাজ সামাজিক
-                                            </p>
-                                        </div>
-                                        <div class="date_area">
-                                            <p class="date_text">
-                                                12.November.2023
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                                <!-- posted_item end -->
+                                            <% })%>
+                                    </ul>
+                                </div>
 
                             </div>
+                            <!-- categories_area end -->
+
+                            <!-- recently_posted_area start -->
+                            <div class="recently_posted_area">
+
+                                <!-- side_ber_area_title start -->
+                                <div class="side_ber_area_title">
+                                    <h2 class="title_text">সম্প্রতি পোস্ট</h2>
+                                </div>
+                                <!-- side_ber_area_title end -->
+
+                                <div class="recently_posted_item_all">
+                                    <% social_works.slice(-2).map( (sw)=>{ %>
+                                        <!-- posted_item start -->
+                                        <a href="/social-work-details/<%= sw._id %>" class="posted_item">
+                                            <div class="image_area">
+                                                <img src="<%= sw.photo %>" alt="img">
+                                            </div>
+                                            <div class="title_and_dete_area">
+                                                <div class="title_area">
+                                                    <p class="title_text">
+                                                        <%= sw.title %>
+                                                    </p>
+                                                </div>
+                                                <div class="date_area">
+                                                    <p class="date_text">
+                                                        <%= sw.published_date.toISOString().substring(0, 10) %>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <!-- posted_item end -->
+                                        <% })%>
+                                </div>
+
+                            </div>
+                            <!-- recently_posted_area end -->
+
+                            <!-- popular_tag_area start -->
+                            <div class="popular_tag_area">
+
+                                <!-- side_ber_area_title start -->
+                                <div class="side_ber_area_title">
+                                    <h2 class="title_text">জনপ্রিয় ট্যাগ</h2>
+                                </div>
+                                <!-- side_ber_area_title end -->
+
+                                <div class="popular_tag_all">
+                                    <ul>
+                                        <% commonData.tags.map( (tag)=>{ %>
+
+                                            <li>
+                                                <a href="#" class="tag_text">
+                                                    <%= tag.title %>
+                                                </a>
+                                            </li>
+                
+                                            <% })%>
+                                    </ul>
+                                </div>
+
+
+                            </div>
+                            <!-- popular_tag_area end -->
 
                         </div>
-                        <!-- recently_posted_area end -->
-
-                        <!-- popular_tag_area start -->
-                        <div class="popular_tag_area">
-
-                            <!-- side_ber_area_title start -->
-                            <div class="side_ber_area_title">
-                                <h2 class="title_text">জনপ্রিয় ট্যাগ</h2>
-                            </div>
-                            <!-- side_ber_area_title end -->
-
-                            <div class="popular_tag_all">
-                                <ul>
-                                    <li>
-                                        <a href="#" class="tag_text">ট্যাগ 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">জনপ্রিয় ট্যাগ</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">জনপ্রিয় ট্যাগ 2</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">ট্যাগ 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">জনপ্রিয় ট্যাগ</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">ট্যাগ 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">জনপ্রিয় ট্যাগ</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">ট্যাগ 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">জনপ্রিয় ট্যাগ</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">ট্যাগ 1</a>
-                                    </li>
-                                </ul>
-                            </div>
-
-
-                        </div>
-                        <!-- popular_tag_area end -->
-
                     </div>
+                    <!-- side_ber_area end -->
                 </div>
-                <!-- side_ber_area end -->
             </div>
         </div>
-    </div>
 
-       <!-- scroll_button_area start -->
-       <a href="#scroll_top" class="scroll-button">
-        <span class="icon">
-            <i class="fa-solid fa-angle-up"></i>
-        </span>
-    </a>
-    <!-- scroll_button_area end -->
-    <%- include('../layouts/frontend/footer.ejs') %>
+        <!-- scroll_button_area start -->
+        <a href="#scroll_top" class="scroll-button">
+            <span class="icon">
+                <i class="fa-solid fa-angle-up"></i>
+            </span>
+        </a>
+        <!-- scroll_button_area end -->
+        <%- include('../layouts/frontend/footer.ejs') %>

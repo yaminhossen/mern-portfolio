@@ -230,36 +230,15 @@
 
                             <div class="categories_item_all">
                                 <ul>
-                                    <li>
-                                        <a href="#" class="categories_name">
-                                            সব
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="categories_name">
-                                            ক্যাটেগরীজ
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="categories_name">
-                                            ক্যাটেগরীজ 1
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="categories_name">
-                                            গরীজ 2
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="categories_name">
-                                            ক্যাটেগরীজ 3
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="categories_name">
-                                            ক্যাটেগরীজ 4
-                                        </a>
-                                    </li>
+                                    <% commonData.blog_category.map( (cm)=>{ %>
+
+                                        <li>
+                                            <a href="<%= cm.url %>" class="categories_name">
+                                                <%= cm.title %>
+                                            </a>
+                                        </li>
+            
+                                        <% })%>
                                 </ul>
                             </div>
 
@@ -277,82 +256,29 @@
 
                             <div class="recently_posted_item_all">
 
-                                <!-- posted_item start -->
-                                <a href="#" class="posted_item">
-                                    <div class="image_area">
-                                        <img src="/assets/images/news_image/img6.jpg" alt="img">
-                                    </div>
-                                    <div class="title_and_dete_area">
-                                        <div class="title_area">
-                                            <p class="title_text">
-                                                সামাজিক কাজ ইউনিয়ন পরিষদ কাজ সামাজিক
-                                            </p>
-                                        </div>
-                                        <div class="date_area">
-                                            <p class="date_text">
-                                                12.November.2023
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                                <!-- posted_item end -->
-                                <!-- posted_item start -->
-                                <a href="#" class="posted_item">
-                                    <div class="image_area">
-                                        <img src="/assets/images/news_image/img6.jpg" alt="img">
-                                    </div>
-                                    <div class="title_and_dete_area">
-                                        <div class="title_area">
-                                            <p class="title_text">
-                                                সামাজিক কাজ ইউনিয়ন
-                                            </p>
-                                        </div>
-                                        <div class="date_area">
-                                            <p class="date_text">
-                                                12.November.2023
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                                <!-- posted_item end -->
-                                <!-- posted_item start -->
-                                <a href="#" class="posted_item">
-                                    <div class="image_area">
-                                        <img src="/assets/images/news_image/img6.jpg" alt="img">
-                                    </div>
-                                    <div class="title_and_dete_area">
-                                        <div class="title_area">
-                                            <p class="title_text">
-                                                সামাজিক কাজ ইউনিয়ন পরিষদ কাজ সামাজিক
-                                            </p>
-                                        </div>
-                                        <div class="date_area">
-                                            <p class="date_text">
-                                                12.November.2023
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                                <!-- posted_item end -->
-                                <!-- posted_item start -->
-                                <a href="#" class="posted_item">
-                                    <div class="image_area">
-                                        <img src="/assets/images/news_image/img6.jpg" alt="img">
-                                    </div>
-                                    <div class="title_and_dete_area">
-                                        <div class="title_area">
-                                            <p class="title_text">
-                                                সামাজিক কাজ ইউনিয়ন পরিষদ কাজ সামাজিক
-                                            </p>
-                                        </div>
-                                        <div class="date_area">
-                                            <p class="date_text">
-                                                12.November.2023
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                                <!-- posted_item end -->
+                                <% blog_islams.slice(-2).map( (bi)=>{ %>
+
+                                    <!-- posted_item start -->
+                               <a href="/blog-islam-details/<%= bi._id %>" class="posted_item">
+                                   <div class="image_area">
+                                       <img src="<%= bi.photo %>" alt="img">
+                                   </div>
+                                   <div class="title_and_dete_area">
+                                       <div class="title_area">
+                                           <p class="title_text">
+                                              <%= bi.title %>
+                                           </p>
+                                       </div>
+                                       <div class="date_area">
+                                           <p class="date_text">
+                                               <%= bi.published_date.toISOString().substring(0, 10) %>
+                                           </p>
+                                       </div>
+                                   </div>
+                               </a>
+                               <!-- posted_item end -->
+       
+                                   <% })%>
 
                             </div>
 
@@ -370,36 +296,15 @@
 
                             <div class="popular_tag_all">
                                 <ul>
-                                    <li>
-                                        <a href="#" class="tag_text">ট্যাগ 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">জনপ্রিয় ট্যাগ</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">জনপ্রিয় ট্যাগ 2</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">ট্যাগ 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">জনপ্রিয় ট্যাগ</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">ট্যাগ 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">জনপ্রিয় ট্যাগ</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">ট্যাগ 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">জনপ্রিয় ট্যাগ</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">ট্যাগ 1</a>
-                                    </li>
+                                    <% commonData.tags.map( (tag)=>{ %>
+
+                                        <li>
+                                            <a href="#" class="tag_text">
+                                                <%= tag.title %>
+                                            </a>
+                                        </li>
+            
+                                        <% })%>
                                 </ul>
                             </div>
 
