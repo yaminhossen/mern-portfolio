@@ -59,8 +59,6 @@ router
 
 	.get("/photo-gallery", website_controller.photo_gallery)
 
-	.get("/video-gallery", function (req, res) {
-		return res.render("frontend/gallery/video_gallery");
-	})
+	.get("/video-gallery",website_controller.video_gallery)
 
 module.exports = () => router;

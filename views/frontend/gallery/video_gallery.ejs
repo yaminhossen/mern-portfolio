@@ -22,11 +22,11 @@
 
                         <!-- inner_page_all_content start -->
                         <div class="inner_page_all_content" data-aos="fade-up" data-aos-duration="1000">
-
+                            <% video_gallery_category.map( (video)=>{ %>
                             <!--card start -->
                             <a href="#" class="video_card edit_video_card" data-aos="fade-up"
                                 data-aos-duration="600">
-                                <img src="/assets/images/local_image/s2.jpg" alt="img">
+                                <img src="<%= video.photo %>" alt="<%= video.photo_alt %>">
                                 <!-- overlay-area start -->
                                 <div class="overlay-area">
                                     <div class="overlay-area_content">
@@ -36,7 +36,7 @@
                                             </div>
                                         </div>
                                         <div class="image_title">
-                                            <h2 class="title_text">বিশ্বব্যাপী উদ্বেগের </h2>
+                                            <h2 class="title_text"><%= video.title %></h2>
                                         </div>
                                     </div>
 
@@ -44,184 +44,7 @@
                                 <!-- overlay-area end -->
                             </a>
                             <!--card end -->
-                            <!--card start -->
-                            <a href="#" class="video_card edit_video_card" data-aos="fade-up"
-                                data-aos-duration="600">
-                                <img src="/assets/images/local_image/s2.jpg" alt="img">
-                                <!-- overlay-area start -->
-                                <div class="overlay-area">
-                                    <div class="overlay-area_content">
-                                        <div class="video_icon_area">
-                                            <div class="video_icon">
-                                                <i class="fa-solid fa-play"></i>
-                                            </div>
-                                        </div>
-                                        <div class="image_title">
-                                            <h2 class="title_text">বিশ্বব্যাপী উদ্বেগের কারণ</h2>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <!-- overlay-area end -->
-                            </a>
-                            <!--card end -->
-                            <!--card start -->
-                            <a href="#" class="video_card edit_video_card" data-aos="fade-up"
-                                data-aos-duration="600">
-                                <img src="/assets/images/local_image/s2.jpg" alt="img">
-                                <!-- overlay-area start -->
-                                <div class="overlay-area">
-                                    <div class="overlay-area_content">
-                                        <div class="video_icon_area">
-                                            <div class="video_icon">
-                                                <i class="fa-solid fa-play"></i>
-                                            </div>
-                                        </div>
-                                        <div class="image_title">
-                                            <h2 class="title_text">বিশ্বব্যাপী উদ্বেগের কারণ হয়ে দাঁড়িয়েছে
-                                               </h2>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <!-- overlay-area end -->
-                            </a>
-                            <!--card end -->
-                            <!--card start -->
-                            <a href="#" class="video_card edit_video_card" data-aos="fade-up"
-                                data-aos-duration="600">
-                                <img src="/assets/images/local_image/s2.jpg" alt="img">
-                                <!-- overlay-area start -->
-                                <div class="overlay-area">
-                                    <div class="overlay-area_content">
-                                        <div class="video_icon_area">
-                                            <div class="video_icon">
-                                                <i class="fa-solid fa-play"></i>
-                                            </div>
-                                        </div>
-                                        <div class="image_title">
-                                            <h2 class="title_text"> হয়ে দাঁড়িয়েছে
-                                                ফিলিস্তিন</h2>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <!-- overlay-area end -->
-                            </a>
-                            <!--card end -->
-                            <!--card start -->
-                            <a href="#" class="video_card edit_video_card" data-aos="fade-up"
-                                data-aos-duration="600">
-                                <img src="/assets/images/local_image/s2.jpg" alt="img">
-                                <!-- overlay-area start -->
-                                <div class="overlay-area">
-                                    <div class="overlay-area_content">
-                                        <div class="video_icon_area">
-                                            <div class="video_icon">
-                                                <i class="fa-solid fa-play"></i>
-                                            </div>
-                                        </div>
-                                        <div class="image_title">
-                                            <h2 class="title_text">বিশ্বব্যাপী উদ্বেগের 
-                                                যুদ্ধ</h2>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <!-- overlay-area end -->
-                            </a>
-                            <!--card end -->
-                            <!--card start -->
-                            <a href="#" class="video_card edit_video_card" data-aos="fade-up"
-                                data-aos-duration="600">
-                                <img src="/assets/images/local_image/s2.jpg" alt="img">
-                                <!-- overlay-area start -->
-                                <div class="overlay-area">
-                                    <div class="overlay-area_content">
-                                        <div class="video_icon_area">
-                                            <div class="video_icon">
-                                                <i class="fa-solid fa-play"></i>
-                                            </div>
-                                        </div>
-                                        <div class="image_title">
-                                            <h2 class="title_text">বিশ্বব্যাপী উদ্বেগের কারণ হয়ে </h2>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <!-- overlay-area end -->
-                            </a>
-                            <!--card end -->
-                            <!--card start -->
-                            <a href="#" class="video_card edit_video_card" data-aos="fade-up"
-                                data-aos-duration="600">
-                                <img src="/assets/images/local_image/s2.jpg" alt="img">
-                                <!-- overlay-area start -->
-                                <div class="overlay-area">
-                                    <div class="overlay-area_content">
-                                        <div class="video_icon_area">
-                                            <div class="video_icon">
-                                                <i class="fa-solid fa-play"></i>
-                                            </div>
-                                        </div>
-                                        <div class="image_title">
-                                            <h2 class="title_text">বিশ্বব্যাপী 
-                                                ফিলিস্তিন
-                                               </h2>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <!-- overlay-area end -->
-                            </a>
-                            <!--card end -->
-                            <!--card start -->
-                            <a href="#" class="video_card edit_video_card" data-aos="fade-up"
-                                data-aos-duration="600">
-                                <img src="/assets/images/local_image/s2.jpg" alt="img">
-                                <!-- overlay-area start -->
-                                <div class="overlay-area">
-                                    <div class="overlay-area_content">
-                                        <div class="video_icon_area">
-                                            <div class="video_icon">
-                                                <i class="fa-solid fa-play"></i>
-                                            </div>
-                                        </div>
-                                        <div class="image_title">
-                                            <h2 class="title_text">বিশ্বব্যাপী উদ্বেগের কারণ </h2>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <!-- overlay-area end -->
-                            </a>
-                            <!--card end -->
-                            <!--card start -->
-                            <a href="#" class="video_card edit_video_card" data-aos="fade-up"
-                                data-aos-duration="600">
-                                <img src="/assets/images/local_image/s2.jpg" alt="img">
-                                <!-- overlay-area start -->
-                                <div class="overlay-area">
-                                    <div class="overlay-area_content">
-                                        <div class="video_icon_area">
-                                            <div class="video_icon">
-                                                <i class="fa-solid fa-play"></i>
-                                            </div>
-                                        </div>
-                                        <div class="image_title">
-                                            <h2 class="title_text">
-                                                যুদ্ধ</h2>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <!-- overlay-area end -->
-                            </a>
-                            <!--card end -->
-                            
-                            
-                            
-                            
+                            <% })%>
                         </div>
                         <!-- inner_page_all_content end -->
 

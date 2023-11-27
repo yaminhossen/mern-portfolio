@@ -1,7 +1,11 @@
 const blogModel = require("../../models/blog.model");
 const categoryModel = require("../../models/category.model");
 const uesrProfileInfosModel = require("../../api/user_profile_infos/model/model")
+
 const photoGalleryCategoriyModel = require("../../api/photo_gallery/photo_gallery_categories/model/model")
+
+const videoGalleryCategoriyModel = require("../../api/video_gallery/video_gallery_categories/model/model")
+
 const tagsModel = require("../../api/tag/tags/model/model")
 const userContactNumbersModel = require("../../api/user_contact_numbers/model/model")
 const userSocialLinksModel = require("../../api/user_social_links/model/model")
@@ -39,9 +43,22 @@ const controllers = {
 			blog_category,
 		});
 	},
+	video_gallery: async function (req, res) {
+
+		let video_gallery_category = await videoGalleryCategoriyModel.find();
+		let tags = await tagsModel.find();
+		let blog_category = await blogCategoriesModel.find();
+
+		return res.render(`frontend/gallery/video_gallery`, {
+			video_gallery_category,
+			tags,
+			blog_category,
+		});
+	},
 	home_page: async function (req, res) {
 		let profile_info = await uesrProfileInfosModel.find();
 		let photo_gallery_category = await photoGalleryCategoriyModel.find();
+		let video_gallery_category = await videoGalleryCategoriyModel.find();
 		let blog_category = await blogCategoriesModel.find();
 		let settingTitle = await settingModel.findOne({ title: "banner_at_a_glance_title" });
 		let settingValue = await settingModel.findOne({ title: "banner_at_a_glance_value" });
@@ -85,6 +102,7 @@ const controllers = {
 		return res.render(`frontend/home`, {
 			profile_info,
 			photo_gallery_category,
+			video_gallery_category,
 			blog_category,
 			banner,
 			settingTitle,
@@ -289,7 +307,7 @@ const controllers = {
 		let social_links = await userSocialLinksModel.find();
 		let contact_message = await userContactMessagesModel.find();
 		let address = await userSettingTitlesModel.find();
-		console.log("address", address[4].value[1]);
+		// console.log("address", address[4].value[1]);
 		return res.render(`frontend/contact`, {
 			contact_numbers,
 			emails,

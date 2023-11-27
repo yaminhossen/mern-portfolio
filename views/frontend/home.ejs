@@ -317,10 +317,10 @@
                         <!-- count_item start -->
                         <div class="count_item">
                             <div class="count_text_area">
-                                <h2 class="count_text">কাউন্ট নাম্বার</h2>
+                                <h2 class="count_text"><%= settingTitle.value[0] %></h2>
                             </div>
                             <div class="count_number_area">
-                                <h2 class="count_number">120</h2>
+                                <h2 class="count_number"><%= settingValue.value[0] %>+</h2>
                             </div>
                         </div>
                         <!-- count_item end -->
@@ -328,7 +328,7 @@
                         <!-- count_item start -->
                         <div class="count_item">
                             <div class="count_text_area">
-                                <h2 class="count_text">কাউন্ট নাম্বার</h2>
+                                <h2 class="count_text"><%= settingTitle.value[0] %></h2>
                             </div>
                             <div class="count_number_area">
                                 <h2 class="count_number">60</h2>
@@ -339,7 +339,7 @@
                         <!-- count_item start -->
                         <div class="count_item">
                             <div class="count_text_area">
-                                <h2 class="count_text">কাউন্ট নাম্বার</h2>
+                                <h2 class="count_text"><%= settingTitle.value[0] %></h2>
                             </div>
                             <div class="count_number_area">
                                 <h2 class="count_number">50</h2>
@@ -350,7 +350,7 @@
                         <!-- count_item start -->
                         <div class="count_item">
                             <div class="count_text_area">
-                                <h2 class="count_text">কাউন্ট নাম্বার</h2>
+                                <h2 class="count_text"><%= settingTitle.value[0] %></h2>
                             </div>
                             <div class="count_number_area">
                                 <h2 class="count_number">90</h2>
@@ -492,7 +492,7 @@
                     <div class="button_area" style="text-align: center;" data-aos="fade-up" data-aos-duration="1000">
                         <a href="photo-gallery" class="button_text_area">
                             <span class="button_text">
-                                আরোও দেখুন
+                                <%= banner[0].button_text  %>
                                 <span class="dash_icon"></span>
                             </span>
                         </a>
@@ -522,9 +522,10 @@
 
                     <!-- all_blog_card start -->
                     <div class="all_video_card">
+                        <% video_gallery_category.splice(0,4).map( (video)=>{ %>
                         <!--card start -->
                         <a href="#" class="video_card" data-aos="fade-up" data-aos-duration="300">
-                            <img src="/assets/images/news_image/img2.jpg" alt="img">
+                            <img src="<%= video.photo %>" alt="<%= video.photo_alt %>">
                             <!-- overlay-area start -->
                             <div class="overlay-area">
                                 <div class="overlay-area_content">
@@ -534,7 +535,7 @@
                                         </div>
                                     </div>
                                     <div class="image_title">
-                                        <h2 class="title_text">বিশ্বব্যাপী উদ্বেগের </h2>
+                                        <h2 class="title_text">  <%= video.title %></h2>
                                     </div>
                                 </div>
 
@@ -542,69 +543,7 @@
                             <!-- overlay-area end -->
                         </a>
                         <!--card end -->
-                        <!--card start -->
-                        <a href="#" class="video_card" data-aos="fade-up" data-aos-duration="600">
-                            <img src="/assets/images/news_image/img3.jpg" alt="img">
-                            <!-- overlay-area start -->
-                            <div class="overlay-area">
-                                <div class="overlay-area_content">
-                                    <div class="video_icon_area">
-                                        <div class="video_icon">
-                                            <i class="fa-solid fa-play"></i>
-                                        </div>
-                                    </div>
-                                    <div class="image_title">
-                                        <h2 class="title_text">বিশ্বব্যাপী উদ্বেগের </h2>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <!-- overlay-area end -->
-                        </a>
-                        <!--card end -->
-                        <!--card start -->
-                        <a href="#" class="video_card" data-aos="fade-up" data-aos-duration="900">
-                            <img src="/assets/images/news_image/img4.webp" alt="img">
-                            <!-- overlay-area start -->
-                            <div class="overlay-area">
-                                <div class="overlay-area_content">
-                                    <div class="video_icon_area">
-                                        <div class="video_icon">
-                                            <i class="fa-solid fa-play"></i>
-                                        </div>
-                                    </div>
-                                    <div class="image_title">
-                                        <h2 class="title_text">বিশ্বব্যাপী উদ্বেগের </h2>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <!-- overlay-area end -->
-                        </a>
-                        <!--card end -->
-                        <!--card start -->
-                        <a href="#" class="video_card" data-aos="fade-up" data-aos-duration="1200">
-                            <img src="/assets/images/news_image/img5.jpeg" alt="img">
-                            <!-- overlay-area start -->
-                            <div class="overlay-area">
-                                <div class="overlay-area_content">
-                                    <div class="video_icon_area">
-                                        <div class="video_icon">
-                                            <i class="fa-solid fa-play"></i>
-                                        </div>
-                                    </div>
-                                    <div class="image_title">
-                                        <h2 class="title_text">বিশ্বব্যাপী উদ্বেগের </h2>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <!-- overlay-area end -->
-                        </a>
-                        <!--card end -->
-
-
-
+                        <% })%>
                     </div>
                     <!-- all_blog_card end -->
 
@@ -612,7 +551,7 @@
                     <div class="button_area" style="text-align: center;" data-aos="fade-up" data-aos-duration="1000">
                         <a href="video-gallery" class="button_text_area">
                             <span class="button_text">
-                                আরোও দেখুন
+                                <%= banner[0].button_text  %>
                                 <span class="dash_icon"></span>
                             </span>
                         </a>

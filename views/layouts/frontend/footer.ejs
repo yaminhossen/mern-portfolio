@@ -11,29 +11,29 @@
                 <div class="menu_area">
                     <ul>
                         <li>
-                            <a href="index.html" class="menu_text">হোম</a>
+                            <a href="/home" class="menu_text">হোম</a>
                         </li>
                         <li>
-                            <a href="about.html" class="menu_text">আমাদের সম্পর্কে</a>
+                            <a href="/about" class="menu_text">আমাদের সম্পর্কে</a>
                         </li>
                         <li>
-                            <a href="contemporary.html" class="menu_text">সমসাময়িক</a>
+                            <a href="/contemporary" class="menu_text">সমসাময়িক</a>
                         </li>
                         <li>
-                            <a href="social_work.html" class="menu_text">সামাজিক কাজ</a>
+                            <a href="/social-work" class="menu_text">সামাজিক কাজ</a>
                         </li>
                         <li>
-                            <a href="book_review.html" class="menu_text">বই পর্যালোচনা</a>
+                            <a href="/book-review" class="menu_text">বই পর্যালোচনা</a>
                         </li>
 
                         <li>
-                            <a href="photo_gallery.html" class="menu_text">ফটো গ্যালারি</a>
+                            <a href="/photo-gallery" class="menu_text">ফটো গ্যালারি</a>
                         </li>
                         <li>
-                            <a href="video_gallery.html" class="menu_text">ভিডিও গ্যালারি</a>
+                            <a href="/video-gallery" class="menu_text">ভিডিও গ্যালারি</a>
                         </li>
                         <li>
-                            <a href="contact.html" class="menu_text">যোগাযোগ</a>
+                            <a href="/contact" class="menu_text">যোগাযোগ</a>
                         </li>
 
                     </ul>
@@ -54,25 +54,12 @@
                             </div>
                             <div class="importent_link_area">
                                 <ul>
-
-                                    <li>
-                                        <a href="blog_islam.html" class="menu_text">ইসলাম</a>
-                                    </li>
-                                    <li>
-                                        <a href="blog_Islamic-movement.html" class="menu_text">ইসলামী আন্দোলন</a>
-                                    </li>
-                                    <li>
-                                        <a href="blog_bangladesh.html" class="menu_text">বাংলাদেশ</a>
-                                    </li>
-                                    <li>
-                                        <a href="blog_politics.html" class="menu_text">রাজনীতি</a>
-                                    </li>
-                                    <li>
-                                        <a href="blog_history.html" class="menu_text">ইতিহাস</a>
-                                    </li>
-                                    <li>
-                                        <a href="blog_misc.html" class="menu_text">বিবিধ</a>
-                                    </li>
+                                    <% commonData.blog_category.splice(0,7).map( (category)=>{ %>
+                                        <li>
+                                            <a href="<%= category.url %>" class="menu_text">
+                                                <%= category.title %></a>
+                                        </li>
+                                    <% })%> 
 
                                 </ul>
                             </div>
@@ -90,7 +77,7 @@
                                 <!-- adddress_area start -->
                                 <div class="adddress_area">
                                     <p class="adddress_text">
-                                        বাড়ি ৩১, লেন ০১, ব্লক বি, সেকশন ০৬, মিরপুর, ঢাকা-১২০৪, বাংলাদেশ।
+                                        <%= commonData.address[4].value[0] %>
                                     </p>
                                 </div>
                                 <!-- adddress_area end -->
@@ -101,12 +88,16 @@
                                         <p class="title_text">ফোন :</p>
                                     </div>
                                     <div class="phone_number f_content_area">
-                                        <a class="content_text f_c_number"
-                                            href="tel:+8801000000000">+8801000000000</a>
-                                        <a class="content_text f_c_number"
-                                            href="tel:+8801000000000">+8801000000000</a>
-                                        <a class="content_text f_c_number"
-                                            href="tel:+8801000000000">+8801000000000</a>
+                                        <% commonData.contact_numbers.map( (cn)=>{ %>
+
+                                            
+                                            <a class="content_text f_c_number" href="tel:+88<%= cn.number   %>" class="text phone_number">
+                                                <%= cn.number %>
+                                            </a>
+
+
+                                            <% })%>
+                                        
                                     </div>
                                 </div>
                                 <!-- phone_title_and_number area end -->
@@ -117,8 +108,15 @@
                                         <p class="title_text">ই-মেইল :</p>
                                     </div>
                                     <div class="email_address f_content_area">
-                                        <a class="content_text email_text"
-                                            href="mailto:abc@gmail.com">abc@gmail.com</a>
+                                        <% commonData.emails.map( (email)=>{ %>
+                                            <div>
+                                            <a class="content_text email_text" href="mailto:<%= email.email   %>"
+                                                class="text phone_number email_text">
+                                                <%= email.email %>
+                                            </a>
+                                        </div>
+                                        <% })%>
+                                        
                                     </div>
                                 </div>
                                 <!-- email_title_and_address end -->
@@ -151,7 +149,9 @@
                 <!-- copy-write_area start -->
                 <div class="copy-write_area">
                     <span class="copy-write_text">
-                        কপিরাইট © 2023 <a href="#" class="text">রাজিবুর রহমান</a>
+                        <% const foundUser = commonData.address.find(user => user.title === 'copy_right'); %>
+                        <%= foundUser.value %>
+                     © <a href="#" class="text"> রাজিবুর রহমান</a>
                     </span>
                 </div>
                 <!-- copy-write_area end -->
@@ -159,26 +159,16 @@
                 <!-- social-media_area start -->
                 <div class="social-media_area">
                     <ul>
-                        <li>
-                            <a href="#" class="social-media_icon">
-                                <i class="fa-brands fa-facebook-f"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="social-media_icon">
-                                <i class="fa-brands fa-youtube"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="social-media_icon">
-                                <i class="fa-brands fa-linkedin"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="social-media_icon">
-                                <i class="fa-brands fa-twitter"></i>
-                            </a>
-                        </li>
+                        <% commonData.social_links.map( (slink)=>{ %>
+                            <li>
+                                <a href="<%= slink.url %>" class="social-media_icon">
+                                    <i class="<%= slink.icon %>"></i>
+                                </a>
+                            </li>
+                            
+                        <% })%>
+                       
+                       
                     </ul>
                 </div>
                 <!-- social-media_area end -->
