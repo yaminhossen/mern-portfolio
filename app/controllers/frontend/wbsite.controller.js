@@ -155,9 +155,12 @@ const controllers = {
 	contemporary_details: async function (req, res) {
 		// console.log(req.params.id);
 		let contemp_details = await blogsModel.findOne({ _id: req.params.id });
+		contemp_details.total_view = (contemp_details.total_view || 0) + 1;
+		contemp_details.save();
 		let contemp = await blogCategoriesModel.findOne({ title: "সমসাময়িক" });
 		let contems = await blogsModel.find().where({ categories: contemp._id });
 		// console.log(contemp_details);
+		
 		return res.render(`frontend/contemporary_details`, {
 			contemp_details,
 			contems,

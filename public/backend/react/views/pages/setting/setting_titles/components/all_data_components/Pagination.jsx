@@ -93,26 +93,7 @@ function Pagination() {
             <div className="d-inline-block">
                 <ul className="pagination pagination-sm">
                     {paginate}
-                    {/* <li className="page-item pagination-prev-nav disabled">
-                        <a href="#" aria-label="Previous" tabindex="-1" className="page-link">
-                            <span><i className="fa fa-angle-left"></i> Previous</span>
-                        </a>
-                    </li>
-                    <li className="page-item pagination-page-nav active">
-                        <a href="#" className="page-link">
-                            1
-                        </a>
-                    </li>
-                    <li className="page-item pagination-page-nav">
-                        <a href="#" className="page-link">
-                            2
-                        </a>
-                    </li>
-                    <li className="page-item pagination-next-nav">
-                        <a href="#" aria-label="Next" className="page-link">
-                            <span>Next <i className="fa fa-angle-right"></i></span>
-                        </a>
-                    </li> */}
+                   
                 </ul>
             </div>
             <div className="show-limit d-inline-block">

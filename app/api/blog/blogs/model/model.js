@@ -51,6 +51,10 @@ let blogSchema = mongoose.Schema({
 		type: Date,
 		require: true,
 	},
+	total_view: {
+		type: Number,
+		default: 0,
+	},
 	categories: {
 		type: [Schema.Types.ObjectId],
 		ref: 'blog_categories'
