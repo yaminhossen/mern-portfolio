@@ -242,36 +242,15 @@
 
                             <div class="popular_tag_all">
                                 <ul>
-                                    <li>
-                                        <a href="#" class="tag_text">ট্যাগ 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">জনপ্রিয় ট্যাগ</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">জনপ্রিয় ট্যাগ 2</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">ট্যাগ 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">জনপ্রিয় ট্যাগ</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">ট্যাগ 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">জনপ্রিয় ট্যাগ</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">ট্যাগ 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">জনপ্রিয় ট্যাগ</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">ট্যাগ 1</a>
-                                    </li>
+                                    <% commonData.tags.map( (tag)=>{ %>
+
+                                        <li>
+                                            <a href="#" class="tag_text">
+                                                <%= tag.title %>
+                                            </a>
+                                        </li>
+            
+                                        <% })%>
                                 </ul>
                             </div>
 
