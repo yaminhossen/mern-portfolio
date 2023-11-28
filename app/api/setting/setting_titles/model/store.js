@@ -8,6 +8,11 @@ const data_validation = async (request_data) => {
         .isEmpty()
         .withMessage("the title field is required")
         .run(request_data);
+    // await body("value")
+    //     .not()
+    //     .isEmpty()
+    //     .withMessage("the value field is required")
+    //     .run(request_data);
 //  console.log("body data",body("title") );
     let result = validationResult(request_data);
     return {

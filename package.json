@@ -11,6 +11,7 @@
     "build": "vite build",
     "watch": "vite build -w",
     "scss": "npx sass public/backend/scss/style.scss public/backend/styles/style.css -w",
+    "scss2": "npx sass public/assets/sass/style.scss public/assets/styles/style.css -w",
     "preview": "vite preview"
   },
   "keywords": [],

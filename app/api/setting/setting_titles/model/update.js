@@ -33,6 +33,7 @@ module.exports = async ( data) => {
     try {
         const model_data = await model.findOne({ _id: data.id });
         model_data.title = data.title;
+        console.log('mdoel data dot value', model_data.value);
         await model_data.save();
         // console.log(data);
         return {

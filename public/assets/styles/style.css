@@ -147,6 +147,8 @@ html ::-webkit-scrollbar-thumb:hover {
 .navigation_area .navigation_area_content .logo_area img {
   border: 0px solid red;
   width: 100%;
+  height: 30px;
+  object-fit: cover;
 }
 .navigation_area .navigation_area_content .navigation_menu_area {
   border: 0px solid red;
@@ -416,6 +418,7 @@ html ::-webkit-scrollbar-thumb:hover {
 .footer_area .footer_area_content .footer_inner_area .footer_area_content .contact_area .title_and_content .f_title_area .title_text {
   border: 0px solid red;
   font-size: 18px;
+  width: 80px;
   font-family: "bangla-font";
   color: #999;
 }
@@ -830,7 +833,7 @@ html ::-webkit-scrollbar-thumb:hover {
 .book_card .book_card_item:hover .image_title_and_description_area {
   background-color: #f9f9f9;
 }
-.book_card .book_card_item .image_area {
+.book_card .book_card_item .image_area a {
   border: 0px solid red;
   width: 100%;
   height: 230px;
@@ -839,7 +842,7 @@ html ::-webkit-scrollbar-thumb:hover {
   border-bottom: 1px solid #e2e2e2;
   position: relative;
 }
-.book_card .book_card_item .image_area::after {
+.book_card .book_card_item .image_area a::after {
   content: "";
   background-image: url("../images/bg_dote_image/bg_dote.png");
   width: 50%;
@@ -848,7 +851,7 @@ html ::-webkit-scrollbar-thumb:hover {
   top: 10px;
   left: 10px;
 }
-.book_card .book_card_item .image_area img {
+.book_card .book_card_item .image_area a img {
   border: 0px solid red;
   width: 100%;
   height: 100%;
@@ -863,21 +866,22 @@ html ::-webkit-scrollbar-thumb:hover {
   min-height: 160px;
   transition-duration: 0.4s;
 }
-.book_card .book_card_item .image_title_and_description_area .title_text {
+.book_card .book_card_item .image_title_and_description_area .title_text a {
   border: 0px solid red;
   font-family: "bangla-font";
   font-size: 18px;
+  color: black;
   color: #5dabbe;
   font-weight: bold;
   margin-bottom: 10px;
 }
-.book_card .book_card_item .image_title_and_description_area .description_text {
+.book_card .book_card_item .image_title_and_description_area a .description_text {
   border: 0px solid red;
   font-family: "bangla-font";
   font-size: 14px;
-  color: #666;
   color: #999;
   text-align: justify;
+  text-decoration: none;
 }
 
 .text_slider_area {
@@ -1468,11 +1472,13 @@ html ::-webkit-scrollbar-thumb:hover {
   border-bottom: 1px solid #5dabbe;
   border-top: 1px solid #5dabbe;
   padding: 20px 0px;
-  margin-top: 40px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
+}
+.related_item_area h4 {
+  margin: 20px;
 }
 .related_item_area .edit_details_social_work_card {
   width: 140px;
@@ -1564,6 +1570,11 @@ html ::-webkit-scrollbar-thumb:hover {
 .related_item_area .edit_details_union_porishad_card_area .image {
   width: 229px;
   height: 151px;
+}
+
+.related_item_area_top h4 {
+  font-weight: 600;
+  padding: 20px 0px;
 }
 
 .inner_details_page {
@@ -2023,6 +2034,7 @@ html ::-webkit-scrollbar-thumb:hover {
 .news-area .news-area_content .news_item-all .top_item_area .left_area {
   border: 0px solid red;
   flex: 1;
+  max-height: 221px;
 }
 .news-area .news-area_content .news_item-all .top_item_area .left_area .item {
   width: 100%;

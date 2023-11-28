@@ -1,5 +1,5 @@
 <!-- head area include -->
-<%- include('../layouts/frontend/head.ejs') %>
+<%- include('../layouts/frontend/head.ejs',{title:'home'}) %>
 
     <!-- navbar area include -->
     <%- include('../layouts/frontend/navbar.ejs' ,{blog_category}) %>
@@ -261,32 +261,36 @@
 
                     <!-- content_title start -->
                     <div class="content_title_and_description" data-aos="fade-right" data-aos-duration="1000">
-                        <h2 class="title_text"><%= social_work.title%></h2>
-                        <p class="description_text"><%= social_work.short_description %></p>
+                        <h2 class="title_text">
+                            <%= social_work.title%>
+                        </h2>
+                        <p class="description_text">
+                            <%= social_work.short_description %>
+                        </p>
                     </div>
                     <!-- content_title end -->
 
                     <div class="social_work_all_item">
                         <ul>
-                            <% social_works.map( (sw)=>{ %>
-                            <li class="item_area">
-                                <a href="social-work-details/<%= sw._id %>" class="social_work_image_card" data-aos="fade-up"
-                                    data-aos-duration="300">
-                                    <img src="<%= sw.photo %>" alt="<%= sw.photo_alt %>">
-                                    <!-- overlay-area start -->
-                                    <div class="overlay-area">
-                                        <div class="overlay-area_content">
+                            <% social_works.slice(0,4).map( (sw)=>{ %>
+                                <li class="item_area">
+                                    <a href="social-work-details/<%= sw._id %>" class="social_work_image_card"
+                                        data-aos="fade-up" data-aos-duration="300">
+                                        <img src="<%= sw.photo %>" alt="<%= sw.photo_alt %>">
+                                        <!-- overlay-area start -->
+                                        <div class="overlay-area">
+                                            <div class="overlay-area_content">
 
-                                            <div class="image_title">
-                                                <h2 class="title_text"><%- sw.subtitle %></h2>
+                                                <div class="image_title">
+                                                    <h2 class="title_text"><%- sw.subtitle %></h2>
+                                                </div>
                                             </div>
-                                        </div>
 
-                                    </div>
-                                    <!-- overlay-area end -->
-                                </a>
-                            </li>
-                            <% })%>
+                                        </div>
+                                        <!-- overlay-area end -->
+                                    </a>
+                                </li>
+                                <% })%>
 
                         </ul>
                     </div>
@@ -317,10 +321,14 @@
                         <!-- count_item start -->
                         <div class="count_item">
                             <div class="count_text_area">
-                                <h2 class="count_text"><%= settingTitle.value[0] %></h2>
+                                <h2 class="count_text">
+                                    <%= settingTitle.value[0] %>
+                                </h2>
                             </div>
                             <div class="count_number_area">
-                                <h2 class="count_number"><%= settingValue.value[0] %>+</h2>
+                                <h2 class="count_number">
+                                    <%= settingValue.value[0] %>+
+                                </h2>
                             </div>
                         </div>
                         <!-- count_item end -->
@@ -328,7 +336,9 @@
                         <!-- count_item start -->
                         <div class="count_item">
                             <div class="count_text_area">
-                                <h2 class="count_text"><%= settingTitle.value[0] %></h2>
+                                <h2 class="count_text">
+                                    <%= settingTitle.value[0] %>
+                                </h2>
                             </div>
                             <div class="count_number_area">
                                 <h2 class="count_number">60</h2>
@@ -339,7 +349,9 @@
                         <!-- count_item start -->
                         <div class="count_item">
                             <div class="count_text_area">
-                                <h2 class="count_text"><%= settingTitle.value[0] %></h2>
+                                <h2 class="count_text">
+                                    <%= settingTitle.value[0] %>
+                                </h2>
                             </div>
                             <div class="count_number_area">
                                 <h2 class="count_number">50</h2>
@@ -350,7 +362,9 @@
                         <!-- count_item start -->
                         <div class="count_item">
                             <div class="count_text_area">
-                                <h2 class="count_text"><%= settingTitle.value[0] %></h2>
+                                <h2 class="count_text">
+                                    <%= settingTitle.value[0] %>
+                                </h2>
                             </div>
                             <div class="count_number_area">
                                 <h2 class="count_number">90</h2>
@@ -373,35 +387,52 @@
 
                     <!-- content_title start -->
                     <div class="content_title_and_description" data-aos="fade-right" data-aos-duration="1000">
-                        <h2 class="title_text"><%= book_review.title %></h2>
-                        <p class="description_text"><%= book_review.short_description %> </p>
+                        <h2 class="title_text">
+                            <%= book_review.title %>
+                        </h2>
+                        <p class="description_text">
+                            <%= book_review.short_description %>
+                        </p>
                     </div>
                     <!-- content_title end -->
 
                     <!-- book_card_area_all start -->
                     <div class="book_card_area_all">
-                        <% book_reviews.map( (br)=>{ %>
-                        <!-- book_card start -->
-                        <div class="book_card">
-                            <a href="book-review-details/<%= br._id %>" class="book_card_item" data-aos="fade-up"
-                                data-aos-duration="300">
-                                <div class="image_area">
-                                    <img src="<%= br.photo %>" alt="<%= br.photo_alt %>">
-                                    <!-- <div class="bg_image" style="">
+                        <% book_reviews.slice(0,4).map( (br)=>{ %>
+                            <!-- book_card start -->
+                            <div class="book_card">
+                                <div href="book-review-details/<%= br._id %>" class="book_card_item" data-aos="fade-up"
+                                    data-aos-duration="300">
+                                    <div class="image_area">
+                                        <a href="book-review-details/<%= br._id %>">
+
+                                            <img src="<%= br.photo %>" alt="<%= br.photo_alt %>">
+                                        </a>
+                                        <!-- <div class="bg_image" style="">
 
                                 </div> -->
-                                </div>
-                                <div class="image_title_and_description_area">
-                                    <h2 class="title_text"><%= br.title %></h2>
-                                    <p class="description_tex">
-                                        <%- br.short_description %>
-                                    </p>
-                                </div>
+                                    </div>
+                                    <div class="image_title_and_description_area">
 
-                            </a>
-                        </div>
-                        <!-- book_card end -->
-                        <% })%>
+
+                                        <h2 class="title_text">
+                                            <a href="book-review-details/<%= br._id %>">
+
+                                                <%= br.title %>
+                                            </a>
+                                        </h2>
+
+                                        <a href="book-review-details/<%= br._id %>">
+                                            <p class="description_text">
+                                                <%- br.short_description %>
+                                            </p>
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- book_card end -->
+                            <% })%>
                     </div>
                     <!-- book_card_area_all end -->
 
@@ -409,8 +440,8 @@
                     <div class="button_area" style="text-align: center;" data-aos="fade-up" data-aos-duration="1000">
                         <a href="book-review" class="button_text_area">
                             <span class="button_text">
-                               <%= banner[0].button_text  %>
-                                <span class="dash_icon"></span>
+                                <%= banner[0].button_text %>
+                                    <span class="dash_icon"></span>
                             </span>
                         </a>
                     </div>
@@ -467,10 +498,26 @@
                     <div class="all_photo_card">
                         <% photo_gallery_category.splice(0,4).map( (photo)=>{ %>
 
-                            <a href="#" class="photo_card" data-aos="fade-up" data-aos-duration="300">
-                                <img src="<%= photo.photo %>" alt="<%= photo.photo_alt %>">
+                            <!-- <a href="#" class="photo_card" data-aos="fade-up" data-aos-duration="300"> -->
+                                <!-- <img src="<%= photo.photo %>" alt="<%= photo.photo_alt %>"> -->
                                 <!-- overlay-area start -->
-                                <div class="overlay-area">
+                                <!-- <div class="overlay-area">
+                                    <div class="overlay-area_content">
+                                        <div class="image_title">
+                                            <h2 class="title_text">
+                                                <%= photo.title %>
+                                            </h2>
+                                        </div>
+                                    </div>
+
+                                </div> -->
+                                <!-- overlay-area end -->
+                            <!-- </a> -->
+
+                            <a class="photo_card venobox" data-gall="myGallery" href="<%= photo.photo %>">
+                                <img src="<%= photo.photo %>" alt="Thumbnail Image" />
+                                 <!-- overlay-area start -->
+                                 <div class="overlay-area">
                                     <div class="overlay-area_content">
                                         <div class="image_title">
                                             <h2 class="title_text">
@@ -481,7 +528,7 @@
 
                                 </div>
                                 <!-- overlay-area end -->
-                            </a>
+                              </a>
 
                             <% })%>
 
@@ -492,8 +539,8 @@
                     <div class="button_area" style="text-align: center;" data-aos="fade-up" data-aos-duration="1000">
                         <a href="photo-gallery" class="button_text_area">
                             <span class="button_text">
-                                <%= banner[0].button_text  %>
-                                <span class="dash_icon"></span>
+                                <%= banner[0].button_text %>
+                                    <span class="dash_icon"></span>
                             </span>
                         </a>
                     </div>
@@ -523,27 +570,29 @@
                     <!-- all_blog_card start -->
                     <div class="all_video_card">
                         <% video_gallery_category.splice(0,4).map( (video)=>{ %>
-                        <!--card start -->
-                        <a href="#" class="video_card" data-aos="fade-up" data-aos-duration="300">
-                            <img src="<%= video.photo %>" alt="<%= video.photo_alt %>">
-                            <!-- overlay-area start -->
-                            <div class="overlay-area">
-                                <div class="overlay-area_content">
-                                    <div class="video_icon_area">
-                                        <div class="video_icon">
-                                            <i class="fa-solid fa-play"></i>
+                            <!--card start -->
+                            <a href="#"  class="video_card" data-aos="fade-up" data-aos-duration="300">
+                                <img src="<%= video.photo %>" alt="<%= video.photo_alt %>">
+                                <!-- overlay-area start -->
+                                <div class="overlay-area">
+                                    <div class="overlay-area_content">
+                                        <div class="video_icon_area">
+                                            <div class="video_icon">
+                                                <i class="fa-solid fa-play"></i>
+                                            </div>
+                                        </div>
+                                        <div class="image_title">
+                                            <h2 class="title_text">
+                                                <%= video.title %>
+                                            </h2>
                                         </div>
                                     </div>
-                                    <div class="image_title">
-                                        <h2 class="title_text">  <%= video.title %></h2>
-                                    </div>
-                                </div>
 
-                            </div>
-                            <!-- overlay-area end -->
-                        </a>
-                        <!--card end -->
-                        <% })%>
+                                </div>
+                                <!-- overlay-area end -->
+                            </a>
+                            <!--card end -->
+                            <% })%>
                     </div>
                     <!-- all_blog_card end -->
 
@@ -551,8 +600,8 @@
                     <div class="button_area" style="text-align: center;" data-aos="fade-up" data-aos-duration="1000">
                         <a href="video-gallery" class="button_text_area">
                             <span class="button_text">
-                                <%= banner[0].button_text  %>
-                                <span class="dash_icon"></span>
+                                <%= banner[0].button_text %>
+                                    <span class="dash_icon"></span>
                             </span>
                         </a>
                     </div>
@@ -562,6 +611,11 @@
             </div>
         </div>
         <!-- video_gallery_are end -->
+        <script>
+            $(document).ready(function(){
+              $('.venobox').venobox();
+            });
+          </script>
 
         <!-- scroll_button_area start -->
         <a href="#scroll_top" class="scroll-button">

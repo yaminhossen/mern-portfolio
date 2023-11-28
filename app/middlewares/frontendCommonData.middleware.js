@@ -5,7 +5,7 @@ const userSocialLinksModel = require("../api/user_social_links/model/model")
 const userEmailsModel = require("../api/user_emails/model/model")
 const userContactMessagesModel = require("../api/contact_message/contact_messages/model/model")
 const userSettingTitlesModel = require("../api/setting/setting_titles/model/model")
-
+const settingModel = require("../api/setting/setting_titles/model/model");
 module.exports = async (server, req) => {
     let blog_category = await blogCategoriesModel.find();
     let tags = await tagsModel.find();
@@ -14,6 +14,7 @@ module.exports = async (server, req) => {
     let social_links = await userSocialLinksModel.find();
     let contact_message = await userContactMessagesModel.find();
     let address = await userSettingTitlesModel.find();
+    let setting_titles = await settingModel.findOne({ title: "logo" });
     server.locals.commonData = {
         blog_category,
         tags,
@@ -22,5 +23,6 @@ module.exports = async (server, req) => {
         social_links,
         contact_message,
         address,
+        setting_titles,
     };
 }

@@ -3,11 +3,14 @@
     border-bottom: 1px solid $brand_color;
     border-top: 1px solid $brand_color;
     padding: 20px 0px;
-    margin-top: 40px;
+    // margin-top: 40px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
+    h4{
+        margin: 20px;
+    }
 
     // edit_details_social_work_card area start
     .edit_details_social_work_card {
@@ -138,7 +141,12 @@
      // edit_details_union_porishad_card_area end
 }
 // related_item_area end
-
+.related_item_area_top{
+h4{
+    font-weight: 600;
+    padding: 20px 0px;
+}
+}
 // inner_details_page start
 .inner_details_page {
     border: $border;
