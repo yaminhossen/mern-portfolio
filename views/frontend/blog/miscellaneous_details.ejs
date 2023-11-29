@@ -116,20 +116,24 @@
                                 </div>
                                 <!-- comment_area end -->
 
-                                <!-- related_item_area start -->
-                                <div class="related_item_area">
+                                 <!-- related_item_area start -->
+                                 <div class="related_item_area_top">
+                                    <h4>সর্বাধিক পঠিত</h4>
+                                    <div class="related_item_area">
+                                        <% misc.sort((a, b)=> b.total_view - a.total_view); %>
+                                            <% misc.slice(0,4).map( (bm)=>{ %>
 
                                     <!-- blog_card start -->
-                                    <a href="#" class="blog_card edit_details_inner_blog_card">
+                                    <a href="/blog-miscellaneous-details/<%= bm._id %>" class="blog_card edit_details_inner_blog_card">
                                         <div class="blog_image">
-                                            <img src="/assets/images/news_image/img2.jpg" alt="img">
+                                            <img src="<%= bm.photo %>" alt="img">
                                         </div>
                                         <!-- overlay_area start -->
                                         <div class="overlay_area">
                                             <div class="blog_title">
                                                 <div class="title_area">
                                                     <h2 class="title_text">
-                                                        বিশ্বব্যাপী উদ্বেগের কারণ
+                                                        <%= bm.title %>
                                                     </h2>
                                                 </div>
 
@@ -138,63 +142,11 @@
                                         <!-- overlay_area end -->
                                     </a>
                                     <!-- blog_card end -->
-                                    <!-- blog_card start -->
-                                    <a href="#" class="blog_card edit_details_inner_blog_card">
-                                        <div class="blog_image">
-                                            <img src="/assets/images/news_image/img2.jpg" alt="img">
-                                        </div>
-                                        <!-- overlay_area start -->
-                                        <div class="overlay_area">
-                                            <div class="blog_title">
-                                                <div class="title_area">
-                                                    <h2 class="title_text">
-                                                        বিশ্বব্যাপী উদ্বেগের কারণ
-                                                    </h2>
-                                                </div>
+                                    <% })%>
 
-                                            </div>
-                                        </div>
-                                        <!-- overlay_area end -->
-                                    </a>
-                                    <!-- blog_card end -->
-                                    <!-- blog_card start -->
-                                    <a href="#" class="blog_card edit_details_inner_blog_card">
-                                        <div class="blog_image">
-                                            <img src="/assets/images/news_image/img2.jpg" alt="img">
-                                        </div>
-                                        <!-- overlay_area start -->
-                                        <div class="overlay_area">
-                                            <div class="blog_title">
-                                                <div class="title_area">
-                                                    <h2 class="title_text">
-                                                        বিশ্বব্যাপী উদ্বেগের কারণ
-                                                    </h2>
-                                                </div>
 
-                                            </div>
-                                        </div>
-                                        <!-- overlay_area end -->
-                                    </a>
-                                    <!-- blog_card end -->
-                                    <!-- blog_card start -->
-                                    <a href="#" class="blog_card edit_details_inner_blog_card">
-                                        <div class="blog_image">
-                                            <img src="/assets/images/news_image/img2.jpg" alt="img">
-                                        </div>
-                                        <!-- overlay_area start -->
-                                        <div class="overlay_area">
-                                            <div class="blog_title">
-                                                <div class="title_area">
-                                                    <h2 class="title_text">
-                                                        বিশ্বব্যাপী উদ্বেগের কারণ
-                                                    </h2>
-                                                </div>
 
-                                            </div>
-                                        </div>
-                                        <!-- overlay_area end -->
-                                    </a>
-                                    <!-- blog_card end -->
+                                </div>
                                 </div>
                                 <!-- related_item_area end -->
                             </div>
@@ -234,36 +186,15 @@
 
                             <div class="categories_item_all">
                                 <ul>
-                                    <li>
-                                        <a href="#" class="categories_name">
-                                            সব
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="categories_name">
-                                            ক্যাটেগরীজ
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="categories_name">
-                                            ক্যাটেগরীজ 1
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="categories_name">
-                                            গরীজ 2
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="categories_name">
-                                            ক্যাটেগরীজ 3
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="categories_name">
-                                            ক্যাটেগরীজ 4
-                                        </a>
-                                    </li>
+                                    <% commonData.blog_category.map( (cm)=>{ %>
+
+                                        <li>
+                                            <a href="<%= cm.url %>" class="categories_name">
+                                                <%= cm.title %>
+                                            </a>
+                                        </li>
+
+                                        <% })%>
                                 </ul>
                             </div>
 
@@ -281,82 +212,29 @@
 
                             <div class="recently_posted_item_all">
 
-                                <!-- posted_item start -->
-                                <a href="#" class="posted_item">
-                                    <div class="image_area">
-                                        <img src="/assets/images/news_image/img6.jpg" alt="img">
-                                    </div>
-                                    <div class="title_and_dete_area">
-                                        <div class="title_area">
-                                            <p class="title_text">
-                                                সামাজিক কাজ ইউনিয়ন পরিষদ কাজ সামাজিক
-                                            </p>
+                                <% misc.slice(-2).map( (bm)=>{ %>
+
+                                    <!-- posted_item start -->
+                                    <a href="/blog-miscellaneous-details/<%= bm._id %>" class="posted_item">
+                                        <div class="image_area">
+                                            <img src="<%= bm.photo %>" alt="img">
                                         </div>
-                                        <div class="date_area">
-                                            <p class="date_text">
-                                                12.November.2023
-                                            </p>
+                                        <div class="title_and_dete_area">
+                                            <div class="title_area">
+                                                <p class="title_text">
+                                                    <%= bm.title %>
+                                                </p>
+                                            </div>
+                                            <div class="date_area">
+                                                <p class="date_text">
+                                                    <%= bm.published_date.toISOString().substring(0, 10) %>
+                                                </p>
+                                            </div>
                                         </div>
-                                    </div>
-                                </a>
-                                <!-- posted_item end -->
-                                <!-- posted_item start -->
-                                <a href="#" class="posted_item">
-                                    <div class="image_area">
-                                        <img src="/assets/images/news_image/img6.jpg" alt="img">
-                                    </div>
-                                    <div class="title_and_dete_area">
-                                        <div class="title_area">
-                                            <p class="title_text">
-                                                সামাজিক কাজ ইউনিয়ন
-                                            </p>
-                                        </div>
-                                        <div class="date_area">
-                                            <p class="date_text">
-                                                12.November.2023
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                                <!-- posted_item end -->
-                                <!-- posted_item start -->
-                                <a href="#" class="posted_item">
-                                    <div class="image_area">
-                                        <img src="/assets/images/news_image/img6.jpg" alt="img">
-                                    </div>
-                                    <div class="title_and_dete_area">
-                                        <div class="title_area">
-                                            <p class="title_text">
-                                                সামাজিক কাজ ইউনিয়ন পরিষদ কাজ সামাজিক
-                                            </p>
-                                        </div>
-                                        <div class="date_area">
-                                            <p class="date_text">
-                                                12.November.2023
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                                <!-- posted_item end -->
-                                <!-- posted_item start -->
-                                <a href="#" class="posted_item">
-                                    <div class="image_area">
-                                        <img src="/assets/images/news_image/img6.jpg" alt="img">
-                                    </div>
-                                    <div class="title_and_dete_area">
-                                        <div class="title_area">
-                                            <p class="title_text">
-                                                সামাজিক কাজ ইউনিয়ন পরিষদ কাজ সামাজিক
-                                            </p>
-                                        </div>
-                                        <div class="date_area">
-                                            <p class="date_text">
-                                                12.November.2023
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                                <!-- posted_item end -->
+                                    </a>
+                                    <!-- posted_item end -->
+
+                                    <% })%>
 
                             </div>
 
@@ -374,36 +252,15 @@
 
                             <div class="popular_tag_all">
                                 <ul>
-                                    <li>
-                                        <a href="#" class="tag_text">ট্যাগ 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">জনপ্রিয় ট্যাগ</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">জনপ্রিয় ট্যাগ 2</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">ট্যাগ 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">জনপ্রিয় ট্যাগ</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">ট্যাগ 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">জনপ্রিয় ট্যাগ</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">ট্যাগ 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">জনপ্রিয় ট্যাগ</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="tag_text">ট্যাগ 1</a>
-                                    </li>
+                                    <% commonData.tags.map( (tag)=>{ %>
+
+                                        <li>
+                                            <a href="#" class="tag_text">
+                                                <%= tag.title %>
+                                            </a>
+                                        </li>
+
+                                        <% })%>
                                 </ul>
                             </div>
 
