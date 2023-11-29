@@ -1,95 +1,60 @@
 <!-- head area include -->
 <%- include('../layouts/frontend/head.ejs',{title:'post'}) %>
 
-<!-- navbar area include -->
-<%- include('../layouts/frontend/navbar.ejs') %>
+    <!-- navbar area include -->
+    <%- include('../layouts/frontend/navbar.ejs') %>
 
-    <div class="inner-page_and_side-ber-area">
-        <div class="container">
-            <div class="inner-page_and_side-ber-area_content">
-                <!-- inner_page_area start -->
-                <div class="inner_page_area">
-                    <div class="inner_page_area_content">
-                        <!-- content_title start -->
-                        <div class="content_title_and_description" data-aos="fade-right" data-aos-duration="1000">
-                            <h2 class="title_text"><%= book_review_details.title %> (বিস্তারিত)</h2>
-                            <p class="description_text"><%= book_review_details.subtitle %></p>
-                        </div>
-                        <!-- content_title end -->
+        <div class="inner-page_and_side-ber-area">
+            <div class="container">
+                <div class="inner-page_and_side-ber-area_content">
+                    <!-- inner_page_area start -->
+                    <div class="inner_page_area">
+                        <div class="inner_page_area_content">
+                            <!-- content_title start -->
+                            <div class="content_title_and_description" data-aos="fade-right" data-aos-duration="1000">
+                                <h2 class="title_text">
+                                    <%= book_review_details.title %> (বিস্তারিত)
+                                </h2>
+                                <p class="description_text">
+                                    <%= book_review_details.subtitle %>
+                                </p>
+                            </div>
+                            <!-- content_title end -->
 
-                        <!-- inner_details_page start -->
-                        <div class="inner_details_page" data-aos="fade-up" data-aos-duration="1000">
-                            <!-- inner_item_details start -->
-                            <div class="inner_item_details">
-                                <div class="image_area book_review">
-                                    <img src="<%= book_review_details.photo %>" alt="<%= book_review_details.photo_alt %>">
-                                </div>
-                                <div class="date_and_comment_area">
-                                    <div class="date_area date_comment_area">
-                                        <p class="date_area_text date_comment_area_text"><%= book_review_details.published_date.toISOString().substring(0, 10) %></p>
+                            <!-- inner_details_page start -->
+                            <div class="inner_details_page" data-aos="fade-up" data-aos-duration="1000">
+                                <!-- inner_item_details start -->
+                                <div class="inner_item_details">
+                                    <div class="image_area book_review">
+                                        <img src="<%= book_review_details.photo %>"
+                                            alt="<%= book_review_details.photo_alt %>">
                                     </div>
-                                    <div class="comment_area date_comment_area">
-                                        <a href="#" class="comment_area_text date_comment_area_text">9 <span
-                                                class="color_text">Comment</span></a>
+                                    <div class="date_and_comment_area">
+                                        <div class="date_area date_comment_area">
+                                            <p class="date_area_text date_comment_area_text">
+                                                <%= book_review_details.published_date.toISOString().substring(0, 10) %>
+                                            </p>
+                                        </div>
+                                        <div class="comment_area date_comment_area">
+                                            <a href="#" class="comment_area_text date_comment_area_text">9 <span
+                                                    class="color_text">Comment</span></a>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="title-area">
-                                    <h2 class="title-area_text">
-                                        <%- book_review_details.short_description %>
-                                    </h2>
-                                </div>
-                                <div class="item_description_area">
-                                    <p class="description_text">
-                                        <%- book_review_details.description %>
-                                    </p>
-                                </div>
+                                    <div class="title-area">
+                                        <h2 class="title-area_text">
+                                            <%- book_review_details.short_description %>
+                                        </h2>
+                                    </div>
+                                    <div class="item_description_area">
+                                        <p class="description_text">
+                                            <%- book_review_details.description %>
+                                        </p>
+                                    </div>
 
-                                <!-- comment_area start -->
-                                <div class="comment-area">
-                                    <form action="#">
-                                        <!-- user-image_area_and_comment_form_area start -->
-                                        <div class="user-image_area_and_comment_form_and_button_area">
-                                            <div class="user-image_and_comment_form_area">
-                                                <div class="user-image_area">
-                                                    <img src="/assets/images/profile_image/img1.png" alt="img">
-                                                </div>
-                                                <input class="comment_form_area" type="text"
-                                                    placeholder="Comment . . .">
-                                            </div>
-
-                                            <div class="cancel_and_submit_button_area">
-                                                <button class="cancel_and_submit_button">Cancel</button>
-                                                <button class="cancel_and_submit_button">Submit</button>
-                                            </div>
-                                        </div>
-                                        <!-- user-image_area_and_comment_form_area end -->
-
-                                        <!-- comment_text_area start -->
-                                        <div class="comment_text_area">
-                                            <div class="user-image_area_and_comment_text_area">
-                                                <div class="user-image_area">
-                                                    <img src="/assets/images/profile_image/img2.png" alt="img">
-                                                </div>
-                                                <div class="comment_text">
-                                                    <p class="text">সমাজবদ্ধ হয়ে বসবাস করা মানুষের স সমাজবদ্ধ হয়ে বসবাস
-                                                        করা মানুষের
-                                                        সহজাত হয়ে বসবাস করা মানুষের সহজা হয়ে
-                                                        বসবাস করা মানুষের সহজা হয়ে বসবাস করা মানুষের সহজা ততত প্রবৃত্তি।
-                                                        সমাজবদ্ধ
-                                                        হয়ে বসবাস করা মানুষের সহজাত হয়ে বসবাস করা মানুষের সহজা হয়ে
-                                                        বসবাস করা মানুষের সহজা হয়ে বসবাস করা মানুষের সহজা ততত
-                                                        প্রবৃত্তি।র সহজা ততত
-                                                        প্রবৃত্তি।</p>
-                                                    <div class="button_area">
-                                                        <button class="cancel_and_submit_button">Replay</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- comment_text_area end -->
-
-                                        <!-- replay_comment_area start -->
-                                        <div class="replay_comment_area">
+                                    <!-- comment_area start -->
+                                    <div class="comment-area">
+                                        <form action="#">
+                                            <!-- user-image_area_and_comment_form_area start -->
                                             <div class="user-image_area_and_comment_form_and_button_area">
                                                 <div class="user-image_and_comment_form_area">
                                                     <div class="user-image_area">
@@ -104,217 +69,215 @@
                                                     <button class="cancel_and_submit_button">Submit</button>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <!-- replay_comment_area end -->
+                                            <!-- user-image_area_and_comment_form_area end -->
 
+                                            <!-- comment_text_area start -->
+                                            <div class="comment_text_area">
+                                                <div class="user-image_area_and_comment_text_area">
+                                                    <div class="user-image_area">
+                                                        <img src="/assets/images/profile_image/img2.png" alt="img">
+                                                    </div>
+                                                    <div class="comment_text">
+                                                        <p class="text">সমাজবদ্ধ হয়ে বসবাস করা মানুষের স সমাজবদ্ধ হয়ে
+                                                            বসবাস
+                                                            করা মানুষের
+                                                            সহজাত হয়ে বসবাস করা মানুষের সহজা হয়ে
+                                                            বসবাস করা মানুষের সহজা হয়ে বসবাস করা মানুষের সহজা ততত
+                                                            প্রবৃত্তি।
+                                                            সমাজবদ্ধ
+                                                            হয়ে বসবাস করা মানুষের সহজাত হয়ে বসবাস করা মানুষের সহজা হয়ে
+                                                            বসবাস করা মানুষের সহজা হয়ে বসবাস করা মানুষের সহজা ততত
+                                                            প্রবৃত্তি।র সহজা ততত
+                                                            প্রবৃত্তি।</p>
+                                                        <div class="button_area">
+                                                            <button class="cancel_and_submit_button">Replay</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- comment_text_area end -->
+
+                                            <!-- replay_comment_area start -->
+                                            <div class="replay_comment_area">
+                                                <div class="user-image_area_and_comment_form_and_button_area">
+                                                    <div class="user-image_and_comment_form_area">
+                                                        <div class="user-image_area">
+                                                            <img src="/assets/images/profile_image/img1.png" alt="img">
+                                                        </div>
+                                                        <input class="comment_form_area" type="text"
+                                                            placeholder="Comment . . .">
+                                                    </div>
+
+                                                    <div class="cancel_and_submit_button_area">
+                                                        <button class="cancel_and_submit_button">Cancel</button>
+                                                        <button class="cancel_and_submit_button">Submit</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- replay_comment_area end -->
+
+                                        </form>
+                                    </div>
+                                    <!-- comment_area end -->
+
+                                    <!-- related_item_area start -->
+                                    <div class="related_item_area_top">
+                                        <h4>সর্বাধিক পঠিত</h4>
+                                        <div class="related_item_area">
+                                            <% book_reviews.sort((a, b)=> b.total_view - a.total_view); %>
+                                                <% book_reviews.slice(0,4).map( (br)=>{ %>
+
+
+                                                    <!-- book_card start -->
+                                                    <div class="book_card edit_details_book_card">
+                                                        <a href="/book-review-details/<%= br._id %>" class="book_card_item">
+                                                            <div class="image_area">
+                                                                <img src="<%= br.photo %>"
+                                                                    alt="image">
+                                                            </div>
+                                                            <div class="image_title_and_description_area">
+                                                                <h2 class="title_text"><%= br.title %></h2>
+                                                                <p class="description_text"><%= br.subtitle %>
+                                                                </p>
+                                                            </div>
+
+                                                        </a>
+                                                    </div>
+                                                    <!-- book_card end -->
+                                                 <% })%>
+
+
+                                        </div>
+                                        <!-- related_item_area end -->
+                                    </div>
+                                    <!-- inner_item_details end -->
+                                </div>
+                                <!-- inner_details_page end -->
+                            </div>
+                        </div>
+                        <!-- inner_page_area end -->
+
+                        <!-- side_ber_area start -->
+                        <div class="side_ber_area" data-aos="fade-left" data-aos-duration="1000">
+                            <div class="side_ber_area_content">
+
+                                <!-- search_area start -->
+                                <div class="search_area">
+                                    <form action="#">
+                                        <input type="text" placeholder="Search . . .">
+                                        <button class="button_area">
+                                            <i class="fa-solid fa-magnifying-glass"></i>
+                                        </button>
                                     </form>
                                 </div>
-                                <!-- comment_area end -->
+                                <!-- search_area end -->
 
-                                <!-- related_item_area start -->
-                                <div class="related_item_area">
+                                <!-- categories_area start -->
+                                <div class="categories_area">
 
-                                    <!-- book_card start -->
-                                    <div class="book_card edit_details_book_card">
-                                        <a href="#" class="book_card_item">
-                                            <div class="image_area">
-                                                <img src="/assets/images/book_review_image/book1.jpg" alt="image">
-                                            </div>
-                                            <div class="image_title_and_description_area">
-                                                <h2 class="title_text">ইসলাম বই</h2>
-                                                <p class="description_text">নাজাত লাভ, জান্নাত অর্জন, খোদার সন্তুষ্টি
-                                                    এবং ধনসম্পদেও
-                                                    বরকতের
-
-                                                </p>
-                                            </div>
-
-                                        </a>
+                                    <!-- side_ber_area_title start -->
+                                    <div class="side_ber_area_title">
+                                        <h2 class="title_text">ক্যাটেগরীজ</h2>
                                     </div>
-                                    <!-- book_card end -->
-                                    <!-- book_card start -->
-                                    <div class="book_card edit_details_book_card">
-                                        <a href="#" class="book_card_item">
-                                            <div class="image_area">
-                                                <img src="/assets/images/book_review_image/book1.jpg" alt="image">
-                                            </div>
-                                            <div class="image_title_and_description_area">
-                                                <h2 class="title_text">ইসলাম বই</h2>
-                                                <p class="description_text">নাজাত লাভ, জান্নাত অর্জন, খোদার সন্তুষ্টি
-                                                    এবং ধনসম্পদেও
+                                    <!-- side_ber_area_title end -->
 
-                                                </p>
-                                            </div>
+                                    <div class="categories_item_all">
+                                        <ul>
+                                            <% commonData.blog_category.map( (cm)=>{ %>
 
-                                        </a>
+                                                <li>
+                                                    <a href="<%= cm.url %>" class="categories_name">
+                                                        <%= cm.title %>
+                                                    </a>
+                                                </li>
+
+                                                <% })%>
+                                        </ul>
                                     </div>
-                                    <!-- book_card end -->
 
-                                    <!-- book_card start -->
-                                    <div class="book_card edit_details_book_card">
-                                        <a href="#" class="book_card_item">
-                                            <div class="image_area">
-                                                <img src="/assets/images/book_review_image/book1.jpg" alt="image">
-                                            </div>
-                                            <div class="image_title_and_description_area">
-                                                <h2 class="title_text">ইসলাম বই</h2>
-                                                <p class="description_text">নাজাত লাভ, জান্নাত অর্জন, খোদার সন্তুষ্টি
+                                </div>
+                                <!-- categories_area end -->
 
-                                                </p>
-                                            </div>
+                                <!-- recently_posted_area start -->
+                                <div class="recently_posted_area">
 
-                                        </a>
+                                    <!-- side_ber_area_title start -->
+                                    <div class="side_ber_area_title">
+                                        <h2 class="title_text">সম্প্রতি পোস্ট</h2>
                                     </div>
-                                    <!-- book_card end -->
-                                    <!-- book_card start -->
-                                    <div class="book_card edit_details_book_card">
-                                        <a href="#" class="book_card_item">
-                                            <div class="image_area">
-                                                <img src="/assets/images/book_review_image/book1.jpg" alt="image">
-                                            </div>
-                                            <div class="image_title_and_description_area">
-                                                <h2 class="title_text">ইসলাম বই</h2>
-                                                <p class="description_text">নাজাত লাভ, জান্নাত অর্জন, খোদার সন্তুষ্টি
+                                    <!-- side_ber_area_title end -->
 
-                                                </p>
-                                            </div>
+                                    <div class="recently_posted_item_all">
 
-                                        </a>
+                                        <% book_reviews.slice(-2).map( (br)=>{ %>
+
+                                            <!-- posted_item start -->
+                                            <a href="/book-review-details/<%= br._id %>" class="posted_item">
+                                                <div class="image_area">
+                                                    <img src="<%= br.photo %>" alt="img">
+                                                </div>
+                                                <div class="title_and_dete_area">
+                                                    <div class="title_area">
+                                                        <p class="title_text">
+                                                            <%= br.title %>
+                                                        </p>
+                                                    </div>
+                                                    <div class="date_area">
+                                                        <p class="date_text">
+                                                            <%= br.published_date.toISOString().substring(0, 10) %>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <!-- posted_item end -->
+
+                                            <% })%>
+
                                     </div>
-                                    <!-- book_card end -->
+
+                                </div>
+                                <!-- recently_posted_area end -->
+
+                                <!-- popular_tag_area start -->
+                                <div class="popular_tag_area">
+
+                                    <!-- side_ber_area_title start -->
+                                    <div class="side_ber_area_title">
+                                        <h2 class="title_text">জনপ্রিয় ট্যাগ</h2>
+                                    </div>
+                                    <!-- side_ber_area_title end -->
+
+                                    <div class="popular_tag_all">
+                                        <ul>
+                                            <% commonData.tags.map( (tag)=>{ %>
+
+                                                <li>
+                                                    <a href="#" class="tag_text">
+                                                        <%= tag.title %>
+                                                    </a>
+                                                </li>
+
+                                                <% })%>
+                                        </ul>
+                                    </div>
 
 
                                 </div>
-                                <!-- related_item_area end -->
+                                <!-- popular_tag_area end -->
+
                             </div>
-                            <!-- inner_item_details end -->
                         </div>
-                        <!-- inner_details_page end -->
+                        <!-- side_ber_area end -->
                     </div>
                 </div>
-                <!-- inner_page_area end -->
-
-                <!-- side_ber_area start -->
-                <div class="side_ber_area" data-aos="fade-left" data-aos-duration="1000">
-                    <div class="side_ber_area_content">
-
-                        <!-- search_area start -->
-                        <div class="search_area">
-                            <form action="#">
-                                <input type="text" placeholder="Search . . .">
-                                <button class="button_area">
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                </button>
-                            </form>
-                        </div>
-                        <!-- search_area end -->
-
-                        <!-- categories_area start -->
-                        <div class="categories_area">
-
-                            <!-- side_ber_area_title start -->
-                            <div class="side_ber_area_title">
-                                <h2 class="title_text">ক্যাটেগরীজ</h2>
-                            </div>
-                            <!-- side_ber_area_title end -->
-
-                            <div class="categories_item_all">
-                                <ul>
-                                    <% commonData.blog_category.map( (cm)=>{ %>
-
-                                        <li>
-                                            <a href="<%= cm.url %>" class="categories_name">
-                                                <%= cm.title %>
-                                            </a>
-                                        </li>
-            
-                                        <% })%>
-                                </ul>
-                            </div>
-
-                        </div>
-                        <!-- categories_area end -->
-
-                        <!-- recently_posted_area start -->
-                        <div class="recently_posted_area">
-
-                            <!-- side_ber_area_title start -->
-                            <div class="side_ber_area_title">
-                                <h2 class="title_text">সম্প্রতি পোস্ট</h2>
-                            </div>
-                            <!-- side_ber_area_title end -->
-
-                            <div class="recently_posted_item_all">
-
-                                <% book_reviews.slice(-2).map( (br)=>{ %>
-
-                                    <!-- posted_item start -->
-                               <a href="/book-review-details/<%= br._id %>" class="posted_item">
-                                   <div class="image_area">
-                                       <img src="<%= br.photo %>" alt="img">
-                                   </div>
-                                   <div class="title_and_dete_area">
-                                       <div class="title_area">
-                                           <p class="title_text">
-                                              <%= br.title %>
-                                           </p>
-                                       </div>
-                                       <div class="date_area">
-                                           <p class="date_text">
-                                               <%= br.published_date.toISOString().substring(0, 10) %>
-                                           </p>
-                                       </div>
-                                   </div>
-                               </a>
-                               <!-- posted_item end -->
-       
-                                   <% })%>
-
-                            </div>
-
-                        </div>
-                        <!-- recently_posted_area end -->
-
-                        <!-- popular_tag_area start -->
-                        <div class="popular_tag_area">
-
-                            <!-- side_ber_area_title start -->
-                            <div class="side_ber_area_title">
-                                <h2 class="title_text">জনপ্রিয় ট্যাগ</h2>
-                            </div>
-                            <!-- side_ber_area_title end -->
-
-                            <div class="popular_tag_all">
-                                <ul>
-                                    <% commonData.tags.map( (tag)=>{ %>
-
-                                        <li>
-                                            <a href="#" class="tag_text">
-                                                <%= tag.title %>
-                                            </a>
-                                        </li>
-            
-                                        <% })%>
-                                </ul>
-                            </div>
-
-
-                        </div>
-                        <!-- popular_tag_area end -->
-
-                    </div>
-                </div>
-                <!-- side_ber_area end -->
             </div>
-        </div>
-    </div>
 
 
-    <!-- scroll_button_area start -->
-    <a href="#scroll_top" class="scroll-button">
-        <span class="icon">
-            <i class="fa-solid fa-angle-up"></i>
-        </span>
-    </a>
-    <!-- scroll_button_area end -->
-    <%- include('../layouts/frontend/footer.ejs') %>
+            <!-- scroll_button_area start -->
+            <a href="#scroll_top" class="scroll-button">
+                <span class="icon">
+                    <i class="fa-solid fa-angle-up"></i>
+                </span>
+            </a>
+            <!-- scroll_button_area end -->
+            <%- include('../layouts/frontend/footer.ejs') %>

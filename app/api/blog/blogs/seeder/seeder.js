@@ -160,7 +160,7 @@ let data = [
 		seo_description: "সাম্প্রদায়িক উন্নয়ন প্রোগ্রাম",
 		seo_schema_tags: "সাম্প্রদায়িক উন্নয়ন প্রোগ্রাম",
 		published_date: "2023-07-05",
-		categories: ['65618a3394f36f64bfe54d48'],
+		categories: ['65618a3394f36f64bfe54d48','65618a3394f36f64bfe54d4c'],
 		status: true,
 
 	},
@@ -201,7 +201,7 @@ let data = [
 		seo_description: "স্বাস্থ্য সেবা",
 		seo_schema_tags: "স্বাস্থ্য সেবা",
 		published_date: "2023-07-05",
-		categories: ['65618a3394f36f64bfe54d48'],
+		categories: ['65618a3394f36f64bfe54d48','65618a3394f36f64bfe54d4c'],
 		status: true,
 
 	},
@@ -269,7 +269,7 @@ let data = [
 		seo_description: "পরিবেশ সংরক্ষণ",
 		seo_schema_tags: "পরিবেশ সংরক্ষণ",
 		published_date: "2023-07-05",
-		categories: ['65618a3394f36f64bfe54d48'],
+		categories: ['65618a3394f36f64bfe54d48','65618a3394f36f64bfe54d4c'],
 		status: true,
 
 	},
@@ -311,7 +311,7 @@ let data = [
 		seo_description: "ভাষা আন্দোলন",
 		seo_schema_tags: "ভাষা আন্দোলন",
 		published_date: "2023-07-05",
-		categories: ['65618a3394f36f64bfe54d44'],
+		categories: ['65618a3394f36f64bfe54d44','65618a3394f36f64bfe54d4c'],
 		status: true,
 	},
 	{
@@ -352,7 +352,7 @@ let data = [
 		seo_description: "গণহত্যা দিবস",
 		seo_schema_tags: "গণহত্যা দিবস",
 		published_date: "2023-07-05",
-		categories: ['65618a3394f36f64bfe54d44'],
+		categories: ['65618a3394f36f64bfe54d44','65618a3394f36f64bfe54d4c'],
 		status: true,
 	},
 	{
@@ -415,7 +415,7 @@ let data = [
 		seo_description: "গণতান্ত্রিক পদ্ধতি",
 		seo_schema_tags: "গণতান্ত্রিক পদ্ধতি",
 		published_date: "2023-07-05",
-		categories: ['65618a3394f36f64bfe54d42'],
+		categories: ['65618a3394f36f64bfe54d42','65618a3394f36f64bfe54d4c'],
 		status: true,
 	},
 	{

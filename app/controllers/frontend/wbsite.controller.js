@@ -166,6 +166,33 @@ const controllers = {
 			contems,
 		});
 	},
+	miscellaneous: async function (req, res) {
+		// const model_data = await model.findOne({ _id: data.id });
+		let mis = await blogCategoriesModel.findOne({ title: "বিবিধ" });
+
+		let misc = await blogsModel.find().where({ categories: mis._id });
+
+		console.log("mis",mis._id);
+		console.log("misc",misc);
+		return res.render(`frontend/blog/miscellaneous`, {
+			misc,
+			mis,
+		});
+	},
+	miscellaneous_details: async function (req, res) {
+		// console.log(req.params.id);
+		let mis_details = await blogsModel.findOne({ _id: req.params.id });
+		mis_details.total_view = (mis_details.total_view || 0) + 1;
+		mis_details.save();
+		let mis = await blogCategoriesModel.findOne({ title: "বিবিধ" });
+		let misc = await blogsModel.find().where({ categories: mis._id });
+		// console.log(mis_details);
+		
+		return res.render(`frontend/blog/miscellaneous_details`, {
+			mis_details,
+			misc,
+		});
+	},
 	social_work: async function (req, res) {
 		// const model_data = await model.findOne({ _id: data.id });
 		let social_work = await blogCategoriesModel.findOne({ title: "সামাজিক কাজ" });

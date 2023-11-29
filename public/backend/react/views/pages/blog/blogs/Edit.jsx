@@ -28,7 +28,7 @@ function Edit() {
     };
   }, []);
 
-  console.log(data_store);
+  // console.log(data_store);
 
   const handleSubmit = async () => {
     let e = event;
@@ -53,7 +53,7 @@ function Edit() {
   if (data_store) {
     const { subtitle, title, short_description, description, photo, photo_alt_text, seo_title, seo_keyword, seo_description, seo_schema_tags, published_date } = data_store;
     let a = new Date(published_date).toISOString().substring(0, 10)
-    console.log(short_description);
+    console.log(photo);
     return (
       <div className="card list_card">
         <div className="card-header ">

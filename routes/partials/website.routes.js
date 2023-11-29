@@ -48,12 +48,8 @@ router
 	.get("/blog-history", website_controller.blog_history)
 	.get("/blog-history-details/:id", website_controller.blog_history_details)
 
-	.get("/blog-miscellaneous", function (req, res) {
-		return res.render("frontend/blog/miscellaneous");
-	})
-	.get("/blog-miscellaneous-details", function (req, res) {
-		return res.render("frontend/blog/miscellaneous_details");
-	})
+	.get("/blog-miscellaneous",website_controller.miscellaneous)
+	.get("/blog-miscellaneous-details/:id", website_controller.miscellaneous_details)
 
 	.get("/photo-gallery", website_controller.photo_gallery)
 
