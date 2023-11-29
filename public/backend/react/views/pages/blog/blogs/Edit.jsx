@@ -8,7 +8,7 @@ function Edit() {
   const { id } = useParams();
   setup.dispatch = useDispatch();
   const data_store = useSelector((state) => state[setup.prefix])[setup.prefix]
-  const { get_blogs, set_data, update_data } = setup.actions;
+  const { get_blogs, set_data, update_data, check_unique_url } = setup.actions;
 
   const short_description_ref = useRef(null);
   const description_ref = useRef(null);
@@ -48,12 +48,16 @@ function Edit() {
 
   };
 
-
+  const handleChange = async (e) => {
+    let url = e.target.value;
+    await check_unique_url({url, id});
+    console.log('Input value changed:', url);
+  }
 
   if (data_store) {
-    const { subtitle, title,url, short_description, description, photo, photo_alt_text, seo_title, seo_keyword, seo_description, seo_schema_tags, published_date } = data_store;
+    const { subtitle, title,url, short_description, description, photo, photo_alt_text, seo_title, seo_keyword, seo_description, seo_schema_tags, published_date , isUrlExist} = data_store;
     let a = new Date(published_date).toISOString().substring(0, 10)
-    console.log(photo);
+    console.log('isurl', isUrlExist);
     return (
       <div className="card list_card">
         <div className="card-header ">
@@ -79,7 +83,22 @@ function Edit() {
                     <div className="custom_form_el">
                       <label htmlFor="">URL</label>
                       <div>:</div>
-                      <div><input name="url" type="text" className="form-control" defaultValue={url} /></div>
+                      <div><input name="url" 
+                      type="text"
+                       className="form-control" 
+                       defaultValue={url} 
+                       onChange={(e) =>handleChange(e)}
+                       />
+                       {
+                        isUrlExist?
+
+                        <div className="text-warning">
+                          This is url is exist
+                        </div>
+                        :
+                        ""
+                      }
+                       </div>
                     </div>
                     <div className="custom_form_el">
                       <label htmlFor="">Subtitle</label>

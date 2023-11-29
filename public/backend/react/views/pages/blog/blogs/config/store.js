@@ -87,10 +87,10 @@ export const async_actions = {
     // check unique url
     [`check_unique_url`]: createAsyncThunk(
         `${store_prefix}/check_unique_url`,
-        async (url, thunkAPI) => {
+        async ({url,id}, thunkAPI) => {
             try {
                 console.log('hit url rout', );
-                const response = await axios.post(`${app_config.api_endpoint}/${api_prefix}/check-unique-url`,{url});
+                const response = await axios.post(`${app_config.api_endpoint}/${api_prefix}/check-unique-url`,{url, id});
                 console.log('check_unique_url', response);
                 return response;
             } catch (error) {

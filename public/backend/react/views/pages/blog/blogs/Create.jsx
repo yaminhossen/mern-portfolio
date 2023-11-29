@@ -55,7 +55,7 @@ function Create() {
 
   const handleChange = async (e) => {
     let url = e.target.value;
-    await check_unique_url(url);
+    await check_unique_url({url, id:null});
     console.log('Input value changed:', url);
   }
 

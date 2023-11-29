@@ -18,9 +18,12 @@ const controllers = {
 		let url = req.body.url;
 		console.log('url', url);
 		const model_data = await blogModel.findOne().where({ url: url });
+		
 		console.log('model_data',model_data?.length);
 		if (model_data){
-
+			if(req.body.id && req.body.id == model_data.id){
+				return res.json(false)
+			}
 			return res.json(true);
 		}
 		else{
