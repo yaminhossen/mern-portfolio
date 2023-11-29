@@ -21,6 +21,7 @@ var setup = {
         update_data: async () => null,
 
         delete_data: async () => null,
+        check_unique_url: async () => null,
         restore_data: async () => null,
 
         fetch_all_data: async () => null,
@@ -47,6 +48,7 @@ setup.actions.fetch_my_data = async () => await setup.dispatch(async_actions.fet
 
 // delete & restore data
 setup.actions.delete_data = async (id) => await setup.dispatch(async_actions[`delete_data`](id))
+setup.actions.check_unique_url = async (url) => await setup.dispatch(async_actions[`check_unique_url`](url))
 setup.actions.restore_data = async (id) => await setup.dispatch(async_actions[`restore_data`](id))
 
 // updated data

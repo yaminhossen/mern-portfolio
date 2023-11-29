@@ -84,6 +84,20 @@ export const async_actions = {
             }
         }
     ),
+    // check unique url
+    [`check_unique_url`]: createAsyncThunk(
+        `${store_prefix}/check_unique_url`,
+        async (url, thunkAPI) => {
+            try {
+                console.log('hit url rout', );
+                const response = await axios.post(`${app_config.api_endpoint}/${api_prefix}/check-unique-url`,{url});
+                console.log('check_unique_url', response);
+                return response;
+            } catch (error) {
+                return error;
+            }
+        }
+    ),
 
     // delete data
     [`restore_data`]: createAsyncThunk(
@@ -124,6 +138,7 @@ export const async_actions = {
             // return response.data;
         }
     ),
+
 };
 
 const storeSlice = createSlice({
@@ -138,6 +153,8 @@ const storeSlice = createSlice({
         management_modal_show: false,
 
         my_data: [],
+
+        isUrlExist : false,
 
         /* data store */
         [`all_data`]: [], // all data
@@ -203,6 +220,11 @@ const storeSlice = createSlice({
             })
             .addCase(async_actions[`details_${store_prefix}`].fulfilled, (state, { type, payload, meta }) => {
                 state[`${store_prefix}`] = payload.data.data;
+            })
+            .addCase(async_actions[`check_unique_url`].fulfilled, (state, { type, payload, meta }) => {
+                // state[`${store_prefix}`] = payload.data.data;
+                console.log(payload);
+                state.isUrlExist = payload.data;
             })
         // .addCase(getUserData2.fulfilled, (state, { type, payload, meta }) => {
         //     state.all = payload.items;

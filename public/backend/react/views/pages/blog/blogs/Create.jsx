@@ -7,10 +7,11 @@ import userSetup from "../../users/config/setup";
 import MultiselectDropdown from "./components/all_data_components/Multiselect_dropdown";
 
 function Create() {
+  const data_store = useSelector((state) => state[setup.prefix])
   const user_data_store = useSelector((state) => state[userSetup.prefix]);
   setup.dispatch = useDispatch();
   userSetup.dispatch = useDispatch();
-  const { store_data } = setup.actions;
+  const { store_data, check_unique_url } = setup.actions;
   const { get_data: get_users } = userSetup.actions;
   const [selectedRole, setselectedRole] = useState([]);
   const [tasklist, setTasklist] = useState(false);
@@ -28,6 +29,9 @@ function Create() {
   }, []);
 
   console.log(selectedRole);
+
+ 
+
 
   const handleSubmit = async () => {
     let e = event;
@@ -48,6 +52,13 @@ function Create() {
     await store_data(form_data);
     // e.target.reset();
   };
+
+  const handleChange = async (e) => {
+    let url = e.target.value;
+    await check_unique_url(url);
+    console.log('Input value changed:', url);
+  }
+
   return (
     <div className="card list_card">
       <div className="card-header ">
@@ -206,7 +217,17 @@ function Create() {
                         name="url"
                         type="text"
                         className="form-control"
+                        onChange={(e) =>handleChange(e)}
                       />
+                      {
+                        data_store.isUrlExist?
+
+                        <div className="text-warning">
+                          This is url is exist
+                        </div>
+                        :
+                        ""
+                      }
                     </div>
                   </div>
                 </div>
@@ -272,7 +293,9 @@ function Create() {
           </button>
         </div>
       </form>
+
     </div>
+
   );
 }
 

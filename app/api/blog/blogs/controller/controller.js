@@ -5,7 +5,7 @@ const restore = require("../model/restore");
 const get = require("../model/get");
 const store = require("../model/store");
 const update = require("../model/update");
-const model = require("../model/model")
+const blogModel = require("../model/model")
 // const blogModel = require("../../models/blog.model");
 // const all_search = require("../model/all_search");
 
@@ -17,7 +17,15 @@ const controllers = {
 	check_unique_url: async function (req, res) {
 		let url = req.body.url;
 		console.log('url', url);
-		return res.json(url);
+		const model_data = await blogModel.findOne().where({ url: url });
+		console.log('model_data',model_data?.length);
+		if (model_data){
+
+			return res.json(true);
+		}
+		else{
+			return res.json(false)
+		}
 	},
 	get: async function (req, res) {
 		const data = await get(req.params.id);
