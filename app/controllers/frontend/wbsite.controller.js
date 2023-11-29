@@ -148,8 +148,11 @@ const controllers = {
 		let contemp = await blogCategoriesModel.findOne({ title: "সমসাময়িক" });
 
 		let contems = await blogsModel.find().where({ categories: contemp._id });
-
-		controllers.server.locals.seo_title = contemp.title;
+		
+		controllers.server.locals.seo_title = contemp.seo_title;
+		controllers.server.locals.seo_description = contemp.seo_description;
+		controllers.server.locals.seo_image = contemp.photo;
+		controllers.server.locals.seo_keyword = contemp.seo_keyword;
 
 		// console.log("contemp",contemp._id);
 		// console.log("contems",contems);
@@ -167,7 +170,12 @@ const controllers = {
 		let contems = await blogsModel.find().where({ categories: contemp._id });
 		// console.log(contemp_details);
 
-		controllers.server.locals.seo_title = contemp_details.title;
+		controllers.server.locals.seo_title = contemp_details.seo_title;
+		controllers.server.locals.seo_schematags = contemp_details.
+		seo_schema_tags;
+		controllers.server.locals.seo_description = contemp_details.seo_description;
+		controllers.server.locals.seo_image = contemp_details.photo;
+		controllers.server.locals.seo_keyword = contemp_details.seo_keyword;
 		
 		return res.render(`frontend/contemporary_details`, {
 			contemp_details,
@@ -179,6 +187,11 @@ const controllers = {
 		let mis = await blogCategoriesModel.findOne({ title: "বিবিধ" });
 
 		let misc = await blogsModel.find().where({ categories: mis._id });
+
+		controllers.server.locals.seo_title = mis.seo_title;
+		controllers.server.locals.seo_description = mis.seo_description;
+		controllers.server.locals.seo_image = mis.photo;
+		controllers.server.locals.seo_keyword = mis.seo_keyword;
 
 		console.log("mis",mis._id);
 		console.log("misc",misc);
@@ -195,6 +208,13 @@ const controllers = {
 		let mis = await blogCategoriesModel.findOne({ title: "বিবিধ" });
 		let misc = await blogsModel.find().where({ categories: mis._id });
 		// console.log(mis_details);
+
+		controllers.server.locals.seo_title = mis_details.seo_title;
+		controllers.server.locals.seo_schematags = mis_details.
+		seo_schema_tags;
+		controllers.server.locals.seo_description = mis_details.seo_description;
+		controllers.server.locals.seo_image = mis_details.photo;
+		controllers.server.locals.seo_keyword = mis_details.seo_keyword;
 		
 		return res.render(`frontend/blog/miscellaneous_details`, {
 			mis_details,
@@ -206,6 +226,11 @@ const controllers = {
 		let social_work = await blogCategoriesModel.findOne({ title: "সামাজিক কাজ" });
 
 		let social_works = await blogsModel.find().where({ categories: social_work._id });
+
+		controllers.server.locals.seo_title = social_work.seo_title;
+		controllers.server.locals.seo_description = social_work.seo_description;
+		controllers.server.locals.seo_image = social_work.photo;
+		controllers.server.locals.seo_keyword = social_work.seo_keyword;
 
 		// console.log("social_work",social_work._id);
 		// console.log("social_works",social_works.length);
@@ -221,6 +246,14 @@ const controllers = {
 		social_work_details.save();
 		let social_work = await blogCategoriesModel.findOne({ title: "সামাজিক কাজ" });
 		let social_works = await blogsModel.find().where({ categories: social_work._id });
+
+		controllers.server.locals.seo_title = social_work_details.seo_title;
+		controllers.server.locals.seo_schematags = social_work_details.
+		seo_schema_tags;
+		controllers.server.locals.seo_description = social_work_details.seo_description;
+		controllers.server.locals.seo_image = social_work_details.photo;
+		controllers.server.locals.seo_keyword = social_work_details.seo_keyword;
+
 		// console.log(social_work_details);
 		return res.render(`frontend/social_work_details`, {
 			social_work_details,
@@ -233,6 +266,10 @@ const controllers = {
 
 		let blog_islams = await blogsModel.find().where({ categories: blog_islam._id });
 
+		controllers.server.locals.seo_title = blog_islam.seo_title;
+		controllers.server.locals.seo_description = blog_islam.seo_description;
+		controllers.server.locals.seo_image = blog_islam.photo;
+		controllers.server.locals.seo_keyword = blog_islam.seo_keyword;
 		// console.log("blog_islam",blog_islam._id);
 		// console.log("blog_islams",blog_islams.length);
 		return res.render(`frontend/blog/islam`, {
@@ -247,6 +284,13 @@ const controllers = {
 		blog_islam_details.save();
 		let blog_islam = await blogCategoriesModel.findOne({ title: "ইসলাম" });
 		let blog_islams = await blogsModel.find().where({ categories: blog_islam._id });
+
+		controllers.server.locals.seo_title = blog_islam_details.seo_title;
+		controllers.server.locals.seo_schematags = blog_islam_details.
+		seo_schema_tags;
+		controllers.server.locals.seo_description = blog_islam_details.seo_description;
+		controllers.server.locals.seo_image = blog_islam_details.photo;
+		controllers.server.locals.seo_keyword = blog_islam_details.seo_keyword;
 		// console.log(blog_islam_details);
 		return res.render(`frontend/blog/islam_details`, {
 			blog_islam_details,
@@ -257,6 +301,11 @@ const controllers = {
 		let blog_islamic_movement = await blogCategoriesModel.findOne({ title: "ইসলামী আন্দোলন" });
 
 		let blog_islamic_movements = await blogsModel.find().where({ categories: blog_islamic_movement._id });
+
+		controllers.server.locals.seo_title = blog_islamic_movement.seo_title;
+		controllers.server.locals.seo_description = blog_islamic_movement.seo_description;
+		controllers.server.locals.seo_image = blog_islamic_movement.photo;
+		controllers.server.locals.seo_keyword = blog_islamic_movement.seo_keyword;
 
 		return res.render(`frontend/blog/islamic_movement`, {
 			blog_islamic_movement,
@@ -269,6 +318,13 @@ const controllers = {
 		blog_islamic_movement_details.save();
 		let blog_islamic_movement = await blogCategoriesModel.findOne({ title: "ইসলামী আন্দোলন" });
 		let blog_islamic_movements = await blogsModel.find().where({ categories: blog_islamic_movement._id });
+
+		controllers.server.locals.seo_title = blog_islamic_movement_details.seo_title;
+		controllers.server.locals.seo_schematags = blog_islamic_movement_details.
+		seo_schema_tags;
+		controllers.server.locals.seo_description = blog_islamic_movement_details.seo_description;
+		controllers.server.locals.seo_image = blog_islamic_movement_details.photo;
+		controllers.server.locals.seo_keyword = blog_islamic_movement_details.seo_keyword;
 		return res.render(`frontend/blog/islamic_movement_details`, {
 			blog_islamic_movement_details,
 			blog_islamic_movements,
@@ -278,6 +334,11 @@ const controllers = {
 		let blog_bangladesh = await blogCategoriesModel.findOne({ title: "বাংলাদেশ" });
 
 		let blog_bangladeshs = await blogsModel.find().where({ categories: blog_bangladesh._id });
+
+		controllers.server.locals.seo_title = blog_bangladesh.seo_title;
+		controllers.server.locals.seo_description = blog_bangladesh.seo_description;
+		controllers.server.locals.seo_image = blog_bangladesh.photo;
+		controllers.server.locals.seo_keyword = blog_bangladesh.seo_keyword;
 
 		return res.render(`frontend/blog/bangladesh`, {
 			blog_bangladesh,
@@ -290,6 +351,14 @@ const controllers = {
 		blog_bangladesh_details.save();
 		let blog_bangladesh = await blogCategoriesModel.findOne({ title: "বাংলাদেশ" });
 		let blog_bangladeshs = await blogsModel.find().where({ categories: blog_bangladesh._id });
+
+		controllers.server.locals.seo_title = blog_bangladesh_details.seo_title;
+		controllers.server.locals.seo_schematags = blog_bangladesh_details.
+		seo_schema_tags;
+		controllers.server.locals.seo_description = blog_bangladesh_details.seo_description;
+		controllers.server.locals.seo_image = blog_bangladesh_details.photo;
+		controllers.server.locals.seo_keyword = blog_bangladesh_details.seo_keyword;
+
 		return res.render(`frontend/blog/bangladesh_details`, {
 			blog_bangladesh_details,
 			blog_bangladeshs,
@@ -299,6 +368,11 @@ const controllers = {
 		let blog_politics = await blogCategoriesModel.findOne({ title: "রাজনীতি" });
 
 		let blog_politicss = await blogsModel.find().where({ categories: blog_politics._id });
+
+		controllers.server.locals.seo_title = blog_politics.seo_title;
+		controllers.server.locals.seo_description = blog_politics.seo_description;
+		controllers.server.locals.seo_image = blog_politics.photo;
+		controllers.server.locals.seo_keyword = blog_politics.seo_keyword;
 
 		return res.render(`frontend/blog/politics`, {
 			blog_politics,
@@ -311,6 +385,14 @@ const controllers = {
 		blog_politics_details.save();
 		let blog_politics = await blogCategoriesModel.findOne({ title: "রাজনীতি" });
 		let blog_politicss = await blogsModel.find().where({ categories: blog_politics._id });
+
+		controllers.server.locals.seo_title = blog_politics_details.seo_title;
+		controllers.server.locals.seo_schematags = blog_politics_details.
+		seo_schema_tags;
+		controllers.server.locals.seo_description = blog_politics_details.seo_description;
+		controllers.server.locals.seo_image = blog_politics_details.photo;
+		controllers.server.locals.seo_keyword = blog_politics_details.seo_keyword;
+
 		return res.render(`frontend/blog/politics_details`, {
 			blog_politics_details,
 			blog_politicss,
@@ -320,6 +402,11 @@ const controllers = {
 		let blog_history = await blogCategoriesModel.findOne({ title: "ইতিহাস" });
 
 		let blog_historys = await blogsModel.find().where({ categories: blog_history._id });
+
+		controllers.server.locals.seo_title = blog_history.seo_title;
+		controllers.server.locals.seo_description = blog_history.seo_description;
+		controllers.server.locals.seo_image = blog_history.photo;
+		controllers.server.locals.seo_keyword = blog_history.seo_keyword;
 
 		return res.render(`frontend/blog/history`, {
 			blog_history,
@@ -332,6 +419,13 @@ const controllers = {
 		blog_history_details.save();
 		let blog_history = await blogCategoriesModel.findOne({ title: "ইতিহাস" });
 		let blog_historys = await blogsModel.find().where({ categories: blog_history._id });
+
+		controllers.server.locals.seo_title = blog_history_details.seo_title;
+		controllers.server.locals.seo_schematags = blog_history_details.
+		seo_schema_tags;
+		controllers.server.locals.seo_description = blog_history_details.seo_description;
+		controllers.server.locals.seo_image = blog_history_details.photo;
+		controllers.server.locals.seo_keyword = blog_history_details.seo_keyword;
 		return res.render(`frontend/blog/history_details`, {
 			blog_history_details,
 			blog_historys,
@@ -342,6 +436,11 @@ const controllers = {
 		let book_review = await blogCategoriesModel.findOne({ title: "বই পর্যালোচনা" });
 
 		let book_reviews = await blogsModel.find().where({ categories: book_review._id });
+
+		controllers.server.locals.seo_title = book_review.seo_title;
+		controllers.server.locals.seo_description = book_review.seo_description;
+		controllers.server.locals.seo_image = book_review.photo;
+		controllers.server.locals.seo_keyword = book_review.seo_keyword;
 
 		// console.log("book_review",book_review._id);
 		// console.log("book_reviews",book_reviews.length);
@@ -358,6 +457,13 @@ const controllers = {
 		book_review_details.save();
 		let book_review = await blogCategoriesModel.findOne({ title: "বই পর্যালোচনা" });
 		let book_reviews = await blogsModel.find().where({ categories: book_review._id });
+
+		controllers.server.locals.seo_title = book_review_details.seo_title;
+		controllers.server.locals.seo_schematags = book_review_details.
+		seo_schema_tags;
+		controllers.server.locals.seo_description = book_review_details.seo_description;
+		controllers.server.locals.seo_image = book_review_details.photo;
+		controllers.server.locals.seo_keyword = book_review_details.seo_keyword;
 		// console.log(book_review_details);
 		return res.render(`frontend/book_review_details`, {
 			book_review_details,

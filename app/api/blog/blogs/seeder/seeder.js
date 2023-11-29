@@ -18,7 +18,7 @@ async function getId() {
 	var random = gen_rand();
 	var data = await blogCategoriesModel.find().limit(1).skip(random);
 	// console.log(random, data[0]._id);
-	return [data.map(i => i._id),"655dc56cdfef49c66bc28b5f"];
+	return [data.map(i => i._id), "655dc56cdfef49c66bc28b5f"];
 }
 
 // node app/api/blog/blogs/seeder/seeder.js
@@ -81,7 +81,7 @@ let data = [
 		seo_description: "জীবনানন্দ দাশ",
 		seo_schema_tags: "জীবনানন্দ দাশ",
 		published_date: "2023-07-11",
-		categories: ['654c5d4e30dbb71ec3d78392','65618a3394f36f64bfe54d46'],
+		categories: ['654c5d4e30dbb71ec3d78392', '65618a3394f36f64bfe54d46'],
 		status: true,
 
 	},
@@ -101,7 +101,7 @@ let data = [
 		seo_description: "কবি মল্লিক",
 		seo_schema_tags: "কবি মল্লিক",
 		published_date: "2023-07-11",
-		categories: ['654c5d4e30dbb71ec3d78392','65618a3394f36f64bfe54d46'],
+		categories: ['654c5d4e30dbb71ec3d78392', '65618a3394f36f64bfe54d46'],
 		status: true,
 
 	},
@@ -140,7 +140,7 @@ let data = [
 		status: true,
 
 	},
-	
+
 	// সামাজিক সেবা
 
 	{
@@ -160,7 +160,7 @@ let data = [
 		seo_description: "সাম্প্রদায়িক উন্নয়ন প্রোগ্রাম",
 		seo_schema_tags: "সাম্প্রদায়িক উন্নয়ন প্রোগ্রাম",
 		published_date: "2023-07-05",
-		categories: ['65618a3394f36f64bfe54d48','65618a3394f36f64bfe54d4c'],
+		categories: ['65618a3394f36f64bfe54d48', '65618a3394f36f64bfe54d4c'],
 		status: true,
 
 	},
@@ -201,7 +201,7 @@ let data = [
 		seo_description: "স্বাস্থ্য সেবা",
 		seo_schema_tags: "স্বাস্থ্য সেবা",
 		published_date: "2023-07-05",
-		categories: ['65618a3394f36f64bfe54d48','65618a3394f36f64bfe54d4c'],
+		categories: ['65618a3394f36f64bfe54d48', '65618a3394f36f64bfe54d4c'],
 		status: true,
 
 	},
@@ -269,12 +269,12 @@ let data = [
 		seo_description: "পরিবেশ সংরক্ষণ",
 		seo_schema_tags: "পরিবেশ সংরক্ষণ",
 		published_date: "2023-07-05",
-		categories: ['65618a3394f36f64bfe54d48','65618a3394f36f64bfe54d4c'],
+		categories: ['65618a3394f36f64bfe54d48', '65618a3394f36f64bfe54d4c'],
 		status: true,
 
 	},
 
-// ইতিহাস
+	// ইতিহাস
 
 	{
 		title: "বাংলাদেশের স্বাধীনতা সংগ্রাম",
@@ -311,7 +311,7 @@ let data = [
 		seo_description: "ভাষা আন্দোলন",
 		seo_schema_tags: "ভাষা আন্দোলন",
 		published_date: "2023-07-05",
-		categories: ['65618a3394f36f64bfe54d44','65618a3394f36f64bfe54d4c'],
+		categories: ['65618a3394f36f64bfe54d44', '65618a3394f36f64bfe54d4c'],
 		status: true,
 	},
 	{
@@ -352,7 +352,7 @@ let data = [
 		seo_description: "গণহত্যা দিবস",
 		seo_schema_tags: "গণহত্যা দিবস",
 		published_date: "2023-07-05",
-		categories: ['65618a3394f36f64bfe54d44','65618a3394f36f64bfe54d4c'],
+		categories: ['65618a3394f36f64bfe54d44', '65618a3394f36f64bfe54d4c'],
 		status: true,
 	},
 	{
@@ -395,7 +395,7 @@ let data = [
 		categories: ['65618a3394f36f64bfe54d44'],
 		status: true,
 	},
-	
+
 	// রাজনিতি
 
 	{
@@ -415,7 +415,7 @@ let data = [
 		seo_description: "গণতান্ত্রিক পদ্ধতি",
 		seo_schema_tags: "গণতান্ত্রিক পদ্ধতি",
 		published_date: "2023-07-05",
-		categories: ['65618a3394f36f64bfe54d42','65618a3394f36f64bfe54d4c'],
+		categories: ['65618a3394f36f64bfe54d42', '65618a3394f36f64bfe54d4c'],
 		status: true,
 	},
 	{
@@ -897,7 +897,7 @@ let data = [
 		status: true,
 	},
 
-// বই পর্যালোচনা
+	// বই পর্যালোচনা
 
 	{
 		title: "বিপদ যখন নিয়ামাত",
@@ -1003,9 +1003,14 @@ const run = async () => mongoose.connect(db_url)
 		console.log("\n");
 		console.log("blogs seeding");
 
+		function convertToSlug(Text) {
+			return Text.replace(/[`~!@#$%^&*()_\-+=\[\]{};:'"\\|\/,.<>?\s]/g, ' ').replace(/^\s+|\s+$/gm,'').replace(/\s+/g, '-');
+		}
+
 		await Model.deleteMany({});
 		for (let i = 0; i < data.length; i++) {
 			let item = data[i]
+			item.url = convertToSlug(item.title)
 			// item.categories = await getId()
 			await Model.create(item);
 		}
@@ -1018,4 +1023,4 @@ const run = async () => mongoose.connect(db_url)
 	});
 
 // run()
-module.exports = async () =>  run()
+module.exports = async () => run()

@@ -31,6 +31,11 @@ let blogSchema = mongoose.Schema({
 		type: String,
 		require: true,
 	},
+	url:{
+		type: String,
+		require: true,
+		// unique: true,
+	},
 	seo_title: {
 		type: String,
 		require: true,

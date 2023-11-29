@@ -161,6 +161,17 @@ function Create() {
                       ></textarea>
                     </div>
                   </div>
+                  {/* <div className="custom_form_el">
+                    <label htmlFor="">URL</label>
+                    <div>:</div>
+                    <div>
+                      <textarea
+                        name="url"
+                        className="form-control"
+                        id=""
+                      ></textarea>
+                    </div>
+                  </div> */}
                   <div className="custom_form_el">
                     <label htmlFor="">Seo Schema Tags</label>
                     <div>:</div>
@@ -181,6 +192,18 @@ function Create() {
                     <div>
                       <input
                         name="title"
+                        type="text"
+                        className="form-control"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="mb-3">
+                  <div>
+                    <label htmlFor="">URL</label>
+                    <div>
+                      <input
+                        name="url"
                         type="text"
                         className="form-control"
                       />

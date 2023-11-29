@@ -31,9 +31,9 @@ module.exports = async (server, req) => {
         ...server.locals,
         
         seo_title: 'razibur rahman',
-        seo_keyWord: 'razibur rahman',
+        seo_keyword: 'razibur rahman',
         seo_schematags: 'razibur rahman',
-        seo_escription: 'razibur rahman',
+        seo_description: 'razibur rahman',
         seo_image: 'razibur rahman',
 
     }

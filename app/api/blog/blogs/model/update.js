@@ -112,6 +112,7 @@ module.exports = async (datas) => {
         model_data.seo_keyword = data.seo_keyword;
         model_data.seo_description = data.seo_description;
         model_data.seo_schema_tags = data.seo_schema_tags;
+        model_data.url = data.url;
         model_data.published_date = data.published_date;
         await model_data.save();
         // console.log(data);

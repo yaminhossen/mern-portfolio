@@ -115,6 +115,15 @@ const controllers = {
 			translators,
 		});
 	},
+	// check_unique_url: async function (req, res) {
+	// 	let url = req.body.url;
+	// 	console.log('url', url);
+	// 	return res.render(`backend/${controllers.folder_prefix}/create`, {
+	// 		categories,
+	// 		writers,
+	// 		translators,
+	// 	});
+	// },
 
 	store: async function (req, res) {
 		// console.log(req.files);

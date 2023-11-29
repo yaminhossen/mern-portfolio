@@ -17,5 +17,6 @@ router
 	.post("/dashboard/blog/:id/edit", blogController.update)
 	.get("/dashboard/blog/:id/delete", blogController.destory)
 	.get("/dashboard/blog/:id", blogController.show)
+	// .post("/dashboard/blog/check-unique-url", blogController.show)
 
 module.exports = () => router;

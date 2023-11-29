@@ -51,7 +51,7 @@ function Edit() {
 
 
   if (data_store) {
-    const { subtitle, title, short_description, description, photo, photo_alt_text, seo_title, seo_keyword, seo_description, seo_schema_tags, published_date } = data_store;
+    const { subtitle, title,url, short_description, description, photo, photo_alt_text, seo_title, seo_keyword, seo_description, seo_schema_tags, published_date } = data_store;
     let a = new Date(published_date).toISOString().substring(0, 10)
     console.log(photo);
     return (
@@ -75,6 +75,11 @@ function Edit() {
                       <label htmlFor="">Title</label>
                       <div>:</div>
                       <div><input name="title" type="text" className="form-control" defaultValue={title} /></div>
+                    </div>
+                    <div className="custom_form_el">
+                      <label htmlFor="">URL</label>
+                      <div>:</div>
+                      <div><input name="url" type="text" className="form-control" defaultValue={url} /></div>
                     </div>
                     <div className="custom_form_el">
                       <label htmlFor="">Subtitle</label>
@@ -135,6 +140,7 @@ function Edit() {
                       <div>:</div>
                       <div><input name="published_date" type="date" className="form-control" defaultValue={published_date} /></div>
                     </div>
+                    
                     <div className="custom_form_el">
                       <label htmlFor="">Photo</label>
                       <div>:</div>

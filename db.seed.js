@@ -31,53 +31,53 @@ const apiTagSeeder = require("./app/api/tag/tags/seeder/seeder")
 const seed = async () => {
 
     // user seeder!!!
-    await apiUserSeeder();
-    await apiUserrolesSeeder();
-    await apiUseracheivementSeeder();
-    await apiUsercontactnumberSeeder();
-    await apiUsereducationSeeder();
-    await apiUseremailSeeder();
-    await apiUsersociallinkSeeder();
-    await apiUserprofileinfoSeeder();
+    // await apiUserSeeder();
+    // await apiUserrolesSeeder();
+    // await apiUseracheivementSeeder();
+    // await apiUsercontactnumberSeeder();
+    // await apiUsereducationSeeder();
+    // await apiUseremailSeeder();
+    // await apiUsersociallinkSeeder();
+    // await apiUserprofileinfoSeeder();
 
     // blog seeder!!!
     // await apiBlogCategoriesSeeder();
     await apiBlogsSeeder();
-    await apiBlogCommentsSeeder();
-    await apiBlogCommentRepliesSeeder();
-    await apiBlogimagesSeeder();
+    // await apiBlogCommentsSeeder();
+    // await apiBlogCommentRepliesSeeder();
+    // await apiBlogimagesSeeder();
 
     // content seeder!!
-    await apiContentCategoriesSeeder();
-    await apiContentSeeder();
-    await apiContentCommentsSeeder();
-    await apiContentCommentRepliesSeeder();
-    await apiContentimagesSeeder();
+    // await apiContentCategoriesSeeder();
+    // await apiContentSeeder();
+    // await apiContentCommentsSeeder();
+    // await apiContentCommentRepliesSeeder();
+    // await apiContentimagesSeeder();
 
     // contact message seeder!!
-    await apiContactMessagesSeeder();
+    // await apiContactMessagesSeeder();
 
     // banner seeder!!
-    await apiBannerSeeder();
+    // await apiBannerSeeder();
 
-    // setting seeder!!
-    await apiSettingTitleSeeder();
-    await apiSettingValueSeeder();
+    // // setting seeder!!
+    // await apiSettingTitleSeeder();
+    // await apiSettingValueSeeder();
 
-    // photo gallery
-    await apiSettingPhotoGalleryCategoriesSeeder();
-    await apiSettingPhotoGalleryimagesSeeder();
+    // // photo gallery
+    // await apiSettingPhotoGalleryCategoriesSeeder();
+    // await apiSettingPhotoGalleryimagesSeeder();
 
-    // video gallery
-    await apiSettingVideoGalleryCategoriesSeeder();
-    await apiSettingVideoGalleryimagesSeeder();
+    // // video gallery
+    // await apiSettingVideoGalleryCategoriesSeeder();
+    // await apiSettingVideoGalleryimagesSeeder();
 
-    // site url
-    await apiSiteUrlSeeder();
-    await apiSiteUrlViewCountSeeder();
+    // // site url
+    // await apiSiteUrlSeeder();
+    // await apiSiteUrlViewCountSeeder();
 
-    // tag seeder
-    await apiTagSeeder();
+    // // tag seeder
+    // await apiTagSeeder();
 }
 
 seed();
