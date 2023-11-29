@@ -25,7 +25,7 @@
 
                             <% contems.map( (cm)=>{ %>
 
-                                <a href="contemporary-details/<%= cm._id %>" class="item">
+                                <a href="/post/<%= cm._id %>" class="item">
                                     <img src="<%= cm.photo %>" alt="<%= cm.photo_alt %>">
     
                                     <!-- layout_area start -->
@@ -140,7 +140,7 @@
                                 <% contems.slice(-2).map( (cm)=>{ %>
 
                                      <!-- posted_item start -->
-                                <a href="/contemporary-details/<%= cm._id %>" class="posted_item">
+                                <a href="/post/<%= cm._id %>" class="posted_item">
                                     <div class="image_area">
                                         <img src="<%= cm.photo %>" alt="img">
                                     </div>

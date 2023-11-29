@@ -24,5 +24,18 @@ module.exports = async (server, req) => {
         contact_message,
         address,
         setting_titles,
+
     };
+
+    server.locals = {
+        ...server.locals,
+        
+        seo_title: 'razibur rahman',
+        seo_keyWord: 'razibur rahman',
+        seo_schematags: 'razibur rahman',
+        seo_escription: 'razibur rahman',
+        seo_image: 'razibur rahman',
+
+    }
+
 }

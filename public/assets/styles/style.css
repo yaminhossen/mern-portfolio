@@ -2034,7 +2034,6 @@ html ::-webkit-scrollbar-thumb:hover {
 .news-area .news-area_content .news_item-all .top_item_area .left_area {
   border: 0px solid red;
   flex: 1;
-  max-height: 221px;
 }
 .news-area .news-area_content .news_item-all .top_item_area .left_area .item {
   width: 100%;

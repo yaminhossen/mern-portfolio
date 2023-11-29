@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+let server = null;
 
 const blogRoutes = require("./partials/blog.routes");
 const emailRoutes = require("./partials/email.routes");
@@ -11,16 +12,19 @@ const authRoutes = require("./partials/auth.routes");
 const categoryRoutes = require("./partials/category.routes");
 const apiRoutes = require("./api.routes");
 
-router.use(apiRoutes());
+module.exports = (mainserver) => {
+    router.use(apiRoutes());
 
-router.use(websiteRoutes());
+    router.use(websiteRoutes(mainserver));
 
-router.use(authRoutes());
-router.use(dashboardRoutes());
-router.use(blogRoutes());
-router.use(emailRoutes());
-router.use(userRoutes());
-router.use(userRoleRoutes());
-router.use(categoryRoutes());
+    router.use(authRoutes());
+    router.use(dashboardRoutes());
+    router.use(blogRoutes());
+    router.use(emailRoutes());
+    router.use(userRoutes());
+    router.use(userRoleRoutes());
+    router.use(categoryRoutes());
 
-module.exports = () => router;
+    return router;
+
+};

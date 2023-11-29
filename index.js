@@ -53,10 +53,8 @@ server.use((req, res, next) => {
 	next();
 });
 
-log(server);
-
 // routes
-server.use(allRoutes());
+server.use(allRoutes(server));
 
 // mongoose.connect("mongodb+srv://mongo:0h4lYcX9RCOo8pHn@cluster0.gn949by.mongodb.net/blogDB")
 // 	.then(()=>{

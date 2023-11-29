@@ -424,7 +424,7 @@
 
                                         <a href="book-review-details/<%= br._id %>">
                                             <p class="description_text">
-                                                <%- br.short_description %>
+                                                <%= br.short_description.replace(/(<([^>]+)>)/ig,'') %>
                                             </p>
                                         </a>
                                     </div>
@@ -611,6 +611,7 @@
             </div>
         </div>
         <!-- video_gallery_are end -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
         <script>
             $(document).ready(function(){
               $('.venobox').venobox();

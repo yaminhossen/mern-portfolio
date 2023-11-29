@@ -18,10 +18,10 @@ const blogCategoriesModel = require("../../api/blog/blog_categories/model/model"
 const blogsModel = require("../../api/blog/blogs/model/model");
 const bannerModel = require("../../api/banner/banners/model/model");
 const settingModel = require("../../api/setting/setting_titles/model/model");
-
 const controllers = {
 	folder_prefix: ``,
 	route_prefix: ``,
+	server:null,
 
 	home: async function (req, res) {
 		let blogs = await blogModel.find().populate('creator').populate('category');
@@ -33,11 +33,15 @@ const controllers = {
 		});
 	},
 	about: async function (req, res) {
-
 		let user_educations = await uesrEducationModel.find();
 		let profile_info = await uesrProfileInfosModel.find();
 		let banner = await bannerModel.find();
+
+		controllers.server.locals.seo_title = 'about';
+		
 		// console.log('profile_info', profile_info)
+		// console.log(controllers.server);
+
 		return res.render(`frontend/about`, {
 			profile_info,
 			user_educations,
@@ -145,6 +149,8 @@ const controllers = {
 
 		let contems = await blogsModel.find().where({ categories: contemp._id });
 
+		controllers.server.locals.seo_title = contemp.title;
+
 		// console.log("contemp",contemp._id);
 		// console.log("contems",contems);
 		return res.render(`frontend/contemporary`, {
@@ -160,6 +166,8 @@ const controllers = {
 		let contemp = await blogCategoriesModel.findOne({ title: "সমসাময়িক" });
 		let contems = await blogsModel.find().where({ categories: contemp._id });
 		// console.log(contemp_details);
+
+		controllers.server.locals.seo_title = contemp_details.title;
 		
 		return res.render(`frontend/contemporary_details`, {
 			contemp_details,
