@@ -249,7 +249,7 @@ const controllers = {
 		social_work_details.save();
 		let social_work = await blogCategoriesModel.findOne({ title: "সামাজিক কাজ" });
 		let social_works = await blogsModel.find().where({ categories: social_work._id });
-
+       console.log('social works', social_works);
 		controllers.server.locals.seo_title = social_work_details.seo_title;
 		controllers.server.locals.seo_schematags = social_work_details.
 		seo_schema_tags;
@@ -257,7 +257,7 @@ const controllers = {
 		controllers.server.locals.seo_image = social_work_details.photo;
 		controllers.server.locals.seo_keyword = social_work_details.seo_keyword;
 
-		// console.log(social_work_details);
+		console.log('social_works', social_works);
 		return res.render(`frontend/social_work_details`, {
 			social_work_details,
 			social_works,

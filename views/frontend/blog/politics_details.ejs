@@ -120,7 +120,7 @@
                                             <% blog_politicss.slice(0,4).map( (bp)=>{ %>
 
                                     <!-- blog_card start -->
-                                    <a href="/post/<%= bp._id %>" class="blog_card edit_details_inner_blog_card">
+                                    <a href="/blog-politics-details/<%= bp._id %>" class="blog_card edit_details_inner_blog_card">
                                         <div class="blog_image">
                                             <img src="<%= bp.photo %>" alt="img">
                                         </div>
@@ -211,7 +211,7 @@
                                 <% blog_politicss.slice(-2).map( (bp)=>{ %>
 
                                     <!-- posted_item start -->
-                               <a href="/post/<%= bp._id %>" class="posted_item">
+                               <a href="/blog-politics-details/<%= bp._id %>" class="posted_item">
                                    <div class="image_area">
                                        <img src="<%= bp.photo %>" alt="img">
                                    </div>

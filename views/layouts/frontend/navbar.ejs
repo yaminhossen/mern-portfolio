@@ -29,7 +29,7 @@
                             <a href="/book-review" class="menu_text">বই পর্যালোচনা</a>
                         </li>
                         <li class="addClass">
-                            <button class="menu_text">ব্লগ
+                            <button class="menu_text"  onclick="inner_menu.classList.toggle('active_class')">ব্লগ
                                 <i class="fa-solid fa-angle-down"></i>
                             </button>
                             <!--  onclick="inner_menu.classList.toggle('active_class')"   onclick="addClass()"-->
@@ -48,7 +48,7 @@
                             </ul>
                         </li>
                         <li class="addClass">
-                            <button class="menu_text">গ্যালারি
+                            <button class="menu_text"  onclick="inner_menuu.classList.toggle('active_class')">গ্যালারি
                                 <i class="fa-solid fa-angle-down"></i>
                             </button>
                             <ul class="submenu_active" id="inner_menuu">
@@ -76,26 +76,26 @@
                 <!-- responsive_menu_area end -->
 
                 <script>
-                    document.querySelectorAll(".addClass").forEach((el) => {
-                        el.addEventListener('click', function (e) {
-                            e.preventDefault();
+                    // document.querySelectorAll(".addClass").forEach((el) => {
+                    //     el.addEventListener('click', function (e) {
+                    //         e.preventDefault();
 
-                            let li = e.currentTarget.children[1];
-                            let isActive = li.classList.contains('active_class');
+                    //         let li = e.currentTarget.children[1];
+                    //         let isActive = li.classList.contains('active_class');
 
-                            document.querySelectorAll('.submenu_active.active_class').forEach((menu) => {
-                                menu.classList.remove('active_class');
-                            });
+                    //         document.querySelectorAll('.submenu_active.active_class').forEach((menu) => {
+                    //             menu.classList.remove('active_class');
+                    //         });
 
-                            if (!isActive) {
-                                li.classList.add('active_class');
-                            } else {
-                                li.classList.remove('active_class');
-                            }
+                    //         if (!isActive) {
+                    //             li.classList.add('active_class');
+                    //         } else {
+                    //             li.classList.remove('active_class');
+                    //         }
 
-                            console.log('Element:', li);
-                        });
-                    });
+                    //         console.log('Element:', li);
+                    //     });
+                    // });
                 </script>
             </div>
         </div>

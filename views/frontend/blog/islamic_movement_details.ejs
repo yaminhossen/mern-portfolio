@@ -121,7 +121,7 @@
                                             <% blog_islamic_movements.slice(0,4).map( (bim)=>{ %>
 
                                     <!-- blog_card start -->
-                                    <a href="/post/<%= bim._id %>" class="blog_card edit_details_inner_blog_card">
+                                    <a href="/blog-islamic-movement-details/<%= bim._id %>" class="blog_card edit_details_inner_blog_card">
                                         <div class="blog_image">
                                             <img src="<%= bim.photo %>" alt="img">
                                         </div>
@@ -212,7 +212,7 @@
                                 <% blog_islamic_movements.slice(-2).map( (bim)=>{ %>
 
                                     <!-- posted_item start -->
-                               <a href="/post/<%= bim._id %>" class="posted_item">
+                               <a href="/blog-islamic-movement-details/<%= bim._id %>" class="posted_item">
                                    <div class="image_area">
                                        <img src="<%= bim.photo %>" alt="img">
                                    </div>

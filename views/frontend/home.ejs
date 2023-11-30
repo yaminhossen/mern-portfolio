@@ -147,7 +147,7 @@
                             <!-- left_area start -->
                             <div class="left_area">
                                 <% contems.splice(0,1).map( (cm)=>{ %>
-                                    <a href="contemporary-details/<%= cm._id %>" class="item">
+                                    <a href="/contemporary-details/<%= cm._id %>" class="item">
                                         <img src="<%= cm.photo %>" alt="News">
 
                                         <!-- layout_area start -->
@@ -176,7 +176,7 @@
                             <!-- right_area start -->
                             <div class="right_area">
                                 <% contems.splice(1,2).map( (cm)=>{ %>
-                                    <a href="contemporary-details/<%= cm._id %>" class="item">
+                                    <a href="/contemporary-details/<%= cm._id %>" class="item">
                                         <img src="<%= cm.photo %>" alt="News">
 
                                         <!-- layout_area start -->
@@ -209,7 +209,7 @@
                         <!-- bottom_item_area start -->
                         <div class="bottom_item_area">
                             <% contems.splice(0,3).map( (cm)=>{ %>
-                                <a href="contemporary-details/<%= cm._id %>" class="item">
+                                <a href="/contemporary-details/<%= cm._id %>" class="item">
                                     <img src="<%= cm.photo %>" alt="News">
                                     <!-- layout_area start -->
                                     <div class="layout_area">
@@ -274,7 +274,7 @@
                         <ul>
                             <% social_works.slice(0,4).map( (sw)=>{ %>
                                 <li class="item_area">
-                                    <a href="social-work-details/<%= sw._id %>" class="social_work_image_card"
+                                    <a href="/social-work-details/<%= sw._id %>" class="social_work_image_card"
                                         data-aos="fade-up" data-aos-duration="300">
                                         <img src="<%= sw.photo %>" alt="<%= sw.photo_alt %>">
                                         <!-- overlay-area start -->
@@ -401,10 +401,10 @@
                         <% book_reviews.slice(0,4).map( (br)=>{ %>
                             <!-- book_card start -->
                             <div class="book_card">
-                                <div href="/post/<%= br._id %>" class="book_card_item" data-aos="fade-up"
+                                <div href="/book-review-details/<%= br._id %>" class="book_card_item" data-aos="fade-up"
                                     data-aos-duration="300">
                                     <div class="image_area">
-                                        <a href="/post/<%= br._id %>">
+                                        <a href="/book-review-details/<%= br._id %>">
 
                                             <img src="<%= br.photo %>" alt="<%= br.photo_alt %>">
                                         </a>
@@ -416,13 +416,13 @@
 
 
                                         <h2 class="title_text">
-                                            <a href="/post/<%= br._id %>">
+                                            <a href="/book-review-details/<%= br._id %>">
 
                                                 <%= br.title %>
                                             </a>
                                         </h2>
 
-                                        <a href="/post/<%= br._id %>">
+                                        <a href="/book-review-details/<%= br._id %>">
                                             <p class="description_text">
                                                 <%= br.short_description.replace(/(<([^>]+)>)/ig,'') %>
                                             </p>
