@@ -76,31 +76,26 @@
                 <!-- responsive_menu_area end -->
 
                 <script>
-                    [...document.querySelectorAll(".addClass")].forEach(
-                        (el) => {
-                            el.onclick = function (e) {
-                                let aClass = document.querySelectorAll('.submenu_active');
-                                let li = e.currentTarget.children[1];
-                                aClass.forEach((menu) => {
-                                    if (menu.classList.contains('active_class')) {
-                                        menu.classList.remove('active_class')
-                                        li.classList.add('active_class')
-                                    }
-                                })
+                    document.querySelectorAll(".addClass").forEach((el) => {
+                        el.addEventListener('click', function (e) {
+                            e.preventDefault();
 
+                            let li = e.currentTarget.children[1];
+                            let isActive = li.classList.contains('active_class');
 
-                                if (li.classList.contains('active_class')) {
-                                    li.classList.remove('active_class')
-                                } else {
-                                    li.classList.add('active_class')
-                                }
+                            document.querySelectorAll('.submenu_active.active_class').forEach((menu) => {
+                                menu.classList.remove('active_class');
+                            });
 
-                                console.log('jsldfjldks', li);
+                            if (!isActive) {
+                                li.classList.add('active_class');
+                            } else {
+                                li.classList.remove('active_class');
+                            }
 
-                                // console.log(e.currentTarget);
-                            };
-                        }
-                    );
+                            console.log('Element:', li);
+                        });
+                    });
                 </script>
             </div>
         </div>
