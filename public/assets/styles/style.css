@@ -227,7 +227,7 @@ html ::-webkit-scrollbar-thumb:hover {
 .navigation_area .navigation_area_content .navigation_menu_area ul li ul li .menu_text {
   border: 0px solid red;
 }
-.navigation_area .navigation_area_content .navigation_menu_area ul li .active_alass {
+.navigation_area .navigation_area_content .navigation_menu_area ul li .active_class {
   visibility: visible;
   opacity: 1;
   transition-duration: 0.4s;

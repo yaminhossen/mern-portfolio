@@ -3,12 +3,12 @@
     <nav class="navigation_area">
         <div class="container">
             <div class="navigation_area_content">
-                <a href="#" class="logo_area">
+                <a href="/home" class="logo_area">
                     <img src="<%= commonData.setting_titles.value %>" alt=" fjf">
-                   
+
                 </a>
                 <div class="navigation_menu_area">
-                   
+
                     <ul>
                         <li>
                             <a href="/home" class="menu_text">হোম</a>
@@ -28,29 +28,30 @@
                         <li>
                             <a href="/book-review" class="menu_text">বই পর্যালোচনা</a>
                         </li>
-                        <li>
-                            <button class="menu_text" onclick="inner_menu.classList.toggle('active_alass')">ব্লগ
+                        <li class="addClass">
+                            <button class="menu_text">ব্লগ
                                 <i class="fa-solid fa-angle-down"></i>
                             </button>
+                            <!--  onclick="inner_menu.classList.toggle('active_class')"   onclick="addClass()"-->
+                            <ul class="submenu_active" id="inner_menu">
 
-                            <ul id="inner_menu">
-                                
-                                    <% commonData.blog_category.map( (category)=>{ %>
+                                <% commonData.blog_category.map( (category)=>{ %>
 
-                                        
-                                        <li>
-                                            <a href="<%= category.url %>" class="menu_text">
-                                                <%= category.title %></a>
-                                        </li>
-                                        <% })%>
-                               
+
+                                    <li>
+                                        <a href="<%= category.url %>" class="menu_text">
+                                            <%= category.title %>
+                                        </a>
+                                    </li>
+                                    <% })%>
+
                             </ul>
                         </li>
-                        <li>
-                            <button class="menu_text" onclick="inner_menuu.classList.toggle('active_alass')">গ্যালারি
+                        <li class="addClass">
+                            <button class="menu_text">গ্যালারি
                                 <i class="fa-solid fa-angle-down"></i>
                             </button>
-                            <ul id="inner_menuu">
+                            <ul class="submenu_active" id="inner_menuu">
                                 <li>
                                     <a href="/photo-gallery" class="menu_text">ফটো গ্যালারি</a>
                                 </li>
@@ -73,6 +74,34 @@
                     </a>
                 </div>
                 <!-- responsive_menu_area end -->
+
+                <script>
+                    [...document.querySelectorAll(".addClass")].forEach(
+                        (el) => {
+                            el.onclick = function (e) {
+                                let aClass = document.querySelectorAll('.submenu_active');
+                                let li = e.currentTarget.children[1];
+                                aClass.forEach((menu) => {
+                                    if (menu.classList.contains('active_class')) {
+                                        menu.classList.remove('active_class')
+                                        li.classList.add('active_class')
+                                    }
+                                })
+
+
+                                if (li.classList.contains('active_class')) {
+                                    li.classList.remove('active_class')
+                                } else {
+                                    li.classList.add('active_class')
+                                }
+
+                                console.log('jsldfjldks', li);
+
+                                // console.log(e.currentTarget);
+                            };
+                        }
+                    );
+                </script>
             </div>
         </div>
     </nav>

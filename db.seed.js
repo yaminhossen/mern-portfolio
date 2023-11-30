@@ -42,7 +42,7 @@ const seed = async () => {
 
     // blog seeder!!!
     // await apiBlogCategoriesSeeder();
-    await apiBlogsSeeder();
+    // await apiBlogsSeeder();
     // await apiBlogCommentsSeeder();
     // await apiBlogCommentRepliesSeeder();
     // await apiBlogimagesSeeder();
@@ -70,7 +70,7 @@ const seed = async () => {
 
     // // video gallery
     // await apiSettingVideoGalleryCategoriesSeeder();
-    // await apiSettingVideoGalleryimagesSeeder();
+    await apiSettingVideoGalleryimagesSeeder();
 
     // // site url
     // await apiSiteUrlSeeder();

@@ -401,10 +401,10 @@
                         <% book_reviews.slice(0,4).map( (br)=>{ %>
                             <!-- book_card start -->
                             <div class="book_card">
-                                <div href="book-review-details/<%= br._id %>" class="book_card_item" data-aos="fade-up"
+                                <div href="/post/<%= br._id %>" class="book_card_item" data-aos="fade-up"
                                     data-aos-duration="300">
                                     <div class="image_area">
-                                        <a href="book-review-details/<%= br._id %>">
+                                        <a href="/post/<%= br._id %>">
 
                                             <img src="<%= br.photo %>" alt="<%= br.photo_alt %>">
                                         </a>
@@ -416,13 +416,13 @@
 
 
                                         <h2 class="title_text">
-                                            <a href="book-review-details/<%= br._id %>">
+                                            <a href="/post/<%= br._id %>">
 
                                                 <%= br.title %>
                                             </a>
                                         </h2>
 
-                                        <a href="book-review-details/<%= br._id %>">
+                                        <a href="/post/<%= br._id %>">
                                             <p class="description_text">
                                                 <%= br.short_description.replace(/(<([^>]+)>)/ig,'') %>
                                             </p>
@@ -498,21 +498,7 @@
                     <div class="all_photo_card">
                         <% photo_gallery_category.splice(0,4).map( (photo)=>{ %>
 
-                            <!-- <a href="#" class="photo_card" data-aos="fade-up" data-aos-duration="300"> -->
-                                <!-- <img src="<%= photo.photo %>" alt="<%= photo.photo_alt %>"> -->
-                                <!-- overlay-area start -->
-                                <!-- <div class="overlay-area">
-                                    <div class="overlay-area_content">
-                                        <div class="image_title">
-                                            <h2 class="title_text">
-                                                <%= photo.title %>
-                                            </h2>
-                                        </div>
-                                    </div>
-
-                                </div> -->
-                                <!-- overlay-area end -->
-                            <!-- </a> -->
+                          
 
                             <a class="photo_card venobox" data-gall="myGallery" href="<%= photo.photo %>">
                                 <img src="<%= photo.photo %>" alt="Thumbnail Image" />
@@ -569,9 +555,9 @@
 
                     <!-- all_blog_card start -->
                     <div class="all_video_card">
-                        <% video_gallery_category.splice(0,4).map( (video)=>{ %>
+                        <% video_gallery_video.splice(0,4).map( (video,index)=>{ %>
                             <!--card start -->
-                            <a href="#"  class="video_card" data-aos="fade-up" data-aos-duration="300">
+                            <a href="<%= video.url %>" data-gall="myGallery2"  data-autoplay="true" data-vbtype="video"   class="venobox video_card" data-aos="fade-up" data-aos-duration="300">
                                 <img src="<%= video.photo %>" alt="<%= video.photo_alt %>">
                                 <!-- overlay-area start -->
                                 <div class="overlay-area">
@@ -589,6 +575,7 @@
                                     </div>
 
                                 </div>
+                                
                                 <!-- overlay-area end -->
                             </a>
                             <!--card end -->

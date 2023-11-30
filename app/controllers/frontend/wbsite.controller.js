@@ -6,6 +6,7 @@ const uesrEducationModel = require("../../api/user_educations/model/model")
 const photoGalleryCategoriyModel = require("../../api/photo_gallery/photo_gallery_categories/model/model")
 
 const videoGalleryCategoriyModel = require("../../api/video_gallery/video_gallery_categories/model/model")
+const videoGalleryVideoModel = require("../../api/video_gallery/video_gallery_images/model/model")
 
 const tagsModel = require("../../api/tag/tags/model/model")
 const userContactNumbersModel = require("../../api/user_contact_numbers/model/model")
@@ -76,6 +77,7 @@ const controllers = {
 		let profile_info = await uesrProfileInfosModel.find();
 		let photo_gallery_category = await photoGalleryCategoriyModel.find();
 		let video_gallery_category = await videoGalleryCategoriyModel.find();
+		let video_gallery_video = await videoGalleryVideoModel.find();
 		let blog_category = await blogCategoriesModel.find();
 		let settingTitle = await settingModel.findOne({ title: "banner_at_a_glance_title" });
 		let settingValue = await settingModel.findOne({ title: "banner_at_a_glance_value" });
@@ -120,6 +122,7 @@ const controllers = {
 			profile_info,
 			photo_gallery_category,
 			video_gallery_category,
+			video_gallery_video,
 			blog_category,
 			banner,
 			settingTitle,
