@@ -13,10 +13,10 @@
                             <!-- content_title start -->
                             <div class="content_title_and_description" data-aos="fade-right" data-aos-duration="1000">
                                 <h2 class="title_text">
-                                    <%= social_work_details.title %> (বিস্তারিত)
+                                    <%= post_details.title %> (বিস্তারিত)
                                 </h2>
                                 <p class="description_text">
-                                    <%= social_work_details.subtitle %>
+                                    <%= post_details.subtitle %>
                                 </p>
                             </div>
                             <!-- content_title end -->
@@ -26,13 +26,13 @@
                                 <!-- inner_item_details start -->
                                 <div class="inner_item_details">
                                     <div class="image_area">
-                                        <img src="<%= social_work_details.photo %>"
-                                            alt="<%= social_work_details.photo_alt %>">
+                                        <img src="<%= post_details.photo %>"
+                                            alt="<%= post_details.photo_alt %>">
                                     </div>
                                     <div class="date_and_comment_area">
                                         <div class="date_area date_comment_area">
                                             <p class="date_area_text date_comment_area_text">
-                                                <%= social_work_details.published_date.toISOString().substring(0, 10) %>
+                                                <%= post_details.published_date.toISOString().substring(0, 10) %>
                                             </p>
                                         </div>
                                         <div class="comment_area date_comment_area">
@@ -43,12 +43,12 @@
 
                                     <div class="title-area">
                                         <h2 class="title-area_text">
-                                            <%- social_work_details.short_description %>
+                                            <%- post_details.short_description %>
                                         </h2>
                                     </div>
                                     <div class="item_description_area">
                                         <p class="description_text">
-                                            <%- social_work_details.description %>
+                                            <%- post_details.description %>
                                         </p>
                                     </div>
 
@@ -125,11 +125,11 @@
                                     <div class="related_item_area_top">
                                         <h4>সর্বাধিক পঠিত</h4>
                                         <div class="related_item_area">
-                                            <% social_works.sort((a, b)=> b.total_view - a.total_view); %>
-                                            <% social_works.slice(0,5).map( (sw)=>{ %>
+                                            <% post_details.sort((a, b)=> b.total_view - a.total_view); %>
+                                            <% post_details.slice(0,5).map( (sw)=>{ %>
                                             <!-- item_area start -->
                                             <div class="item_area">
-                                                <a href="/social-work-details/<%= sw._id %>"
+                                                <a href="/post/<%= sw._id %>"
                                                     class="social_work_image_card edit_social_work_image_card edit_details_social_work_card">
                                                     <img src="<%= sw.photo %>" alt="img">
                                                     <!-- overlay-area start -->
@@ -213,9 +213,9 @@
                                 <!-- side_ber_area_title end -->
 
                                 <div class="recently_posted_item_all">
-                                    <% social_works.slice(-2).map( (sw)=>{ %>
+                                    <% post_details.slice(-2).map( (sw)=>{ %>
                                         <!-- posted_item start -->
-                                        <a href="/social-work-details/<%= sw._id %>" class="posted_item">
+                                        <a href="/post/<%= sw._id %>" class="posted_item">
                                             <div class="image_area">
                                                 <img src="<%= sw.photo %>" alt="img">
                                             </div>

@@ -22,7 +22,7 @@ const settingModel = require("../../api/setting/setting_titles/model/model");
 const controllers = {
 	folder_prefix: ``,
 	route_prefix: ``,
-	server:null,
+	server: null,
 
 	home: async function (req, res) {
 		let blogs = await blogModel.find().populate('creator').populate('category');
@@ -39,7 +39,7 @@ const controllers = {
 		let banner = await bannerModel.find();
 
 		controllers.server.locals.seo_title = 'about';
-		
+
 		// console.log('profile_info', profile_info)
 		// console.log(controllers.server);
 
@@ -151,7 +151,7 @@ const controllers = {
 		let contemp = await blogCategoriesModel.findOne({ title: "সমসাময়িক" });
 
 		let contems = await blogsModel.find().where({ categories: contemp._id });
-		
+
 		controllers.server.locals.seo_title = contemp.seo_title;
 		controllers.server.locals.seo_description = contemp.seo_description;
 		controllers.server.locals.seo_image = contemp.photo;
@@ -175,15 +175,39 @@ const controllers = {
 
 		controllers.server.locals.seo_title = contemp_details.seo_title;
 		controllers.server.locals.seo_schematags = contemp_details.
-		seo_schema_tags;
+			seo_schema_tags;
 		controllers.server.locals.seo_description = contemp_details.seo_description;
 		controllers.server.locals.seo_image = contemp_details.photo;
 		controllers.server.locals.seo_keyword = contemp_details.seo_keyword;
-		
+
 		return res.render(`frontend/contemporary_details`, {
 			contemp_details,
 			contems,
 		});
+	},
+	post_details: async function (req, res) {
+		let post_details = await blogsModel.findOne({ _id: req.params.id }).populate('categories');
+		post_details.total_view = (post_details.total_view || 0) + 1;
+		post_details.save();
+		// let post = await blogCategoriesModel.findOne({ title: "সমসাময়িক" });
+		// let posts = await blogsModel.find().where({ categories: post._id });
+
+		// let posts = await post_details.populate('categories');
+
+		// console.log("blog posts", posts);
+		// controllers.server.locals.seo_title = contemp_details.seo_title;
+		// controllers.server.locals.seo_schematags = contemp_details.
+		// 	seo_schema_tags;
+		// controllers.server.locals.seo_description = contemp_details.seo_description;
+		// controllers.server.locals.seo_image = contemp_details.photo;
+		// controllers.server.locals.seo_keyword = contemp_details.seo_keyword;
+		return res.render(`frontend/social_work_details`,{
+			post_details,
+		})
+		// return res.json({
+		// 	post_details,
+			// posts,
+		// });
 	},
 	miscellaneous: async function (req, res) {
 		// const model_data = await model.findOne({ _id: data.id });
@@ -196,8 +220,8 @@ const controllers = {
 		controllers.server.locals.seo_image = mis.photo;
 		controllers.server.locals.seo_keyword = mis.seo_keyword;
 
-		console.log("mis",mis._id);
-		console.log("misc",misc);
+		console.log("mis", mis._id);
+		console.log("misc", misc);
 		return res.render(`frontend/blog/miscellaneous`, {
 			misc,
 			mis,
@@ -214,11 +238,11 @@ const controllers = {
 
 		controllers.server.locals.seo_title = mis_details.seo_title;
 		controllers.server.locals.seo_schematags = mis_details.
-		seo_schema_tags;
+			seo_schema_tags;
 		controllers.server.locals.seo_description = mis_details.seo_description;
 		controllers.server.locals.seo_image = mis_details.photo;
 		controllers.server.locals.seo_keyword = mis_details.seo_keyword;
-		
+
 		return res.render(`frontend/blog/miscellaneous_details`, {
 			mis_details,
 			misc,
@@ -249,10 +273,10 @@ const controllers = {
 		social_work_details.save();
 		let social_work = await blogCategoriesModel.findOne({ title: "সামাজিক কাজ" });
 		let social_works = await blogsModel.find().where({ categories: social_work._id });
-       console.log('social works', social_works);
+		console.log('social works', social_works);
 		controllers.server.locals.seo_title = social_work_details.seo_title;
 		controllers.server.locals.seo_schematags = social_work_details.
-		seo_schema_tags;
+			seo_schema_tags;
 		controllers.server.locals.seo_description = social_work_details.seo_description;
 		controllers.server.locals.seo_image = social_work_details.photo;
 		controllers.server.locals.seo_keyword = social_work_details.seo_keyword;
@@ -290,7 +314,7 @@ const controllers = {
 
 		controllers.server.locals.seo_title = blog_islam_details.seo_title;
 		controllers.server.locals.seo_schematags = blog_islam_details.
-		seo_schema_tags;
+			seo_schema_tags;
 		controllers.server.locals.seo_description = blog_islam_details.seo_description;
 		controllers.server.locals.seo_image = blog_islam_details.photo;
 		controllers.server.locals.seo_keyword = blog_islam_details.seo_keyword;
@@ -324,7 +348,7 @@ const controllers = {
 
 		controllers.server.locals.seo_title = blog_islamic_movement_details.seo_title;
 		controllers.server.locals.seo_schematags = blog_islamic_movement_details.
-		seo_schema_tags;
+			seo_schema_tags;
 		controllers.server.locals.seo_description = blog_islamic_movement_details.seo_description;
 		controllers.server.locals.seo_image = blog_islamic_movement_details.photo;
 		controllers.server.locals.seo_keyword = blog_islamic_movement_details.seo_keyword;
@@ -357,7 +381,7 @@ const controllers = {
 
 		controllers.server.locals.seo_title = blog_bangladesh_details.seo_title;
 		controllers.server.locals.seo_schematags = blog_bangladesh_details.
-		seo_schema_tags;
+			seo_schema_tags;
 		controllers.server.locals.seo_description = blog_bangladesh_details.seo_description;
 		controllers.server.locals.seo_image = blog_bangladesh_details.photo;
 		controllers.server.locals.seo_keyword = blog_bangladesh_details.seo_keyword;
@@ -391,7 +415,7 @@ const controllers = {
 
 		controllers.server.locals.seo_title = blog_politics_details.seo_title;
 		controllers.server.locals.seo_schematags = blog_politics_details.
-		seo_schema_tags;
+			seo_schema_tags;
 		controllers.server.locals.seo_description = blog_politics_details.seo_description;
 		controllers.server.locals.seo_image = blog_politics_details.photo;
 		controllers.server.locals.seo_keyword = blog_politics_details.seo_keyword;
@@ -425,7 +449,7 @@ const controllers = {
 
 		controllers.server.locals.seo_title = blog_history_details.seo_title;
 		controllers.server.locals.seo_schematags = blog_history_details.
-		seo_schema_tags;
+			seo_schema_tags;
 		controllers.server.locals.seo_description = blog_history_details.seo_description;
 		controllers.server.locals.seo_image = blog_history_details.photo;
 		controllers.server.locals.seo_keyword = blog_history_details.seo_keyword;
@@ -463,7 +487,7 @@ const controllers = {
 
 		controllers.server.locals.seo_title = book_review_details.seo_title;
 		controllers.server.locals.seo_schematags = book_review_details.
-		seo_schema_tags;
+			seo_schema_tags;
 		controllers.server.locals.seo_description = book_review_details.seo_description;
 		controllers.server.locals.seo_image = book_review_details.photo;
 		controllers.server.locals.seo_keyword = book_review_details.seo_keyword;

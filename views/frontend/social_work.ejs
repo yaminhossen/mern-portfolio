@@ -24,7 +24,7 @@
                             <!-- item_area start -->
                             <% social_works.map( (sw)=>{ %>
                             <div class="item_area">
-                                <a href="/social-work-details/<%= sw._id %>"
+                                <a href="/post/<%= sw._id %>"
                                     class="social_work_image_card edit_social_work_image_card" data-aos="fade-up" data-aos-duration="300">
                                     <img src="<%= sw.photo %>" alt="img">
                                     <!-- overlay-area start -->
@@ -131,7 +131,7 @@
                                 <% social_works.slice(-2).map( (sw)=>{ %>
 
                                     <!-- posted_item start -->
-                               <a href="/social-work-details/<%= sw._id %>" class="posted_item">
+                               <a href="/post/<%= sw._id %>" class="posted_item">
                                    <div class="image_area">
                                        <img src="<%= sw.photo %>" alt="img">
                                    </div>

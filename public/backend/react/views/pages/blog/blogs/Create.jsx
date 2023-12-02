@@ -30,7 +30,7 @@ function Create() {
 
   console.log(selectedRole);
 
- 
+
 
 
   const handleSubmit = async () => {
@@ -55,7 +55,7 @@ function Create() {
 
   const handleChange = async (e) => {
     let url = e.target.value;
-    await check_unique_url({url, id:null});
+    await check_unique_url({ url, id: null });
     console.log('Input value changed:', url);
   }
 
@@ -132,7 +132,6 @@ function Create() {
                       />
                     </div>
                   </div>
-
                   <div className="mt-4 mb-3">
                     <h4>
                       SEO Part <sub>optional</sub>
@@ -217,16 +216,16 @@ function Create() {
                         name="url"
                         type="text"
                         className="form-control"
-                        onChange={(e) =>handleChange(e)}
+                        onChange={(e) => handleChange(e)}
                       />
                       {
-                        data_store.isUrlExist?
+                        data_store.isUrlExist ?
 
-                        <div className="text-warning">
-                          This is url is exist
-                        </div>
-                        :
-                        ""
+                          <div className="text-warning">
+                            This is url is exist
+                          </div>
+                          :
+                          ""
                       }
                     </div>
                   </div>
@@ -293,7 +292,40 @@ function Create() {
           </button>
         </div>
       </form>
+      {/* <!-- Your EJS file -->
+<form id="commentForm">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <textarea id="comment" placeholder="Your Comment" required></textarea>
+    <button type="submit">Submit</button>
+</form>
+Set up Axios to handle the form submission:
+Add an event listener to the form submission in your client-side JavaScript (assuming you have Axios already included in your project):
 
+html
+Copy code
+<!-- Your EJS file -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+    document.getElementById('commentForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const comment = document.getElementById('comment').value;
+
+        axios.post('/submitComment', {
+            name: name,
+            comment: comment
+        })
+        .then(function (response) {
+            console.log(response);
+            // Handle successful submission (if needed)
+        })
+        .catch(function (error) {
+            console.error(error);
+            // Handle error (if needed)
+        });
+    });
+</script> */}
     </div>
 
   );
