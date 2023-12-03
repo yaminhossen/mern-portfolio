@@ -19,6 +19,10 @@ let blogCommentSchema = mongoose.Schema({
 		type: String,
 		require: true,
 	},
+	post_id: {
+		type: String,
+		// require: true,
+	},
 
 	status: {
 		type: Boolean,

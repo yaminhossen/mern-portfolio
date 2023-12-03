@@ -18,6 +18,7 @@
                                 <p class="description_text">
                                     <%= post_details.subtitle %>
                                 </p>
+                                <!-- <%= post_details._id %> -->
                             </div>
                             <!-- content_title end -->
 
@@ -70,6 +71,8 @@
                                                                 placeholder="name">
                                                             <input name="email" class="comment_form_area" type="text"
                                                                 placeholder="email">
+                                                            <input name="post_id" class="comment_form_area" type="hidden" value="<%= post_details._id %>"
+                                                                placeholder="comment id">
                                                         </div>
                                                        
                                                             <textarea class="comment_form_area" name="comment" placeholder="comment" id="" cols="20" rows="10"></textarea>
@@ -282,7 +285,8 @@
                     let comment = event.target.comment.value;
                     let name = event.target.name.value;
                     let email = event.target.email.value;
-                    console.log(comment, name, email);
+                    let post_id = event.target.post_id.value;
+                    console.log(comment, name, email, post_id);
 
                     event.target.name.value = '';
                     event.target.email.value = '';
@@ -292,6 +296,7 @@
                         comment: comment,
                         name:name,
                         email:email,
+                        post_id:post_id,
                     })
                         .then(function (response) {
                             console.log(response);
