@@ -1,3 +1,5 @@
+let ObjectId = require('mongodb').ObjectId;
+
 const blogModel = require("../../models/blog.model");
 const categoryModel = require("../../models/category.model");
 const uesrProfileInfosModel = require("../../api/user_profile_infos/model/model")
@@ -172,8 +174,13 @@ const controllers = {
    
 	save_comment: async function(req, res) {
 		let data = req.body;
-		const new_data = await blogCommentModel.create(data);
-		console.log('save commmetnt', data);
+		const new_comment = await blogCommentModel.create(data);
+		let blog = await blogsModel.findOne().where({ _id: new_comment.post_id });
+	
+		blog.comment.push(new_comment._id);
+		blog.save(); 
+		console.log('save commmetnt', new_comment);
+		// console.log('find comment blog', blog);
 	},
 	
 	post_details: async function (req, res) {
