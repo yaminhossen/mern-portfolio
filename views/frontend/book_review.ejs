@@ -26,7 +26,7 @@
                                 <% book_reviews.map( (br)=>{ %>
                                     <!-- book_card start -->
                                     <div class="book_card">
-                                        <a href="/book-review-details/<%= br._id %>"
+                                        <a href="/post/<%= br._id %>"
                                             class="book_card_item edit_inner_book_card_item">
                                             <div class="image_area">
                                                 <img src="<%= br.photo %>" alt="<%= br.photo_alt %>">
@@ -131,7 +131,7 @@
 
                                     <% book_reviews.slice(-2).map( (br)=>{ %>
                                         <!-- posted_item start -->
-                                        <a href="/book-review-details/<%= br._id %>" class="posted_item">
+                                        <a href="/post/<%= br._id %>" class="posted_item">
                                             <div class="image_area">
                                                 <img src="<%= br.photo %>" alt="img">
                                             </div>

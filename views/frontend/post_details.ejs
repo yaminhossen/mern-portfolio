@@ -26,8 +26,7 @@
                                 <!-- inner_item_details start -->
                                 <div class="inner_item_details">
                                     <div class="image_area">
-                                        <img src="<%= post_details.photo %>"
-                                            alt="<%= post_details.photo_alt %>">
+                                        <img src="<%= post_details.photo %>" alt="<%= post_details.photo_alt %>">
                                     </div>
                                     <div class="date_and_comment_area">
                                         <div class="date_area date_comment_area">
@@ -54,7 +53,7 @@
 
                                     <!-- comment_area start -->
                                     <div class="comment-area">
-                                        <form action="#">
+                                        <form onsubmit="commentSubmit()">
                                             <!-- user-image_area_and_comment_form_area start -->
                                             <div class="user-image_area_and_comment_form_and_button_area">
                                                 <div class="user-image_and_comment_form_area">
@@ -79,17 +78,7 @@
                                                         <img src="/assets/images/profile_image/img2.png" alt="img">
                                                     </div>
                                                     <div class="comment_text">
-                                                        <p class="text">সমাজবদ্ধ হয়ে বসবাস করা মানুষের স সমাজবদ্ধ হয়ে
-                                                            বসবাস
-                                                            করা মানুষের
-                                                            সহজাত হয়ে বসবাস করা মানুষের সহজা হয়ে
-                                                            বসবাস করা মানুষের সহজা হয়ে বসবাস করা মানুষের সহজা ততত
-                                                            প্রবৃত্তি।
-                                                            সমাজবদ্ধ
-                                                            হয়ে বসবাস করা মানুষের সহজাত হয়ে বসবাস করা মানুষের সহজা হয়ে
-                                                            বসবাস করা মানুষের সহজা হয়ে বসবাস করা মানুষের সহজা ততত
-                                                            প্রবৃত্তি।র সহজা ততত
-                                                            প্রবৃত্তি।</p>
+                                                        <p class="text">সমাজবদ্ধ হয়ে বসবাস করা </p>
                                                         <div class="button_area">
                                                             <button class="cancel_and_submit_button">Replay</button>
                                                         </div>
@@ -126,27 +115,29 @@
                                         <h4>সর্বাধিক পঠিত</h4>
                                         <div class="related_item_area">
                                             <% posts.sort((a, b)=> b.total_view - a.total_view); %>
-                                            <% posts.slice(0,5).map( (sw)=>{ %>
-                                            <!-- item_area start -->
-                                            <div class="item_area">
-                                                <a href="/post/<%= sw._id %>"
-                                                    class="social_work_image_card edit_social_work_image_card edit_details_social_work_card">
-                                                    <img src="<%= sw.photo %>" alt="img">
-                                                    <!-- overlay-area start -->
-                                                    <div class="overlay-area">
-                                                        <div class="overlay-area_content">
+                                                <% posts.slice(0,5).map( (sw)=>{ %>
+                                                    <!-- item_area start -->
+                                                    <div class="item_area">
+                                                        <a href="/post/<%= sw._id %>"
+                                                            class="social_work_image_card edit_social_work_image_card edit_details_social_work_card">
+                                                            <img src="<%= sw.photo %>" alt="img">
+                                                            <!-- overlay-area start -->
+                                                            <div class="overlay-area">
+                                                                <div class="overlay-area_content">
 
-                                                            <div class="image_title">
-                                                                <h2 class="title_text"><%= sw.subtitle %></h2>
+                                                                    <div class="image_title">
+                                                                        <h2 class="title_text">
+                                                                            <%= sw.subtitle %>
+                                                                        </h2>
+                                                                    </div>
+                                                                </div>
+
                                                             </div>
-                                                        </div>
-
+                                                            <!-- overlay-area end -->
+                                                        </a>
                                                     </div>
-                                                    <!-- overlay-area end -->
-                                                </a>
-                                            </div>
-                                            <!-- item_area end -->
-                                            <% })%>
+                                                    <!-- item_area end -->
+                                                    <% })%>
                                         </div>
                                     </div>
 
@@ -271,6 +262,29 @@
                     <!-- side_ber_area end -->
                 </div>
             </div>
+            <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+            <script>
+                 function commentSubmit(event) {
+                    event.preventDefault();
+                    console.log('comment submit hoyche');
+
+                    // const name = document.getElementById('name').value;
+                    // const comment = document.getElementById('comment').value;
+
+                    // axios.post('/submitComment', {
+                    //     name: name,
+                    //     comment: comment
+                    // })
+                    //     .then(function (response) {
+                    //         console.log(response);
+                    //         // Handle successful submission (if needed)
+                    //     })
+                    //     .catch(function (error) {
+                    //         console.error(error);
+                    //         // Handle error (if needed)
+                    //     });
+                };
+            </script>
         </div>
 
         <!-- scroll_button_area start -->

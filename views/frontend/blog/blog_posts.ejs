@@ -12,27 +12,25 @@
                     <div class="inner_page_area_content">
                         <!-- content_title start -->
                         <div class="content_title_and_description" data-aos="fade-right" data-aos-duration="1000">
-                            <h2 class="title_text"><%= mis.title %></h2>
-                            <p class="description_text">
-                                <%= mis.short_description %>
-                            </p>
+                            <h2 class="title_text"><%= blog.title %></h2>
+                            <p class="description_text"><%= blog.short_description %></p>
                         </div>
                         <!-- content_title end -->
 
                         <!-- inner_page_all_content start -->
                         <div class="inner_page_all_content" data-aos="fade-up" data-aos-duration="1000">
-                            <% misc.map( (bm)=>{ %>
                             <!-- blog_card start -->
-                            <a href="/post/<%= bm._id %>" class="blog_card edit_inner_blog_card">
+                            <% blogs.map( (bi)=>{ %>
+                            <a href="/post/<%= bi._id %>" class="blog_card edit_inner_blog_card">
                                 <div class="blog_image">
-                                    <img src="<%= bm.photo %>" alt="img">
+                                    <img src="<%= bi.photo %>" alt="<%= bi.photo_alt %>">
                                 </div>
                                 <!-- overlay_area start -->
                                 <div class="overlay_area">
                                     <div class="blog_title">
                                         <div class="title_area">
                                             <h2 class="title_text">
-                                               <%= bm.title %>
+                                                <%= bi.title %>
                                             </h2>
                                         </div>
 
@@ -42,6 +40,7 @@
                             </a>
                             <!-- blog_card end -->
                             <% })%>
+                            
                         </div>
                         <!-- inner_page_all_content end -->
 
@@ -124,27 +123,31 @@
                             <!-- side_ber_area_title end -->
 
                             <div class="recently_posted_item_all">
-                                <% misc.slice(-2).map( (bm)=>{ %>
-                                <!-- posted_item start -->
-                                <a href="/post/<%= bm._id %>" class="posted_item">
-                                    <div class="image_area">
-                                        <img src="<%= bm.photo %>" alt="img">
-                                    </div>
-                                    <div class="title_and_dete_area">
-                                        <div class="title_area">
-                                            <p class="title_text">
-                                            <%= bm.title %>
-                                            </p>
-                                        </div>
-                                        <div class="date_area">
-                                            <p class="date_text">
-                                                <%= bm.published_date.toISOString().substring(0, 10) %>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                                <!-- posted_item end -->
-                                <% })%>
+
+                                <% blogs.slice(-2).map( (bi)=>{ %>
+
+                                    <!-- posted_item start -->
+                               <a href="/post/<%= bi._id %>" class="posted_item">
+                                   <div class="image_area">
+                                       <img src="<%= bi.photo %>" alt="img">
+                                   </div>
+                                   <div class="title_and_dete_area">
+                                       <div class="title_area">
+                                           <p class="title_text">
+                                              <%= bi.title %>
+                                           </p>
+                                       </div>
+                                       <div class="date_area">
+                                           <p class="date_text">
+                                               <%= bi.published_date.toISOString().substring(0, 10) %>
+                                           </p>
+                                       </div>
+                                   </div>
+                               </a>
+                               <!-- posted_item end -->
+       
+                                   <% })%>
+
                             </div>
 
                         </div>

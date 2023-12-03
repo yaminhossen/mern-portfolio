@@ -21,7 +21,7 @@
                         <div class="inner_page_all_content" data-aos="fade-up" data-aos-duration="1000">
                             <!-- blog_card start -->
                             <% blog_islamic_movements.map( (bim)=>{ %>
-                            <a href="/blog-islamic-movement-details/<%= bim._id %>" class="blog_card edit_inner_blog_card">
+                            <a href="/post/<%= bim._id %>" class="blog_card edit_inner_blog_card">
                                 <div class="blog_image">
                                     <img src="<%= bim.photo %>" alt="img">
                                 </div>
@@ -128,7 +128,7 @@
                                 <% blog_islamic_movements.slice(-2).map( (bim)=>{ %>
 
                                     <!-- posted_item start -->
-                               <a href="/blog-islamic-movement-details/<%= bim._id %>" class="posted_item">
+                               <a href="/post/<%= bim._id %>" class="posted_item">
                                    <div class="image_area">
                                        <img src="<%= bim.photo %>" alt="img">
                                    </div>

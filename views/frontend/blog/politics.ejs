@@ -21,7 +21,7 @@
                         <div class="inner_page_all_content" data-aos="fade-up" data-aos-duration="1000">
                             <% blog_politicss.map( (bp)=>{ %>
                             <!-- blog_card start -->
-                            <a href="/blog-politics-details/<%= bp._id %>" class="blog_card edit_inner_blog_card">
+                            <a href="/post/<%= bp._id %>" class="blog_card edit_inner_blog_card">
                                 <div class="blog_image">
                                     <img src="<%= bp.photo %>" alt="<%= bp.photo_alt %>">
                                 </div>
@@ -127,7 +127,7 @@
                                 <% blog_politicss.slice(-2).map( (bp)=>{ %>
 
                                     <!-- posted_item start -->
-                               <a href="/blog-politics-details/<%= bp._id %>" class="posted_item">
+                               <a href="/post/<%= bp._id %>" class="posted_item">
                                    <div class="image_area">
                                        <img src="<%= bp.photo %>" alt="img">
                                    </div>
