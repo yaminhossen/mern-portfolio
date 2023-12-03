@@ -8,6 +8,16 @@ const data_validation = async (request_data) => {
         .isEmpty()
         .withMessage("the comment field is required")
         .run(request_data);
+    await body("name")
+        .not()
+        .isEmpty()
+        .withMessage("the name field is required")
+        .run(request_data);
+    await body("email")
+        .not()
+        .isEmpty()
+        .withMessage("the email field is required")
+        .run(request_data);
 
 //  console.log("body data",body("title") );
     let result = validationResult(request_data);

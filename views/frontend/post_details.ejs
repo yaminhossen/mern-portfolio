@@ -53,15 +53,27 @@
 
                                     <!-- comment_area start -->
                                     <div class="comment-area">
-                                        <form onsubmit="commentSubmit()">
+                                        <form onsubmit="commentSubmit(event)">
                                             <!-- user-image_area_and_comment_form_area start -->
                                             <div class="user-image_area_and_comment_form_and_button_area">
+
+
                                                 <div class="user-image_and_comment_form_area">
+
                                                     <div class="user-image_area">
                                                         <img src="/assets/images/profile_image/img1.png" alt="img">
                                                     </div>
-                                                    <input class="comment_form_area" type="text"
-                                                        placeholder="Comment . . .">
+
+                                                    <div class="user_name_and_comment_area">
+                                                        <div class=" user_name_area">
+                                                            <input name="name" class="comment_form_area" type="text"
+                                                                placeholder="name">
+                                                            <input name="email" class="comment_form_area" type="text"
+                                                                placeholder="email">
+                                                        </div>
+                                                       
+                                                            <textarea class="comment_form_area" name="comment" placeholder="comment" id="" cols="20" rows="10"></textarea>
+                                                    </div>
                                                 </div>
 
                                                 <div class="cancel_and_submit_button_area">
@@ -80,7 +92,7 @@
                                                     <div class="comment_text">
                                                         <p class="text">সমাজবদ্ধ হয়ে বসবাস করা </p>
                                                         <div class="button_area">
-                                                            <button class="cancel_and_submit_button">Replay</button>
+                                                            <!-- <button class="cancel_and_submit_button">Replay</button> -->
                                                         </div>
                                                     </div>
                                                 </div>
@@ -88,13 +100,13 @@
                                             <!-- comment_text_area end -->
 
                                             <!-- replay_comment_area start -->
-                                            <div class="replay_comment_area">
+                                            <!--  <div class="replay_comment_area">
                                                 <div class="user-image_area_and_comment_form_and_button_area">
                                                     <div class="user-image_and_comment_form_area">
                                                         <div class="user-image_area">
                                                             <img src="/assets/images/profile_image/img1.png" alt="img">
                                                         </div>
-                                                        <input class="comment_form_area" type="text"
+                                                        <input name="reply" class="comment_form_area" type="text"
                                                             placeholder="Comment . . .">
                                                     </div>
 
@@ -103,7 +115,7 @@
                                                         <button class="cancel_and_submit_button">Submit</button>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                             <!-- replay_comment_area end -->
 
                                         </form>
@@ -264,25 +276,31 @@
             </div>
             <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
             <script>
-                 function commentSubmit(event) {
+                function commentSubmit(event) {
                     event.preventDefault();
                     console.log('comment submit hoyche');
+                    let comment = event.target.comment.value;
+                    let name = event.target.name.value;
+                    let email = event.target.email.value;
+                    console.log(comment, name, email);
 
-                    // const name = document.getElementById('name').value;
-                    // const comment = document.getElementById('comment').value;
+                    event.target.name.value = '';
+                    event.target.email.value = '';
+                    event.target.comment.value = '';
+                    axios.post('/api/v1/blog-comment/store', {
 
-                    // axios.post('/submitComment', {
-                    //     name: name,
-                    //     comment: comment
-                    // })
-                    //     .then(function (response) {
-                    //         console.log(response);
-                    //         // Handle successful submission (if needed)
-                    //     })
-                    //     .catch(function (error) {
-                    //         console.error(error);
-                    //         // Handle error (if needed)
-                    //     });
+                        comment: comment,
+                        name:name,
+                        email:email,
+                    })
+                        .then(function (response) {
+                            console.log(response);
+                            // Handle successful submission (if needed)
+                        })
+                        .catch(function (error) {
+                            console.error(error);
+                            // Handle error (if needed)
+                        });
                 };
             </script>
         </div>

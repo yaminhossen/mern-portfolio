@@ -37,7 +37,7 @@ function Edit() {
 
 
   if (data_store) {
-    const { comment } = data_store;
+    const { comment,name,email } = data_store;
     return (
       <div className="card list_card">
         <div className="card-header ">
@@ -55,11 +55,22 @@ function Edit() {
             <div className="row">
               <div className="col-lg-8">
                   <div className="form-group mb-5">
+                  <div className="custom_form_el">
+                      <label htmlFor="">Name</label>
+                      <div>:</div>
+                      <div><input name="name" type="text" className="form-control" defaultValue={name?name:'name'} /></div>
+                    </div>
+                    <div className="custom_form_el">
+                      <label htmlFor="">Email</label>
+                      <div>:</div>
+                      <div><input name="email" type="text" className="form-control" defaultValue={email?email:'email'} /></div>
+                    </div>
                     <div className="custom_form_el">
                       <label htmlFor="">Comment</label>
                       <div>:</div>
                       <div><input name="comment" type="text" className="form-control" defaultValue={comment} /></div>
                     </div>
+                    
                   </div>
                   <input type="submit" value="Update" />
               </div>

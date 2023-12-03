@@ -38,6 +38,12 @@ console.log(data_store);
                                 <th className="cursor_n_resize">
                                     Comment
                                 </th>
+                                <th className="cursor_n_resize">
+                                    Name
+                                </th>
+                                <th className="cursor_n_resize">
+                                    Email
+                                </th>
 
                                 <th className="cursor_n_resize">
                                     Status
@@ -55,6 +61,16 @@ console.log(data_store);
                                             <td>
                                                 <span onClick={() => set_data(data._id)} className="cursor_pointer text-warning">
                                                     {data.comment}
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <span>
+                                                    {data?.name ? data?.name : 'user name'}
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <span>
+                                                    {data?.email ? data?.email : 'user email'}
                                                 </span>
                                             </td>
                                             <td>

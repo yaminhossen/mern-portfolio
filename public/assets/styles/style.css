@@ -1660,6 +1660,9 @@ html ::-webkit-scrollbar-thumb:hover {
 }
 .comment-area form .user-image_area_and_comment_form_and_button_area .user-image_and_comment_form_area {
   display: flex;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
 }
 .comment-area form .user-image_area_and_comment_form_and_button_area .user-image_and_comment_form_area .user-image_area {
   border: 0px solid red;
@@ -1676,7 +1679,14 @@ html ::-webkit-scrollbar-thumb:hover {
   object-fit: cover;
   border-radius: 50%;
 }
-.comment-area form .user-image_area_and_comment_form_and_button_area .user-image_and_comment_form_area .comment_form_area {
+.comment-area form .user-image_area_and_comment_form_and_button_area .user-image_and_comment_form_area .user_name_and_comment_area {
+  width: 100%;
+}
+.comment-area form .user-image_area_and_comment_form_and_button_area .user-image_and_comment_form_area .user_name_and_comment_area .user_name_area {
+  display: flex;
+  gap: 15px;
+}
+.comment-area form .user-image_area_and_comment_form_and_button_area .user-image_and_comment_form_area .user_name_and_comment_area .comment_form_area {
   border: 0px solid red;
   outline: 0;
   border-bottom: 1px solid #5dabbe;
@@ -1689,6 +1699,7 @@ html ::-webkit-scrollbar-thumb:hover {
   height: 30px;
   padding: 0px;
   background-color: transparent;
+  margin: 10px 0px;
 }
 .comment-area form .user-image_area_and_comment_form_and_button_area .cancel_and_submit_button_area {
   border: 0px solid red;

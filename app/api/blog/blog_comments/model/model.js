@@ -11,6 +11,15 @@ let blogCommentSchema = mongoose.Schema({
 		type: String,
 		require: true,
 	},
+	name: {
+		type: String,
+		require: true,
+	},
+	email: {
+		type: String,
+		require: true,
+	},
+
 	status: {
 		type: Boolean,
 		default: true,

@@ -17,13 +17,13 @@
                             <a href="/about" class="menu_text">আমাদের সম্পর্কে</a>
                         </li>
                         <li>
-                            <a href="/contemporary" class="menu_text">সমসাময়িক</a>
+                            <a href="/posts/contemporary" class="menu_text">সমসাময়িক</a>
                         </li>
                         <li>
-                            <a href="/social-work" class="menu_text">সামাজিক কাজ</a>
+                            <a href="/posts/social-work" class="menu_text">সামাজিক কাজ</a>
                         </li>
                         <li>
-                            <a href="/book-review" class="menu_text">বই পর্যালোচনা</a>
+                            <a href="/posts/book-review" class="menu_text">বই পর্যালোচনা</a>
                         </li>
 
                         <li>
@@ -56,7 +56,7 @@
                                 <ul>
                                     <% commonData.blog_category.splice(0,7).map( (category)=>{ %>
                                         <li>
-                                            <a href="<%= category.url %>" class="menu_text">
+                                            <a href="/posts<%= category.url %>" class="menu_text">
                                                 <%= category.title %></a>
                                         </li>
                                     <% })%> 

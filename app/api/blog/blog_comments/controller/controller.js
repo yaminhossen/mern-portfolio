@@ -21,7 +21,9 @@ const controllers = {
 		return res.json(data);
 	},
 	store: async function (req, res) {
+		console.log('comment req body',req.body);
 		const data = await store(req.body);
+
 		if(data.status === "success"){
 			return res.status(data.status_code).json(data);
 		}else{

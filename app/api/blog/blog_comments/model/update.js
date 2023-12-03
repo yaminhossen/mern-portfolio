@@ -7,6 +7,16 @@ const data_validation = async (request_data) => {
         .isEmpty()
         .withMessage("the comment field is required")
         .run(request_data);
+    await body("name")
+        .not()
+        .isEmpty()
+        .withMessage("the name field is required")
+        .run(request_data);
+    await body("email")
+        .not()
+        .isEmpty()
+        .withMessage("the email field is required")
+        .run(request_data);
 
     let result = validationResult(request_data);
     return {
@@ -31,6 +41,8 @@ module.exports = async ( data) => {
 
     try {
         const model_data = await model.findOne({ _id: data.id });
+        model_data.name = data.name;
+        model_data.email = data.email;
         model_data.comment = data.comment;
         await model_data.save();
         // console.log(data);

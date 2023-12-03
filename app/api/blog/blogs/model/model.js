@@ -64,6 +64,10 @@ let blogSchema = mongoose.Schema({
 		type: [Schema.Types.ObjectId],
 		ref: 'blog_categories'
 	},
+	comment: {
+		type: [Schema.Types.ObjectId],
+		ref: 'blog_comments'
+	},
 	status: {
 		type: Boolean,
 		default: true,
