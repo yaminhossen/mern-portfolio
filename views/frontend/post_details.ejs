@@ -291,7 +291,8 @@
                     event.target.name.value = '';
                     event.target.email.value = '';
                     event.target.comment.value = '';
-                    axios.post('/api/v1/blog-comment/store', {
+                    // axios.post('/api/v1/blog-comment/store', {
+                    axios.post('/save/comment', {
 
                         comment: comment,
                         name:name,
@@ -300,11 +301,9 @@
                     })
                         .then(function (response) {
                             console.log(response);
-                            // Handle successful submission (if needed)
                         })
                         .catch(function (error) {
                             console.error(error);
-                            // Handle error (if needed)
                         });
                 };
             </script>

@@ -35,6 +35,9 @@ module.exports = (mainserver) => {
 		// blog posts routes
 		.get("/posts/:url", website_controller.blog_posts)
 
+		// save comment routes
+		.post("/save/comment", website_controller.save_comment)
+
 		// post details routes
 		.get("/post/:id", website_controller.post_details)
 

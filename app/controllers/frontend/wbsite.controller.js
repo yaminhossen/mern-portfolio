@@ -19,6 +19,8 @@ const blogCategoriesModel = require("../../api/blog/blog_categories/model/model"
 const blogsModel = require("../../api/blog/blogs/model/model");
 const bannerModel = require("../../api/banner/banners/model/model");
 const settingModel = require("../../api/setting/setting_titles/model/model");
+const blogCommentModel = require("../../api/blog/blog_comments/model/model");
+const { async } = require("q");
 const controllers = {
 	folder_prefix: ``,
 	route_prefix: ``,
@@ -167,9 +169,17 @@ const controllers = {
 		});
 	},
 
-
+   
+	save_comment: async function(req, res) {
+		let data = req.body;
+		const new_data = await blogCommentModel.create(data);
+		console.log('save commmetnt', data);
+	},
 	
 	post_details: async function (req, res) {
+
+		// let comment_blog = await blogCommentModel.find().where({_id:})
+
 
 		let post_details = await blogsModel.findOne({ _id: req.params.id }).populate('categories');
 		post_details.total_view = (post_details.total_view || 0) + 1;
