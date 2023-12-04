@@ -26,10 +26,10 @@
                             <!--card start -->
                             <% photo_gallery_category.map( (photo)=>{ %>
 
-                                <a href="#" class="photo_card" data-aos="fade-up" data-aos-duration="300">
-                                    <img src="<%= photo.photo %>" alt="<%= photo.photo_alt %>">
-                                    <!-- overlay-area start -->
-                                    <div class="overlay-area">
+                                <a class="photo_card edit_photo_card venobox" data-gall="myGallery" href="<%= photo.photo %>">
+                                    <img src="<%= photo.photo %>" alt="Thumbnail Image" />
+                                     <!-- overlay-area start -->
+                                     <div class="overlay-area">
                                         <div class="overlay-area_content">
                                             <div class="image_title">
                                                 <h2 class="title_text">
@@ -40,7 +40,7 @@
     
                                     </div>
                                     <!-- overlay-area end -->
-                                </a>
+                                  </a>
     
                                 <% })%>
                             <!--card end -->
@@ -247,6 +247,14 @@
             </div>
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+          $('.venobox').venobox();
+        });
+      </script>
+
 
     <!-- scroll_button_area start -->
     <a href="#scroll_top" class="scroll-button">

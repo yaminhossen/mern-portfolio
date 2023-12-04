@@ -38,6 +38,9 @@ module.exports = (mainserver) => {
 		// save comment routes
 		.post("/save/comment", website_controller.save_comment)
 
+		// save contact message routes
+		.post("/save/contact-message", website_controller.save_contact_message)
+
 		// post details routes
 		.get("/post/:id", website_controller.post_details)
 

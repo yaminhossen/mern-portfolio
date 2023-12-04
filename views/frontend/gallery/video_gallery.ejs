@@ -22,10 +22,9 @@
 
                         <!-- inner_page_all_content start -->
                         <div class="inner_page_all_content" data-aos="fade-up" data-aos-duration="1000">
-                            <% video_gallery_category.map( (video)=>{ %>
-                            <!--card start -->
-                            <a href="#" class="video_card edit_video_card" data-aos="fade-up"
-                                data-aos-duration="600">
+                            <% video_gallery_video.map( (video, index)=>{ %>
+                             <!--card start -->
+                             <a href="<%= video.url %>" data-gall="myGallery2"  data-autoplay="true" data-vbtype="video"   class="venobox edit_video_card video_card" data-aos="fade-up" data-aos-duration="300">
                                 <img src="<%= video.photo %>" alt="<%= video.photo_alt %>">
                                 <!-- overlay-area start -->
                                 <div class="overlay-area">
@@ -36,11 +35,14 @@
                                             </div>
                                         </div>
                                         <div class="image_title">
-                                            <h2 class="title_text"><%= video.title %></h2>
+                                            <h2 class="title_text">
+                                                <%= video.title %>
+                                            </h2>
                                         </div>
                                     </div>
 
                                 </div>
+                                
                                 <!-- overlay-area end -->
                             </a>
                             <!--card end -->
@@ -264,6 +266,12 @@
             </div>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+          $('.venobox').venobox();
+        });
+      </script>
 
     <!-- scroll_button_area start -->
     <a href="#scroll_top" class="scroll-button">

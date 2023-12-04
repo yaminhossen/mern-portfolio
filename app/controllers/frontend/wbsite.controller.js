@@ -22,6 +22,8 @@ const blogsModel = require("../../api/blog/blogs/model/model");
 const bannerModel = require("../../api/banner/banners/model/model");
 const settingModel = require("../../api/setting/setting_titles/model/model");
 const blogCommentModel = require("../../api/blog/blog_comments/model/model");
+const contactModel = require("../../api/contact_message/contact_messages/model/model")
+
 const { async } = require("q");
 const controllers = {
 	folder_prefix: ``,
@@ -70,11 +72,13 @@ const controllers = {
 		let video_gallery_category = await videoGalleryCategoriyModel.find();
 		let tags = await tagsModel.find();
 		let blog_category = await blogCategoriesModel.find();
+		let video_gallery_video = await videoGalleryVideoModel.find();
 
 		return res.render(`frontend/gallery/video_gallery`, {
 			video_gallery_category,
 			tags,
 			blog_category,
+			video_gallery_video,
 		});
 	},
 	home_page: async function (req, res) {
@@ -162,8 +166,6 @@ const controllers = {
 		controllers.server.locals.seo_description = blog.seo_description;
 		controllers.server.locals.seo_image = blog.photo;
 		controllers.server.locals.seo_keyword = blog.seo_keyword;
-		// console.log("blog",blog._id);
-		// console.log("blogs",blogs.length);
 		console.log("blog posts", blog);
 		return res.render(`frontend/blog/blog_posts`, {
 			blog,
@@ -180,6 +182,11 @@ const controllers = {
 		blog.comments.push(new_comment._id);
 		blog.save(); 
 		console.log('save commmetnt', new_comment);
+		// console.log('find comment blog', blog);
+	},
+	save_contact_message: async function(req, res) {
+		let data = req.body;
+		const new_contact_message = await contactModel.create(data);
 		// console.log('find comment blog', blog);
 	},
 	
@@ -199,8 +206,6 @@ const controllers = {
 		// let posts = await post_details.populate('categories');
 
 		console.log("postdd", post_details.categories[0]?.title);
-		// console.log("post", posts);
-		// console.log("blog posts", req.params);
 
 		controllers.server.locals.seo_title = post_details.seo_title;
 		controllers.server.locals.seo_schematags = post_details.
