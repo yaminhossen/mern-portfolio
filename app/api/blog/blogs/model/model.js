@@ -64,7 +64,7 @@ let blogSchema = mongoose.Schema({
 		type: [Schema.Types.ObjectId],
 		ref: 'blog_categories'
 	},
-	comment: {
+	comments: {
 		type: [Schema.Types.ObjectId],
 		ref: 'blog_comments'
 	},

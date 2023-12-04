@@ -45,6 +45,7 @@ let data = [
 		seo_schema_tags: "আল মাহমুদ",
 		published_date: "2023-06-14",
 		categories: ['65618a3394f36f64bfe54d46'],
+		comments:[],
 		status: true,
 
 	},
@@ -62,6 +63,7 @@ let data = [
 		seo_schema_tags: "জন মিলটন",
 		published_date: "2023-07-11",
 		categories: ['654c5d4e30dbb71ec3d78392', '65618a3394f36f64bfe54d46'],
+		comments:[],
 		status: true,
 
 	},
@@ -82,6 +84,7 @@ let data = [
 		seo_schema_tags: "জীবনানন্দ দাশ",
 		published_date: "2023-07-11",
 		categories: ['654c5d4e30dbb71ec3d78392', '65618a3394f36f64bfe54d46'],
+		comments:[],
 		status: true,
 
 	},
@@ -102,6 +105,7 @@ let data = [
 		seo_schema_tags: "কবি মল্লিক",
 		published_date: "2023-07-11",
 		categories: ['654c5d4e30dbb71ec3d78392', '65618a3394f36f64bfe54d46'],
+		comments:[],
 		status: true,
 
 	},
@@ -121,6 +125,7 @@ let data = [
 		seo_schema_tags: "আরবি নিউজ",
 		published_date: "2023-07-01",
 		categories: ['65618a3394f36f64bfe54d46'],
+		comments:[],
 		status: true,
 
 	},
@@ -137,6 +142,7 @@ let data = [
 		seo_schema_tags: "মানবজীবনে ট্র্যাজেডি",
 		published_date: "2023-07-05",
 		categories: ['65618a3394f36f64bfe54d46'],
+		comments:[],
 		status: true,
 
 	},
@@ -161,6 +167,7 @@ let data = [
 		seo_schema_tags: "সাম্প্রদায়িক উন্নয়ন প্রোগ্রাম",
 		published_date: "2023-07-05",
 		categories: ['65618a3394f36f64bfe54d48', '65618a3394f36f64bfe54d4c'],
+		comments:[],
 		status: true,
 
 	},
@@ -182,6 +189,7 @@ let data = [
 		seo_schema_tags: "শিক্ষা ও দক্ষতা উন্নয়ন",
 		published_date: "2023-07-05",
 		categories: ['65618a3394f36f64bfe54d48'],
+		comments:[],
 		status: true,
 
 	},
@@ -202,6 +210,7 @@ let data = [
 		seo_schema_tags: "স্বাস্থ্য সেবা",
 		published_date: "2023-07-05",
 		categories: ['65618a3394f36f64bfe54d48', '65618a3394f36f64bfe54d4c'],
+		comments:[],
 		status: true,
 
 	},
@@ -223,6 +232,7 @@ let data = [
 		seo_schema_tags: "প্রতিবন্ধী ও প্রতিষ্ঠানিক",
 		published_date: "2023-07-05",
 		categories: ['65618a3394f36f64bfe54d48'],
+		comments:[],
 		status: true,
 
 	},
@@ -243,6 +253,7 @@ let data = [
 		seo_schema_tags: "দুর্যোগ ব্যবস্থা",
 		published_date: "2023-07-05",
 		categories: ['65618a3394f36f64bfe54d48'],
+		comments:[],
 		status: true,
 
 	},
@@ -270,6 +281,7 @@ let data = [
 		seo_schema_tags: "পরিবেশ সংরক্ষণ",
 		published_date: "2023-07-05",
 		categories: ['65618a3394f36f64bfe54d48', '65618a3394f36f64bfe54d4c'],
+		comments:[],
 		status: true,
 
 	},
@@ -293,6 +305,7 @@ let data = [
 		seo_schema_tags: "বাংলাদেশের স্বাধীনতা",
 		published_date: "2023-07-05",
 		categories: ['65618a3394f36f64bfe54d44'],
+		comments:[],
 		status: true,
 	},
 	{
@@ -312,6 +325,7 @@ let data = [
 		seo_schema_tags: "ভাষা আন্দোলন",
 		published_date: "2023-07-05",
 		categories: ['65618a3394f36f64bfe54d44', '65618a3394f36f64bfe54d4c'],
+		comments:[],
 		status: true,
 	},
 	{
@@ -334,6 +348,7 @@ let data = [
 		seo_schema_tags: "বাংলাদেশের সংবিধান",
 		published_date: "2023-07-05",
 		categories: ['65618a3394f36f64bfe54d44'],
+		comments:[],
 		status: true,
 	},
 	{
@@ -353,6 +368,7 @@ let data = [
 		seo_schema_tags: "গণহত্যা দিবস",
 		published_date: "2023-07-05",
 		categories: ['65618a3394f36f64bfe54d44', '65618a3394f36f64bfe54d4c'],
+		comments:[],
 		status: true,
 	},
 	{
@@ -374,6 +390,7 @@ let data = [
 		seo_schema_tags: "সাংস্কৃতিক ও ঐতিহাসিক",
 		published_date: "2023-07-05",
 		categories: ['65618a3394f36f64bfe54d44'],
+		comments:[],
 		status: true,
 	},
 	{
@@ -393,6 +410,7 @@ let data = [
 		seo_schema_tags: "অর্থনৈতিক উন্নয়ন",
 		published_date: "2023-07-05",
 		categories: ['65618a3394f36f64bfe54d44'],
+		comments:[],
 		status: true,
 	},
 
@@ -416,6 +434,7 @@ let data = [
 		seo_schema_tags: "গণতান্ত্রিক পদ্ধতি",
 		published_date: "2023-07-05",
 		categories: ['65618a3394f36f64bfe54d42', '65618a3394f36f64bfe54d4c'],
+		comments:[],
 		status: true,
 	},
 	{
@@ -435,6 +454,7 @@ let data = [
 		seo_schema_tags: "রাজনৈতিক ইতিহাস",
 		published_date: "2023-07-05",
 		categories: ['65618a3394f36f64bfe54d42'],
+		comments:[],
 		status: true,
 	},
 	{
@@ -456,6 +476,7 @@ let data = [
 		seo_schema_tags: "নির্বাচন",
 		published_date: "2023-07-05",
 		categories: ['65618a3394f36f64bfe54d42'],
+		comments:[],
 		status: true,
 	},
 	{
@@ -477,6 +498,7 @@ let data = [
 		seo_schema_tags: "অর্থনৈতিক",
 		published_date: "2023-07-05",
 		categories: ['65618a3394f36f64bfe54d42'],
+		comments:[],
 		status: true,
 	},
 	{
@@ -500,6 +522,7 @@ let data = [
 		seo_schema_tags: "আন্তর্জাতিক সম্পর্ক",
 		published_date: "2023-07-05",
 		categories: ['65618a3394f36f64bfe54d42'],
+		comments:[],
 		status: true,
 	},
 	{
@@ -519,6 +542,7 @@ let data = [
 		seo_schema_tags: "নারী রাজনীতি",
 		published_date: "2023-07-05",
 		categories: ['65618a3394f36f64bfe54d42'],
+		comments:[],
 		status: true,
 	},
 
@@ -542,6 +566,7 @@ let data = [
 		seo_schema_tags: "আমার বাংলাদেশ",
 		published_date: "2023-07-05",
 		categories: ['65618a3394f36f64bfe54d40'],
+		comments:[],
 		status: true,
 	},
 	{
@@ -565,6 +590,7 @@ let data = [
 		seo_schema_tags: "বাংলাদেশের অর্থনীতি ও উন্নয়ন",
 		published_date: "2023-07-05",
 		categories: ['65618a3394f36f64bfe54d40'],
+		comments:[],
 		status: true,
 	},
 	{
@@ -584,6 +610,7 @@ let data = [
 		seo_schema_tags: "বাংলাদেশের পর্যটন স্থান",
 		published_date: "2023-07-05",
 		categories: ['65618a3394f36f64bfe54d40'],
+		comments:[],
 		status: true,
 	},
 	{
@@ -603,6 +630,7 @@ let data = [
 		seo_schema_tags: "বাংলাদেশের সাহিত্য ও শিল্প",
 		published_date: "2023-07-05",
 		categories: ['65618a3394f36f64bfe54d40'],
+		comments:[],
 		status: true,
 	},
 	{
@@ -622,6 +650,7 @@ let data = [
 		seo_schema_tags: "বাংলাদেশের ধর্ম ও সাংস্কৃতিক প্রথা",
 		published_date: "2023-07-05",
 		categories: ['65618a3394f36f64bfe54d40'],
+		comments:[],
 		status: true,
 	},
 	{
@@ -643,6 +672,7 @@ let data = [
 		seo_schema_tags: "বাংলাদেশের কৃষি ও সংগ্রহণ",
 		published_date: "2023-07-05",
 		categories: ['65618a3394f36f64bfe54d40'],
+		comments:[],
 		status: true,
 	},
 
@@ -665,6 +695,7 @@ let data = [
 		seo_schema_tags: "ইসলামী আন্দোলনের ইতিহাস ও প্রবণতা",
 		published_date: "2023-07-05",
 		categories: ['65618a3394f36f64bfe54d3e'],
+		comments:[],
 		status: true,
 	},
 	{
@@ -686,6 +717,7 @@ let data = [
 		seo_schema_tags: "ইসলামী আন্দোলনের রাজনৈতিক",
 		published_date: "2023-07-05",
 		categories: ['65618a3394f36f64bfe54d3e'],
+		comments:[],
 		status: true,
 	},
 	{
@@ -707,6 +739,7 @@ let data = [
 		seo_schema_tags: "ইসলামী শিক্ষা ও সংস্কৃতির ব্যবস্থা",
 		published_date: "2023-07-05",
 		categories: ['65618a3394f36f64bfe54d3e'],
+		comments:[],
 		status: true,
 	},
 	{
@@ -728,6 +761,7 @@ let data = [
 		seo_schema_tags: "আন্দোলনের সুযোগ-সুবিধা",
 		published_date: "2023-07-05",
 		categories: ['65618a3394f36f64bfe54d3e'],
+		comments:[],
 		status: true,
 	},
 	{
@@ -747,6 +781,7 @@ let data = [
 		seo_schema_tags: "ইসলামী আন্দোলন ও সামাজিক পরিবর্তন",
 		published_date: "2023-07-05",
 		categories: ['65618a3394f36f64bfe54d3e'],
+		comments:[],
 		status: true,
 	},
 	{
@@ -766,6 +801,7 @@ let data = [
 		seo_schema_tags: "ইসলামী আন্দোলনের ও ধর্মীয় অধিকার",
 		published_date: "2023-07-05",
 		categories: ['65618a3394f36f64bfe54d3e'],
+		comments:[],
 		status: true,
 	},
 
@@ -789,6 +825,7 @@ let data = [
 		seo_schema_tags: "ইসলামের মূল শিক্ষা",
 		published_date: "2023-07-05",
 		categories: ['65618a3394f36f64bfe54d3c'],
+		comments:[],
 		status: true,
 	},
 	{
@@ -810,6 +847,7 @@ let data = [
 		seo_schema_tags: "ইসলামের সমাজ ও শিক্ষা",
 		published_date: "2023-07-05",
 		categories: ['65618a3394f36f64bfe54d3c'],
+		comments:[],
 		status: true,
 	},
 	{
@@ -831,6 +869,7 @@ let data = [
 		seo_schema_tags: "রোজার প্রভাব ও ফজিলত",
 		published_date: "2023-07-05",
 		categories: ['65618a3394f36f64bfe54d3c'],
+		comments:[],
 		status: true,
 	},
 	{
@@ -852,6 +891,7 @@ let data = [
 		seo_schema_tags: "ইসলামিক ইতিহাস ও ঐতিহ্য",
 		published_date: "2023-07-05",
 		categories: ['65618a3394f36f64bfe54d3c'],
+		comments:[],
 		status: true,
 	},
 	{
@@ -873,6 +913,7 @@ let data = [
 		seo_schema_tags: "ইসলামের প্রতিষ্ঠান ও অর্থনীতি",
 		published_date: "2023-07-05",
 		categories: ['65618a3394f36f64bfe54d3c'],
+		comments:[],
 		status: true,
 	},
 	{
@@ -894,6 +935,7 @@ let data = [
 		seo_schema_tags: "ইসলাম ও ভিন্ন ধর্মের সম্পর্ক",
 		published_date: "2023-07-05",
 		categories: ['65618a3394f36f64bfe54d3c'],
+		comments:[],
 		status: true,
 	},
 
@@ -912,6 +954,7 @@ let data = [
 		seo_schema_tags: "বিপদ যখন নিয়ামাত",
 		published_date: "2023-07-05",
 		categories: ['65618a3394f36f64bfe54d4a'],
+		comments:[],
 		status: true,
 
 	},
@@ -928,6 +971,7 @@ let data = [
 		seo_schema_tags: "আইনে রাসূল (ছাঃ) দো’আ অধ্যায়",
 		published_date: "2023-07-05",
 		categories: ['65618a3394f36f64bfe54d4a'],
+		comments:[],
 		status: true,
 
 	},
@@ -944,6 +988,7 @@ let data = [
 		seo_schema_tags: "আর রাহীকুল মাখতূম",
 		published_date: "2023-07-05",
 		categories: ['65618a3394f36f64bfe54d4a'],
+		comments:[],
 		status: true,
 
 	},
@@ -960,6 +1005,7 @@ let data = [
 		seo_schema_tags: "স্মার্ট প্যারেন্টিং",
 		published_date: "2023-07-05",
 		categories: ['65618a3394f36f64bfe54d4a'],
+		comments:[],
 		status: true,
 
 	},
@@ -976,6 +1022,7 @@ let data = [
 		seo_schema_tags: "খুশু-খুযু",
 		published_date: "2023-07-05",
 		categories: ['65618a3394f36f64bfe54d4a'],
+		comments:[],
 		status: true,
 
 	},
@@ -992,6 +1039,7 @@ let data = [
 		seo_schema_tags: "হালাল বিনোদন",
 		published_date: "2023-07-05",
 		categories: ['65618a3394f36f64bfe54d4a'],
+		comments:[],
 		status: true,
 
 	},

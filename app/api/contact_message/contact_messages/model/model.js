@@ -17,7 +17,7 @@ let contactMessageSchema = mongoose.Schema({
 	},
 	address: {
 		type: String,
-		require: true,
+		// require: true,
 	},
 	subject: {
 		type: String,

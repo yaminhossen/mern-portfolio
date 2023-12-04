@@ -177,7 +177,7 @@ const controllers = {
 		const new_comment = await blogCommentModel.create(data);
 		let blog = await blogsModel.findOne().where({ _id: new_comment.post_id });
 	
-		blog.comment.push(new_comment._id);
+		blog.comments.push(new_comment._id);
 		blog.save(); 
 		console.log('save commmetnt', new_comment);
 		// console.log('find comment blog', blog);
@@ -189,7 +189,9 @@ const controllers = {
 
 
 		let post_details = await blogsModel.findOne({ _id: req.params.id }).populate('categories');
-		post_details.total_view = (post_details.total_view || 0) + 1;
+		let post_comments = await blogsModel.findOne({ _id: req.params.id }).populate('comments');
+		// console.log('post comment', post_comments?.comments?.length);
+		post_details.total_view = (post_details?.total_view || 0) + 1;
 		post_details.save();
 		let post = await blogCategoriesModel.findOne({ title: post_details.categories[0]?.title });
 		let posts = await blogsModel.find().where({ categories: post._id });
@@ -209,6 +211,7 @@ const controllers = {
 		return res.render(`frontend/post_details`,{
 			post_details,
 			posts,
+			post_comments,
 		})
 		// return res.json({
 		// 	post_details,

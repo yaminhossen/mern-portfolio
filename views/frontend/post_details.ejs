@@ -36,8 +36,8 @@
                                             </p>
                                         </div>
                                         <div class="comment_area date_comment_area">
-                                            <a href="#" class="comment_area_text date_comment_area_text">9 <span
-                                                    class="color_text">Comment</span></a>
+                                            <a href="#" class="comment_area_text date_comment_area_text"><%= post_comments?.comments?.length %> <span
+                                                    class="color_text">Comments</span></a>
                                         </div>
                                     </div>
 
@@ -88,17 +88,19 @@
 
                                             <!-- comment_text_area start -->
                                             <div class="comment_text_area">
+                                                <% post_comments?.comments.slice(-5).map( (pc)=>{ %>
                                                 <div class="user-image_area_and_comment_text_area">
-                                                    <div class="user-image_area">
+                                                    <div class="mb-3 user-image_area">
                                                         <img src="/assets/images/profile_image/img2.png" alt="img">
                                                     </div>
                                                     <div class="comment_text">
-                                                        <p class="text">সমাজবদ্ধ হয়ে বসবাস করা </p>
+                                                        <p class="text"><%= pc.comment %></p>
                                                         <div class="button_area">
                                                             <!-- <button class="cancel_and_submit_button">Replay</button> -->
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <% })%>
                                             </div>
                                             <!-- comment_text_area end -->
 

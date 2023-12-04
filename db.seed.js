@@ -70,7 +70,7 @@ const seed = async () => {
 
     // // video gallery
     // await apiSettingVideoGalleryCategoriesSeeder();
-    await apiSettingVideoGalleryimagesSeeder();
+    // await apiSettingVideoGalleryimagesSeeder();
 
     // // site url
     // await apiSiteUrlSeeder();
