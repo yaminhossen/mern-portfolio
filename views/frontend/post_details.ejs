@@ -129,21 +129,21 @@
 
                                     <!-- related_item_area start -->
                                     <div class="related_item_area_top">
-                                        <h4>সর্বাধিক পঠিত</h4>
-                                        <div class="related_item_area">
+                                        <h4><%= post_details.title %> বিষয়ে আরো .....</h4>
+                                        <div class="related_item_areaa">
                                             <% posts.sort((a, b)=> b.total_view - a.total_view); %>
-                                                <% posts.slice(0,5).map( (sw)=>{ %>
+                                                <% posts.slice(0,4).map( (sw)=>{ %>
                                                     <!-- item_area start -->
-                                                    <div class="item_area">
+                                                    <div class="item_areaa">
                                                         <a href="/post/<%= sw._id %>"
-                                                            class="social_work_image_card edit_social_work_image_card edit_details_social_work_card">
-                                                            <img src="<%= sw.photo %>" alt="img">
+                                                            class="social_work_image_carda edit_social_work_image_carda edit_details_social_work_carda">
+                                                            
                                                             <!-- overlay-area start -->
-                                                            <div class="overlay-area">
-                                                                <div class="overlay-area_content">
+                                                            <div class="overlay-areaa">
+                                                                <div class="overlay-area_contenta">
 
-                                                                    <div class="image_title">
-                                                                        <h2 class="title_text">
+                                                                    <div class="image_titlea">
+                                                                        <h2 class="title_texta">
                                                                             <%= sw.subtitle %>
                                                                         </h2>
                                                                     </div>
@@ -151,6 +151,9 @@
 
                                                             </div>
                                                             <!-- overlay-area end -->
+                                                            <div>
+                                                                <img src="<%= sw.photo %>" alt="img">
+                                                            </div>
                                                         </a>
                                                     </div>
                                                     <!-- item_area end -->

@@ -1812,6 +1812,34 @@ html ::-webkit-scrollbar-thumb:hover {
   font-size: 22px;
 }
 
+.related_item_areaa {
+  border-bottom: 1px solid #5dabbe;
+  border-top: 1px solid #5dabbe;
+  padding: 20px 0px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+}
+.related_item_areaa .social_work_image_carda {
+  display: flex;
+  height: 120px;
+}
+.related_item_areaa .social_work_image_carda img {
+  height: 100%;
+}
+.related_item_areaa .social_work_image_carda .overlay-areaa {
+  width: 50%;
+}
+.related_item_areaa .social_work_image_carda .overlay-areaa .overlay-area_contenta .image_titlea {
+  border: 0px solid red;
+}
+.related_item_areaa .social_work_image_carda .overlay-areaa .overlay-area_contenta .image_titlea .title_texta {
+  border: 0px solid red;
+  font-family: "bangla-font";
+  font-size: 18px;
+  color: #5dabbe;
+}
+
 .banner_area {
   border: 0px solid red;
   background-repeat: no-repeat;
