@@ -174,21 +174,7 @@ const controllers = {
 	},
 
    
-	save_comment: async function(req, res) {
-		let data = req.body;
-		const new_comment = await blogCommentModel.create(data);
-		let blog = await blogsModel.findOne().where({ _id: new_comment.post_id });
 	
-		blog.comments.push(new_comment._id);
-		blog.save(); 
-		console.log('save commmetnt', new_comment);
-		// console.log('find comment blog', blog);
-	},
-	save_contact_message: async function(req, res) {
-		let data = req.body;
-		const new_contact_message = await contactModel.create(data);
-		// console.log('find comment blog', blog);
-	},
 	
 	post_details: async function (req, res) {
 
@@ -205,7 +191,11 @@ const controllers = {
 
 		// let posts = await post_details.populate('categories');
 
+		// let blog = await blogCategoriesModel.findOne({ url: "/"+req.params.url });
+		// let blogs = await blogsModel.find().where({ categories: blog._id });
+
 		console.log("postdd", post_details.categories[0]?.title);
+		// let blogs = await blogsModel.find().where({ categories: blog._id });
 
 		controllers.server.locals.seo_title = post_details.seo_title;
 		controllers.server.locals.seo_schematags = post_details.
@@ -217,11 +207,29 @@ const controllers = {
 			post_details,
 			posts,
 			post_comments,
+			post,
 		})
+
 		// return res.json({
 		// 	post_details,
 			// posts,
 		// });
+	},
+
+	save_comment: async function(req, res) {
+		let data = req.body;
+		const new_comment = await blogCommentModel.create(data);
+		let blog = await blogsModel.findOne().where({ _id: new_comment.post_id });
+	
+		blog.comments.push(new_comment._id);
+		blog.save(); 
+		console.log('save commmetnt', new_comment);
+		// console.log('find comment blog', blog);
+	},
+	save_contact_message: async function(req, res) {
+		let data = req.body;
+		const new_contact_message = await contactModel.create(data);
+		// console.log('find comment blog', blog);
 	},
 
 	/* contemporary: async function (req, res) {
