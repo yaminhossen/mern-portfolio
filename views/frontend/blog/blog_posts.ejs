@@ -94,18 +94,18 @@
                             <div class="side_ber_area_title">
                                 <h2 class="title_text">ক্যাটেগরীজ</h2>
                             </div>
-                            <!-- side_ber_area_title end -->
+                             <!-- side_ber_area_title end -->
 
-                            <div class="categories_item_all">
+                             <div class="categories_item_alla new_categories_item_all">
                                 <ul>
                                     <% commonData.blog_category.map( (cm)=>{ %>
 
                                         <li>
-                                            <a href="<%= cm.url %>" class="categories_name">
+                                            <a href="/posts<%= cm.url %>" class="categories_namea new_categories_name">
                                                 <%= cm.title %>
                                             </a>
                                         </li>
-            
+
                                         <% })%>
                                 </ul>
                             </div>

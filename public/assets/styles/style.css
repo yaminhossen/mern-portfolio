@@ -1822,10 +1822,19 @@ html ::-webkit-scrollbar-thumb:hover {
 }
 .related_item_areaa .social_work_image_carda {
   display: flex;
+  width: 100%;
+  gap: 20px;
   height: 120px;
+  overflow: hidden;
 }
-.related_item_areaa .social_work_image_carda img {
+.related_item_areaa .social_work_image_carda .item_area_image_div {
+  width: 50%;
+  object-fit: cover;
+}
+.related_item_areaa .social_work_image_carda .item_area_image_div img {
+  width: 100%;
   height: 100%;
+  transition-duration: 0.4s;
 }
 .related_item_areaa .social_work_image_carda .overlay-areaa {
   width: 50%;
@@ -1838,6 +1847,39 @@ html ::-webkit-scrollbar-thumb:hover {
   font-family: "bangla-font";
   font-size: 18px;
   color: #5dabbe;
+}
+.related_item_areaa .social_work_image_carda:hover .overlay-areaa .overlay-area_contenta .image_titlea .title_texta {
+  font-size: 18px;
+  color: black;
+}
+.related_item_areaa .social_work_image_carda:hover img {
+  scale: 1.1;
+}
+
+.new_categories_item_all {
+  border: 0px solid red;
+  margin-top: 15px;
+}
+.new_categories_item_all ul {
+  border: 0px solid red;
+}
+.new_categories_item_all ul li {
+  list-style: disc;
+  border: 0px solid red;
+  margin-left: 20px;
+}
+.new_categories_item_all ul li .new_categories_name {
+  border: 0px solid red;
+  font-family: "bangla-font";
+  font-size: 15px;
+  color: #5dabbe;
+  transition-duration: 0.4s;
+  padding: 5px 0px;
+  transition-duration: 0.4s;
+}
+.new_categories_item_all ul li .new_categories_name:hover {
+  color: black;
+  font-weight: bold;
 }
 
 .banner_area {

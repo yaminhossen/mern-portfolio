@@ -129,7 +129,7 @@
 
                                     <!-- related_item_area start -->
                                     <div class="related_item_area_top">
-                                        <h4><%= post_details.title %> বিষয়ে আরো .....</h4>
+                                        <h4><%= post_details.title.slice(0,20) %> বিষয়ে আরো .....</h4>
                                         <div class="related_item_areaa">
                                             <% posts.sort((a, b)=> b.total_view - a.total_view); %>
                                                 <% posts.slice(0,4).map( (sw)=>{ %>
@@ -144,14 +144,14 @@
 
                                                                     <div class="image_titlea">
                                                                         <h2 class="title_texta">
-                                                                            <%= sw.subtitle %>
+                                                                            <%= sw.subtitle.slice(0,90) %>.....
                                                                         </h2>
                                                                     </div>
                                                                 </div>
 
                                                             </div>
                                                             <!-- overlay-area end -->
-                                                            <div>
+                                                            <div class="item_area_image_div">
                                                                 <img src="<%= sw.photo %>" alt="img">
                                                             </div>
                                                         </a>
@@ -197,12 +197,12 @@
                                 </div>
                                 <!-- side_ber_area_title end -->
 
-                                <div class="categories_item_all">
+                                <div class="categories_item_alla new_categories_item_all">
                                     <ul>
                                         <% commonData.blog_category.map( (cm)=>{ %>
 
                                             <li>
-                                                <a href="<%= cm.url %>" class="categories_name">
+                                                <a href="/posts<%= cm.url %>" class="categories_namea new_categories_name">
                                                     <%= cm.title %>
                                                 </a>
                                             </li>

@@ -9,11 +9,19 @@
     .social_work_image_carda{
         // border: 1px solid red;
         display: flex;
-        // width: 140px;
+        width: 100%;
+        gap: 20px;
         height: 120px;
-        img{
-            // width: 100%;
-            height: 100%;
+        overflow: hidden;
+        .item_area_image_div{
+            width: 50%;
+            object-fit: cover;
+            img{
+                width: 100%;
+                height: 100%;
+                transition-duration: .4s;
+            }
+            
         }
         .overlay-areaa{
             width: 50%;
@@ -25,11 +33,64 @@
                         font-family: $font_bangla;
                         font-size: 18px;
                         // font-weight: bold;
-                        // color: $brand_color;
                         color: $brand_color;
                     }
                 }
             }
+        }
+        &:hover{
+            .overlay-areaa{
+                .overlay-area_contenta{
+                    .image_titlea {
+                        .title_texta {
+                            // border: $border;
+                            // font-family: $font_bangla;
+                            font-size: 18px;
+                            color: black;
+                        }
+                    }
+                }
+            }
+            img{
+                scale: 1.1;
+            }
+        }
+    }
+}
+
+
+// categories area start for custom
+.new_categories_item_all {
+    border: $border;
+    margin-top: 15px;
+
+    ul {
+        border: $border;
+        // gap: 5px;
+        
+        li {
+            list-style: disc;
+            border: $border;
+            margin-left: 20px;
+            .new_categories_name {
+                border: $border;
+                font-family: $font_bangla;
+                font-size: 15px;
+                // font-weight: bold;
+                // color: $white;
+                color: $brand_color;
+                transition-duration: 0.4s;
+                padding: 5px 0px;
+                // border: 1px solid $brand_color;
+                // background-color: $brand_color;
+                transition-duration: 0.4s;
+                &:hover {
+                    color: black;
+                    // background-color: transparent;
+                    font-weight: bold;
+                }
+            }
+            
         }
     }
 }
