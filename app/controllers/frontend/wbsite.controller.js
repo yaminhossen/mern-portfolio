@@ -91,9 +91,9 @@ const controllers = {
 		let settingValue = await settingModel.findOne({ title: "banner_at_a_glance_value" });
 		let banner = await bannerModel.find();
 
-		let contemp = await blogCategoriesModel.findOne({ title: "সমসাময়িক" });
+		let contemp = await blogCategoriesModel.findOne({ title: "সংবাদ" });
 
-		let contems = await blogsModel.find().where({ categories: contemp._id });
+		let contems = await blogsModel.find().where({ categories: contemp?._id });
 
 		let social_work = await blogCategoriesModel.findOne({ title: "সামাজিক কাজ" });
 
@@ -160,12 +160,12 @@ const controllers = {
 		let blog = await blogCategoriesModel.findOne({ url: "/"+req.params.url });
 		// let datas = await blogCategoriesModel.findOne({ url: "/"+req.params.url });
 
-		let blogs = await blogsModel.find().where({ categories: blog._id });
+		let blogs = await blogsModel.find().where({ categories: blog?._id });
 
-		controllers.server.locals.seo_title = blog.seo_title;
-		controllers.server.locals.seo_description = blog.seo_description;
-		controllers.server.locals.seo_image = blog.photo;
-		controllers.server.locals.seo_keyword = blog.seo_keyword;
+		controllers.server.locals.seo_title = blog?.seo_title;
+		controllers.server.locals.seo_description = blog?.seo_description;
+		controllers.server.locals.seo_image = blog?.photo;
+		controllers.server.locals.seo_keyword = blog?.seo_keyword;
 		console.log("blog posts", blog);
 		return res.render(`frontend/blog/blog_posts`, {
 			blog,
@@ -186,8 +186,10 @@ const controllers = {
 		// console.log('post comment', post_comments?.comments?.length);
 		post_details.total_view = (post_details?.total_view || 0) + 1;
 		post_details.save();
-		let post = await blogCategoriesModel.findOne({ title: post_details.categories[0]?.title });
-		let posts = await blogsModel.find().where({ categories: post._id });
+		let post = await blogCategoriesModel.findOne({ title: post_details?.categories[0]?.title });
+		let posts = await blogsModel.find().where({ categories: post?._id });
+
+		let filterPost = posts?.filter((post) => post?._id != req.params.id);
 
 		// let posts = await post_details.populate('categories');
 
@@ -197,17 +199,18 @@ const controllers = {
 		console.log("postdd", post_details.categories[0]?.title);
 		// let blogs = await blogsModel.find().where({ categories: blog._id });
 
-		controllers.server.locals.seo_title = post_details.seo_title;
-		controllers.server.locals.seo_schematags = post_details.
+		controllers.server.locals.seo_title = post_details?.seo_title;
+		controllers.server.locals.seo_schematags = post_details?.
 			seo_schema_tags;
-		controllers.server.locals.seo_description = post_details.seo_description;
-		controllers.server.locals.seo_image = post_details.photo;
-		controllers.server.locals.seo_keyword = post_details.seo_keyword;
+		controllers.server.locals.seo_description = post_details?.seo_description;
+		controllers.server.locals.seo_image = post_details?.photo;
+		controllers.server.locals.seo_keyword = post_details?.seo_keyword;
 		return res.render(`frontend/post_details`,{
 			post_details,
 			posts,
 			post_comments,
 			post,
+			filterPost,
 		})
 
 		// return res.json({
